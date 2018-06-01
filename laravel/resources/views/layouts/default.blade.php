@@ -19,10 +19,16 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <a href="{{route('user.create')}}" class="btn btn-outline-success my-2 my-sm-0">注册</a>
+                @auth
+                    <a href="{{route('user.create')}}" class="btn btn-outline-success my-2 my-sm-0">退出</a>
+                @else
+                    <a href="{{route('user.create')}}" class="btn btn-outline-success my-2 my-sm-0">注册</a>
+                @endauth
             </form>
         </div>
     </nav>
+    @include('layouts._validate')
+    @include('layouts._message')
     @yield('content')
 </div>
 <script src="/js/app.js"></script>
