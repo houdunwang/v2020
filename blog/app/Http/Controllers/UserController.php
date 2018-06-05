@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegMail;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'except' => ['index', 'show', 'create', 'store']
+            'except' => ['index', 'show', 'create', 'store', 'confirmEmailToken']
         ]);
         $this->middleware('guest', [
             'only' => ['create', 'store']
@@ -53,10 +54,10 @@ class UserController extends Controller
         ]);
         $data['password'] = bcrypt($data['password']);
         //添加用户
-        User::create($data);
-        //自动登录
-        \Auth::attempt(['email' => $request->email, 'password' => $request->password]);
-        session()->flash('success', '注册成功，已经为你自动登录系统');
+        $user = User::create($data);
+        //发送注册邮件
+        \Mail::to($user)->send(new RegMail($user));
+        session()->flash('success', '请查看邮箱完成注册验证');
         return redirect()->route('home');
     }
 
@@ -67,8 +68,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
-    {
-        return view('user.show', compact('user'));
+    {   
+        $blogs= $user->blogs()->paginate('10');
+        return view('user.show', compact('user','blogs'));
     }
 
     /**
@@ -117,5 +119,19 @@ class UserController extends Controller
         $user->delete();
         session()->flash('success', '删除成功');
         return redirect()->route('user.index');
+    }
+    //注册邮箱验证
+    public function confirmEmailToken($token)
+    {
+        $user = User::where('email_token', $token)->first();
+        if ($user) {
+            $user->email_active = true;
+            $user->save();
+            session()->flash('验证成功');
+            \Auth::login($user);
+            return redirect('/');
+        }
+        session()->flash('danger', '邮箱验证失败');
+        return redirect('/');
     }
 }

@@ -6,29 +6,27 @@
         </div>
         <div class="card-body">
             <table class="table">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </thead>
                 <tbody>
-                <tr>
-                    <td scope="row"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td scope="row"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                @foreach($blogs as $blog)
+                    <tr>
+                        <td>
+                            {{$blog['content']}}
+                        </td>
+                        <td>
+                            @can('delete',$blog)
+                            <form action="{{route('blog.destroy',$blog)}}" method="post">
+                                @csrf @method('DELETE')
+                                <button class="btn btn-danger btn-sm">删除</button>
+                            </form>
+                            @endcan
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
         <div class="card-footer text-muted">
-
+{{$blogs->links()}}
         </div>
     </div>
 @endsection

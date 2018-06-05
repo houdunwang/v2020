@@ -11,5 +11,10 @@
 |
 */
 
-Route::get('/','IndexController@home')->name('home');
-Route::resource('user','UserController');
+Route::get('/', 'IndexController@home')->name('home');
+Route::resource('user', 'UserController');
+
+Route::get('login', 'LoginController@login')->name('login');
+Route::post('login', 'LoginController@
+')->name('login');
+Route::get('logout', 'LoginController@logout')->name('logout');

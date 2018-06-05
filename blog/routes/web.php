@@ -16,4 +16,14 @@ Route::resource('user', 'UserController');
 
 Route::get('logout', 'LoginController@logout')->name('logout');
 Route::get('login', "LoginController@login")->name('login');
-Route::post('login','LoginController@store')->name('login');
+Route::post('login', 'LoginController@store')->name('login');
+
+Route::get('confirmEmailToken/{token}', 'UserController@confirmEmailToken')->name('confirmEmailToken');
+
+//找回密码
+Route::get('FindPasswordEmail', 'PasswordController@email')->name('FindPasswordEmail');
+Route::post('FindPasswordSend', 'PasswordController@send')->name('FindPasswordSend');
+Route::get('FindPasswordEdit/{token}', 'PasswordController@edit')->name('FindPasswordEdit');
+Route::post('FindPasswordUpdate', 'PasswordController@update')->name('FindPasswordUpdate');
+
+Route::resource('blog', 'BlogController');

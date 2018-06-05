@@ -17,11 +17,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="http://www.houdunwang.com">后盾人</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('user.index')}}" >用户列表</a>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 @auth
-                    <a href="{{route('user.create')}}" class="btn btn-outline-success my-2 my-sm-0">退出</a>
+                    <a href="{{route('logout')}}" class="btn btn-outline-success my-2 my-sm-0">退出</a>
                 @else
+                    <a href="{{route('login')}}" class="btn btn-success mr-2 my-sm-0">登录</a>
                     <a href="{{route('user.create')}}" class="btn btn-outline-success my-2 my-sm-0">注册</a>
                 @endauth
             </form>
