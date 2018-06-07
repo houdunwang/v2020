@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegMail;
 use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => ['show', 'index', 'create', 'store', 'confirmMail']
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -37,14 +45,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $this->validate($request, [
-            'name' => 'required|min:5',
+            'name' => 'required|min:3',
             'email' => 'email|required|unique:users',
             'password' => 'required|min:5|confirmed'
         ]);
         $data['password'] = bcrypt($data['password']);
-        User::create($data);
-        \Auth::attempt(['email' => $request->email, 'password' => $request->password]);
-        session()->flash('success', '注册成功');
+        $user = User::create($data);
+        \Mail::to($user)->send(new RegMail($user));
+        //\Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+        session()->flash('success', '验证邮件已经发送到您的邮箱，请注意查收');
         return redirect()->route('home');
     }
 
@@ -107,4 +116,19 @@ class UserController extends Controller
         session()->flash('success', '删除成功');
         return redirect()->route('user.index');
     }
+
+    public function confirmMail($token)
+    {
+        $user = User::where('email_token', $token)->first();
+        if ($user) {
+            $user->email_active = true;
+            $user->save();
+            session()->flash('succes', '注册成功');
+            \Auth::login($user);
+            return redirect('/');
+        }
+        session()->flash('danger', '验证码失效');
+        return redirect('/');
+    }
+
 }

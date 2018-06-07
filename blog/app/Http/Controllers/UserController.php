@@ -61,6 +61,13 @@ class UserController extends Controller
         return redirect()->route('home');
     }
 
+    //关注或取关
+    public function follow(User $user)
+    {
+        $user->followToggle(\Auth::user()->id);
+        return back();
+    }
+
     /**
      * Display the specified resource.
      *
@@ -68,9 +75,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
-    {   
-        $blogs= $user->blogs()->paginate('10');
-        return view('user.show', compact('user','blogs'));
+    {
+        $blogs = $user->blogs()->paginate('10');
+        if (\Auth::check())
+            $followTitle = $user->isFollow(\Auth::user()->id) ? '取消关注' : '关注';
+        return view('user.show', compact('user', 'blogs', 'followTitle'));
     }
 
     /**
@@ -120,6 +129,7 @@ class UserController extends Controller
         session()->flash('success', '删除成功');
         return redirect()->route('user.index');
     }
+
     //注册邮箱验证
     public function confirmEmailToken($token)
     {

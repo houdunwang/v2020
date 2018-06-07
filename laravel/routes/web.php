@@ -15,6 +15,8 @@ Route::get('/', 'IndexController@home')->name('home');
 Route::resource('user', 'UserController');
 
 Route::get('login', 'LoginController@login')->name('login');
-Route::post('login', 'LoginController@
-')->name('login');
+Route::post('login', 'LoginController@store')->name('login');
 Route::get('logout', 'LoginController@logout')->name('logout');
+
+Route::resource('blog','BlogController');
+Route::get('confirmMail/{token}','UserController@confirmMail')->name('confirmMail');

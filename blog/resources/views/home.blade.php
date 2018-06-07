@@ -39,7 +39,7 @@
                             @endcan
                         </td>
                         <td>
-                            {{$blog->user->name}}
+                            <a href="{{route('user.show',$blog->user)}}">{{$blog->user->name}}</a>
                         </td>
                     </tr>
                 @endforeach

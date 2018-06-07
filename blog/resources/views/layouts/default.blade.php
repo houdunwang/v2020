@@ -27,6 +27,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 @auth
+                    <a href="{{route('user.show',auth()->user())}}" class="btn btn-dark my-2 my-sm-0 mr-2">空间</a>
                     <a href="{{route('user.edit',auth()->user())}}" class="btn btn-info my-2 my-sm-0 mr-2">修改</a>
                     <a href="{{route('logout')}}" class="btn btn-danger my-2 my-sm-0 mr-2">退出</a>
                 @else
