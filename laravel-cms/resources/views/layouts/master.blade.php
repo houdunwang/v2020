@@ -172,7 +172,7 @@
     <div class="be-left-sidebar">
         <div class="left-sidebar-wrapper"><a href="#" class="left-sidebar-toggle">Fixed Sidebar</a>
             <div class="left-sidebar-spacer">
-                @include('layouts._menus')
+                @include('Modules.Admin.Resources.views.layouts._menus')
             </div>
             <div class="progress-widget">
                 <div class="progress-data">

@@ -1,84 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="author" content="向军大叔">
-    <link rel="shortcut icon" href="assets/img/logo-fav.png">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="stylesheet" type="text/css" href="{{asset('theme/beagle/lib/perfect-scrollbar/css/perfect-scrollbar.min.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{asset('theme/beagle/lib/material-design-icons/css/material-design-iconic-font.min.css')}}"/>
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" href="{{asset('theme/beagle/css/app.css')}}" type="text/css"/>
-</head>
-<body class="be-splash-screen">
-<div class="be-wrapper be-login" id="app">
-    <div class="be-content">
-        <div class="main-content container-fluid">
-            <div class="splash-container">
-                <div class="card card-border-color card-border-color-primary">
-                    <div class="card-header"><img src="{{asset('theme/beagle/img/logo-xx.png')}}" alt="logo" width="120" height="27" class="logo-img">
-                        <span class="splash-description">登录系统</span></div>
-                    <div class="card-body">
-                        <form action="{{route('login')}}" method="post">
-                            @csrf
-                            @include('layouts._error')
-                            <div class="login-form">
-                                <div class="form-group">
-                                    <input id="email" type="email" name="email" placeholder="系统帐号" autocomplete="off" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <input id="password" type="password" name="password" placeholder="登录密码" class="form-control">
-                                </div>
-                                <div class="form-group row login-tools">
-                                    <div class="col-6 login-remember">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input"><span class="custom-control-label">
-                                                {{__('Remember Me')}}
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="col-6 login-forgot-password">
-                                        <a href="{{route('password.request')}}">
-                                            {{__('Forgot Your Password?')}}
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="form-group row login-submit">
-                                    <div class="col-6">
-                                        <button data-dismiss="modal" type="submit" class="btn btn-primary btn-xl">
-                                            {{__('Login')}}
-                                        </button>
-                                    </div>
-                                    <div class="col-6">
-                                        <a href="{{route('register')}}" class="btn btn-secondary btn-xl">
-                                            {{__('Register')}}
-                                        </a>
-                                    </div>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
+                                    </label>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
+
+                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="splash-footer">&copy; 2019 {{ config('app.name', 'Laravel') }} <a href="/">返回首页</a></div>
             </div>
         </div>
     </div>
 </div>
-<script src="{{mix('js/app.js')}}"></script>
-<script src="{{asset('theme/beagle/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('theme/beagle/js/app.js')}}" type="text/javascript"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        //initialize the javascript
-        App.init();
-    });
-</script>
-</body>
-</html>
+@endsection

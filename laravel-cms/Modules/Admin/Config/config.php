@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'name' => 'Admin'
+    'name' => '系统管理'
 ];
