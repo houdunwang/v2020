@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.26 on 2018-07-01 11:35:49.
+ * Generated for Laravel 5.6.26 on 2018-07-08 12:29:18.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -12488,16 +12488,75 @@ namespace Illuminate\Support\Facades {
 
 namespace Houdunwang\Module { 
 
-    class Facade {
+    class Factory {
+        
+        /**
+         * 当前模块
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function currentModule()
+        {
+            return \Houdunwang\Module\Provider::currentModule();
+        }
+        
+        /**
+         * 支持点语法的获取配置项
+         *
+         * @param $name
+         * @return mixed 
+         * @static 
+         */ 
+        public static function config($name)
+        {
+            return \Houdunwang\Module\Provider::config($name);
+        }
+        
+        /**
+         * 验证权限
+         *
+         * @param $permissions
+         * @param string $guard
+         * @return bool 
+         * @static 
+         */ 
+        public static function hadPermission($permissions, $guard)
+        {
+            return \Houdunwang\Module\Provider::hadPermission($permissions, $guard);
+        }
+        
+        /**
+         * 站长检测
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function isWebMaster($guard = 'admin')
+        {
+            return \Houdunwang\Module\Provider::isWebMaster($guard);
+        }
+        
+        /**
+         * 
+         *
+         * @param $guard
+         * @return array 
+         * @static 
+         */ 
+        public static function getPermissionByGuard($guard)
+        {
+            return \Houdunwang\Module\Provider::getPermissionByGuard($guard);
+        }
         
         /**
          * 
          *
          * @static 
          */ 
-        public static function show()
+        public static function getMenus()
         {
-            return \Houdunwang\Module\Provider::show();
+            return \Houdunwang\Module\Provider::getMenus();
         }
          
     }
@@ -15408,7 +15467,7 @@ namespace  {
 
     class View extends \Illuminate\Support\Facades\View {}
 
-    class HdModule extends \Houdunwang\Module\Facade {}
+    class HDModule extends \Houdunwang\Module\Factory {}
 
     class Module extends \Nwidart\Modules\Facades\Module {}
  

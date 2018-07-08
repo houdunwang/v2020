@@ -6,23 +6,17 @@
  * '-------------------------------------------------------------------*/
 /**
  * 权限配置
- * 为了避免其他模块有同名的权限，权限标识要以 '模块标识::' 开始
+ * 为了避免其他模块有同名的权限，权限标识要以 '控制器@方法' 开始
  */
 return [
     [
-        'group' => '系统管理',
+        'group' => '角色管理',
         'permissions' => [
-            ['title' => '网站配置', 'name' => 'Admin::config-site', 'guard' => 'admin'],
-            ['title' => '微信配置', 'name' => 'Admin::config-wechat', 'guard' => 'admin'],
-            ['title' => '邮件配置', 'name' => 'Admin::config-mail', 'guard' => 'admin'],
-            ['title' => '权限管理', 'name' => 'Admin::role-manage', 'guard' => 'admin'],
-        ],
-    ],
-    [
-        'group' => '会员管理',
-        'permissions' => [
-            ['title' => '会员列表', 'name' => 'Admin::user-index', 'guard' => 'admin'],
-            ['title' => '编辑会员', 'name' => 'Admin::user-edit', 'guard' => 'admin'],
+            ['title' => '角色列表', 'name' => 'Modules\Admin\Http\Controllers\RoleController@index', 'guard' => 'admin'],
+            ['title' => '修改列表', 'name' => 'Modules\Admin\Http\Controllers\RoleController@edit', 'guard' => 'admin'],
+            ['title' => '删除角色', 'name' => 'Modules\Admin\Http\Controllers\RoleController@destroy', 'guard' => 'admin'],
+            ['title' => '添加角色', 'name' => 'Modules\Admin\Http\Controllers\RoleController@create', 'guard' => 'admin'],
+            ['title' => '修改角色权限', 'name' => 'Modules\Admin\Http\Controllers\RoleController@permission', 'guard' => 'admin'],
         ],
     ],
 ];

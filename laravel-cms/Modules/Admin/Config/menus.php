@@ -14,14 +14,11 @@
  */
 return [
     [
-        "title"      => "系统管理",
-        "icon"       => "fa fa-cog",
-        'permission' => '权限标识',
-        "menus"      => [
-            ["title" => "网站配置", "permission" => "Admin::config-site", "url" => "链接地址"],
-            ["title" => "微信配置", "permission" => "Admin::config-wechat", "url" => "链接地址"],
-            ["title" => "邮件配置", "permission" => "Admin::config-mail", "url" => "http://houdunren.com"],
-            ["title" => "权限管理", "permission" => "Admin::role-manage", "url" => "/admin/role"],
+        "title" => "系统管理",
+        "icon" => "fa fa-navicon",
+        'permission' => ['Modules\Admin\Http\Controllers\RoleController@index'],
+        "menus" => [
+            ["title" => "角色管理", "permission" => "Modules\Admin\Http\Controllers\RoleController@index", "url" => "/admin/role"],
         ],
-    ]
+    ],
 ];

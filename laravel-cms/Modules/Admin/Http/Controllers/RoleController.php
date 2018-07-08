@@ -16,7 +16,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $roles = Role::get();
+        $roles = Role::where('name','<>',config('hd_module.webmaster'))->get();
         return view('admin::role.index', compact('roles'));
     }
 
@@ -45,22 +45,27 @@ class RoleController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     * @return Response
+     * 删除角色
+     * @param Role $role
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
      */
-    public function destroy()
+    public function destroy(Role $role)
     {
+        $role->delete();
+        return redirect('/admin/role')->with('success', '删除成功');
     }
 
     public function permission(Role $role)
     {
         $modules = \HDModule::getPermissionByGuard('admin');
-        return view('admin::role.permission',compact('role','modules'));
+        return view('admin::role.permission', compact('role', 'modules'));
     }
 
-    public function permissionStore(Request $request,Role $role){
+    public function permissionStore(Request $request, Role $role)
+    {
         $role->syncPermissions($request->name);
-        session()->flash('success','权限设置成功');
+        session()->flash('success', '权限设置成功');
         return back();
     }
 }

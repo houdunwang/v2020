@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d1951775096f890be7718b42b7ee724e",
+    "content-hash": "e982c02e0df6d2005a69fd0787c18589",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -592,16 +592,16 @@
         },
         {
             "name": "houdunwang/laravel-module",
-            "version": "v1.0.12",
+            "version": "v1.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/houdunwang/laravel-module.git",
-                "reference": "c30bece54515daf1d2117cdcaee404766bc25c0b"
+                "reference": "53b63312c0b08ec3219a1934f77b9656882a5083"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/houdunwang/laravel-module/zipball/c30bece54515daf1d2117cdcaee404766bc25c0b",
-                "reference": "c30bece54515daf1d2117cdcaee404766bc25c0b",
+                "url": "https://api.github.com/repos/houdunwang/laravel-module/zipball/53b63312c0b08ec3219a1934f77b9656882a5083",
+                "reference": "53b63312c0b08ec3219a1934f77b9656882a5083",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -611,7 +611,10 @@
                 ]
             },
             "require": {
-                "nwidart/laravel-modules": "^3.3"
+                "houdunwang/laravel-upload": "^1.0",
+                "houdunwang/laravel-view": "^1.0",
+                "nwidart/laravel-modules": "^3.3",
+                "spatie/laravel-permission": "^2.12"
             },
             "type": "library",
             "extra": {
@@ -643,7 +646,129 @@
                 }
             ],
             "description": "laravel modules",
-            "time": "2018-07-05T12:23:37+00:00"
+            "time": "2018-07-08T09:21:34+00:00"
+        },
+        {
+            "name": "houdunwang/laravel-upload",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/laravel-upload.git",
+                "reference": "c3e09dc4c912b7c7118b6c27fdf1fc280ffd8557"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/houdunwang/laravel-upload/zipball/c3e09dc4c912b7c7118b6c27fdf1fc280ffd8557",
+                "reference": "c3e09dc4c912b7c7118b6c27fdf1fc280ffd8557",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Houdunwang\\LaravelUpload\\ServiceProvider"
+                    ],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "files": [],
+                "psr-4": {
+                    "Houdunwang\\LaravelUpload\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "后盾网向军",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "Laravel上传处理",
+            "homepage": "http://www.houdunren.com/",
+            "keywords": [
+                "houdunwang",
+                "laravel-upload",
+                "后盾人",
+                "向军大叔"
+            ],
+            "time": "2018-07-08T09:22:42+00:00"
+        },
+        {
+            "name": "houdunwang/laravel-view",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/laravel-view.git",
+                "reference": "facee96723a51f8472cfe7af1af89516fd46c44b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/houdunwang/laravel-view/zipball/facee96723a51f8472cfe7af1af89516fd46c44b",
+                "reference": "facee96723a51f8472cfe7af1af89516fd46c44b",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Houdunwang\\LaravelView\\ServiceProvider"
+                    ],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "files": [],
+                "psr-4": {
+                    "Houdunwang\\LaravelView\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "后盾网向军",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "根据注释生成表结构",
+            "homepage": "http://www.houdunren.com/",
+            "keywords": [
+                "houdunwang",
+                "laravel-view",
+                "后盾人",
+                "向军老师"
+            ],
+            "time": "2018-07-08T09:19:09+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1776,6 +1901,64 @@
             "time": "2018-06-14T02:52:40+00:00"
         },
         {
+            "name": "spatie/laravel-pjax",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-pjax.git",
+                "reference": "5c8d3b147bbdb40ecd794dee3035b4c05734ef35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-pjax/zipball/5c8d3b147bbdb40ecd794dee3035b4c05734ef35",
+                "reference": "5c8d3b147bbdb40ecd794dee3035b4c05734ef35",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "illuminate/http": "^5.1",
+                "illuminate/support": "^5.1",
+                "php": "^5.5.0|^7.0",
+                "symfony/css-selector": "^2.7|^3.0|^4.0",
+                "symfony/dom-crawler": "^2.7|^3.0|^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.36",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Pjax\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A pjax middleware for Laravel 5",
+            "homepage": "https://github.com/spatie/laravel-pjax",
+            "keywords": [
+                "laravel-pjax",
+                "pjax",
+                "spatie"
+            ],
+            "time": "2018-02-06T13:21:42+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.1.1",
             "source": {
@@ -2096,6 +2279,69 @@
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
             "time": "2018-06-08T09:39:36+00:00"
+        },
+        {
+            "name": "symfony/dom-crawler",
+            "version": "v4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dom-crawler.git",
+                "reference": "3350cacf151b48d903114ab8f7a4ccb23e07e10a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/3350cacf151b48d903114ab8f7a4ccb23e07e10a",
+                "reference": "3350cacf151b48d903114ab8f7a4ccb23e07e10a",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "require-dev": {
+                "symfony/css-selector": "~3.4|~4.0"
+            },
+            "suggest": {
+                "symfony/css-selector": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DomCrawler\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DomCrawler Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-05-01T23:02:13+00:00"
         },
         {
             "name": "symfony/event-dispatcher",

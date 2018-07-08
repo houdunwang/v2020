@@ -17,10 +17,10 @@ class AdminSeeder extends Seeder
         $user->nickname = '向军大叔';
         $user->save();
         \Spatie\Permission\Models\Role::create([
-            'title'=>'管理员',
-            'name'=>'admin',
+            'title'=>'站长',
+            'name'=>'webmaster',
             'guard_name'=>'admin'
         ]);
-        $user->assignRole('admin');
+        $user->assignRole('webmaster');
     }
 }

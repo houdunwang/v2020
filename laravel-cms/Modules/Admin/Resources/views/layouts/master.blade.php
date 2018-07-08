@@ -185,10 +185,23 @@
         </div>
     </div>
     <div class="be-content">
-        <div class="main-content container-fluid">
-            @include('layouts._validate')
-            @include('layouts._message')
-            @yield('content')
+        <div class="main-content container-fluid" id="pjax-container">
+            <!--pjax加载动画-->
+            <div id="loading">
+                <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+            </div>
+            <!--pjax加载动画 结束-->
+            <div id="app">
+                @include('layouts._validate')
+                @include('layouts._message')
+                @yield('content')
+            </div>
         </div>
     </div>
     <nav class="be-right-sidebar">
@@ -356,5 +369,9 @@
         App.init();
     });
 </script>
+<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+<script src="{{asset('plugin/pjax/pjax.js')}}"></script>
+<link rel="stylesheet" href="{{asset('plugin/pjax/pjax.css')}}">
+@yield('scripts')
 </body>
 </html>
