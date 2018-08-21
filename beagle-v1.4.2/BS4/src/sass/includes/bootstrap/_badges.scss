@@ -1,0 +1,34 @@
+/*------------------------------------------------------------------
+  [Badges]
+*/
+.badge{
+	font-size: .8462rem;
+	font-weight: $font-weight-bold;
+	line-height: 1.55;
+	border: 1px solid darken(theme-color("light"), 15%);
+}
+
+.badge-primary{
+ @include badge-color($primary-color-text); 
+}
+
+.badge-secondary {
+	background-color: theme-color("light");
+	color: $badge-color;
+}
+
+.badge-success{
+ @include badge-color($success-color-text); 
+}
+
+.badge-info{
+ @include badge-color($info-color-text); 
+}
+
+.badge-warning{
+ @include badge-color($warning-color-text); 
+}
+
+.badge-danger{
+ @include badge-color($danger-color-text); 
+}

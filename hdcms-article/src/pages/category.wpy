@@ -1,0 +1,36 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="weui-cells__title">栏目列表</view>
+  <view class="weui-cells weui-cells_after-title">
+    <repeat for="{{categorys}}" key="index" index="index" item="item">
+    <navigator url="/pages/lists?id={{item.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">{{item.title}}</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+    </repeat>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import util from '@/services/util'
+
+  export default class Category extends wepy.page {
+    data = {
+      categorys: []
+    }
+
+    async getCategoryLists() {
+      let response = await util.api({url: 'categorys'})
+      if (response.statusCode === 200) {
+        this.categorys = response.data.data
+        this.$apply()
+      }
+    }
+
+    onLoad() {
+      this.getCategoryLists()
+    }
+  }
+</script>

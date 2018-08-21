@@ -1,0 +1,81 @@
+/*------------------------------------------------------------------
+  [Tabs]
+*/
+.nav-tabs{
+	background-color: theme-color("light");
+	border-bottom: 2px solid darken(theme-color("light"), 8%);
+
+	> li.nav-item{
+		margin-bottom: -2px;
+		margin-right: 2px;
+
+		a.nav-link{
+			padding: 11px 20px;
+			margin-right: 0;  
+			min-width: 60px;
+    	text-align: center;
+    	border-radius: 0;
+    	color: $body-color;
+    	border-width: 0;
+
+    	.icon{
+    		font-size: 1.538rem;
+    		vertical-align: middle;
+    		margin-right: 6px;
+    		line-height: 17px;
+    	}
+
+    	&:hover{
+    		background: transparent;
+				color: theme-color("primary");
+    	}
+
+    	&:active{
+    		background-color: transparent;    		
+    	}
+
+    	&.active {
+    		background: transparent;
+    		border-bottom: 2px solid theme-color("primary");
+
+    		.icon {
+    			color: #555;		
+    		}    		
+
+    		&:hover, &:focus {
+    			color: $body-color;
+    		}
+    	}
+		}
+	}
+}
+
+.tab-content{
+	background: theme-color("light");
+	padding: 20px;
+	margin-bottom: 40px;
+	border-radius: 0 0 3px 3px;
+
+	.tab-pane{
+		
+		//First heading margin-top fix
+		h1, h2, h3, h4, h5, h6{
+
+			&:first-child{
+				margin-top: 5px;
+			}
+		}
+	}
+}
+
+// Navs Color States
+
+.nav-tabs-success{
+	@include tabs-color(theme-color("success"));
+}
+.nav-tabs-warning{
+	@include tabs-color(theme-color("warning"));
+}
+.nav-tabs-danger{
+	@include tabs-color(theme-color("danger"));
+}

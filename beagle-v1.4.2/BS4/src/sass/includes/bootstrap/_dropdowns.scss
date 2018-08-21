@@ -1,0 +1,99 @@
+/*------------------------------------------------------------------
+  [Dropdown menu]
+*/
+
+// Hide icon arrow by default
+.dropdown-toggle {
+	
+	&:after {
+		display: none;
+	}
+}
+
+// div container for the dropdown showcase
+.dropdown-showcase{
+	margin: 0;
+
+	.showcase{
+		display: inline-block;
+		margin-right: 20px;
+		margin-bottom: 6px;
+	}
+}
+
+//Dropdown Menu Style
+.dropdown-menu {
+	box-shadow: $dropdown-box-shadow;
+	border-radius: 3px;
+	padding: 7px 0px;
+	min-width: 185px;
+	line-height: 18px;
+
+	//First level
+	> .dropdown-item {
+		font-weight: $font-weight-normal;
+		color: $dropdown-text-color;
+		padding: 8px 20px;
+
+		.icon {
+			font-size: 1.231rem;
+			line-height: normal;
+			vertical-align: middle;
+			margin-right: 8px;
+			color: darken(theme-color("light"), 59%)
+		}
+
+		&:focus, &:active {
+			background-color: transparent;
+			color: $dropdown-text-color;
+		}
+
+		&:hover {
+			background-color: darken(theme-color("light"), 4%);
+		}
+	}
+
+	.btn-group {
+		.btn {
+			font-size: 1.231rem;
+			color: darken(theme-color("light"), 59%);
+			padding: 0 20px;
+		}
+	}
+	
+	//Divider Line
+	.dropdown-divider {
+		margin: 6px 0;
+		border-color: $dropdown-border-color;
+	}
+}
+
+//Dropdown Header
+.dropdown-header {
+	padding: 5px 20px 1px;
+	font-weight: 600;
+	color: lighten($dropdown-text-color, 45%);
+	cursor: default;
+}
+
+//Dropdown Tools
+.dropdown-tools {
+	text-align: center;
+}
+
+//Dropdown Color Set
+.dropdown-menu-primary {
+	@include dropdown-color($primary-color-text);
+}
+
+.dropdown-menu-success {
+	@include dropdown-color($success-color-text);
+}
+
+.dropdown-menu-warning {
+	@include dropdown-color($warning-color-text);
+}
+
+.dropdown-menu-danger {
+	@include dropdown-color($danger-color-text);
+}

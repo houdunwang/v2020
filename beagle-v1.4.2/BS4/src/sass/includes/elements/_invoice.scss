@@ -1,0 +1,348 @@
+/*------------------------------------------------------------------
+  [Invoice]
+*/
+
+.invoice {
+	background-color: theme-color("light");
+	padding: $invoice-page-padding;
+	color: darken(theme-color("light"), 45%);
+
+	@include laptop {
+		padding: $invoice-tablet-padding;
+	}
+
+	@include phone {
+		padding: $invoice-small-phone-padding;
+	}
+}
+
+.invoice-header {
+	margin-bottom: $invoice-header-margin;
+	
+	@include laptop {
+		margin-bottom: $invoice-header-margin / 2;
+	}
+
+	@include phone {
+		> div {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+
+.invoice-logo {
+	height: $invoice-logo-height;
+	min-width: $invoice-logo-width;
+	background-image: url("#{$img-path}/logo-xx.png");
+	background-repeat: no-repeat;
+	background-position: 0 ;
+
+	@include laptop {
+		height: $invoice-logo-small-height;
+		width: $invoice-logo-small-width;
+		background-image: url("#{$img-path}/logo.png");
+	}	
+
+	@include phone {
+		margin: 0 auto 20px;
+		float: none;
+		min-width: auto;
+	}
+
+	@media #{$print} {
+		height: $invoice-logo-small-height !important;
+		width: $invoice-logo-small-width !important;
+		background-image: url("#{$img-path}/logo.png") !important;
+		display: block !important;
+		background-repeat: no-repeat !important;
+	}
+}
+
+.invoice-order {
+	text-align: right;
+
+	@include phone{
+		text-align: center;
+	}
+}
+
+.invoice-id {
+	display: block;
+	font-size: $invoice-id-font-size;
+	line-height: $invoice-id-lineheight;
+
+	@include laptop {
+		font-size: $invoice-id-font-size / 2;
+		line-height: $invoice-id-lineheight - .9231rem;
+	}
+}
+
+.incoice-date {
+	display: block;
+	font-size: 1.385rem;
+
+	@include laptop {
+		font-size: $font-size-base;
+	}
+}
+
+.invoice-data {
+	margin-bottom: $invoice-data-margin;
+
+	@include laptop {
+		margin-bottom: $invoice-data-margin / 2;
+	}
+
+	@include phone {
+		> div {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+
+.invoice-person {
+
+	@include phone {
+		text-align: center;
+	}
+
+	span {
+		font-size: $invoice-person-font-size;
+		line-height: $invoice-person-lineheight;
+		display: block;
+
+		@include laptop {
+			font-size: $invoice-person-font-size - .3846rem;
+			line-height: $invoice-person-lineheight - .4615rem;
+		}
+	}
+
+	.name {
+		font-weight: $font-weight-medium;
+	}
+
+	&:last-child {
+		text-align: right;
+
+		@include phone {
+			text-align: center;
+		}
+	}
+}
+
+.invoice-payment-direction {
+	text-align: center;
+	position: relative;
+	padding-top: 20px;
+
+	@include phone {
+		padding: 20px;
+	}
+
+	.icon {
+		width: $invoice-direction-bubble-size;
+		height: $invoice-direction-bubble-size; 
+		border-radius: 50%;
+		background-color: darken(theme-color("light"), 3%);
+		font-size: 3.846rem;
+		color: darken(theme-color("light"), 24%);
+		line-height: 80px;
+
+		@include laptop {
+			width: $invoice-direction-bubble-size / 2;
+			height: $invoice-direction-bubble-size / 2; 
+			line-height: 40px;
+			font-size: 1.923rem;
+		}
+
+		@include phone {
+			transform: rotate(90deg);
+		}
+
+		@media #{$print} {
+			background-color: darken(theme-color("light"), 3%) !important;
+			color: darken(theme-color("light"), 24%) !important;
+		}
+	}
+}
+
+.invoice-details {
+	width: 100%;
+	font-size: $invoice-details-font-size;
+
+	@include laptop {
+			font-size: $invoice-details-font-size - .3846rem;
+	}
+
+	tr > td {
+		padding: 20px 0;
+
+		@include laptop {
+			padding: 15px 0;
+		}
+	}
+
+	th {
+		text-align: right;
+		padding-bottom: 8px;
+		border-bottom: 1px solid darken(theme-color("light"), 6%);
+
+		&:first-child {
+			text-align: left;
+		}
+	}
+
+	td {
+
+		&.description,
+		&.hours,
+		&.amount,
+		&.summary {
+			border-bottom: 1px solid darken(theme-color("light"), 6%);
+		}
+
+		&.description {
+			
+		}
+
+		&.hours {
+			text-align: right;
+		}
+
+		&.amount {
+			text-align: right;
+		}
+
+		&.summary {
+			color: darken(theme-color("light"), 23%);
+		}
+
+		&.total {
+			color: darken(theme-color("light"), 45%);
+			font-weight: $font-weight-medium;
+		}
+
+		&.total-value {
+			font-size: 1.692rem;
+			color: theme-color("primary");
+
+			@include laptop{
+				font-size: $invoice-details-font-size - .3846rem;
+			}
+		}
+	}
+}
+
+.invoice-payment-method {
+	margin-bottom: $invoice-payment-margin;
+
+	@include laptop {
+		margin-bottom: floor($invoice-payment-margin / 2);
+	}
+
+	span {
+		font-size: $invoice-payment-font-size;
+		line-height: $invoice-payment-lineheight;
+		display: block;
+
+		@include laptop {
+			font-size: $invoice-payment-font-size - .3846rem;
+			line-height: $invoice-payment-lineheight - .4615rem;
+		}
+	}
+
+	.title {
+		font-weight: $font-weight-medium;
+	}
+}
+
+.invoice-message {
+	font-size: $invoice-message-font-size;
+	margin-bottom: $invoice-message-margin;
+
+	@include laptop {
+		font-size: $font-size-base;
+	}
+
+	@include phone {
+		margin-bottom: $invoice-message-margin / 2;
+	}
+	
+	.title {
+		font-weight: $font-weight-medium;
+		text-transform: uppercase;
+		display: block;
+		margin-bottom: 12px;
+	}
+
+	p {
+		line-height: $invoice-message-lineheight;
+
+		@include laptop {
+			line-height: $invoice-message-lineheight - .4615rem;
+		}
+	}
+}
+
+.invoice-company-info {
+	margin-bottom: $invoice-company-info-margin;
+
+	@include tablet {
+		margin-bottom: $invoice-company-info-margin / 2;
+	}
+
+	> div {
+		border-left: 1px solid darken(theme-color("light"), 6%);
+		padding: 8px 40px;
+
+		@include tablet {
+			border: none;
+			padding: 8px 15px;
+		}
+
+		&:first-child {
+			border-left: none;
+		}
+	}
+
+	.summary {
+		padding: 0 40px 0;
+		line-height: 16px;
+
+		@include tablet {
+			padding: 8px 15px;
+		}
+
+		.title {
+			color: darken(theme-color("light"), 45%);
+			font-size: 1.077rem;
+			line-height: 21px;
+			font-weight: $font-weight-medium;
+		}
+
+		p {
+			line-height: 16px;
+		}
+	}
+
+	@include laptop {
+		.phone {
+			border-left-width: 0;
+		}
+	}
+}
+
+.invoice-footer {
+	text-align: center;
+
+	.btn {
+		min-width: 96px;
+		font-size: $invoice-footer-button-font-size;
+	}
+
+	@media #{$print} {
+		display: none !important;
+	}
+}

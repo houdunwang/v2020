@@ -1,0 +1,80 @@
+.be-connections{
+	min-width: 304px;
+
+	.float-right &{
+		left: auto;
+		right: $grid-gutter-width - 5px;
+	}
+
+	.content{
+		padding: 20px 15px;
+		
+		.row{
+			margin: 0;
+
+			> div{
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+		}
+	}
+
+	.connection-item{
+		display: block;
+		border-radius: 3px;
+		line-height: 34px;
+		text-align: center;
+		padding: 15px 0 9px;
+		display: block;
+		border: 1px solid transparent;
+		color: $top-header-link-color;
+
+		span{
+			display: block;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+
+		img{
+			max-height: 35px;
+			max-width: 35px;
+		}
+
+		&:hover{
+			background-color: transparent;
+			border-color: darken(theme-color("light"), 7.7%);
+		}
+	}	
+}
+
+@include tablet {
+
+	.be-connections{
+
+		.float-right & {
+			right: 5px;
+		}
+
+		.navbar-nav .show & {
+			position: absolute;
+			background-color: theme-color("light");
+		}
+	}
+}
+
+@include phone {
+
+	.be-connections{
+		min-width: 260px;
+
+		.navbar-nav .show & {
+			position: fixed;
+		}
+
+		.content{
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+}

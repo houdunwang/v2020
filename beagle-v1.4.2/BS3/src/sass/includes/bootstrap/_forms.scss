@@ -1,0 +1,431 @@
+/*------------------------------------------------------------------
+	[Forms]
+*/
+.form-control{
+	border-width: 1px;
+	border-top-color: $input-top-border;
+	box-shadow: none;
+	padding: 10px 12px;
+	font-size: $font-size-base + 2px;
+	transition: none;
+	height: $input-height-base;
+
+	&:focus{
+		box-shadow: none;
+	}
+
+	//Select multiple
+	&[multiple]{
+		padding: 0;
+
+		option{
+			padding: 8px 12px;
+		} 
+	}
+}
+
+//Remove default iOs input style
+input.form-control, textarea.form-control{
+	-webkit-appearance: none;
+}
+
+label{
+	font-weight: $font-weight-regular;
+	font-size: $font-size-base;
+	margin-bottom: 8px;
+	color: $input-label-color;
+}
+
+// File input
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+
+	& + label {
+    padding: $btn-padding-vertical $btn-padding-horizontal;
+		font-size: $btn-font-size-base;
+		line-height: $btn-line-height-base;
+		border: 1px solid transparent;
+  	border-color: $btn-default-border;
+		border-radius: $btn-border-radius-base;
+    display: inline-block;
+    cursor: pointer;
+
+    i {
+    	margin-right: 10px;
+    }
+	}
+}
+
+//Checkbox & Radio components
+.be-checkbox, .be-radio{
+	display: block;
+	line-height: $input-check-component-size;
+	margin: 0;
+	padding: 7px 0;
+
+	.form-horizontal & {
+		padding: 7px 0;
+		min-height: auto;
+	}
+	
+	input[type="checkbox"], input[type="radio"]{
+		margin: 0;
+		display: none;
+		width: $input-check-component-size;
+	}
+
+	label{
+		margin-bottom: 0;
+
+		&::selection{
+			background-color: transparent;
+		}
+	}
+ 
+	input[type="checkbox"] + label, input[type="radio"] + label{
+	 padding-left: 0;
+		
+		&:before{
+			content: ""; 
+			width: $input-check-component-size;
+			height: $input-check-component-size;
+			display: inline-block;
+			border: $input-check-component-border;
+			border-radius: $input-check-component-border-radius;
+			margin-right: 6px;
+			font-size: $input-check-component-size - 2px;
+			font-family: $icons-font;
+			font-weight: normal;
+			line-height: $input-check-component-size - 3px;
+			vertical-align: bottom;
+			text-align: center;
+			background-color: $light-color;
+			cursor: pointer;
+		} 
+		
+		&:hover:before{
+			border-color: darken($input-border, 18%);
+		}
+	}
+
+	input[type="checkbox"]:hover + label, input[type="radio"]:hover + label {
+
+		&:before{
+			border-color: darken($input-border, 10%);
+		}
+	}
+	
+	input[type="checkbox"]:checked + label, input[type="radio"]:checked + label{
+		
+		&:before{
+			content: "\f26b";
+			color: $primary-color;
+			border-color: $primary-color;
+		}
+	}
+
+	input[type="checkbox"]:disabled + label, input[type="radio"]:disabled + label{
+		opacity: .5;
+		pointer-events: none;
+
+		&:before {
+			pointer-events: none;
+			background-color: $light-color;
+		}
+	}
+	
+	input[type="radio"] + label{
+
+		&:before{
+			border-radius: 50%;
+			width: $input-check-component-size + 1px;
+			height: $input-check-component-size + 1px;
+			line-height: $input-check-component-size - 1px;
+			font-size: 13px;
+		}
+	}
+
+	input[type="radio"]:checked + label{
+
+		&:before{
+			content: "\f26d";
+		}
+	} 
+
+	//Inline style
+	&.inline{
+		display: inline-block;
+
+		& + & {
+			margin-left: 18px;
+		}
+	}
+
+	//Validation states
+	&.has-success{
+
+		input[type="checkbox"] + label, 
+		input[type="radio"] + label {
+			
+			&:before{
+				color: $success-color-text;
+				border-color: $success-color-text;
+			}
+		}
+	}
+
+	&.has-warning{
+
+		input[type="checkbox"] + label,
+		input[type="radio"] + label {
+
+			&:before{
+				color: $warning-color-text;
+				border-color: $warning-color-text;
+			}
+		}
+	}
+
+	&.has-danger{
+
+		input[type="checkbox"] + label, 
+		input[type="radio"] + label {
+
+			&:before{
+				color: $danger-color-text;
+				border-color: $danger-color-text;
+			}
+		}
+	}
+}
+
+//Checkbox & Radio color background
+.be-checkbox-color,
+.be-radio-color {
+	
+	input[type="checkbox"]:checked + label,
+	input[type="radio"]:checked + label {
+		
+		&:before{
+			color: $light-color;
+			border-color: $primary-color;
+			background-color: $primary-color;
+		} 
+	}
+
+	//Validation states
+	&.has-success{
+
+		input[type="checkbox"]:checked + label,
+		input[type="radio"]:checked + label {
+			
+			&:before{
+				color: $light-color;
+				border-color: $success-color-text;
+				background-color: $success-color-text;
+			} 
+		}
+	}
+
+	&.has-warning{
+
+		input[type="checkbox"]:checked + label,
+		input[type="radio"]:checked + label {
+			
+			&:before{
+				color: $light-color;
+				border-color: $warning-color-text;
+				background-color: $warning-color-text;
+			} 
+		}
+	}
+
+	&.has-danger{
+
+		input[type="checkbox"]:checked + label,
+		input[type="radio"]:checked + label {
+			
+			&:before{
+				color: $light-color;
+				border-color: $danger-color-text;
+				background-color: $danger-color-text;
+			} 
+		}
+	}
+}
+
+//Icon Radio
+.be-radio-icon{
+	display: block;
+	margin: 0;
+	padding: 7px 0;
+
+	input[type="radio"]{
+		margin: 0;
+		display: none;
+		width: $radio-icon-component-size;
+	}
+
+	label{
+		cursor: pointer;
+		margin: 0;
+		width: $radio-icon-component-size;
+		height: $radio-icon-component-size;
+		line-height: $radio-icon-component-size;
+		border: 1px solid $radio-icon-component-border;
+		border-radius: 50%;
+		text-align: center;
+		font-size: $radio-icon-component-icon-size;
+		vertical-align: middle;
+		color: $radio-icon-component-color;
+
+		&:hover{
+			border-color: darken($radio-icon-component-border, 10%);
+		}
+	}
+
+	//Checked
+	input[type="radio"]:checked{
+
+		& + label{
+			border-color: $primary-color;
+			color: $primary-color;
+		}
+	}
+
+	//Validation states
+	&.has-success{
+
+		input[type="radio"]:checked{
+
+			& + label{
+				border-color: $success-color-text;
+				color: $success-color-text;
+			}
+		}
+	}
+
+	&.has-warning{
+
+		input[type="radio"]:checked, input[type="radio"]{
+
+			& + label{
+				border-color: $warning-color-text;
+				color: $warning-color-text;
+			}
+		}
+
+	}
+
+	&.has-danger{
+
+		input[type="radio"]:checked{
+
+			& + label{
+				border-color: $danger-color-text;
+				color: $danger-color-text;
+			}
+		}
+	}
+
+	//Inline style
+	&.inline{
+		display: inline-block;
+
+		& + & {
+			margin-left: 18px;
+		}
+	}
+}
+
+//Small size
+.be-checkbox-sm{
+	line-height: $input-check-component-size - 4px;
+
+	input[type="checkbox"]{
+		
+		& + label{
+
+			&:before{
+				width: $input-check-component-size - 4px;
+				height: $input-check-component-size - 4px;
+				font-size: $input-check-component-size - 5px;
+				line-height: $input-check-component-size - 7px;
+			}
+		}
+	} 
+}
+
+//Form horizontal
+.form-horizontal{
+	
+	.form-group{
+		margin-bottom: 0;
+		padding: 12px 0;
+	}
+}
+
+//Input group addon
+.input-group-addon {
+	font-size: 15px;
+
+	.be-checkbox, .be-radio{
+		padding: 0;
+		line-height: 21px;
+
+		input + label{
+			margin: 0;
+
+			&:before{
+				margin: 0;
+				border-color: darken($input-border, 5%);
+			}
+		}
+	}
+}
+
+.input-group-btn{
+	
+	.btn{
+		height: $input-height-base;
+	}
+}
+
+//Input sizing
+.input-lg{
+	height: 57px;
+	padding: 12px 14px;
+	@include font-size-large(3px);
+	font-weight: $font-weight-light;
+	border-radius: 2px;
+}
+
+.input-sm{
+	height: 37px;
+	font-size: $font-size-base;
+	padding: 4px 12px;
+}
+
+.input-xs{
+	height: 30px;
+	font-size: $font-size-small;
+	padding: 6px 9px;
+}
+
+//Validation states
+.has-feedback {
+
+	.form-control {
+		padding-right: ceil($input-height-base - 3px);
+	}
+}
+
+.form-control-feedback{
+	font-size: $form-validation-icon-size;
+}

@@ -1,0 +1,449 @@
+.aside-compose{
+	text-align: center;
+	padding: 20px 25px;
+	margin-top: 10px;
+}
+
+//Email components
+
+//==Email inbox page
+//Inbox header
+.email-inbox-header{
+	background-color: @light-color;
+	padding: 37px 25px;
+
+	@media @tablet{
+		padding: 20px 25px;
+	}
+}
+
+//Inbox title
+.email-title{
+	display: block;
+	margin: 3px 0 0;
+	.font-size-large(8px);
+	font-weight: @font-weight-light;
+
+	@media @tablet, @phone{
+		margin-bottom: 10px;
+	}
+
+	.icon{
+		.font-size-large(8px);
+		color: lighten(@text-color, 20%)
+	}
+
+	.new-messages{
+		font-size: @font-size-base;
+		color: lighten(@text-color, 30%);
+		margin-left: 3px;
+	}
+}
+
+//Inbox filters
+.email-filters{
+	padding: 0 20px 30px;
+  border-bottom: 1px solid darken(@light-color, 10%);
+  background-color: @light-color;
+  display: table;
+  width: 100%;
+
+  > div{
+  	display: table-cell;
+  	vertical-align: middle;
+
+  	@media @tablet, @phone{
+  		vertical-align: top;
+  	}
+  }
+
+  .btn-group + .btn-group{
+		margin-left: 10px;
+
+		@media @tablet, @small-phone{
+			margin-left: 0;
+			margin-top: 10px;
+		}
+  }
+
+  .be-select-all.be-checkbox{
+  	display: inline-block;
+		vertical-align: middle;
+  	padding: 0;
+
+  	label:before{
+  		margin-right: 18px;
+  	}
+  }
+
+  .email-filters-right{
+  	text-align: right;
+  }
+
+  input{
+  	margin-right: 8px;
+  }
+}
+
+//Pagination text
+.email-pagination-indicator{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 13px;
+
+	@media @tablet{
+		margin-right: 0;
+	}
+}
+
+//Pagination buttons nav
+.email-pagination-nav{
+
+	.btn{
+		min-width: 30px;
+
+		i{
+			.font-size-large(6px);
+			vertical-align: middle;
+		}
+	}
+}
+
+//Inbox email list
+.email-list{
+	background: @light-color;
+}
+
+//List element
+.email-list-item{
+	border-bottom: 1px solid darken(@light-color, 10%);
+  padding: 14px 20px;
+  display: table;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  background-color: darken(@light-color, 2%);
+
+  &&--unread{
+  	background-color: @light-color;
+
+  	&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			width: 3px;
+			top: -1px;
+			bottom: -1px;
+			left: 0;
+			background-color: @primary-color;
+  	}
+
+  	.from, .date{
+  		font-weight: @font-weight-medium;
+  	}
+  }
+
+  .icon{
+  	margin-right: 7px;
+  	font-size: 15px;
+  	vertical-align: middle;
+  	color: lighten(@text-color, 15%)
+  }
+
+  .from{
+  	display: block;
+  	font-weight: @font-weight-regular;
+	  font-size: 13px;
+	  margin:0 0 3px 0;
+  }
+
+  .msg{
+		margin: 0;
+		color: lighten(@text-color, 20%);
+  }
+
+  &:hover{
+  	background-color: darken(@light-color, 3%);
+  }
+}
+
+//List columns specs
+.email-list-detail, .email-list-actions{
+	vertical-align: top;
+	display: table-cell;
+}
+
+//Action column
+.email-list-actions{
+	width: 40px;
+
+	.be-checkbox{
+  	padding: 0;
+  }
+
+  .favorite{
+  	display: block;
+  	padding-top: 5px;
+		padding-left: 3px;
+		line-height: 15px;
+
+  	span{
+  		.font-size-large(5px);
+  		line-height: 17px;
+  		color: lighten(@text-color, 50%);
+  	}
+
+  	&:hover{
+
+  		span{
+  			color: lighten(@text-color, 30%);
+  		}
+  	}
+
+  	&.active{
+
+  		span{
+  			color: @email-page-favorite-color;
+  		}
+  	}
+  }
+}
+
+
+//==Email detail page
+.email-head{
+	background-color: @light-color;
+}
+
+.email-head-title{
+	padding: 25px 25px;
+	border-bottom: 1px solid darken(@light-color, 10%);
+	display: block;
+	font-weight: @font-weight-regular;
+	color: lighten(@text-color, 10%);
+	.font-size-large(8px);
+
+	.icon{
+		color: darken(@light-color, 59%);
+		margin-right: 12px;
+		vertical-align: middle;
+		line-height: 31px;
+		position: relative;
+		top: -1px;
+		float: left;
+		.font-size-large(5px);
+	}
+}
+
+.email-head-subject{
+	padding: 25px 25px;
+	border-bottom: 1px solid darken(@light-color, 10%);
+
+	.title{
+		display: block;
+		.font-size-large(8px);
+		font-weight: @font-weight-light;
+		color: lighten(@text-color, 10%);
+
+		> a{
+			.icon{
+				color: lighten(@text-color, 50%);
+				.font-size-large(3px);
+				margin-right: 6px;
+				vertical-align: middle;
+				line-height: 31px;
+				position: relative;
+				top: -1px;
+			}
+
+			&:hover{
+
+				.icon{
+					color: lighten(@text-color, 30%);
+				}
+			}
+
+			&.active{
+
+				.icon{
+					color: @email-page-favorite-color;
+				}
+			}
+		}
+	}
+
+	.icons{
+		.font-size-large(5px);
+  	float: right; 	
+
+  	.icon{
+  		color: lighten(@text-color, 20%);
+  		margin-left: 12px;
+  		vertical-align: middle;
+
+  		&:hover{
+	  		color: lighten(@text-color, 10%);
+	  	}
+  	}
+	}
+}
+
+.email-head-sender{
+	padding: 13px 25px;
+	line-height: 40px;
+
+	.avatar{
+		float: left;
+		margin-right: 10px;
+
+		img{
+			max-width: 40px;
+			max-height: 40px;
+			border-radius: 50%;
+		}
+	}
+
+	.sender{
+		font-size: @font-size-large;
+
+		.actions{
+			display: inline-block;
+			position: relative;
+		}
+
+		.icon{
+			.font-size-large(5px);
+			line-height: 16px;
+			color: lighten(@text-color, 10%);
+			margin-left: 7px;
+
+			i{
+				line-height: 16px;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.date{
+		float: right;
+
+		a{
+			vertical-align: middle;
+			margin-right: 5px;
+		}
+
+		.icon{
+			font-size: 20px;
+		}
+	}
+}
+
+
+//Email body
+.email-body{
+	background-color: @light-color;
+	border-top: 1px solid darken(@light-color, 10%);
+	padding: 30px 28px;
+
+  p{
+  	line-height: 25px;
+  	margin-bottom: 20px;
+
+  	&:last-child{
+  		margin-bottom: 0;
+  	}
+  }
+}
+
+//Email attachments
+.email-attachments{
+	background-color: @light-color;
+	padding: 25px 28px;
+	border-top: 1px solid darken(@light-color, 10%);
+
+	.title{
+		display: block;
+		font-weight: @font-weight-medium;
+
+		span{
+			font-weight: @font-weight-regular;
+		}
+	}
+
+	ul{
+		list-style: none;
+		margin: 15px 0 0;
+		padding: 0;
+
+		> li{
+			line-height: 23px;
+
+			a{
+				color: @text-color;
+				font-weight: @font-weight-medium;
+
+				&:hover{
+					color: @primary-color;
+				}
+			}
+
+			span{
+				font-weight: @font-weight-regular;
+			}
+
+			.icon{
+				vertical-align: middle;
+				color: lighten(@text-color, 20%);
+				margin-right: 2px;
+			}
+		}
+	}
+}
+
+//Email compose
+.compose-title{
+	font-weight: 400; 
+  font-size: 23px;
+  height: auto;
+  padding: 25px 23px;
+  border: 0;
+  width: 100%;
+  outline: none;
+  background-color: @light-color;
+
+  .icon{
+		float: left;
+		font-size: 20px;
+		margin-right: 15px;
+		color: darken(@light-color, 59%);
+		margin-top: 6px;
+  }
+}
+
+.email-compose-fields{
+	background-color: @light-color;
+  border-bottom: 1px solid darken(@light-color, 10%);
+  padding: 30px 30px 10px;
+
+  label{
+  	padding-top: 15px;
+  }
+}
+
+.email.editor{
+	background-color: @light-color;
+	padding: 30px;
+
+	.note-toolbar{
+		border: 0;
+	}
+
+	.form-group{
+		text-align: right;
+		margin-top: 15px;
+
+		.icon{
+			font-size: 23px;
+		}
+	}
+}

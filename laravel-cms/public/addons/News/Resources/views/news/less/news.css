@@ -1,0 +1,49 @@
+.news {
+  width: 300px;
+}
+.news div.first {
+  border: solid 1px #ddd;
+  position: relative;
+}
+.news div.first:hover div.edit {
+  display: block;
+}
+.news div.first img {
+  width: 100%;
+}
+.news div.first p {
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  margin-bottom: 0;
+}
+.news div.item {
+  overflow: hidden;
+  height: auto;
+  padding: 15px;
+  border: solid 1px #ddd;
+  position: relative;
+}
+.news div.item:hover div.edit {
+  display: block;
+}
+.news div.item img {
+  width: 60px;
+  height: 60px;
+  float: right;
+}
+.news div.item p {
+  float: left;
+  padding: 5px 10px;
+}
+.news div.edit {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0px;
+  bottom: 0;
+  background: #333;
+  text-align: center;
+  padding: 5px 0;
+}
+/*# sourceMappingURL=news.css.map */

@@ -1,0 +1,189 @@
+/*------------------------------------------------------------------
+  [Forms]
+*/
+.form-control {
+	border-width: 1px;
+  border-top-color: $input-top-border;
+  box-shadow: none;
+  padding: 10px 12px;
+  font-size: $font-size-base + 0.1538rem;
+  transition: none;
+  height: $input-height;
+}
+
+.form-control[multiple] {
+  padding: 0;
+
+  option {
+    padding: 8px 12px;
+  }
+}
+
+// Remove padding bottom
+.col-form-label {
+  padding-bottom: 0;
+
+  @include phone {
+    padding-bottom: 8px;      
+  }
+}
+
+//Remove default iOs input style
+input.form-control, textarea.form-control{
+  -webkit-appearance: none;
+}
+
+// Reset height
+textarea.form-control, select[multiple], select[size] {
+  height: auto;
+}
+
+label{
+  font-weight: $font-weight-normal;
+  font-size: $font-size-base;
+  margin-bottom: 8px;
+  color: $input-label-color;
+}
+
+// File input
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+
+  & + label {
+    padding: $btn-padding-vertical $btn-padding-horizontal;
+    font-size: $btn-font-size-base;
+    line-height: $btn-line-height-base;
+    border: 1px solid transparent;
+    border-color: $input-border-color;
+    border-radius: $btn-border-radius-base;
+    display: inline-block;
+    cursor: pointer;
+
+    i {
+      margin-right: 10px;
+    }
+  }
+}
+
+// Form control sizing
+//
+
+.form-control-xs {
+  height: 30px;
+  font-size: $font-size-sm * 1.086;
+  padding: 6px 9px;
+}
+
+select.form-control-xs {
+  &:not([size]):not([multiple]) {
+    height: $input-height-xs;
+  }
+}
+
+.form-control-sm {
+  height: 37px;
+  font-size: $font-size-base;
+  padding: 4px 12px;
+}
+
+.form-control-lg {
+  height: 57px;
+  padding: 12px 14px;
+  font-size: 1.385rem;
+  font-weight: $font-weight-light;
+  border-radius: 2px;
+}
+
+// Form groups
+.form-group {
+
+  &.row {
+    margin-bottom: 0;
+    padding: 12px 0;
+
+    .col-form-label {
+
+      .form-horizontal & {
+        text-align: right;
+      }
+    }
+
+    label {
+      white-space: nowrap;
+    }
+  }
+}
+
+//Input group addon
+.input-group-prepend, .input-group-append {
+
+  .custom-control {
+    width: $input-check-component-size + .07692rem;
+    height: $input-check-component-size + .07692rem;
+    top: 2px;
+  }
+
+  .input-group-text {
+    padding: 10px 12px;
+  }  
+}
+
+.custom-control {
+
+  .input-group-prepend &, .input-group-append & {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Custom select
+.custom-select {
+  line-height: 1.2;
+  padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+
+// Form control states
+.form-control-success,
+.form-control-error {
+  padding: 10px 45px 10px 12px;
+
+  + span {
+    padding-right: ($input-btn-padding-x * 3);
+    background-repeat: no-repeat;
+    background-position: center right ($input-height / 4);
+    background-size: ($input-height / 2) ($input-height / 2);
+    font-size: $form-validation-icon-size;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    pointer-events: none;      
+  }
+
+  &.is-valid {    
+    + span {
+      color: theme-color("success");
+    }
+  }
+
+  &.is-invalid {   
+   + span {
+      color: theme-color("danger"); 
+    } 
+  }
+}

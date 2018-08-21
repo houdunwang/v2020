@@ -1,0 +1,34 @@
+<style lang="less">
+
+</style>
+<template>
+
+
+</template>
+
+<script>
+  import wepy from 'wepy'
+
+  export default class Login extends wepy.page {
+    submit(e) {
+      let formData = e.detail.value
+
+      if (!formData.email || !formData.password) {
+        wepy.showToast({
+          title: '邮箱或密码不能为空',
+          icon: 'none',
+          duration: 2000
+        })
+        return false
+      }
+      if (!/.+@.+/.test(formData.email)) {
+        wepy.showToast({
+          title: '邮箱格式错误',
+          icon: 'none',
+          duration: 2000
+        })
+        return false
+      }
+    }
+  }
+</script>

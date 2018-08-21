@@ -1,0 +1,58 @@
+//Tab Settings
+.tab-settings{
+  
+  .settings-wrapper{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .settings-content{
+
+  }
+
+  .be-scroller{
+    padding: 10px 20px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .category-title{
+    display: block;
+    font-size: 15px;
+    font-weight: @font-weight-regular;
+    color: lighten(@text-color, 25%);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid darken(@right-sidebar-background, 6%);
+    margin-bottom: 15px;
+  }
+}
+
+.settings-list{
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 15px;
+
+  > li{
+    margin: 0;
+    padding: 5px 0;
+    line-height: 24px;
+    font-size: 14px;
+
+    .name{
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .switch-button{
+      float: right;
+      margin-left: 5px;
+    }
+  }
+}

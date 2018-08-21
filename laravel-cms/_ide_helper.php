@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.26 on 2018-07-08 12:29:18.
+ * Generated for Laravel 5.6.29 on 2018-08-04 11:19:18.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -5263,6 +5263,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $driver
          * @return mixed 
+         * @throws \InvalidArgumentException
          * @static 
          */ 
         public static function driver($driver = null)
@@ -6196,6 +6197,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $driver
          * @return mixed 
+         * @throws \InvalidArgumentException
          * @static 
          */ 
         public static function driver($driver = null)
@@ -6450,22 +6452,21 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function size($queue = null)
         {
-            return \Illuminate\Queue\SyncQueue::size($queue);
+            return \Illuminate\Queue\RedisQueue::size($queue);
         }
         
         /**
          * Push a new job onto the queue.
          *
-         * @param string $job
+         * @param object|string $job
          * @param mixed $data
          * @param string $queue
          * @return mixed 
-         * @throws \Exception|\Throwable
          * @static 
          */ 
         public static function push($job, $data = '', $queue = null)
         {
-            return \Illuminate\Queue\SyncQueue::push($job, $data, $queue);
+            return \Illuminate\Queue\RedisQueue::push($job, $data, $queue);
         }
         
         /**
@@ -6479,14 +6480,14 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function pushRaw($payload, $queue = null, $options = array())
         {
-            return \Illuminate\Queue\SyncQueue::pushRaw($payload, $queue, $options);
+            return \Illuminate\Queue\RedisQueue::pushRaw($payload, $queue, $options);
         }
         
         /**
          * Push a new job onto the queue after a delay.
          *
          * @param \DateTimeInterface|\DateInterval|int $delay
-         * @param string $job
+         * @param object|string $job
          * @param mixed $data
          * @param string $queue
          * @return mixed 
@@ -6494,7 +6495,7 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function later($delay, $job, $data = '', $queue = null)
         {
-            return \Illuminate\Queue\SyncQueue::later($delay, $job, $data, $queue);
+            return \Illuminate\Queue\RedisQueue::later($delay, $job, $data, $queue);
         }
         
         /**
@@ -6506,7 +6507,70 @@ namespace Illuminate\Support\Facades {
          */ 
         public static function pop($queue = null)
         {
-            return \Illuminate\Queue\SyncQueue::pop($queue);
+            return \Illuminate\Queue\RedisQueue::pop($queue);
+        }
+        
+        /**
+         * Migrate the delayed jobs that are ready to the regular queue.
+         *
+         * @param string $from
+         * @param string $to
+         * @return array 
+         * @static 
+         */ 
+        public static function migrateExpiredJobs($from, $to)
+        {
+            return \Illuminate\Queue\RedisQueue::migrateExpiredJobs($from, $to);
+        }
+        
+        /**
+         * Delete a reserved job from the queue.
+         *
+         * @param string $queue
+         * @param \Illuminate\Queue\Jobs\RedisJob $job
+         * @return void 
+         * @static 
+         */ 
+        public static function deleteReserved($queue, $job)
+        {
+            \Illuminate\Queue\RedisQueue::deleteReserved($queue, $job);
+        }
+        
+        /**
+         * Delete a reserved job from the reserved queue and release it.
+         *
+         * @param string $queue
+         * @param \Illuminate\Queue\Jobs\RedisJob $job
+         * @param int $delay
+         * @return void 
+         * @static 
+         */ 
+        public static function deleteAndRelease($queue, $job, $delay)
+        {
+            \Illuminate\Queue\RedisQueue::deleteAndRelease($queue, $job, $delay);
+        }
+        
+        /**
+         * Get the queue or return the default.
+         *
+         * @param string|null $queue
+         * @return string 
+         * @static 
+         */ 
+        public static function getQueue($queue)
+        {
+            return \Illuminate\Queue\RedisQueue::getQueue($queue);
+        }
+        
+        /**
+         * Get the underlying Redis instance.
+         *
+         * @return \Illuminate\Contracts\Redis\Factory 
+         * @static 
+         */ 
+        public static function getRedis()
+        {
+            return \Illuminate\Queue\RedisQueue::getRedis();
         }
         
         /**
@@ -6521,7 +6585,7 @@ namespace Illuminate\Support\Facades {
         public static function pushOn($queue, $job, $data = '')
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::pushOn($queue, $job, $data);
+            return \Illuminate\Queue\RedisQueue::pushOn($queue, $job, $data);
         }
         
         /**
@@ -6537,7 +6601,7 @@ namespace Illuminate\Support\Facades {
         public static function laterOn($queue, $delay, $job, $data = '')
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::laterOn($queue, $delay, $job, $data);
+            return \Illuminate\Queue\RedisQueue::laterOn($queue, $delay, $job, $data);
         }
         
         /**
@@ -6552,7 +6616,7 @@ namespace Illuminate\Support\Facades {
         public static function bulk($jobs, $data = '', $queue = null)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::bulk($jobs, $data, $queue);
+            return \Illuminate\Queue\RedisQueue::bulk($jobs, $data, $queue);
         }
         
         /**
@@ -6565,7 +6629,7 @@ namespace Illuminate\Support\Facades {
         public static function getJobExpiration($job)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::getJobExpiration($job);
+            return \Illuminate\Queue\RedisQueue::getJobExpiration($job);
         }
         
         /**
@@ -6577,7 +6641,7 @@ namespace Illuminate\Support\Facades {
         public static function getConnectionName()
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::getConnectionName();
+            return \Illuminate\Queue\RedisQueue::getConnectionName();
         }
         
         /**
@@ -6590,7 +6654,7 @@ namespace Illuminate\Support\Facades {
         public static function setConnectionName($name)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            return \Illuminate\Queue\SyncQueue::setConnectionName($name);
+            return \Illuminate\Queue\RedisQueue::setConnectionName($name);
         }
         
         /**
@@ -6603,7 +6667,7 @@ namespace Illuminate\Support\Facades {
         public static function setContainer($container)
         {
             //Method inherited from \Illuminate\Queue\Queue            
-            \Illuminate\Queue\SyncQueue::setContainer($container);
+            \Illuminate\Queue\RedisQueue::setContainer($container);
         }
          
     }
@@ -6726,7 +6790,7 @@ namespace Illuminate\Support\Facades {
          * Create a new redirect response to a named route.
          *
          * @param string $route
-         * @param array $parameters
+         * @param mixed $parameters
          * @param int $status
          * @param array $headers
          * @return \Illuminate\Http\RedirectResponse 
@@ -6741,7 +6805,7 @@ namespace Illuminate\Support\Facades {
          * Create a new redirect response to a controller action.
          *
          * @param string $action
-         * @param array $parameters
+         * @param mixed $parameters
          * @param int $status
          * @param array $headers
          * @return \Illuminate\Http\RedirectResponse 
@@ -6811,6 +6875,46 @@ namespace Illuminate\Support\Facades {
         public static function hasMacro($name)
         {
             return \Illuminate\Routing\Redirector::hasMacro($name);
+        }
+         
+    }
+
+    class Redis {
+        
+        /**
+         * Get a Redis connection by name.
+         *
+         * @param string|null $name
+         * @return \Illuminate\Redis\Connections\Connection 
+         * @static 
+         */ 
+        public static function connection($name = null)
+        {
+            return \Illuminate\Redis\RedisManager::connection($name);
+        }
+        
+        /**
+         * Resolve the given connection by name.
+         *
+         * @param string|null $name
+         * @return \Illuminate\Redis\Connections\Connection 
+         * @throws \InvalidArgumentException
+         * @static 
+         */ 
+        public static function resolve($name = null)
+        {
+            return \Illuminate\Redis\RedisManager::resolve($name);
+        }
+        
+        /**
+         * Return all of the created connections.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function connections()
+        {
+            return \Illuminate\Redis\RedisManager::connections();
         }
          
     }
@@ -7065,6 +7169,21 @@ namespace Illuminate\Support\Facades {
         public static function replace($input)
         {
             return \Illuminate\Http\Request::replace($input);
+        }
+        
+        /**
+         * This method belongs to Symfony HttpFoundation and is not usually needed when using Laravel.
+         * 
+         * Instead, you may use the "input" method.
+         *
+         * @param string $key
+         * @param mixed $default
+         * @return mixed 
+         * @static 
+         */ 
+        public static function get($key, $default = null)
+        {
+            return \Illuminate\Http\Request::get($key, $default);
         }
         
         /**
@@ -7506,26 +7625,6 @@ namespace Illuminate\Support\Facades {
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::getHttpMethodParameterOverride();
-        }
-        
-        /**
-         * Gets a "parameter" value from any bag.
-         * 
-         * This method is mainly useful for libraries that want to provide some flexibility. If you don't need the
-         * flexibility in controllers, it is better to explicitly get request parameters from the appropriate
-         * public property instead (attributes, query, request).
-         * 
-         * Order of precedence: PATH (routing placeholders or custom attributes), GET, BODY
-         *
-         * @param string $key The key
-         * @param mixed $default The default value if the parameter key does not exist
-         * @return mixed 
-         * @static 
-         */ 
-        public static function get($key, $default = null)
-        {
-            //Method inherited from \Symfony\Component\HttpFoundation\Request            
-            return \Illuminate\Http\Request::get($key, $default);
         }
         
         /**
@@ -10070,6 +10169,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $driver
          * @return mixed 
+         * @throws \InvalidArgumentException
          * @static 
          */ 
         public static function driver($driver = null)
@@ -11764,6 +11864,7 @@ namespace Illuminate\Support\Facades {
          * @param array $data
          * @param array $mergeData
          * @return \Illuminate\Contracts\View\View 
+         * @throws \InvalidArgumentException
          * @static 
          */ 
         public static function first($views, $data = array(), $mergeData = array())
@@ -12491,17 +12592,6 @@ namespace Houdunwang\Module {
     class Factory {
         
         /**
-         * 当前模块
-         *
-         * @return mixed 
-         * @static 
-         */ 
-        public static function currentModule()
-        {
-            return \Houdunwang\Module\Provider::currentModule();
-        }
-        
-        /**
          * 支持点语法的获取配置项
          *
          * @param $name
@@ -12511,6 +12601,16 @@ namespace Houdunwang\Module {
         public static function config($name)
         {
             return \Houdunwang\Module\Provider::config($name);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function saveConfig($data = array(), $name = 'config')
+        {
+            return \Houdunwang\Module\Provider::saveConfig($data, $name);
         }
         
         /**
@@ -12550,13 +12650,71 @@ namespace Houdunwang\Module {
         }
         
         /**
-         * 
+         * 获取所有菜单
          *
+         * @return mixed 
          * @static 
          */ 
         public static function getMenus()
         {
             return \Houdunwang\Module\Provider::getMenus();
+        }
+        
+        /**
+         * 获取模块菜单
+         *
+         * @param $module
+         * @return mixed 
+         * @static 
+         */ 
+        public static function getMenuByModule($module = null)
+        {
+            return \Houdunwang\Module\Provider::getMenuByModule($module);
+        }
+        
+        /**
+         * 当前模块
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function currentModule()
+        {
+            return \Houdunwang\Module\Provider::currentModule();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getModulesLists($filter = array())
+        {
+            return \Houdunwang\Module\Provider::getModulesLists($filter);
+        }
+        
+        /**
+         * 获取模块
+         *
+         * @param null $module
+         * @return mixed|void 
+         * @static 
+         */ 
+        public static function module($module = null)
+        {
+            return \Houdunwang\Module\Provider::module($module);
+        }
+        
+        /**
+         * 获取模块路径
+         *
+         * @param null $module
+         * @return mixed 
+         * @static 
+         */ 
+        public static function getModulePath($module = null)
+        {
+            return \Houdunwang\Module\Provider::getModulePath($module);
         }
          
     }
@@ -12576,8 +12734,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function addLocation($path)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::addLocation($path);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::addLocation($path);
         }
         
         /**
@@ -12588,8 +12746,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getPaths()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getPaths();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getPaths();
         }
         
         /**
@@ -12600,8 +12758,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getScanPaths()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getScanPaths();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getScanPaths();
         }
         
         /**
@@ -12612,8 +12770,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function scan()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::scan();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::scan();
         }
         
         /**
@@ -12624,8 +12782,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function all()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::all();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::all();
         }
         
         /**
@@ -12636,8 +12794,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getCached()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getCached();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getCached();
         }
         
         /**
@@ -12648,8 +12806,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function toCollection()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::toCollection();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::toCollection();
         }
         
         /**
@@ -12661,8 +12819,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getByStatus($status)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getByStatus($status);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getByStatus($status);
         }
         
         /**
@@ -12674,8 +12832,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function has($name)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::has($name);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::has($name);
         }
         
         /**
@@ -12686,8 +12844,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function allEnabled()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::allEnabled();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::allEnabled();
         }
         
         /**
@@ -12698,8 +12856,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function allDisabled()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::allDisabled();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::allDisabled();
         }
         
         /**
@@ -12710,8 +12868,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function count()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::count();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::count();
         }
         
         /**
@@ -12723,8 +12881,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getOrdered($direction = 'asc')
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getOrdered($direction);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getOrdered($direction);
         }
         
         /**
@@ -12735,8 +12893,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getPath()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getPath();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getPath();
         }
         
         /**
@@ -12746,8 +12904,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function register()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::register();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::register();
         }
         
         /**
@@ -12757,8 +12915,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function boot()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::boot();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::boot();
         }
         
         /**
@@ -12770,8 +12928,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function find($name)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::find($name);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::find($name);
         }
         
         /**
@@ -12783,8 +12941,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function findByAlias($alias)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::findByAlias($alias);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::findByAlias($alias);
         }
         
         /**
@@ -12797,8 +12955,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function findRequirements($name)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::findRequirements($name);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::findRequirements($name);
         }
         
         /**
@@ -12811,8 +12969,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function findOrFail($name)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::findOrFail($name);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::findOrFail($name);
         }
         
         /**
@@ -12824,8 +12982,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function collections($status = 1)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::collections($status);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::collections($status);
         }
         
         /**
@@ -12837,8 +12995,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getModulePath($module)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getModulePath($module);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getModulePath($module);
         }
         
         /**
@@ -12850,8 +13008,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function assetPath($module)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::assetPath($module);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::assetPath($module);
         }
         
         /**
@@ -12864,8 +13022,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function config($key, $default = null)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::config($key, $default);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::config($key, $default);
         }
         
         /**
@@ -12876,8 +13034,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getUsedStoragePath()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getUsedStoragePath();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getUsedStoragePath();
         }
         
         /**
@@ -12889,8 +13047,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function setUsed($name)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::setUsed($name);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::setUsed($name);
         }
         
         /**
@@ -12900,8 +13058,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function forgetUsed()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::forgetUsed();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::forgetUsed();
         }
         
         /**
@@ -12913,8 +13071,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getUsedNow()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getUsedNow();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getUsedNow();
         }
         
         /**
@@ -12925,8 +13083,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getFiles()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getFiles();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getFiles();
         }
         
         /**
@@ -12937,8 +13095,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getAssetsPath()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getAssetsPath();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getAssetsPath();
         }
         
         /**
@@ -12951,8 +13109,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function asset($asset)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::asset($asset);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::asset($asset);
         }
         
         /**
@@ -12965,8 +13123,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function enabled($name)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::enabled($name);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::enabled($name);
         }
         
         /**
@@ -12979,8 +13137,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function disabled($name)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::disabled($name);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::disabled($name);
         }
         
         /**
@@ -12993,8 +13151,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function enable($name)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            \Nwidart\Modules\Laravel\Repository::enable($name);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            \Nwidart\Modules\Laravel\LaravelFileRepository::enable($name);
         }
         
         /**
@@ -13007,8 +13165,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function disable($name)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            \Nwidart\Modules\Laravel\Repository::disable($name);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            \Nwidart\Modules\Laravel\LaravelFileRepository::disable($name);
         }
         
         /**
@@ -13021,8 +13179,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function delete($name)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::delete($name);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::delete($name);
         }
         
         /**
@@ -13033,8 +13191,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function update($module)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::update($module);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::update($module);
         }
         
         /**
@@ -13049,8 +13207,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function install($name, $version = 'dev-master', $type = 'composer', $subtree = false)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::install($name, $version, $type, $subtree);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::install($name, $version, $type, $subtree);
         }
         
         /**
@@ -13061,8 +13219,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function getStubPath()
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::getStubPath();
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::getStubPath();
         }
         
         /**
@@ -13074,8 +13232,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function setStubPath($stubPath)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::setStubPath($stubPath);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::setStubPath($stubPath);
         }
         
         /**
@@ -13088,8 +13246,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function macro($name, $macro)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            \Nwidart\Modules\Laravel\Repository::macro($name, $macro);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            \Nwidart\Modules\Laravel\LaravelFileRepository::macro($name, $macro);
         }
         
         /**
@@ -13102,8 +13260,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function mixin($mixin)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            \Nwidart\Modules\Laravel\Repository::mixin($mixin);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            \Nwidart\Modules\Laravel\LaravelFileRepository::mixin($mixin);
         }
         
         /**
@@ -13115,8 +13273,8 @@ namespace Nwidart\Modules\Facades {
          */ 
         public static function hasMacro($name)
         {
-            //Method inherited from \Nwidart\Modules\Repository            
-            return \Nwidart\Modules\Laravel\Repository::hasMacro($name);
+            //Method inherited from \Nwidart\Modules\FileRepository            
+            return \Nwidart\Modules\Laravel\LaravelFileRepository::hasMacro($name);
         }
          
     }
@@ -15448,6 +15606,8 @@ namespace  {
     class Queue extends \Illuminate\Support\Facades\Queue {}
 
     class Redirect extends \Illuminate\Support\Facades\Redirect {}
+
+    class Redis extends \Illuminate\Support\Facades\Redis {}
 
     class Request extends \Illuminate\Support\Facades\Request {}
 

@@ -1,0 +1,65 @@
+@mixin phone {
+    @include media-breakpoint-down(xs) { 
+        @content;
+    }
+}
+
+@mixin tablet {
+    @include media-breakpoint-down(sm) { 
+        @content;
+    }
+}
+
+@mixin laptop {
+    @include media-breakpoint-down(md) { 
+        @content;
+    }
+}
+
+@mixin desktop {
+    @include media-breakpoint-down(lg) { 
+        @content;
+    }
+}
+
+@mixin large-desktop {
+    @include media-breakpoint-down(xl) { 
+        @content;
+    }
+}
+
+@mixin phone-only {
+    @include media-breakpoint-only(xs) { 
+        @content;
+    }
+}
+
+@mixin tablet-only {
+    @include media-breakpoint-only(sm) { 
+        @content;
+    }
+}
+
+@mixin laptop-only {
+    @include media-breakpoint-only(md) { 
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @include media-breakpoint-only(lg) { 
+        @content;
+    }
+}
+
+@mixin large-desktop-only {
+    @include media-breakpoint-only(xl) { 
+        @content;
+    }
+}
+
+@mixin non-responsive {
+    @include media-breakpoint-up(md) { 
+        @content;
+    }
+}

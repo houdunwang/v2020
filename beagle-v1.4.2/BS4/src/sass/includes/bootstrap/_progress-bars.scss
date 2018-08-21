@@ -1,0 +1,12 @@
+/*------------------------------------------------------------------
+  [Progress bars]
+*/
+.progress {
+	height: $progress-line-height;
+	box-shadow: none;
+}
+
+.progress-bar{
+	box-shadow: none;
+	line-height: $progress-line-height;
+}

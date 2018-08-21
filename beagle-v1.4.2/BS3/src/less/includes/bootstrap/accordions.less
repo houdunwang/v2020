@@ -1,0 +1,70 @@
+/*------------------------------------------------------------------
+  [Accordions]
+*/
+.accordion{
+	margin-bottom: 40px;
+	padding: 0;
+	
+	.panel{
+		padding: 0;
+		border-radius: 3px;
+
+		.panel-heading{
+			padding: 0;
+			margin: 0;
+			border-radius: 3px;
+
+			a{
+				padding: 20px;
+				display: block;
+				color: @primary-color;
+
+				.icon{
+					transition: transform 200ms ease-in-out;
+					font-size: 25px;
+					vertical-align: middle;
+					position: relative;
+					top: -1px;
+					display: inline-block;
+					margin-right: 10px;
+				}
+
+				&.collapsed{
+					color: @text-color;
+
+					.icon{
+						transform: rotate(-90deg);
+					}
+				}
+			}
+		}
+
+		.panel-collapse{
+
+			.panel-body{
+				padding: 0 20px 20px 20px;
+				border-top: 0;
+				line-height: 22px;
+				border-radius: 0 0 3px 3px;
+			}
+		}
+	}
+}
+
+//Colored Full Panels
+.accordion-color{
+
+	.panel{
+
+		.panel-heading{
+
+			a{
+				color: @light-color;
+
+				&.collapsed{
+					color: @light-color;
+				}
+			}
+		}
+	}
+}

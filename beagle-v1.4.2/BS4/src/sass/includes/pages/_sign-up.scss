@@ -1,0 +1,39 @@
+/*------------------------------------------------------------------
+  [Sign up]
+*/
+.splash-container.sign-up{
+	max-width: $sign-up-width;
+	margin: $sign-up-margin-top auto;
+
+	.card{
+		
+		.card-header{
+			margin-bottom: 0;
+		}
+	}
+}
+
+//Signup password
+.signup-password{
+
+	&.row {
+		padding: 0;
+		margin-bottom: $form-group-margin-bottom - .1538rem;
+	}
+
+	.btn{
+		width: 100%;
+	}
+
+	//Reduce bs col padding
+	> div{
+		
+		&:first-child{
+			padding-right: 10px;
+		}
+
+		&:last-child{
+			padding-left: 10px;
+		}
+	}
+}

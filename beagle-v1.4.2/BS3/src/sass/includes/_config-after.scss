@@ -1,0 +1,50 @@
+// Right Sidebar
+$right-sidebar-z-index: 						$zindex-navbar-fixed + 1;
+
+// Forms
+$radio-icon-component-color: 					lighten($input-color, 25%);
+
+$input-bg-disabled:              $gray-lighter;
+$legend-color:                   $gray-dark;
+
+//** Default `.form-control` height
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + 10);
+
+// Buttons
+$btn-link-disabled-color:        	$gray-light;
+
+// Code
+$pre-color:                   darken($gray-light, 6.8%);
+
+// Nifty Modals
+$modal-zindex: 								$zindex-modal;
+
+// Panels
+$panel-info-text:             $state-info-text;
+
+//Responsive Variables
+$desktop: 				"(min-width: #{$screen-lg})";
+$laptop: 					"(min-width: #{$screen-md}) and (max-width: #{$screen-md-max})";
+$tablet: 					"(min-width: #{$screen-sm}) and (max-width: #{$screen-sm-max})";
+$phone: 					'(max-width: #{$screen-xs-max})';
+$small-phone: 		"(max-width: #{$screen-xs})";
+$print:						"print";
+
+//Non responsive devices
+$non-responsive: 	"(min-width: #{$screen-sm})";
+
+//Retina Display
+$retina: 					"(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+$high-dpi: 				"only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 13/10), only screen and (min-resolution: 120dpi)";
+
+//Google Chrome Query
+$webkit: 					"screen and (-webkit-min-device-pixel-ratio:0)";
+
+//IE8 Media Query
+$ie8: 						"\0screen";
+
+//IE9 & IE10 Media Query
+$ie910: 					"screen and (min-width:0\0)";
+
+//IE 10+ Media Query
+$ie10: 						"all and (-ms-high-contrast: none), (-ms-high-contrast: active)";

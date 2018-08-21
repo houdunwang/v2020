@@ -1,0 +1,26 @@
+.be-option-buttons {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	justify-content: space-around;
+}
+
+.be-option-button {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	color: $text-color;
+	padding: 12px 21px;
+	border-radius: 3px;
+	min-width: 107px;
+
+	&:hover {
+		background-color: $primary-color;
+		color: $light-color;
+	}
+
+	.icon {
+		font-size: 21px;
+		font-weight: $font-weight-regular;
+ 	}
+}

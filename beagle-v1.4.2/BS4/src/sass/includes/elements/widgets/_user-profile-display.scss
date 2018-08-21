@@ -1,0 +1,73 @@
+/*------------------------------------------------------------------
+  [User profile widget]
+*/
+.user-display{
+	margin-bottom: 30px;
+	border-radius: $border-radius;
+	background-color: theme-color("light");
+
+	&-bg{
+		max-height: 300px;
+		overflow: hidden;
+
+		img{
+			width: 100%;
+			border-radius: $border-radius $border-radius 0 0;
+
+			@include tablet {
+				min-height: 130px;
+			}
+		}
+	}
+
+	&-bottom{
+		position: relative;
+		padding: 11px 20px;
+	}
+
+	&-avatar{
+		position: absolute;
+		left: 20px;
+		top: -50px;
+		border-radius: 50%;
+		background-color: theme-color("light");
+
+		img{
+			width: $user-profile-widget-avatar-size;
+			height: $user-profile-widget-avatar-size;
+			border-radius: 50%;
+			border: 3px solid theme-color("light");
+		}
+	}
+
+	&-info{
+		line-height: 20px;
+		padding-left: $user-profile-widget-avatar-size + 20px;
+
+		.name{
+			display: block;
+			font-size: 1.385rem;
+			font-weight: $font-weight-medium;
+			line-height: 22px;
+		}
+
+		.nick{
+			line-height: 21px;
+			color: lighten($body-color, 12%);
+		}
+	}
+
+	&-details{
+		margin-top: 15px;
+
+		.title{
+			text-transform: uppercase;
+			font-size: .9231rem;
+			color: lighten($body-color, 12%);
+		}
+
+		.counter{
+			font-size: 1.385rem;
+		}
+	}
+}

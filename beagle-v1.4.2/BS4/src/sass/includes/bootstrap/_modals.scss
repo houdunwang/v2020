@@ -1,0 +1,276 @@
+/*------------------------------------------------------------------
+  [Modals]
+*/
+
+.modal-content{
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	background-color: theme-color("light");
+	color: $body-color;
+	border: none;
+}
+
+//Modal Header
+.modal-header{
+	border: 0;
+	padding: 19px;
+
+	h1, h2, h3, h4, h5, h6{
+		display: block;
+		margin: 0;
+	}
+
+	.close{
+		font-size: 1.538rem;
+		opacity: 0.4;
+		text-shadow: none;
+		margin-top: -17px;	
+
+		&:hover{
+			opacity: 0.8;
+		}
+
+		&:focus {
+			outline: none;	
+		}
+	}
+}
+
+//Modal Body
+.modal-body{
+	padding: 10px 20px 20px;
+
+	//Remove margin bottom from last row form group
+	.row:last-child{
+		
+		.form-group{
+			margin-bottom: 0;
+		}
+	}
+}
+
+//Modal Main Icon
+.modal-main-icon{
+	display: inline-block;
+	height: 45px;
+	width: 45px;
+	line-height: normal;
+	font-size: 3.846rem;
+}
+
+//Modal Footer
+.modal-footer{
+	padding: 20px;
+	border: none;
+
+  > :not(:first-child) { margin-left: 4px; }
+  > :not(:last-child) { margin-right: 4px; }
+}
+
+// Modal Open
+.modal-open {
+	
+	.modal {
+		padding: 0 !important;
+	}
+}
+		
+//Full Color Alerts
+.modal-full-color{
+
+	.modal-header{
+		padding: 19px;
+	}
+
+	.modal-content{
+		color: theme-color("light");
+		background-color: transparent;
+
+		.close{
+			color: theme-color("light");
+			line-height: 40px;
+			opacity: 0.6;
+
+			&:hover{
+				opacity: 1;
+			}
+		}
+		
+		.modal-footer{
+			border: none;
+		}
+	}
+
+	.btn-secondary{
+		border-width: 2px;
+		border-color: transparent;
+	}
+
+	//Transparent style for color buttons
+	.btn-primary,
+  .btn-success,
+  .btn-warning,
+  .btn-danger {
+		background-color: transparent;
+		border-color: rgba(255, 255, 255, 0.5);
+		border-width: 2px;
+		
+		&:focus{
+			background-color: transparent;
+			border-color: rgba(255, 255, 255, 0.4);
+		}
+
+		&:hover,.hover{
+			box-shadow: none;
+			background-color: rgba(255, 255, 255, 0.1);
+			border-color: rgba(255, 255, 255, 0.8);
+		}
+		
+		&:not([disabled]):not(.disabled):active,
+  	&:not([disabled]):not(.disabled).active,
+		&.active,
+		&:active {
+			box-shadow: none;
+			background-color: rgba(255, 255, 255, 0.1);
+			border-color: rgba(255, 255, 255, 0.8);
+		}
+  }
+}
+
+//Modal Full Color set
+.modal-full-color-success{
+	@include modal-full-color($success-color-text);
+}
+
+.modal-full-color-primary{
+	@include modal-full-color($primary-color-text);
+}
+
+.modal-full-color-warning{
+	@include modal-full-color($warning-color-text);
+}
+
+.modal-full-color-danger{
+	@include modal-full-color($danger-color-text);
+}
+
+.modal-full-color-dark{
+	@include modal-full-color(theme-color("dark"));
+}
+
+
+//Bootstrap Modals
+.full-width{
+	width: 90%;
+	max-width:none;
+
+	@include tablet {
+		width: 100%;
+	}
+
+	&.modal-container {
+		width: 100%;
+
+		@include tablet {
+			width: 100%;
+		}
+
+		.modal-content {
+			width: 81%;
+
+			@include tablet {
+				width: 100%;
+			}
+		}
+	}
+
+	.modal-content {
+		width: 100%;
+		max-width:none;
+	}
+}
+
+//Custom Width Modals
+.custom-width {
+	
+	//Bootstrap Modals
+	.modal-dialog {
+		width: 700px;
+		max-width: none;
+	}		
+	
+	//Nifty Modals
+	.modal-content {
+		width: 700px;
+		max-width: none;
+	}
+	
+
+	@include tablet {
+		.modal-content, .modal-dialog, .modal-header {
+			width: 100% !important;
+		}		
+	}
+}
+
+//Colored Header Modals
+.colored-header{
+
+	.modal-content{
+
+		.modal-header{
+			background-color: darken(theme-color("light"), 10%);
+			color: theme-color("light");
+			padding: 30px 20px;
+			border-top-left-radius: 0;
+    	border-top-right-radius: 0;
+
+			.modal-title{
+				font-size: 1.538rem;
+			}
+
+			.close{
+				color: rgba(0, 0, 0, 0.7);
+				margin-top: -13px;
+			}
+		}
+		.modal-body{
+			padding: 35px 20px 20px;
+			background-color: theme-color("light");
+			color: $body-color;
+		}
+		.modal-footer{
+			background-color: theme-color("light");
+		}
+	}
+}
+
+//Colored header color set
+
+.colored-header-success{
+	@include colored-header($success-color-text);
+}
+.colored-header-primary{
+	@include colored-header($primary-color-text);
+}
+.colored-header-warning{
+	@include colored-header($warning-color-text);
+}
+.colored-header-danger{
+	@include colored-header($danger-color-text);
+}
+.colored-header-dark{
+	@include colored-header(theme-color("dark"));
+}
+
+//Responsive Design
+@include tablet {
+
+	.modal-dialog{
+		margin: 0 auto;
+	}
+}
+
+.be-modal-open{
+	overflow-x: visible;
+}

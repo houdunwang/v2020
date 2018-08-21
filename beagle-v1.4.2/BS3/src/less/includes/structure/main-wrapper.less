@@ -1,0 +1,15 @@
+/*------------------------------------------------------------------
+	[Main wrapper]
+*/
+.be-wrapper{
+	min-height: 100%;
+	padding-top: @top-header-height + 1px;
+
+	@media @phone {
+		overflow-x: hidden;
+	}
+
+	@media @print {
+		padding-top: 0 !important;
+	}
+}

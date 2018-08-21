@@ -1,0 +1,28 @@
+.ms-selectable {
+	.ms-container & {
+		background-color: transparent;
+	}
+}
+
+.ms-container .ms-selectable li.ms-hover, 
+.ms-container .ms-selection li.ms-hover {
+	background-color: theme-color("primary");
+}
+
+.ms-list {
+	.ms-container & {	
+		background-color: theme-color("light");
+	}
+
+	.ms-container &.ms-focus {
+		box-shadow: none;
+		border-color: theme-color("primary");
+	}
+} 
+
+.search-input {
+	.ms-container & {
+		height: 30px;
+		margin-bottom: 10px;
+	}
+}

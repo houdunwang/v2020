@@ -1,0 +1,49 @@
+//Right sidebar animation
+@mixin right-sidebar-animation($ha_animation) {
+
+	@if $ha_animation {
+
+		//With Hardware Acceleration
+		@include tablet {
+
+			.be-wrapper{
+				overflow: hidden;
+			}
+
+			.be-right-sidebar{
+	    	transform: translate3d(0, 0, 0);
+			}
+		}
+	} @else {
+
+		//Without Hardware Acceleration
+		.be-right-sidebar{
+			right: 0;
+		}
+	}
+}
+
+//Left sidebar animation
+@mixin left-sidebar-animation($ha_animation) {
+	@if $ha_animation {
+
+		//With Hardware Acceleration
+		@include tablet {
+
+			.be-wrapper {
+				overflow: hidden;
+			}
+
+			.be-left-sidebar {
+	    	transform: translate3d(0, 0, 0);
+			}
+		}
+
+	} @else {
+
+		//Without Hardware Acceleration
+		.be-left-sidebar {
+			left: 0;
+		}
+	}
+}

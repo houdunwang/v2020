@@ -1,0 +1,36 @@
+//Typography Mixins
+
+//Font size using percentage
+.font-size( @v ) when ( ispercentage(@v) ){
+  @number: unit(@v);
+  @value: @font-size-base * (@number / 100);
+  
+  font-size: unit(ceil( @font-size-base + @value ), px);
+}
+
+.font-size-small( @v ) when ( ispercentage(@v) ){
+  @number: unit(@v);
+  @value: @font-size-small * (@number / 100);
+  
+  font-size: unit(ceil( @font-size-small + @value ), px);
+}
+
+.font-size-large( @v ) when ( ispercentage(@v) ){
+  @number: unit(@v);
+  @value: @font-size-large * (@number / 100);
+  
+  font-size: unit(ceil( @font-size-large + @value ), px);
+}
+
+//Font size using pixels
+.font-size( @v ) when ( ispixel(@v) ){
+  font-size: ceil( @font-size-base + @v );
+}
+
+.font-size-small( @v ) when ( ispixel(@v) ){
+  font-size: ceil( @font-size-small + @v );
+}
+
+.font-size-large( @v ) when ( ispixel(@v) ){
+  font-size: ceil( @font-size-large + @v );
+}

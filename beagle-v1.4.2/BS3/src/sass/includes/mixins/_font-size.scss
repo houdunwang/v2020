@@ -1,0 +1,34 @@
+//Typography Mixins
+
+@mixin font-size( $v ) {
+  @if is-percentage($v) {
+
+    $number: unit($v);
+    $value: $font-size-base * ($number / 100);
+    font-size: unit(ceil( $font-size-base + $value ), px);
+  } @else {
+    font-size: ceil( $font-size-base + $v );
+  }
+}
+
+@mixin font-size-small( $v ) {
+  @if is-percentage($v) {
+
+    $number: unit($v);
+    $value: $font-size-small * ($number / 100);
+    font-size: unit(ceil( $font-size-small + $value ), px);
+  } @else {
+    font-size: ceil( $font-size-small + $v );
+  }
+}
+
+@mixin font-size-large( $v ) {
+  @if is-percentage($v) {
+
+    $number: unit($v);
+    $value: $font-size-large * ($number / 100);
+    font-size: unit(ceil( $font-size-large + $value ), px);
+  } @else {
+    font-size: ceil( $font-size-large + $v );
+  }
+}

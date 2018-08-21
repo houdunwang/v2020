@@ -1,0 +1,70 @@
+/*------------------------------------------------------------------
+  [Helper classes]
+*/
+//Space helpers
+// init functions
+@mixin make-space($prefix, $value) {
+  .#{$prefix}-p-#{$value}   { padding:        #{$value}px !important; }
+  .#{$prefix}-pt-#{$value}  { padding-top:    #{$value}px !important; }
+  .#{$prefix}-pl-#{$value}  { padding-left:   #{$value}px !important; }
+  .#{$prefix}-pr-#{$value}  { padding-right:  #{$value}px !important; }
+  .#{$prefix}-pb-#{$value}  { padding-bottom: #{$value}px !important; }
+  .#{$prefix}-m-#{$value}   { margin:         #{$value}px !important; }
+  .#{$prefix}-mt-#{$value}  { margin-top:     #{$value}px !important; }
+  .#{$prefix}-ml-#{$value}  { margin-left:    #{$value}px !important; }
+  .#{$prefix}-mr-#{$value}  { margin-right:   #{$value}px !important; }
+  .#{$prefix}-mb-#{$value}  { margin-bottom:  #{$value}px !important; }
+}
+
+// global
+@include make-space($prefix: xs, $value:50);
+@include make-space($prefix: xs, $value:40);
+@include make-space($prefix: xs, $value:30);
+@include make-space($prefix: xs, $value:25);
+@include make-space($prefix: xs, $value:20);
+@include make-space($prefix: xs, $value:15);
+@include make-space($prefix: xs, $value:10);
+@include make-space($prefix: xs, $value:5 );
+@include make-space($prefix: xs, $value:0 );
+
+// mobile
+@media (min-width: $screen-sm) {
+  @include make-space($prefix: sm, $value:50 );
+  @include make-space($prefix: sm, $value:40 );
+  @include make-space($prefix: sm, $value:30 );
+  @include make-space($prefix: sm, $value:25 );
+  @include make-space($prefix: sm, $value:20 );
+  @include make-space($prefix: sm, $value:15 );
+  @include make-space($prefix: sm, $value:10 );
+  @include make-space($prefix: sm, $value:5  );
+  @include make-space($prefix: sm, $value:0  );
+}
+
+// tablet
+@media (min-width: $screen-md) {
+  @include make-space($prefix: md, $value:50 );
+  @include make-space($prefix: md, $value:40 );
+  @include make-space($prefix: md, $value:30 );
+  @include make-space($prefix: md, $value:25 );
+  @include make-space($prefix: md, $value:20 );
+  @include make-space($prefix: md, $value:15 );
+  @include make-space($prefix: md, $value:10 );
+  @include make-space($prefix: md, $value:5  );
+  @include make-space($prefix: md, $value:0  );
+}
+
+// desktop
+@media (min-width: $screen-lg) {
+  @include make-space($prefix: lg, $value:200 );
+  @include make-space($prefix: lg, $value:150 );
+  @include make-space($prefix: lg, $value:100 );
+  @include make-space($prefix: lg, $value:50  );
+  @include make-space($prefix: lg, $value:40  );
+  @include make-space($prefix: lg, $value:30  );
+  @include make-space($prefix: lg, $value:25  );
+  @include make-space($prefix: lg, $value:20  );
+  @include make-space($prefix: lg, $value:15  );
+  @include make-space($prefix: lg, $value:10  );
+  @include make-space($prefix: lg, $value:5   );
+  @include make-space($prefix: lg, $value:0   );
+}

@@ -1,0 +1,51 @@
+// Tooltip Chart
+.tooltip-chart {
+	display: flex;
+
+	.content-chart {
+		background-color: rgba(0,0,0,0.8);
+		color: #FFF;
+		border-radius: 3px;
+		padding: 5px 12px 5px;
+		position: relative;
+
+		&:before {
+			content: '';
+			width: 0;
+		  height: 0;
+		  border-left: 5px solid transparent;
+		  border-right: 5px solid transparent;
+		  border-top: 5px solid rgba(0,0,0,0.8);
+		  position: absolute;
+		  bottom: -5px;
+		  margin-left: 50%;
+		  left: -5px;
+		}
+
+		&.arrow-none {
+
+			&:before {
+				display: none;
+			}
+		}
+
+		span {
+			display: block;
+			font-size: 12px;
+			font-weight: 600;
+			margin-bottom: -2px;
+			text-align: center;
+			color: lighten(theme-color("primary"), 25%);
+
+		}
+
+		.label {
+			font-size: 11px;
+			text-align: center;
+
+			.label-x, .label-y {
+				display: inline-block;
+			}
+		}
+	}
+}

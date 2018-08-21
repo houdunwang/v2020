@@ -1,0 +1,36 @@
+/*------------------------------------------------------------------
+	[Scroll to top button]
+*/
+.be-scroll-top{
+	cursor: pointer;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	color: theme-color("light");
+	background-color: rgba(0,0,0, 0.6);
+	padding: 0 14px;
+	display: none;
+	transition: background-color .2s ease;
+	border-radius: 4px;
+	z-index: $zindex-tooltip + 1;
+
+	@media #{$print} {
+		display: none !important;
+	}
+
+	&:hover{
+		background-color: rgba(0,0,0, 0.8);
+	}
+
+	&:hover, &:focus{
+		color: theme-color("light");
+	}
+
+	&:before{
+		content: '\f2fc';
+		font-family: $icons-font;
+		font-size: 2.538rem;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}

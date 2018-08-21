@@ -1,0 +1,57 @@
+/*------------------------------------------------------------------
+  [Grid]
+*/
+.bs-grid-block{
+	border: 2px dashed darken($body-background, 16.8%);
+	font-weight: 300;
+	font-size: 1.538rem;
+	color: lighten(theme-color("dark"), 26%);
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	margin-bottom: 40px;
+
+	.content{
+		display: table-cell;
+		height: 177px;
+		text-align: center;
+		vertical-align: middle;
+
+		.size{
+			display: block;
+		}
+
+		.device{
+			line-height: 0;
+
+			&:after{
+				font-size: 1.154rem;
+
+				@include large-desktop {
+					content: 'Large Desktop';
+					color: theme-color("primary");
+				}
+
+				@include desktop {
+					content: 'Desktop';
+					color: theme-color("primary");
+				}
+
+				@include laptop {
+					content: 'Laptop';
+					color: theme-color("primary");;
+				}
+
+				@include tablet {
+					content: 'Tablet';
+					color: theme-color("success");
+				}
+
+				@include phone {
+					content: 'Phone';
+					color: theme-color("success");
+				}
+			}
+		}
+	}
+}

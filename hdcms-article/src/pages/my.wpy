@@ -1,0 +1,109 @@
+<style lang="less">
+  .user {
+    text-align: center;
+    .icon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    .name {
+      font-size: 18px;
+    }
+  }
+</style>
+<template>
+  <view class="user" wx:if="{{isLogin}}">
+    <image class="icon" mode="aspectFill" src="{{user.icon}}"></image>
+    <view class="name">
+      {{user.name}}
+    </view>
+    <view>
+      <button class="weui-btn logout" @tap="logout" type="primary">退出登录</button>
+    </view>
+  </view>
+
+  <form @submit="login" wx:if="{{!isLogin}}">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">会员登录</view>
+      <view class="weui-panel__bd">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">邮箱</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="email" value="2300071698@qq.com"/>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">密码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" name="password" value="admin888"/>
+          </view>
+        </view>
+      </view>
+      <view>
+        <button class="weui-btn logout" form-type="submit">登录</button>
+      </view>
+    </view>
+  </form>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import util from '@/services/util'
+  import user from '@/services/user'
+
+  export default class My extends wepy.page {
+    data = {
+      isLogin: util.getToken(),
+      user: {}
+    }
+    methods = {
+      async login(e) {
+        let formData = e.detail.value
+
+        if (!formData.email || !formData.password) {
+          wepy.showToast({
+            title: '邮箱或密码不能为空',
+            icon: 'none',
+            duration: 2000
+          })
+          return false
+        }
+        if (!/.+@.+/.test(formData.email)) {
+          wepy.showToast({
+            title: '邮箱格式错误',
+            icon: 'none',
+            duration: 2000
+          })
+          return false
+        }
+        let response = await util.login({
+          url: 'login',
+          data: formData
+        })
+        if (response.statusCode === 200) {
+          this.isLogin = true
+          this.$apply()
+        }
+      },
+      async logout() {
+        let response = await util.logout()
+        if (response.statusCode === 200) {
+          this.isLogin = false
+          this.$apply()
+        }
+      }
+    }
+    onLoad = async () => {
+      let response = await user.info()
+      if (response.statusCode === 200) {
+        console.log(response.data)
+        this.user = response.data
+        this.$apply()
+      }
+    }
+  }
+</script>

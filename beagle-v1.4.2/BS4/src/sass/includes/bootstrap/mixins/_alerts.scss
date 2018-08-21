@@ -1,0 +1,36 @@
+// Contrast alerts Mixin
+@mixin contrast-alert-variation($color){
+	background-color: darken($color, 1%);
+}
+
+//Colored alerts Mixin
+@mixin icon-alert-variation($color){
+
+	> .icon{
+		background-color: $color;
+
+		&:after{
+			border-left-color: $color;
+		}
+	}
+}
+
+//Dismissible alerts color variations
+@mixin dismissible-variation($color){
+
+	.close{ 
+		color: darken($color, 30%);
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}	
+}
+
+//Alert Color Icon Bg
+@mixin alert-icon-colored($color){
+
+	> .icon{
+		color: $color;
+	}
+}

@@ -1,0 +1,20 @@
+.editable-input {
+
+	.form-control {
+		height: 30px;
+		padding: 4px 12px;
+	}
+
+	textarea {
+		&.form-control {
+			height: auto;
+		}
+	}
+}
+
+.editable-buttons{
+
+	.btn {
+		padding: 3px 10px;
+	}
+}

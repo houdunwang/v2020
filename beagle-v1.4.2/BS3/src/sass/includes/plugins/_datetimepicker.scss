@@ -1,0 +1,150 @@
+/*------------------------------------------------------------------
+  [Bootstrap dateTime Picker]
+*/
+.datetimepicker{
+	padding: 4px 12px;
+
+	&.input-group {
+		padding: 4px 0;
+	}
+
+	.input-group-addon{
+		padding: 0 13px;
+		font-size: 24px;
+		line-height: 23px;
+
+		> i{
+			vertical-align: middle;
+		}
+	}
+
+	&.input-group-sm{
+
+		.input-group-addon{
+			font-size: 20px;
+			line-height: 21px;
+			padding: 0 11px;
+		}
+	}
+
+	&.input-group-lg{
+
+		.input-group-addon{
+			padding: 0 15px;
+		}
+	}
+
+	//Table
+	table{
+		border-collapse: separate;
+		border-spacing: 7px 2px;
+
+		thead{
+
+			tr{
+
+				th{
+					padding: 10px 4px 8px;
+
+					&.prev, &.next{
+						padding: 0;
+						
+						> .icon{
+							font-size: 21px;
+						}
+
+						&:hover{
+							background-color: transparent;
+							color: $primary-color;
+						}
+					}
+
+					&.switch{
+						font-weight: 600;
+						font-size: 14px;
+
+						&:hover{
+							background-color: transparent;
+							color: lighten($text-color, 10%);
+						}
+					}
+
+					&.dow{
+						font-weight: 400;
+						font-size: 14px;
+						padding-top: 10px;
+					}
+				}
+			}
+		}
+
+		tbody{
+
+			tr{
+
+				td{
+					line-height: 31px;
+  				padding: 0 8px;
+
+  				&.day{
+  					border-radius: 50%;
+  					color: lighten($text-color, 20%);
+
+  					&.old, &.new{
+  						color: lighten($text-color, 45%);
+  					}
+
+  					&.active{
+  						background: $primary-color;
+  						color: $light-color;
+  						text-shadow: none;
+
+  						&:hover{
+  							background: darken($primary-color, 10%);
+  						}
+  					}
+  				}
+
+  				.year, .month, .hour, .minute{
+  					color: lighten($text-color, 20%);
+
+  					&.old, &.new{
+  						color: lighten($text-color, 45%);
+  					}
+
+  					&.active{
+  						background: $primary-color;
+  						color: $light-color;
+  						text-shadow: none;
+
+  						&:hover{
+  							background: darken($primary-color, 10%);
+  						}
+  					}
+  				}
+
+  				fieldset{
+
+  					legend{
+  						font-size: 17px;
+  						font-weight: 400;
+  						color: lighten($text-color, 10%);
+  						margin-bottom: 5px;
+  					}
+  				}
+				}
+			}
+		}
+	}
+
+	//Datepicker dropdown
+	&.dropdown-menu{
+		@include box-shadow(0 2px 4px rgba(0,0,0,.08));
+		border-color: rgba(0, 0, 0, 0.1);
+		padding: 10px;
+
+		&:before{
+			border-bottom-color: rgba(0, 0, 0, 0.08);
+		}
+	}
+}

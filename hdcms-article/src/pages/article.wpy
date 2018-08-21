@@ -1,0 +1,42 @@
+<style lang="less">
+  .title {
+    font-size: 18px;
+    text-align: center;
+    border-bottom: solid 1px #ddd;
+    margin-bottom: 20px;
+    color: #0BB20C;
+  }
+
+  .content {
+    font-size: 14px;
+    padding: 10px;
+  }
+</style>
+<template>
+  <import src="../wxParse/wxParse.wxml"/>
+  <view class="title">{{field.title}}</view>
+  <view class="content">
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import article from '@/services/article'
+  import WxParse from '@/wxParse/wxParse.js'
+
+  export default class Article extends wepy.page {
+    data = {
+      field: {}
+    }
+
+    async onLoad(options) {
+      let response = await article.getById(options.id)
+      let field = response.data.data
+      let that = this
+      WxParse.wxParse('content', 'html', field.content, that, 5)
+      this.field = field
+      this.$apply()
+    }
+  }
+</script>

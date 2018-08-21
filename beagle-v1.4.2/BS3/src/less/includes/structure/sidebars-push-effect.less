@@ -1,0 +1,47 @@
+//Right sidebar animation
+//Without Hardware Acceleration
+.right-sidebar-animation(@ha_animation) when (@ha_animation = false){
+
+	.be-right-sidebar{
+		right: 0;
+	}
+}
+
+//With Hardware Acceleration
+.right-sidebar-animation(@ha_animation) when (@ha_animation = true){
+
+	@media @phone{
+
+		.be-wrapper{
+			overflow: hidden;
+		}
+
+		.be-right-sidebar{
+    	transform: translate3d(0, 0, 0);
+		}
+	}
+}
+
+//Left sidebar animation
+//Without Hardware Acceleration
+.left-sidebar-animation(@ha_animation) when (@ha_animation = false) {
+
+	.be-left-sidebar {
+		left: 0;
+	}
+}
+
+//With Hardware Acceleration
+.left-sidebar-animation(@ha_animation) when (@ha_animation = true) {
+
+	@media @phone {
+
+		.be-wrapper {
+			overflow: hidden;
+		}
+
+		.be-left-sidebar {
+    	transform: translate3d(0, 0, 0);
+		}
+	}
+}

@@ -1,0 +1,215 @@
+/*------------------------------------------------------------------
+  [Right sidebar]
+*/
+//Sidebar Structure
+.be-right-sidebar {
+  position: fixed;
+  background-color: $right-sidebar-background;
+  margin-top: $top-header-height + 1px;
+  padding-bottom: $top-header-height + 1px;
+  width: $right-sidebar-width;
+  height: 100%;
+  right: -$right-sidebar-width;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid darken($right-sidebar-background, 7%);
+  z-index: $zindex-fixed + 1;
+
+  .be-animate & {
+    transition: $sidebars-push-effect;
+  }
+  
+  @include non-responsive{
+    .be-boxed-layout & {
+      position: absolute;
+    }    
+  }
+}
+
+
+//Push sidebar animation
+body.open-right-sidebar{
+
+  @include non-responsive {
+    @include right-sidebar-animation(false);
+  }
+
+  @include tablet {
+    @include right-sidebar-animation($sidebars-hardware-accelerated-animation);
+  }
+}
+
+//Sidebar Style
+.be-right-sidebar{
+
+  .sb-content{
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+  }
+
+  .tab-navigation{
+
+    .nav-tabs{
+      background-color: transparent;
+      border-bottom: 0;
+      padding: 0;
+
+      > li.nav-item{
+        margin-right: 0;
+
+        > a.nav-link{
+          background-color: darken($right-sidebar-background, 3%);
+          border-width: 0;
+          padding: 15px 10px;
+          min-width: auto;
+          font-size: 1.077rem;
+
+          .icon{
+            font-size: 1.923rem;
+            color: $right-sidebar-icons-color;
+          }
+
+          &:hover{
+            border: 0;
+            background-color: darken($right-sidebar-background, 1.5%);
+            color: darken($body-color, 2%);
+          }
+
+          &:focus{
+            border: 0;
+          }
+
+          &.active{
+            color: theme-color("primary");
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    @include tablet {
+
+      .nav-justified{
+
+        > li{
+          display: table-cell;
+
+          > a{
+            margin-bottom: 0;
+            min-width: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .tab-panel{
+    height: 100%;
+    display: table-row;
+
+    .tab-content{
+      height: 100%;
+      position: relative;
+      width: 100%;
+      padding: 0;
+      background: transparent;
+      display: table-cell;
+      overflow: hidden;
+
+      .tab-pane{
+        height: 100%;
+        position: relative;
+        width: 100%;
+
+        > .content{
+          overflow: auto;
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+        h2{
+          font-size: 1.154rem;
+          font-weight: $font-weight-normal;
+          padding-bottom: 15px;
+          border-bottom: 1px solid darken($right-sidebar-background, 6%);
+          padding-left: 5px;
+          margin-bottom: 20px;
+          margin-top: 18px;
+        }
+      }
+      
+      //Search input at the bottom of the sb
+      .bottom-input{
+        position: relative;
+        border-top: 1px solid darken($right-sidebar-background, 3%);
+
+        > input{
+          border: 0;
+          background-color: $right-sidebar-background;
+          color:$body-color;
+          width: 100%;
+          font-size: 1rem;
+          font-weight: $font-weight-normal;
+          padding: 15px 20px;
+          outline: none;
+        }
+
+        > span{
+          position: absolute;
+          color: $right-sidebar-icons-color;
+          right: 15px;
+          top: 50%;
+          font-size: 1.538rem;
+          margin-top: -10px;
+          cursor: pointer;
+
+          &:hover{
+            color: lighten($right-sidebar-icons-color, 15%);
+          }
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    width: $right-sidebar-width-phone;
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+    margin-top: 0;
+    padding-bottom: 0;
+
+    .tab-panel{
+
+      .tab-content{
+
+        > .chat{
+          width: 100%;
+
+          .chat-contacts, .chat-window{
+            width: 100%;
+          }
+
+          .chat-window{
+            left: 100%;
+          }
+
+          &.chat-opened{
+            
+            .chat-contacts{
+              left: -100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    width: 90%;
+  }
+}

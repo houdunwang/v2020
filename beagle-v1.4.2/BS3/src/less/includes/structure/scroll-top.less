@@ -1,0 +1,35 @@
+/*------------------------------------------------------------------
+	[Scroll to top button]
+*/
+.be-scroll-top{
+	cursor: pointer;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	color: @light-color;
+	background-color: rgba(0,0,0, 0.6);
+	padding: 0 14px;
+	display: none;
+	transition: background-color .2s ease;
+	border-radius: 4px;
+
+	@media @print {
+		display: none !important;
+	}
+
+	&:hover{
+		background-color: rgba(0,0,0, 0.8);
+	}
+
+	&:hover, &:focus{
+		color: @light-color;
+	}
+
+	&:before{
+		content: '\f2fc';
+		font-family: @icons-font;
+		.font-size-large(18px);
+		display: inline-block;
+		vertical-align: middle;
+	}
+}

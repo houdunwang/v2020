@@ -1,0 +1,40 @@
+/*------------------------------------------------------------------
+[General elements style]
+*/
+
+html{
+	height:100%;
+	overflow-x: hidden;
+	font-size: $font-size-root;
+}
+
+body {
+	padding: 0;
+	background-color: $body-background;
+	height: 100%;
+	line-height: 1.42857143;
+
+	&.be-alt-bg {
+		background-color: darken($body-bg, 2%);
+	}
+}
+
+a{
+
+	&:hover, &:focus{
+		text-decoration: none;
+		outline: none;
+	}	
+}
+
+p{
+	font-size: $paragraph-font-size;
+	line-height: $paragraph-line-height;
+}
+
+//Fix for plugins like charts
+canvas{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}

@@ -19,6 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('nickname')->default('')->comment('昵称');
             $table->string('password');
+            $table->string('icon');
+            $table->string('mail_token')->default('');
+            $table->tinyInteger('mail_status')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

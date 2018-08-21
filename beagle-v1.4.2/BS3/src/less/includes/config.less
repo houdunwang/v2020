@@ -1,0 +1,553 @@
+//Paths
+@img-path: 				"../img"; 
+@fonts-path: 			"../lib"; 
+@lib-path: 				"../lib"; 
+
+//General colors palette
+@primary-color: 	#4285f4;
+
+@dark-color: 			#3d3c3c;
+@light-color: 		#ffffff;
+@black-color: 		#000000;
+@body-color: 			#404040;
+
+//States Color
+@danger-color: 		#ea4335;
+@warning-color: 	#fbbc05;
+@success-color: 	#34a853;
+@grey-color: 			#cccccc;
+@info-color: 			@primary-color;
+
+//Icons colors
+@icon-default-color: 		darken(@light-color, 55%);
+@icon-hover-color: 			darken(@light-color, 75%);
+
+//Color variations
+@import "colors.less";
+
+//General elements
+@logo-width: 										102px;
+@logo-height: 									27px;
+@logo-padding: 									20px;
+@body-background: 							#EEEEEE;
+@content-padding: 							25px;
+@content-padding-tablet: 				25px;
+@content-padding-phone: 				15px;
+@content-padding-small-phone: 	10px;
+@link-color: 										(@primary-color + 10%);
+@scroller-size: 								6px;//Scroller plugin width
+
+//Aside
+@page-aside-width: 									280px;
+@page-aside-padding: 								22px;
+@page-aside-title-size: 						27px;
+
+//Top Header
+@top-header-bg:											@light-color;
+@top-header-phone-bg:								@primary-color;
+@top-header-link-color:							darken(@light-color, 55%);
+@top-header-height: 								60px;
+@top-header-height-phone: 					70px;
+@top-header-navbar-color: 					lighten(@text-color, 10%);
+@top-header-navbar-font-size: 			14px;
+@top-header-navbar-padding: 				18px;
+@top-header-search-max-width: 			800px;
+@icons-nav-dropdown-width: 					300px;
+@user-dropdown-width:								220px;
+
+//Sub Navigation
+@sub-navigation-bg:									#f5f5f5;
+@sub-navigation-focus-color:				darken(@light-color, 80%);
+@sub-navigation-collapse-padding:   16px 10px;
+
+//Left Sidebar
+@left-sidebar-bg: 									#f5f5f5;
+@left-sidebar-width: 								230px;
+@left-sidebar-color: 								lighten(@body-color, 14%);
+@left-sidebar-logo-bg: 							darken(@dark-color, 1.5%);
+@left-sidebar-icon-size: 						19px;
+@left-sidebar-main-level-font-size: 14px;
+@left-sidebar-main-level-padding:		20px;
+@left-sidebar-main-level-height:		38px;
+@left-sidebar-sub-level-color: 			@left-sidebar-color;
+@left-sidebar-sub-level-bg: 				darken(@left-sidebar-bg, 2.8%);
+@left-sidebar-sub-level-font-size: 	13px;
+@left-sidebar-sub-level-padding:		8px 15px 8px 49px;
+@left-sidebar-multilevel-sub-level-padding: 49px;
+@left-sidebar-collapsible-submenu-padding: 25px;
+@left-sidebar-collapsed-width:					60px;
+@left-sidebar-collapsed-submenu-width: 	232px;
+
+//Right Sidebar
+@right-sidebar-width: 							290px;
+@right-sidebar-width-phone: 				290px;
+@right-sidebar-icons-color: 				darken(@light-color, 33.2%);
+@right-sidebar-low-contrast-color: 	darken(@light-color, 30%);
+@right-sidebar-background: 					#FAFAFA;
+@right-sidebar-z-index: 						@zindex-navbar-fixed + 1;
+
+//Typography
+@roboto-font-path: 					'@{fonts-path}/roboto';
+@roboto: 										'Roboto', Arial, sans-serif;
+@icons-font-path:						'@{fonts-path}/material-design-icons/fonts';
+@icons-font:								'Material Icons';
+
+@font-size-base:        		13px;
+@font-size-large:         	ceil((@font-size-base * 1.15)); // ~15px
+@font-size-small:         	ceil((@font-size-base * 0.85)); // ~12px
+@font-size-extra-small:   	ceil((@font-size-base * 0.8)); // ~12px
+
+@font-weight-thin: 					100;
+@font-weight-light: 				300;
+@font-weight-regular: 			400;
+@font-weight-medium: 				500;
+@font-weight-bold: 					700;
+@font-weight-black: 				900;
+
+@font-size-h1:            	floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            	floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:           	 	ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            	ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:           	 	@font-size-base;
+@font-size-h6:            	ceil((@font-size-base * 0.85)); // ~12px
+
+@paragraph-font-size: 			inherit;
+@paragraph-line-height: 		21px;
+@paragraph-margin:					15px;
+
+@list-lineheight:						20px;
+
+@display-heading-size: 							40px;
+@display-heading-margin: 						20px 0 15px;
+@display-description-size:  				18px;
+@display-description-line-height:  	29px;
+@display-description-margin:  			0 0 50px;
+
+//== Sidebars
+@sidebars-hardware-accelerated-animation: true;
+@sidebars-push-effect: 			all .35s ease;
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+@padding-base-vertical:     10px;
+@padding-base-horizontal:   12px;
+
+@padding-large-vertical:    12px;
+@padding-large-horizontal:  16px;
+
+@padding-small-vertical:    5px;
+@padding-small-horizontal:  9px;
+
+@padding-xs-vertical:       1px;
+@padding-xs-horizontal:     5px;
+
+@line-height-large:         1.7; // extra decimals for Win 8.1 Chrome
+@line-height-small:         1.6;
+
+@border-radius-base:        2px;
+@border-radius-large:       4px;
+@border-radius-small:       2px;
+
+
+//Forms
+@input-check-component-size: 		 			22px;
+@input-check-component-border: 	 			1px solid #ccc;
+@input-check-component-border-radius: 3px;
+
+@radio-icon-component-size: 					52px;
+@radio-icon-component-color: 					lighten(@input-color, 25%);
+@radio-icon-component-icon-size: 			36px;
+@radio-icon-component-border: 				#d5d8de;
+
+@input-bg:                       #fff;
+@input-bg-disabled:              @gray-lighter;
+@input-color:                    @body-color;
+@input-border:                   #d5d8de;
+@input-top-border:               #bdc0c7;
+@input-border-radius:            @border-radius-base;
+@input-border-radius-large:      @border-radius-large;
+@input-border-radius-small:      @border-radius-small;
+@input-border-focus:             @primary-color;
+@input-color-placeholder:        #999;
+
+//** Default `.form-control` height
+@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 10);
+@input-height-large:             57px;
+@input-height-small:             37px;
+@input-height-extra-small:       30px;
+
+@form-group-margin-bottom:       20px;
+@legend-color:                   @gray-dark;
+@legend-border-color:            #e5e5e5;
+
+//** Background color for textual input addons
+@input-group-addon-bg:           darken(@light-color, 3.8%);
+//** Border color for textual input addons
+@input-group-addon-border-color: @input-border;
+
+//** Disabled cursor for form controls and buttons.
+@cursor-disabled:                not-allowed;
+
+@input-label-color: 						 lighten(@input-color, 15%);
+
+//Form validation states
+@form-validation-icon-size: 		 19px;
+
+//Dropdowns
+@dropdown-text-color: 					 lighten(@dark-color, 7.2%);
+@dropdown-bg:                    #fff;
+@dropdown-border:                darken(@light-color, 11%);
+@dropdown-fallback-border:       @dropdown-border;
+@dropdown-divider-bg:            #e5e5e5;
+@dropdown-box-shadow:            0px 0px 6px 0px rgba(0, 0, 0, 0.12);
+
+//Panels & Widget Panels
+@panel-border-radius:          			3px;
+@panel-body-padding:          			15px 20px 20px;
+@panel-body-horizontal-padding: 		20px;
+@panel-body-top-padding: 						8px;
+@panel-body-bottom-padding: 				20px;
+@panel-heading-horizontal-padding:  20px;
+@panel-heading-top-padding:   		 	20px;
+@panel-heading-bottom-padding:    	10px;
+@panel-heading-padding:       			@panel-heading-top-padding @panel-heading-horizontal-padding @panel-heading-bottom-padding;
+@panel-heading-subtitle-margin:   	6px;
+@panel-heading-font-size: 					18px;
+@panel-heading-font-weight: 				@font-weight-light;
+@panel-heading-icon-color: 					darken(@light-color, 27%);
+@panel-heading-icon-hover: 					darken(@light-color, 35%);
+@panel-heading-icon-size: 					20px;
+@panel-heading-icon-separation: 		2px;
+@panel-heading-icon-line-height: 		25px;
+@panel-margin-bottom: 							25px;
+@panel-box-shadow: 									0px 0px 4px 0px rgba(0,0,0,0.04);
+
+@widget-heading-font-size: 					18px;
+@widget-heading-font-weight: 				300;
+@widget-horizontal-padding: 				20px;
+@widget-horizontal-padding-small: 	15px;
+@widget-margin-bottom: 							@panel-margin-bottom;
+
+//Buttons
+@btn-padding-vertical: 						0;
+@btn-padding-horizontal: 					10px;
+@btn-font-size-base: 				 			13px;
+@btn-line-height-base: 			 			28px;
+@btn-border-radius-base: 			 		2px;
+@btn-box-shadow-base: 						0 1px 0 rgba(0, 0, 0, .05);
+
+//Sizes
+@btn-xs-font-size: 							 	@btn-font-size-base - 2px;
+@btn-xs-padding-horizontal: 			6px;
+@btn-xs-line-height: 				 			18px;
+@btn-xs-border-radius: 				 		1px;
+
+@btn-sm-font-size: 							 	@btn-font-size-base;
+@btn-sm-padding-horizontal: 			8px;
+@btn-sm-line-height: 				 			22px;
+@btn-sm-border-radius: 				 		2px;
+
+@btn-lg-font-size: 							 	@btn-font-size-base + 2px;
+@btn-lg-padding-horizontal: 			12px;
+@btn-lg-line-height: 				 			38px;
+@btn-lg-border-radius: 				 		3px;
+
+@btn-xl-font-size: 							 	@btn-font-size-base + 2px;
+@btn-xl-padding-horizontal: 			12px;
+@btn-xl-line-height: 				 			43px;
+@btn-xl-border-radius: 				 		3px;
+
+@btn-font-weight:                	@font-weight-bold;
+@btn-icon-margin:								 	1px;	
+
+@btn-default-color:             	@text-color;
+@btn-default-bg:                	#fff;
+@btn-default-border:             	#dedede;
+
+@btn-primary-color:             	#fff;
+@btn-primary-bg:                 	#4285f4;
+@btn-primary-border:             	darken(@btn-primary-bg, 5%);
+
+@btn-success-color:              	#fff;
+@btn-success-bg:                	#34a853;
+@btn-success-border:             	darken(@btn-success-bg, 5%);
+
+@btn-info-color:                 	#fff;
+@btn-info-bg:                    	@info-color-text;
+@btn-info-border:                	darken(@btn-info-bg, 5%);
+
+@btn-warning-color:              	#fff;
+@btn-warning-bg:                 	#fbbc05;
+@btn-warning-border:             	darken(@btn-warning-bg, 5%);
+
+@btn-danger-color:               	#fff;
+@btn-danger-bg:                  	#ea4335;
+@btn-danger-border:              	darken(@btn-danger-bg, 5%);
+
+@btn-link-disabled-color:        	@gray-light;
+
+//== Alerts
+@alert-icon-width: 			60px;
+
+//
+//## Define alert colors, border radius, and padding.
+@alert-success-bg:            @success-color;
+@alert-success-border:        @success-color;
+
+@alert-warning-bg:            @warning-color;
+@alert-warning-border:        @warning-color;
+
+@alert-danger-bg:             @danger-color;
+@alert-danger-border:         @danger-color;
+
+
+//== Tables
+
+//** Padding for `<th>`s and `<td>`s.
+@table-cell-padding:            12px 10px;
+//** Padding for cells in `.table-condensed`.
+@table-condensed-cell-padding:  7px;
+//** Background color used for `.table-striped`.
+@table-bg-accent:               #f5f5f5;
+//** background color used for '.table-hover'
+@table-bg-hover:                #f0f0f0;
+
+//Breadcrumbs
+@breadcrumb-color: 								darken(@light-color, 46%);
+@breadcrumb-active-color: 				darken(@breadcrumb-color, 30%);
+@breadcrumb-bg:  									darken(@light-color, 4%);
+@breadcrumb-padding-vertical:  		7px;		
+@breadcrumb-padding-horizontal:   20px;
+
+//== Labels
+//
+//##
+
+//** Default label background color
+@label-default-bg:            @light-color;
+//** Primary label background color
+@label-primary-bg:            @primary-color-text;
+//** Success label background color
+@label-success-bg:            @success-color-text;
+//** Warning label background color
+@label-warning-bg:            @warning-color-text;
+//** Danger label background color
+@label-danger-bg:             @danger-color-text;
+
+//** Default label text color
+@label-color:                	@light-color;
+//** Default text color of a linked label
+@label-link-hover-color:      darken(@primary-color, 10%);
+
+//== Badges
+@badge-color:                 @text-color;
+
+//** Linked badge text color on hover
+@badge-link-hover-color:      #fff;
+@badge-bg:                    @light-color;
+@badge-font-weight:           400;
+
+//== Pagination
+//
+//##
+
+@pagination-color:          	@body-color;
+
+//== Code
+//
+//##
+
+@code-color:                  #4285F4;
+@code-bg:                     #fafafa;
+
+@kbd-color:                   #fff;
+@kbd-bg:                      #333;
+
+@pre-bg:                      #fafafa;
+@pre-color:                   darken(@gray-light, 6.8%);
+@pre-border-color:            #ccc;
+@pre-scrollable-max-height:   340px;
+
+//Progress bars
+@progress-bar-height: 				22px;	
+
+//Status color
+@status-online: 							#00b777;
+@status-offline: 							#e65a5a;
+@status-away: 								#f2c329;
+
+//Dividers
+@divider-border: 							1px solid darken(@light-color, 5%);
+@divider-margin: 							10px;
+@divider-lg-margin: 					15px;
+@divider-xl-margin: 					20px;
+
+//Loader
+@loader-background: 					rgba(255, 255, 255, 0.7);
+
+//Pricing Tables
+@pricing-tables-margin: 						30px 0 20px;
+@pricing-table-border-radius: 			@panel-border-radius;
+@pricing-table-horizontal-space: 		10px;
+@pricing-table-padding: 						35px 20px;
+@pricing-table-margin: 							0 0 20px;
+@pricing-table-value-size: 					35px;
+@pricing-table-price-line-height: 	40px;
+@pricing-table-frecuency-size: 			20px;
+@pricing-table-fatures-line-height: 33px;
+@pricing-table-button-height: 			36px;
+@pricing-table-button-min-width: 		120px;
+
+// Table Filters
+@table-filter-title-font-size:					13px;
+@table-filters-padding: 								25px;
+@table-container-filter-padding:       	5px 0 15px;
+
+//==Pages
+
+//Splash screen (login, sign up, forgot passwrd)
+@splash-screen-bg: 						#eee;
+
+//Login page
+@login-width: 								401px;
+@login-margin-top: 						50px;
+
+//Sign up page
+@sign-up-width: 							433px;
+@sign-up-margin-top: 					10px;
+
+//Email pages
+@email-page-favorite-color: 	#FFC600;
+
+//Booking page
+@booking-container-padding:								26px;
+@booking-container-padding-responsive:		15px 0;
+@booking-promo-border-radius: 						3px;
+@booking-promo-bg:	 											@light-color;
+@booking-promo-padding:	 									23px 30px 26px;
+
+
+//Charts
+@chart-legend-color-size: 		10px;
+@chart-legend-padding: 				6px;
+@chart-pie-counter-size: 			50px;
+
+//Timeline
+@timeline-max-width: 					840px;
+@timeline-left-padding: 			210px;
+@timeline-vbar-position: 			@timeline-left-padding - 40px;// From timeline-item element to left
+@timeline-margin-helper:			10px; //Helper to thumbnails whitout damage timeline content size
+@timeline-avatar-size: 				35px;
+@timeline-content-min-height: 85px;
+@timeline-header-line-height: 21px;
+@timeline-header-padding-top: (@timeline-avatar-size - @timeline-header-line-height) / 2;
+@timeline-content-vpadding: 	25px;
+@timeline-date-width: 				@timeline-vbar-position - 25px;
+@timeline-date-position: 			ceil(@timeline-content-vpadding + @timeline-header-padding-top) + 2px;
+@timeline-tail-size: 					10px;
+@timeline-tail-position:			ceil(@timeline-content-min-height - @timeline-tail-size) / 2;
+@timeline-bubble-size:				16px;
+@timeline-bubble-position:		ceil(@timeline-content-min-height - @timeline-bubble-size) / 2;
+@timeline-icon-size:					44px;
+@timeline-icon-border-width:	2px;
+@timeline-icon-position:			floor((@timeline-content-min-height - @timeline-icon-size) / 2);
+
+//Invoice
+@invoice-page-padding:									100px 100px 70px;
+@invoice-tablet-padding:								50px 50px 35px;
+@invoice-small-phone-padding:						35px 25px 15px;
+@invoice-logo-height:										@logo-height * 2;
+@invoice-logo-width:										@logo-width * 2;
+@invoice-logo-small-height:							@logo-height;
+@invoice-logo-small-width:							@logo-width;
+@invoice-header-margin:									100px;
+@invoice-id-font-size:									30px; 
+@invoice-id-lineheight:									@invoice-id-font-size;
+@invoice-data-margin:										110px;
+@invoice-person-font-size:								18px;
+@invoice-person-lineheight:							26px;
+@invoice-direction-height:							130px;
+@invoice-direction-bubble-size:					80px;
+@invoice-details-font-size:							16px;
+@invoice-payment-font-size:							18px;
+@invoice-payment-lineheight:						26px;
+@invoice-payment-margin:								75px;
+@invoice-message-font-size:							16px;
+@invoice-message-lineheight:						26px;
+@invoice-message-margin:								62px;
+@invoice-company-info-margin:						70px;
+@invoice-footer-button-font-size:				14px;
+
+
+
+//Widgets
+
+//User profile display widget
+@user-profile-widget-avatar-size: 	110px;
+
+//User progress widget
+@user-progress-height: 							10px;
+
+//==Plugins
+
+//Nifty Modals
+@modal-prefix: 								modal;
+@modal-zindex: 								@zindex-modal;
+
+//Gritter Notifications
+@notification-width: 					360px;
+@notification-top-position: 	82px;
+
+//Select2
+@select2-border-width: 				1px;
+
+//Parsley
+@parsley-error-bg: 						@danger-color-text;
+
+//Vector Maps
+@vector-map-zoom-button-size: 30px;
+@vector-map-zoom-font-size: 	22px;
+@vector-map-zoom-line-height: 24px;
+
+//Social colors
+@facebook: 			#5d82d1;
+@twitter: 			#50bff5;
+@google-plus: 	#eb5e4c;
+@dribbble: 			#f7659c;
+@youtube: 			#ef4e41;
+@flickr: 				#0063dc;
+@linkedin: 			#238cc8;
+@pinterest: 		#e13138;
+@github: 				#333;
+@tumblr: 				#426d9b;
+@evernote: 			#2DBE60;
+@dropbox: 			#007EE5;
+
+//Responsive Variables
+@desktop: 				~"(min-width: @{screen-lg})";
+@laptop: 					~"(min-width: @{screen-md}) and (max-width: @{screen-md-max})";
+@tablet: 					~"(min-width: @{screen-sm}) and (max-width: @{screen-sm-max})";
+@phone: 					~"(max-width: @{screen-xs-max})";
+@small-phone: 		~"(max-width: @{screen-xs})";
+@print:						~"print";
+
+//Non responsive devices
+@non-responsive: 	~"(min-width: @{screen-sm})";
+
+//Retina Display
+@retina: 					~"(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+@high-dpi: 				~"only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 13/10), only screen and (min-resolution: 120dpi)";
+
+//Google Chrome Query
+@webkit: 					~"screen and (-webkit-min-device-pixel-ratio:0)";
+
+//IE8 Media Query
+@ie8: 						~"\0screen";
+
+//IE9 & IE10 Media Query
+@ie910: 					~"screen and (min-width:0\0)";
+
+//IE 10+ Media Query
+@ie10: 						~"all and (-ms-high-contrast: none), (-ms-high-contrast: active)";

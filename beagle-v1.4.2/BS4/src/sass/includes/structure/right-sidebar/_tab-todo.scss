@@ -1,0 +1,109 @@
+//Tab Todo
+.tab-todo{
+  
+  .todo-container{
+    height: 100%;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .todo-wrapper{
+    display: table-row;
+    height: 100%;
+  }
+
+  .be-scroller{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .todo-content{
+    padding: 10px 20px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .category-title{
+    display: block;
+    font-size: 1.154rem;
+    font-weight: $font-weight-normal;
+    color: lighten($body-color, 25%);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid darken($right-sidebar-background, 6%);
+    margin-bottom: 15px;
+  }
+}
+
+//Todo list
+.todo-list{
+  list-style: none;
+  padding: 4px 0 1px;
+  margin-bottom: 15px;
+
+  > li{
+    margin: 0;
+    padding: 0;
+
+    .custom-checkbox {
+      display: block;
+      margin-right: 4px;
+
+      &.custom-control {
+        margin-bottom: .7rem;
+      }
+
+      input[type="checkbox"]{
+       
+        & ~ .custom-control-label {
+          display: block;
+          cursor: pointer;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          line-height: 1.8;
+
+          &::before {
+            margin-top: 5px;
+            margin-right: 8px;
+          }
+        }
+
+        &:checked ~ .custom-control-label {
+          text-decoration: line-through;
+          color: lighten($body-color, 35%);
+
+          &::after {
+            margin-top: 5px;  
+          }
+        }
+      }
+
+      .delete{
+        display: none;
+        float: right;
+        font-size: 1.308rem;
+        color: lighten($body-color, 45%);
+        line-height: 22px;
+        margin-left: 5px;
+        cursor: pointer;
+
+        &:hover{
+          color: lighten($body-color, 25%);
+        }
+      }
+
+      &:hover{
+
+        .delete{
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

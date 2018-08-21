@@ -1,0 +1,28 @@
+.table-filters-container {
+	margin: 0;
+	border-bottom: 1px solid darken($light-color, 10%);
+}
+
+.table-filters {
+	padding: $table-filters-padding;
+	display: flex;
+	flex-direction: column;
+}
+
+.table-filter-title {
+  flex: 0 0 auto;
+  margin-bottom: 20px;
+	font-size: $table-filter-title-font-size;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  color: lighten($black-color, 47%);
+}
+
+#slider-value {
+	font-size: 19px;
+	font-weight: $font-weight-regular;
+}
+
+.filter-container {
+	padding: $table-container-filter-padding;
+}

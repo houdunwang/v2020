@@ -1,0 +1,14 @@
+/*------------------------------------------------------------------
+  [Code]
+*/
+pre{
+	padding: 20px;
+	border: 0;
+	border-radius: 0;background-color: darken(theme-color("light"), 2%);
+	font-size: .9231rem;
+	margin: 0 0 9px;
+
+	code {
+		white-space: pre-wrap;
+	}
+}

@@ -1,0 +1,80 @@
+<style lang="less">
+  .swiper {
+    swiper {
+      height: 200px;
+      image {
+        height: 200px;
+        width: 100%;
+      }
+    }
+  }
+</style>
+<template>
+  <view class="swiper">
+    <swiper indicator-dots="true" autoplay="true" interval="3000">
+      <repeat for="{{imgUrls}}" key="index" index="index" item="item">
+        <swiper-item>
+          <navigator url="/pages/article?id={{item.id}}" hover-class="navigator-hover">
+            <image src="{{item.pic}}" class="slide-image"/>
+          </navigator>
+        </swiper-item>
+      </repeat>
+    </swiper>
+  </view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">图文组合列表</view>
+    <view class="weui-panel__bd">
+      <repeat for="{{articles}}" key="index" index="index" item="item">
+        <navigator url="/pages/article?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.thumb}}"/>
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{item.title}}</view>
+            <view class="weui-media-box__desc">
+              {{item.category.data.title}}
+            </view>
+          </view>
+        </navigator>
+      </repeat>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // import util from '@/services/util'
+  import slide from '@/services/slide'
+  import article from '@/services/article'
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '后盾人'
+    }
+    data = {
+      imgUrls: [],
+      articles: []
+    }
+
+    async getSlideList() {
+      let response = await slide.get(3)
+      if (response.statusCode === 200) {
+        this.imgUrls = response.data.slides
+        this.$apply()
+      }
+    }
+
+    async getArticleLists() {
+      let response = await article.paginate(1, {limit: 10})
+      if (response.statusCode === 200) {
+        this.articles = response.data.data
+        this.$apply()
+      }
+    }
+
+    onLoad = () => {
+      this.getSlideList()
+      this.getArticleLists()
+    }
+  }
+</script>

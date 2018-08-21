@@ -1,0 +1,33 @@
+.mobile {
+  border: solid 1px #ddd;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+}
+.mobile .menu-container {
+  display: flex;
+  flex: 1;
+}
+.mobile .menu-container .menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.mobile .menu-container .menu h5 {
+  border: solid 1px #ddd;
+  text-align: center;
+  padding: 5px 10px;
+  margin: 0;
+  font-weight: bold;
+}
+.mobile .menu-container .menu dl {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 0;
+}
+.mobile .menu-container .menu dl dd {
+  border: solid 1px #ddd;
+  padding: 5px 10px;
+  text-align: center;
+}
+/*# sourceMappingURL=index.css.map */

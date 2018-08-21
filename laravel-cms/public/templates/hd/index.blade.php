@@ -1,0 +1,1 @@
+hd_>index.blade.php

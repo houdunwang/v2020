@@ -1,0 +1,769 @@
+/*------------------------------------------------------------------
+	[Left sidebar]
+*/
+.be-left-sidebar {
+	background-color: $left-sidebar-bg;
+	width: $left-sidebar-width;
+	left: 0;
+	position: absolute;
+	border-right: 1px solid darken($left-sidebar-bg, 7%);
+
+	@media #{$print} {
+		display: none;
+	}
+
+	// Collapsed left sidebar style
+	.be-collapsible-sidebar-collapsed & {
+		width: $left-sidebar-collapsed-width;
+
+		@include tablet {
+			width: 100%;
+		}
+	}
+	
+	.left-sidebar-wrapper {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		height: 100%;
+	}
+
+	.left-sidebar-spacer {
+		height: 100%;
+		display: table-row;
+
+		@include non-responsive {
+			display: table-row;
+		}
+	}
+
+	.left-sidebar-scroll {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.left-sidebar-content {
+		position: relative;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding-top: 8px;
+
+		.be-collapsible-sidebar-collapsed & {
+			padding-top: 20px;
+		}
+	}
+
+	.left-sidebar-toggle {
+		display: none;
+		background-color: theme-color("light");
+		padding: 16px 10px;
+		color: $body-color;
+		font-weight: $font-weight-light;
+		font-size: 1.077rem;
+
+		&:before {
+			content: '\f2f2';
+			float: right;
+			font-family: $icons-font;
+			font-size: 2.077rem;
+			line-height: 22px;
+			color: darken($left-sidebar-bg, 19%);
+		}
+
+		&.open {
+
+			&:before {
+				content: '\f2f8';
+			}
+		}
+
+		@include tablet {
+			display: block;
+		}
+	}
+
+	.sidebar-elements {
+		margin: 0;
+		padding: 0;
+
+		.divider {
+			padding: 20px $left-sidebar-main-level-padding 0;
+			color: lighten($left-sidebar-color, 30%);
+			line-height: 30px;
+			font-weight: 600;
+			text-transform: uppercase;
+			font-size: .8462rem;
+			
+			@include non-responsive {
+				.be-collapsible-sidebar-collapsed & {
+					padding: 40px 0 0;
+					height: 0;
+					overflow: hidden;
+	    		text-indent: -9999px;
+
+					&:first-child {
+						display: none;
+					}
+				}
+			}
+		}
+
+		//First Level
+		> li {
+			list-style: none;
+
+			> a {
+				display: block;
+				padding: 0 $left-sidebar-main-level-padding;
+				color: $left-sidebar-color;
+				font-size: $left-sidebar-main-level-font-size;
+				line-height: $left-sidebar-main-level-height;
+				text-overflow: ellipsis;
+		    overflow: hidden;
+		    white-space: nowrap;
+
+				// Fix for IE11 overflow ellipsis
+		    .be-collapsible-sidebar-collapsed & {
+					text-overflow: clip;
+		    }
+
+				.icon {
+					line-height: $left-sidebar-icon-size - 1px;
+					font-size: $left-sidebar-icon-size;
+					min-width: $left-sidebar-icon-size;
+					margin-right: 9px;
+					text-align: center;
+					vertical-align: middle;
+				}
+
+				span {
+
+					@include non-responsive {
+						.be-collapsible-sidebar-collapsed & { 
+							display: none; 
+						}
+					}
+				}
+
+				&:hover {
+					background-color: darken($left-sidebar-bg, 2%);
+
+					> span {
+						color: darken($left-sidebar-color, 15%);
+					}
+				}
+			}
+
+			//Second Level
+			> ul {
+				border-top: 1px solid darken($left-sidebar-bg, 6%);
+				border-bottom: 1px solid darken($left-sidebar-bg, 6%);
+	
+				// This is needed to avoid jQuery slideDown flickering effect on hidden elements
+				.be-collapsible-sidebar & {
+					.nav-items {
+						.content {
+							> ul {
+								display: block;
+							}
+						}
+					}
+				}
+				
+				// Remove sub menu vertical borders when sidebar is collapsed
+				@include non-responsive {
+					.be-collapsible-sidebar-collapsed & {
+						border-top-width: 0;
+						border-bottom-width: 0;
+					}			
+				}
+			}
+
+			ul {
+				display: none;
+				background-color: $left-sidebar-sub-level-bg;
+				padding: 10px 0;
+				list-style: none;
+				line-height: 20px;
+
+				.title {
+					display: none;
+				}
+
+				.be-collapsible-sidebar & {
+
+					.content {
+
+						> ul {
+							padding-left: 0;
+						}
+					}
+				}
+
+				@include non-responsive {
+					.be-collapsible-sidebar-collapsed &.visible {
+						display: table;
+						table-layout: fixed;
+				    position: fixed; 
+				    left: $left-sidebar-collapsed-width; 
+				    top: $top-header-height + 1px; 
+				    height: 100%; 
+				    z-index: 1031; 
+				    padding: 0 0 ($top-header-height + 1px);
+				    list-style: none; 
+				    width: $left-sidebar-collapsed-submenu-width;
+				    border-right: 1px solid darken($left-sidebar-bg, 6%);
+
+				    .title {
+				    	display:  block;
+				    	padding: 30px $left-sidebar-collapsible-submenu-padding;
+				    	font-size: 1.385rem;
+				    	color: darken(theme-color("light"), 55%)
+				    }
+
+				    .nav-items {
+				    	display: table-row;
+				    	height: 100%;
+				    	
+				    	.be-scroller {
+				    		display: table-cell;
+				    		position: relative;
+				    		height: 100%;
+								
+								// This is required to scroller work properly
+				    		> .content {
+				    			position: absolute;
+				    			top: 0;
+				    			bottom: 0;
+				    			width: 100%;
+				    			height: 100%;
+				    		}
+				    	}
+						
+							.content {
+
+					    	> ul {
+						    	border-color: transparent;
+						    	padding: 0; 
+									
+									// First level in sub menu
+						    	> li {
+						    		> a {
+						    			padding-left: $left-sidebar-collapsible-submenu-padding;
+						    		}
+
+										// Second level
+						    		> ul > li {
+						    			> a {
+												padding-left: $left-sidebar-collapsible-submenu-padding + 10px;
+						    			}
+
+											// Third level
+						    			> ul > li {
+						    				> a {
+						    					padding-left: $left-sidebar-collapsible-submenu-padding + 20px;
+						    				}
+												
+												// Fourth level
+						    				> ul > li {
+							    				> a {
+							    					padding-left: $left-sidebar-collapsible-submenu-padding + 30px;
+							    				}
+
+													// Fifth level
+							    				> ul > li {
+								    				> a {
+								    					padding-left: $left-sidebar-collapsible-submenu-padding + 40px;
+								    				}
+								    			}
+							    			}
+						    			}
+						    		}
+						    	}
+						    }
+							}
+			    	}
+					}
+				}
+
+				//Sub menu items
+    		li {
+
+					> a {
+						padding: $left-sidebar-sub-level-padding;
+						color: $left-sidebar-sub-level-color;
+						font-size: $left-sidebar-sub-level-font-size;
+						display: block;
+						text-overflow: ellipsis;
+				    overflow: hidden;
+				    white-space: nowrap;
+
+						.badge {
+							border-radius: 2px;
+							font-weight: $font-weight-medium;
+							line-height: 9px;
+							font-size: $font-size-sm;
+							padding: 4px 7px;
+							margin-left: 4px;
+							margin-top: 1px;
+						}
+
+						&:hover {
+							background-color: darken($left-sidebar-sub-level-bg, 2.5%);
+						}
+					}
+
+					&.active {
+
+						> a {
+							color: theme-color("primary");
+						}
+					}
+
+					// Remove spacing for the first sub-menu
+					ul {
+						padding-top: 0;
+						padding-bottom: 0;
+						padding-left: 0;
+					}
+
+					// Multilevel indentation
+
+					// Second level vertical spacing between sub menus
+					> ul {
+						padding: 5px 0;
+					}
+					
+					// Second level
+					> ul > li {
+
+						// Multilevel vertical spacing between sub menus
+						ul {
+							padding: 5px 0;
+						}
+
+						> a {
+							padding-left: $left-sidebar-multilevel-sub-level-padding + 10;
+						}
+
+						// Third level
+						> ul > li {
+
+							> a { 
+								padding-left: $left-sidebar-multilevel-sub-level-padding + 20;
+							}
+
+							// Fourth level
+							> ul > li {
+
+								> a { 
+									padding-left: $left-sidebar-multilevel-sub-level-padding + 30;
+								}
+
+								// Fifth level
+								// Since this level there is no enough space, feel free to expand more sub levels if you need to 
+								> ul > li {
+
+									> a { 
+										padding-left: $left-sidebar-multilevel-sub-level-padding + 40;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			//First level active
+			&.active {
+				
+				> a {
+					padding-left: $left-sidebar-main-level-padding;
+					font-weight: 500;
+					color: theme-color("primary");
+
+					> span {
+						color: theme-color("primary");
+					}
+				}
+			}
+
+			// First level open
+			&.open {
+				
+				> ul, 
+				> ul .nav-items .content > ul {
+					display: block;
+				}
+
+				> ul {
+					
+					@include non-responsive {
+						.be-collapsible-sidebar-collapsed & {
+							display: none;
+
+							&.visible {
+								display: table;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		li {
+
+			//Parent elements
+			&.parent {
+
+				> a:before {
+					content: '\f2f2';
+					float: right;
+					font-family: $icons-font;
+					font-size: 1.615rem;
+					color: darken($left-sidebar-bg, 19%);
+
+					@include non-responsive {
+						.be-collapsible-sidebar-collapsed & { 
+							display: none;
+						}
+					}
+				}
+
+				&.open {
+
+					> a:before {
+						content: '\f2f8';
+					}
+				}
+			}
+
+			&.open {
+				
+				> ul {
+					display: block;
+				}
+			}
+		}
+
+		// Show caret icons on collapsible sub menu items
+		@include non-responsive {
+			.sub-menu.visible {
+				
+				li.parent {
+
+					> a:before {
+						
+						.be-collapsible-sidebar-collapsed & {
+							display: block;	
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@include non-responsive {
+		.be-boxed-layout & {		
+			flex: 0 0 230px;
+			position: relative;
+
+			&:before {
+				position: absolute;
+			}
+		}		
+	}
+
+	&:before {
+		content: "";
+		position: fixed;
+		z-index: -1;
+		width: inherit;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		background-color: inherit;
+		border-right: 1px solid darken($left-sidebar-bg, 7%);
+
+		@include tablet { 
+			display: none;
+		}
+	}
+
+	@include tablet {
+		width: 100%;
+		background-color: lighten($left-sidebar-bg, 2%);
+		border-bottom: 1px solid darken($left-sidebar-bg, 7%);
+		border-right-width: 0;
+		position: relative;
+
+		.left-sidebar-wrapper, 
+		.left-sidebar-spacer, 
+		.left-sidebar-scroll,
+		.left-sidebar-content {
+			display: block;
+			position: relative;
+			overflow: visible;
+		}
+
+		.left-sidebar-spacer {
+			display: none;
+			border-top: 2px solid $left-sidebar-bg;
+
+			&.open {
+				display: block;
+			}
+		}
+
+		.left-sidebar-content {
+			padding-bottom: 20px;
+		}
+
+		.sidebar-elements {
+
+			> li {
+
+				> a {
+					text-align: left;
+					position: relative;
+
+					&:hover {
+						background-color: transparent;
+
+						> span {
+							color: inherit;
+						}
+					}
+				}
+
+				//Second level style
+				> ul {
+					position: relative;
+					height: auto;
+					width: 100%;
+					left: 0;
+
+					li {
+
+						> a {
+
+							&:hover {
+								background-color: transparent;
+							}
+
+							&:active {
+								background-color: darken($left-sidebar-sub-level-bg, 2.5%);
+							}
+						}
+					}
+
+					> li.title {
+						display: none;
+					}
+
+					> li.nav-items {
+						display: block;
+						height: auto;
+
+						> .be-scroller {
+							height: auto;
+							overflow: visible;
+
+							> .content {
+								padding-top: 0;
+								overflow: visible;
+								position: relative;
+							}
+						}
+					}
+				}
+
+				&:hover {
+					background-color: inherit;
+
+					> ul {
+						display: none;
+					}
+				}
+			}
+
+			li.open {
+
+				> ul {
+					display: block;
+				}
+			}
+		}
+	}
+
+	.be-fixed-sidebar & {
+		height: 100%;
+		margin-top: $top-header-height + 1px;
+		padding-bottom: $top-header-height + 1px;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		z-index: $zindex-fixed - 1;
+
+		.left-sidebar-content {
+			position: absolute;
+
+			@include tablet {
+				position: relative;
+			}
+		}
+	
+		@include tablet {
+			margin-top: 0;
+			position: static;
+			height: auto;
+			margin-top: 0;
+			padding-bottom: 0;
+		}
+
+		&:before {
+			top: $top-header-height;
+		}
+	}
+
+	//Off canvas sidebar
+	.be-offcanvas-menu & {
+		position: fixed;
+		height: 100%;
+		top: 0;
+		left: -($left-sidebar-width + 10px);
+		z-index: $zindex-fixed + 1;
+		background-color: theme-color("light");
+		box-shadow: 0 6px 18px 0 rgba(0,0,0,0.18);
+		border-right-width: 0;
+
+		@include tablet {
+			width: $left-sidebar-width;
+			left: 0;
+			transform: translate3d(-105%, 0, 0);
+		}
+
+		&:before {
+			left: -$left-sidebar-width;
+			border-right-width: 0;
+		}
+
+		.left-sidebar-toggle {
+
+			@include tablet {
+				display: none;
+			}
+		}
+
+		.be-toggle-left-sidebar {
+		  display: inline-block;
+		  text-align: center;
+		  line-height: 60px;
+		  float: left;
+
+		  .icon {
+		  	padding-left: 25px;
+		    font-size: 1.846rem;
+		    color: $icon-default-color;
+		    line-height: 25px;
+		    vertical-align: middle;
+			}
+		}
+
+		.menu-logo {
+		    height: 60px;
+		    width: 150px;
+		    background-image: url('#{$img-path}/logo.png');
+		    background-repeat: no-repeat;
+		    background-position: 20px center;
+		    display: block;
+		    float: left;
+		}
+	}
+
+	.be-fixed-sidebar.be-offcanvas-menu & {
+		margin-top: $top-header-height + 1;
+		padding-bottom: $top-header-height + 1;
+	}
+
+	.be-animate & {
+    transition: $sidebars-push-effect;
+  }
+
+  .left-sidebar-wrapper {
+
+		.be-offcanvas-menu & {
+
+			@include tablet {
+				display: table;
+			}
+		}
+	}
+
+	.left-sidebar-spacer {
+
+		.be-offcanvas-menu & {
+
+			@include tablet {
+				display: table-row;
+				border-top-width: 0;
+			}
+		}
+	}
+
+	.left-sidebar-content {
+
+		.be-fixed-sidebar.be-offcanvas-menu & {
+
+			@include tablet {
+				position: absolute;
+			}
+		}
+	}
+
+	.progress-widget {
+
+		.be-offcanvas-menu & {
+
+			@include tablet {
+				display: block;
+			}
+		}
+	}
+
+	.be-navbar-header {
+
+		.be-offcanvas-menu & {
+
+			@include tablet {
+				display: block;
+			}
+
+			.navbar-brand {
+				padding-left: 0;
+				background-position: 0 center;
+			}
+		}
+	}
+
+	.left-sidebar-top {
+		@include clearfix();
+		border-bottom: 1px solid darken(theme-color("light"), 7%);
+	}
+}
+
+//Push sidebar animation
+body.open-left-sidebar {
+
+  @include non-responsive {
+    @include left-sidebar-animation(false);
+  }
+
+  @include tablet {
+    @include left-sidebar-animation($sidebars-hardware-accelerated-animation);
+  }
+} 

@@ -1,0 +1,247 @@
+/*------------------------------------------------------------------
+  [Elements]
+*/
+/*------------------------------------------------------------------
+  [Widgets]
+*/
+.widget{
+	background-color: theme-color("light");
+	padding: 20px;
+	margin-bottom: $widget-margin-bottom;
+	border-radius: $card-border-radius;
+
+	&.widget-fullwidth{
+		padding: 0;
+		
+		.widget-head{
+			padding: 20px $widget-horizontal-padding 10px;
+			margin-bottom: 0;
+
+			@include phone {
+				padding-left: $widget-horizontal-padding-small;
+				padding-left: $widget-horizontal-padding-small;
+			}
+		}
+
+		.widget-chart-container{
+
+			.counter{
+				left: $widget-horizontal-padding;
+			}
+		}
+
+		.chart-table{
+
+			table{
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&.widget-small{
+		margin-bottom: 20px;
+
+		&.widget-fullwidth{
+
+			> .widget-head{
+				padding: 20px 15px 10px;
+			}
+		}
+	}
+
+	th {
+		border-top: 0;					
+	}
+}
+
+//Widget head
+.widget-head{
+	margin-bottom: 20px;
+	display: block;
+	border-radius: $card-border-radius $card-border-radius 0 0;
+	@include clearfix();
+
+	.title{
+		display: block;
+		font-size: $widget-heading-font-size;
+		font-weight: $widget-heading-font-weight;
+	}
+
+	.description{
+		display: block;
+		color: hsl(0, 0%, 62%);
+		line-height: 22px;
+		font-weight: $font-weight-light;
+	}
+
+	//Icon tools
+	.tools{
+		float: right;
+		margin-left: 10px;
+
+		.icon{
+			display: inline-block;
+			font-size: $card-heading-icon-size;
+			line-height: $card-heading-icon-line-height;
+			vertical-align: middle;
+			cursor: pointer;
+			color: $card-heading-icon-color;
+			min-width: $card-heading-icon-size;
+			text-align: center;
+
+			& + .icon{
+				margin-left: $card-heading-icon-separation;
+			}
+
+			&:hover{
+				color: $card-heading-icon-hover;
+			}
+		}
+
+		.value{
+			font-size: 1.846rem;
+			line-height: 22px;
+		}
+
+		.dropdown{
+			display: inline-block;
+		}
+
+		//Open dropdowns from right to left
+		.dropdown-menu{
+			right: 0;
+			left: auto;
+		}
+	}
+
+	//Button toolbar
+	.button-toolbar{
+		float: right;
+
+		.btn-group{
+
+			@include tablet {
+				margin-bottom: 5px;
+			}
+
+			& + * {
+				margin-left: 7px;
+			}
+		}
+
+		//Open dropdowns from right to left
+		.dropdown-menu{
+			right: 0;
+			left: auto;
+		}
+	}
+}
+
+//Widget chart container
+.widget-chart-container{
+	position: relative;
+
+	.counter{
+		min-height: auto;
+		top: 0;
+		left: 0;
+		position: absolute;
+		z-index: 2;
+
+		&-inline{
+			position: relative;
+			display: inline-block;
+		}
+
+		.value{
+			font-size: 1.846rem;
+		}
+
+		.desc{
+			text-transform: uppercase;
+			font-size: .8462rem;
+			color: lighten($body-color, 36.5%);
+		}
+	}
+
+	.counter-big{
+	
+		.value{
+			display: block;
+			font-size: 2.077rem;
+			line-height: $font-size-lg + 0.927rem;
+			font-weight: $font-weight-light;
+			margin-bottom: 5px;
+		}
+	}
+
+	.indicator{
+
+		&-equal{
+
+			.icon{
+				color: theme-color("primary");
+			}
+		}
+
+		&-positive{
+
+			.icon{
+				color: theme-color("success");
+			}
+		}
+
+		&-negative{
+
+			.icon{
+				color: theme-color("danger");
+			}
+		}
+
+		.icon{
+			font-size: 1.923rem;
+	    margin-right: 7px;
+	    line-height: 24px;
+	    vertical-align: middle;
+		}
+
+		.number{
+			font-size: 1.538rem;
+			vertical-align: middle;
+		}
+	}
+}
+
+//Chart information section
+.widget-chart-info{
+	@include clearfix();
+	
+	@include tablet {
+
+		& + .widget-counter-group{
+			margin-top: 15px;
+		}
+	}
+
+	.widget-fullwidth &{
+		padding: 9px $widget-horizontal-padding 0;
+	}
+}
+
+//Widget counter group
+.widget-counter-group{
+	padding: 0 $widget-horizontal-padding 10px;
+
+	&-right{
+		text-align: right;
+	}
+
+	.counter{
+		position: static;
+		display: inline-block;
+
+		& + .counter{
+			margin-left: 20px;
+		}
+	}
+}

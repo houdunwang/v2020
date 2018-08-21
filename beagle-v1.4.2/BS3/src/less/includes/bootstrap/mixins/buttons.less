@@ -1,0 +1,235 @@
+/*------------------------------------------------------------------
+  [Bootstrap elements]
+*/
+.button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @background;
+
+  &:focus,
+  &.focus {
+    color: @color;
+    background-color: @background;
+    border-color: @background;
+    outline: none;
+  }
+
+  &:hover, &.hover{
+    box-shadow: inset 0 -1px 0 darken(@background, 10%);
+    background-color: lighten(@background, 2%);
+    border-color: lighten(@background, 2%);
+    border-bottom-color: darken(@background, 10%);
+  }
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    color: @color;
+    box-shadow: inset 0 2px 0 darken(@background, 10%);
+    background-color: darken(@background, 6%);
+    border-color: darken(@background, 6%);
+    border-top-color: darken(@background, 17%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: @color;
+      background-color: darken(@background, 6%);
+      border-color: transparent;
+      border-top-color: darken(@background, 17%);
+      box-shadow: inset 0 2px 0 darken(@background, 10%);
+
+      .icon{
+        color: @color;
+      }
+    }
+  }
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: @background;
+          border-color: @background;
+    }
+  }
+
+  .badge {
+    color: @background;
+    background-color: @color;
+  }
+}
+
+.button-shade(@background) {
+  background-color: @background;
+  border-color: @background;
+
+  &:focus,
+  &.focus {
+    background-color: @background;
+        border-color: @background;
+  }
+
+  &:hover {
+    background-color: lighten(@background, 5%);
+        border-color: lighten(@background, 5%);
+  }
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    background-color: darken(@background, 3%);
+        border-color: darken(@background, 3%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: darken(@background, 3%);
+          border-color: darken(@background, 3%);
+    }
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: @background;
+          border-color: @background;
+    }
+  }
+
+  .badge {
+    color: @background;
+  }
+}
+
+.button-icon-active-color(@color) {
+
+  &:active,
+  &.active,
+  .open > .dropdown-toggle& {
+    
+    .icon{
+      color: @color;
+    }
+
+    &:hover,
+    &:focus,
+    &.focus {
+      
+      .icon{
+        color: @color;
+      }
+    }
+  }
+}
+
+//Colored buttons in buttons groups
+.colored-btn-group(@bg) {
+  border-left-color: darken(@bg, 7%);
+  border-right-color: darken(@bg, 7%);
+
+  &:hover,
+  &:active,
+  &.active {
+    box-shadow: none;
+    border-left-color: darken(@bg, 13%);
+    border-right-color: darken(@bg, 13%);
+    border-bottom-color: transparent;
+  }
+
+  &.active,
+  &:active {
+    box-shadow: inset 0 2px 0 darken(@bg, 10%);
+  }
+
+  &:hover + .btn,
+  &:active + .btn, 
+  &.active + .btn {
+    border-left-color: darken(@bg, 13%);
+  }
+
+  &:first-child {
+    border-left-color: transparent;
+  }
+
+  &:last-child {
+    border-right-color: transparent;
+  }
+}
+
+//Colored buttons in buttons groups
+.colored-vertical-btn-group(@bg) {
+  border-top-color: darken(@bg, 7%);
+  border-bottom-color: darken(@bg, 7%);
+
+  &:hover,
+  &:active,
+  &.active {
+    box-shadow: none;
+    border-top-color: darken(@bg, 13%);
+    border-bottom-color: darken(@bg, 13%);
+  }
+
+  &:first-child {
+    border-top-color: transparent;
+  }
+
+  &:last-child {
+    border-bottom-color: transparent;
+  }
+
+  &:active,
+  &.active{
+    box-shadow: inset 0 1px 0 darken(@bg, 13%);
+    border-top-color: darken(@bg, 13%);
+    border-bottom-color: darken(@bg, 13%);
+  }
+}
+
+//Outline transparent button
+.btn-transparent-outline(@color) {
+  background-color: transparent;
+  color: @light-color;
+  border-color: rgba(255,255,255,.5);
+  border-width: 2px;
+  
+  &:hover {
+    border-color: @light-color;
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    & + .btn {
+      border-left-color: transparent; 
+    }
+  }
+
+  &:active,
+  &.active {
+    background-color: @light-color;
+    color: @color;
+    border-color: transparent;
+    border-width: 2px;
+    box-shadow: @btn-box-shadow-base;
+  }
+
+  &:focus {
+    box-shadow: @btn-box-shadow-base;
+  }
+}

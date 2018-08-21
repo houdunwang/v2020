@@ -1,0 +1,10 @@
+@mixin big-promo($color) {
+
+	.be-booking-desc-title {
+		color: $color;
+	}
+
+	&:before {
+		border-right-color: $color;
+	}
+}

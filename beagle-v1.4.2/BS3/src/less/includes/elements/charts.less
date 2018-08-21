@@ -1,0 +1,73 @@
+/*------------------------------------------------------------------
+  [Charts]
+*/
+
+//Chart legend for widgets (table)
+.chart-legend{
+
+	table{
+		width: 100%;
+
+		tr{
+			
+			td{
+				padding: @chart-legend-padding 0;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+//Chart legend color cell
+.chart-legend-color{
+	
+	> span{
+		display: block;
+		background-color: hsl(0, 0%, 95%);
+		height: @chart-legend-color-size;
+		width: @chart-legend-color-size;
+	}
+}
+
+//Chart legend value cell
+.chart-legend-value{
+	text-align: right;
+}
+
+//Chart legend horizontal (list)
+.chart-legend-horizontal{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: 14px;
+
+	> li{
+		display: inline-block;
+
+		& + li{
+			margin-left: 14px;
+		}
+
+		> span{
+			display: inline-block;
+			height: 10px;
+			width: 10px;
+			border-radius: 50%;
+			background-color: hsl(0, 0%, 95%);
+			margin-right: 2px;
+		}
+	}
+}
+
+//Chart pie counter
+.chart-pie-counter{
+	diplay: block;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+	line-height: @chart-pie-counter-size;
+	margin-top: -(@chart-pie-counter-size / 2);
+	font-size: @chart-pie-counter-size;
+	font-weight: @font-weight-light;
+}

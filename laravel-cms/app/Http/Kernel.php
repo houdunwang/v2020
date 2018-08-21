@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\MailCheckMiddleware;
 use Houdunwang\Module\Middlewares\PermissionMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -53,6 +54,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'check.mail' => MailCheckMiddleware::class,
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
@@ -61,6 +63,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'permission' => PermissionMiddleware::class
+        'permission' => PermissionMiddleware::class,
     ];
 }

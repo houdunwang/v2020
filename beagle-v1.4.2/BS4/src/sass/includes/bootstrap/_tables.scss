@@ -1,0 +1,284 @@
+/*------------------------------------------------------------------
+  [Tables]
+*/
+.table{
+
+	> thead{
+		
+		> tr{
+
+			> th{
+				border-bottom-width: 2px;
+				font-weight: $font-weight-bold;
+			}
+		}
+
+		//Color classes
+		&.primary{
+
+			> tr{
+				> th{
+					color: theme-color("primary");
+				}
+			}
+		}
+
+		&.success{
+
+			> tr{
+				> th{
+					color: theme-color("success");
+				}
+			}
+		}
+	}
+
+	> tbody{
+
+		> tr{
+			> td{
+				font-weight: $font-weight-normal;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+.table-condensed{
+
+	> thead{
+
+		> tr{
+
+			> th{
+				padding-top: 10px;
+				padding-bottom: 8px;
+			}
+		}
+	}
+}
+
+.table-bordered{
+	
+	> thead{
+
+		> tr{
+
+			> th{
+				padding: 14px 10px;
+			}
+		}
+	}
+
+	tbody{
+
+		>tr{
+
+			td{
+
+				&:first-child{
+					padding-left: 10px;
+				}
+
+				&:last-child{
+					padding-right: 10px;
+				} 
+			}
+		}
+	}
+}
+
+// Generate the contextual variants
+@include table-row-variant(primary, theme-color("primary"));
+@include table-row-variant(success, theme-color("success"));
+@include table-row-variant(info, theme-color("info"));
+@include table-row-variant(warning, theme-color("warning"));
+@include table-row-variant(danger, theme-color("danger"));
+
+.table-responsive{
+	border: 0;
+	margin-bottom: 0;
+
+	tbody{
+
+		> tr{
+
+			> td{
+				padding-top: $table-cell-padding-sm + 4px;
+				padding-bottom: $table-cell-padding-sm + 4px;
+
+				@include tablet {					
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+}
+
+//Helpers classes
+.table{
+
+	tr{
+		
+		th, td{
+
+			.custom-control {
+				padding: 0;
+				margin: 0;
+				vertical-align: middle;
+
+					.custom-control-indicator {
+						top: 0;
+					}
+			}
+
+			//Actions column
+			&.actions{
+				text-align: center;
+
+				.icon{
+					color: darken(theme-color("light"), 37%);
+					font-size: $font-size-base + 0.3846rem;
+					line-height: 18px;
+
+					&:hover{
+						color: darken(theme-color("light"), 50%);
+					}
+				}
+			}
+		}
+	}
+
+	tbody{
+
+		tr{
+	
+			td{
+
+				&.user-avatar{
+
+					img{
+						height: 30px;
+						width: 30px;
+						border-radius: 50%;
+						margin-right: 10px;
+
+						@include tablet {
+							display: none;
+						}
+					}
+				}
+
+				&.cell-detail{
+
+					span{
+						display: block;
+					}
+
+					.cell-detail-description{
+						display: block;
+						font-size: $font-size-base - 0.1538rem;
+						color: darken(theme-color("light"), 40%);
+					}
+				}
+
+				&.user-info{
+
+					img{
+						float: left;
+					}
+
+					span{
+						padding-left: 40px;
+
+						@include tablet {
+							padding-left: 0;
+						}
+					}
+				}
+
+				&.milestone{
+					min-width: 100px;
+
+					span{
+						display: block;
+						font-size: $font-size-base - 0.1538rem;
+						color: darken(theme-color("light"), 40%);
+						margin-bottom: 6px;
+
+						&.completed{
+							float: right;
+						}
+					}
+
+					.progress{
+						height: 6px;
+						background-color: darken(theme-color("light"), 10%);
+						margin-bottom: 0;
+
+						.progress-bar{
+							border-radius: $border-radius;
+						}
+					}
+				}
+			}
+
+			&.online{
+
+				td:first-child{
+					border-left: 3px solid $primary-color-text;
+					padding-left: 17px;
+				}
+			}
+		}
+	}
+
+	.number{
+		text-align: right;
+	}
+
+	&.table-borderless{
+
+		tbody{
+
+			tr{
+
+				td{
+					border-top-width: 0;
+				}
+			}
+		}
+	}
+}	
+
+//Table inside full-width widget
+.card-table{
+	table{
+			margin-bottom: 0;
+		}
+	
+	tr{
+
+		th, td{
+
+			&:first-child{
+				padding-left: 20px;
+			}
+
+			&:last-child{
+				padding-right: 20px;
+			}
+		}
+	}
+
+	thead{
+
+		tr{
+
+			th{
+				padding-top: 15px;
+				padding-bottom: 10px;
+			}
+		}
+	}
+}

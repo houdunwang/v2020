@@ -1,0 +1,65 @@
+/*------------------------------------------------------------------
+  [Pagination]
+*/
+.pagination{
+  padding-left: 0;
+  border-radius: $border-radius;
+}
+
+.page-item {
+
+  &:first-child {
+    .page-link {
+      border-radius: 2px;
+    }
+  }
+
+  &:last-child {
+    .page-link {
+      border-radius: 2px;
+    }
+  }
+
+  .pagination-rounded & {
+
+    &:first-child {
+      .page-link {
+        border-radius: 50%;
+      }
+    }
+
+    &:last-child {
+      .page-link {
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.page-link {
+  font-size: 1.077rem;
+  line-height: 14px;
+  font-weight: $font-weight-normal;
+  padding: ($pagination-padding-y + 0.2692rem) ($pagination-padding-x + 0.1731rem);
+  color: $pagination-color;
+  background-color: $pagination-bg;
+  border: 1px solid $pagination-border;
+  border-radius: 2px;
+  margin-left: 4px;
+
+  > span{
+    line-height: 12px;
+  }
+}
+
+
+.pagination-rounded{
+
+	.page-link {
+    border-radius: 50%;	    
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 14px;
+	}
+}

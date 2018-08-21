@@ -1,0 +1,281 @@
+/*------------------------------------------------------------------
+  [Page aside]
+*/
+.be-aside{
+
+	.main-content{
+		margin-left: $page-aside-width;
+    width: auto;
+
+		@include tablet {
+			margin-left: inherit;
+		}
+	}
+
+  .be-content {
+    height: 100%;
+  }
+
+  .content {
+    height: 100%;
+  }
+}
+
+.page-aside{
+  background: none repeat scroll 0 0 theme-color("light");
+  width: $page-aside-width;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: $left-sidebar-width;
+  border-right: 1px solid darken(theme-color("light"), 10%);
+  margin-top: $top-header-height + 1px;
+	padding-bottom: $top-header-height + 1px;
+
+  .no-border & {
+    border-width: 0;
+  }
+
+  .be-scroller{
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  .content{
+  	padding: 20px $page-aside-padding;
+    position: relative;
+  }
+
+	@include tablet {
+    width: 100%;
+    display: block;
+    height: auto;
+    position: relative;
+    margin-top: 0;
+    padding-bottom: 0;
+    left: 0;
+    border-bottom: 2px solid darken(theme-color("light"), 5%);
+	}
+}
+
+.aside-header{
+  margin-bottom: 5px;
+
+  .title{
+    display: block;
+    margin: 16px 0 0;
+    font-size: $page-aside-title-size;
+    line-height: $page-aside-title-size;
+    font-weight: $font-weight-light;
+  }
+
+  .navbar-toggle{
+    background:rgba(0, 0, 0, 0);
+    display: none;
+    outline: none;
+    border: 0;
+
+    padding: 0 11px 0 0;
+    text-align: right;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    @include tablet {
+      display: block;
+    }
+
+    .icon{
+      font-size: 1.538rem;
+      color: lighten($body-color, 50%)
+    }
+  }
+
+  .description{
+    color: lighten($body-color, 10%);
+    margin: 0;
+  }
+}
+
+.aside-nav{
+  display: block;
+  visibility: visible;
+
+  .nav{
+
+    li{
+
+      a{
+        color: $body-color;
+        padding: 13px $page-aside-padding;
+      }
+
+      &.active{
+        
+        a{
+          color: theme-color("primary");
+
+          .icon{
+            color: theme-color("primary");
+          }
+        }
+      }
+
+      .badge{
+        float: right;
+        font-size: .9231rem;
+        font-weight: $font-weight-light;
+        padding: 1px 7px;
+      }
+
+      .icon{
+        font-size: 1.462rem;
+        vertical-align: middle;
+        text-align: center;
+        min-width: 19px;
+        margin-right: 3px;
+        color: lighten($body-color, 13%);
+      }
+    } 
+  }
+
+  .title{
+    display: block;
+    color: lighten($body-color, 35%);
+    font-size: .8462rem;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    margin: 20px 0 0;
+    padding: 8px $page-aside-padding 4px;
+  }
+
+  @include tablet {
+    border-bottom: 1px solid darken(theme-color("light"), 10%);
+
+    &.collapse{
+      display: none;
+    }
+
+    &.show{
+      display: block;
+    }
+  }
+}
+
+// Aside page components
+
+// Header
+
+//Email components
+
+//==Email inbox page
+//Inbox header
+.be-aside-header{
+  background-color: theme-color("light");
+  padding: 37px 25px;
+
+  @include laptop-only {
+    padding: 20px 25px;
+  }
+}
+
+//Inbox title
+.be-aside-header-title{
+  display: block;
+  margin: 3px 0 0;
+  font-size: 1.769rem;
+  font-weight: $font-weight-light;
+
+  @include laptop {
+    margin-bottom: 10px;
+  }
+
+  .icon{
+    font-size: 1.769rem;
+    color: lighten($body-color, 20%)
+  }
+
+  .new-messages{
+    font-size: $font-size-base;
+    color: lighten($body-color, 30%);
+    margin-left: 3px;
+  }
+}
+
+//Inbox filters
+.be-aside-header-filters{
+  padding: 0 20px 30px;
+  border-bottom: 1px solid darken(theme-color("light"), 10%);
+  background-color: theme-color("light");
+  display: table;
+  width: 100%;
+
+  .dropdown-toggle {
+  
+    &:after {
+      display: inline-block;
+    }
+  }
+
+  > div{
+    display: table-cell;
+    vertical-align: middle;
+
+    @include laptop {
+      vertical-align: top;
+    }
+  }
+
+  .btn-group + .btn-group{
+
+    @include laptop {
+      margin-left: 0;
+    }
+  }
+
+  .be-select-all.be-checkbox{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+
+    label:before{
+      margin-right: 18px;
+    }
+  }
+
+  .be-aside-header-filters-right{
+    text-align: right;
+  }
+
+  input{
+    margin-right: 8px;
+  }
+}
+
+//Pagination text
+.be-aside-pagination-indicator{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 13px;
+
+  @include laptop-only {
+    margin-right: 0;
+  }
+}
+
+//Pagination buttons nav
+.be-aside-pagination-nav{
+
+  .btn{
+    min-width: 30px;
+
+    i{
+      font-size: 1.615rem;
+      vertical-align: middle;
+    }
+  }
+}

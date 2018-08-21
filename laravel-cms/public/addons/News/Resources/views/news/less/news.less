@@ -1,0 +1,52 @@
+.news {
+  width: 300px;
+  div.first {
+    border: solid 1px #ddd;
+    position: relative;
+    &:hover{
+      div.edit{
+        display: block;
+      }
+    }
+    img {
+      width: 100%;
+    }
+    p {
+      background: #333;
+      color: #fff;
+      padding: 5px 10px;
+      margin-bottom: 0;
+    }
+  }
+  div.item {
+    overflow: hidden;
+    height: auto;
+    padding: 15px;
+    border: solid 1px #ddd;
+    position: relative;
+    &:hover{
+      div.edit{
+        display: block;
+      }
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      float: right;
+    }
+    p {
+      float: left;
+      padding: 5px 10px;
+    }
+  }
+  div.edit {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0px;
+    bottom: 0;
+    background: #333;
+    text-align: center;
+    padding: 5px 0;
+  }
+}

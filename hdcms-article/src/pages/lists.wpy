@@ -1,0 +1,60 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">图文组合列表</view>
+    <view class="weui-panel__bd">
+      <repeat for="{{articles}}" key="index" index="index" item="item">
+        <navigator url="/pages/article?id={{item.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">{{item.title}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </repeat>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import article from '@/services/article'
+
+  export default class My extends wepy.page {
+    config = {
+      // 1) 开启下拉刷新功能
+      enablePullDownRefresh: true
+    }
+    data = {
+      cid: null,
+      page: 1,
+      articles: []
+    }
+
+    async getArticlesLists() {
+      let response = await article.paginate(this.page, {limit: 10, cid: this.cid})
+      if (response.statusCode === 200) {
+        this.articles = response.data.data.concat(this.articles)
+        this.$apply()
+        if (this.page >= response.data.meta.pagination.total_pages) {
+          wepy.showLoading({title: '没有更多了...'})
+          setTimeout(function () {
+            wepy.hideLoading()
+          }, 2000)
+        }
+      }
+    }
+
+    onLoad(options) {
+      this.cid = options.id
+      this.getArticlesLists()
+    }
+
+    // 2) 下拉刷新获取数据
+    async onPullDownRefresh() {
+      this.page += 1
+      this.getArticlesLists()
+      // 停止当前页面下拉刷新
+      wepy.stopPullDownRefresh()
+    }
+  }
+</script>

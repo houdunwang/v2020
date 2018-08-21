@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <title>Beagle - Documentation</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400" rel="stylesheet" type="text/css">
+    <!--if lt IE 9
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    
+    -->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+  </head>
+  <body data-spy="scroll" data-target="#left-navbar" data-offset="40">
+    <div class="docs-wrapper">
+            <!--Sidebar item function-->
+            <!--Sidebar sub-item function-->
+            <!--Here goes the sidebar structure-->
+            <div id="left-navbar" data-spy="affix" data-offset-top="0" class="left-sidebar">
+              <!--Sidebar top content-->
+              <div class="left-sidebar__logo"><img src="assets/img/logo.png" alt="logo" height="27px" width="102px"></div>
+              <ul class="nav left-sidebar__elements">
+                      <li><a href="#general">General</a>
+                        <ul class="nav sub-menu">
+                                <li><a href="#general_introduction">Introduction</a>
+                                </li>
+                                <li><a href="#general_structure">HTML Strcuture</a>
+                                </li>
+                                <li><a href="#general_javascript">JavaScript</a>
+                                </li>
+                        </ul>
+                      </li>
+                      <li><a href="#getting_started">Getting Started</a>
+                        <ul class="nav sub-menu">
+                                <li><a href="#gs_basic_setup">Basic Setup</a>
+                                </li>
+                                <li><a href="#gs_grunt_setup">Using Grunt</a>
+                                </li>
+                                <li><a href="#gs_grunt_install_dependencies">Install dependencies</a>
+                                </li>
+                                <li><a href="#gs_grunt_setup_sass">Setup Sass</a>
+                                </li>
+                                <li><a href="#gs_sass_variables">Variables</a>
+                                </li>
+                                <li><a href="#gs_grunt_tasks">Grunt tasks</a>
+                                </li>
+                                <li><a href="#gs_grunt_add_new_dependencies">Add new dependencies</a>
+                                </li>
+                        </ul>
+                      </li>
+                      <li><a href="#plugins">Plugins</a>
+                      </li>
+                      <li><a href="#support">Support</a>
+                      </li>
+                      <li><a href="#changelog">Changelog</a>
+                      </li>
+              </ul>
+              <!--Sidebar bottom content-->
+            </div>
+      <div class="docs-content">
+        <div id="general">
+          <h1 id="general_introduction">Introduction</h1>
+          <p>Thank you for support our work, <b>Beagle</b> is an HTML/CSS/Js admin template based on the famous Bootstrap framework, made it with love in every pixel.</p>
+          <p>In this document you will find a complete guide which covers topics about the product functionality, components, structure, workflow and the initial setup. </p>
+          <h2>Folder Structure</h2>
+          <p>Once you downloaded this product, extract the zip file and you will find these directories:</p>
+          <div class="code-panel">
+            <div class="code-panel__heading"><span>beagle.zip</span></div>
+            <div class="code-panel__content">
+              <pre class="prettyprint lang-html">beagle
+├── dist
+├──── html
+├──── starter
+├── docs
+├── src
+├── grunt
+├── Gruntfile.js
+└── package.json
+</pre>
+            </div>
+          </div>
+          <h3>dist</h3>
+          <p>This folder contains the final production-ready compiled files</p>
+          <h4>html</h4>
+          <p>This folder contains the complete distribution version with all demo content included as seen in the live preview version.</p>
+          <h4>starter</h4>
+          <p>This folder contains the essentials components, this version does not include any of the live preview examples. This is especially designed to get started with only the needed elements. </p>
+          <h3>docs</h3>
+          <p>The current documentation is located inside this folder.</p>
+          <h3>src</h3>
+          <p>In this folder you'll find the template's source code, if you want to customize the template to fit your specific needs, this is the right place to start with.</p>
+          <h3>grunt</h3>
+          <p>Inside this directory you'll find the grunt tasks that are part of the built-in workflow.</p>
+          <h3>Grunfile.js</h3>
+          <p>This is the main workflow JavaScript file that runs with <a href="http://gruntjs.com/">Grunt.js</a>, if you haven't used Grunt before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide.</p>
+          <h3>package.json</h3>
+          <p>This is the <a href="https://docs.npmjs.com/getting-started/using-a-package.json">npm manifest</a> file in which we define what are going to be our workflow dependencies.</p>
+          <h1 id="general_structure">HTML Structure</h1>
+          <p>The template main structure is divided in four sections: <b>Top bar</b>, <b>Left sidebar</b>, <b>Right sidebar</b> and <b>Main content</b>.</p>
+          <div class="code-panel">
+            <div class="code-panel__heading"><span>Main Structure</span></div>
+            <div class="code-panel__content">
+              <pre class="prettyprint">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;be-wrapper&quot;&gt;
+      &lt;nav class=&quot;navbar navbar-expand fixed-top be-top-header&quot;&gt;
+        &lt;!-- Top bar --&gt;
+      &lt;/nav&gt;
+      &lt;div class=&quot;be-left-sidebar&quot;&gt;
+        &lt;!-- Left sidebar --&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;be-content&quot;&gt;
+        &lt;!-- Main Content --&gt;
+      &lt;/div&gt;
+      &lt;nav class=&quot;be-right-sidebar&quot;&gt;
+        &lt;!-- Right sidebar --&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+            </div>
+          </div>
+          <h3 id="required_dependencies">Required Dependencies</h3>
+          <p>This template require four libraries to work:</p>
+          <ul>
+            <li><a href="https://jquery.com/">jQuery 1.9.1</a> (or later)</li>
+            <li><a href="http://getbootstrap.com/">Bootstrap 4.0.0</a></li>
+            <li><a href="https://github.com/noraesae/perfect-scrollbar">Perfect Scrollbar 0.6.16</a></li>
+            <li><a href="http://zavoloklom.github.io/material-design-iconic-font/index.html">Material Design Iconic Font</a> (latest)</li>
+          </ul>
+          <p>In addition to these libs, the main structure needs a basic modular js core to provide the template interaction like sidebars functionality. This file is located in <code>"assets/js/app.js"</code></p>
+          <p>There are some dependencies embedded in the <code>app.js</code> file that adds extra functionality to the template:</p>
+          <ul>
+            <li><a href="https://github.com/ftlabs/fastclick">Fast Click 1.0.3</a></li>
+            <li><a href="https://github.com/bgrins/TinyColor">Tiny Color 1.2.1</a></li>
+            <li><a href="https://github.com/mattbryson/TouchSwipe-Jquery-Plugin">jQuery Touch Swipe 1.6.12</a></li>
+            <li><a href="https://github.com/foxythemes/bs4-breakpoint-check">jQuery Bootstrap 4 Breakpoint Check 1.0.5</a></li>
+          </ul>
+          <div role="information" class="alert alert-info"><b>Note:</b> You don't need to add these last dependencies because they are already included in the app.js file </div>
+          <h3>Include the dependencies</h3>
+          <p>Be sure to include the essentials scripts in your pages, for example inside your <code>head</code> tag should be like this:</p>
+          <div class="code-panel">
+            <div class="code-panel__heading"><span>Head Links</span></div>
+            <div class="code-panel__content">
+              <pre class="prettyprint">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/lib/material-design-icons/css/material-design-iconic-font.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css&quot;&gt;
+
+&lt;!--[if lt IE 9]&gt;
+	&lt;script src=&quot;https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;https://oss.maxcdn.com/respond/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/css/style.css&quot; type=&quot;text/css&quot;&gt;
+</pre>
+            </div>
+          </div>
+          <p>And just before the <code>body</code> tag ends, please add these JavaScript libs:</p>
+          <div class="code-panel">
+            <div class="code-panel__heading"><span>Footer Scripts</span></div>
+            <div class="code-panel__content">
+              <pre class="prettyprint">&lt;script src=&quot;assets/lib/jquery/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;				
+&lt;script src=&quot;assets/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/lib/bootstrap/dist/js/bootstrap.bundle.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/js/app.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  $(document).ready(function(){
+    //initialize the javascript
+    App.init();
+  });
+&lt;/script&gt;
+</pre>
+            </div>
+          </div>
+          <h2>Top bar</h2>
+          <p>We are extending the <a href="https://getbootstrap.com/docs/4.0/components/navbar/">Bootstrap Navbar</a> component using the fixed version by default, we also added some custom elements:</p>
+          <div class="code-panel">
+            <div class="code-panel__heading"><span>Top bar structure</span></div>
+            <div class="code-panel__content">
+              <pre class="prettyprint">&lt;nav class=&quot;navbar navbar-expand fixed-top be-top-header&quot;&gt;
+  &lt;div class=&quot;container-fluid&quot;&gt;
+
+    &lt;!-- Navbar Header --&gt;
+    &lt;div class=&quot;be-navbar-header&quot;&gt;
+
+      &lt;!-- Brand Logo --&gt;
+      &lt;a href=&quot;&#35;&quot; class=&quot;navbar-brand&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Main topbar elements --&gt;
+    &lt;div class=&quot;be-right-navbar&quot;&gt;
+      &lt;ul class=&quot;nav navbar-nav be-user-nav&quot;&gt;
+        &lt;!-- User Menu --&gt;
+      &lt;/ul&gt;
+
+      &lt;!-- Page title --&gt;
+      &lt;div class=&quot;page-title&quot;&gt;&lt;span&gt;Dashboard&lt;/span&gt;&lt;/div&gt;
+
+      &lt;ul class=&quot;nav navbar-nav be-icons-nav&quot;&gt;
+        &lt;!-- Icons Menu --&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Left navbar (Used only when there is no left sidebar) --&gt;
+    &lt;a href=&quot;&#35;&quot; data-toggle=&quot;collapse&quot; data-target=&quot;&#35;be-navbar-collapse&quot; class=&quot;be-toggle-top-header-menu collapsed&quot;&gt;No Sidebar Left&lt;/a&gt;
+    &lt;div id=&quot;be-navbar-collapse&quot; class=&quot;navbar-collapse collapse&quot;&gt;
+      &lt;!-- Default bootstrap navbar --&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+</pre>
+            </div>
+          </div>
+          <h3>Navbar Header</h3>
+          <p>In this element you'll find the app logo, located in the top left corner (<code>"navbar-brand"</code>), it will be shown on large devices and hidden on small resolutions:<br><img src="assets/img/docs/img1.png" alt="Page Title"></p>
+          <h3>Main topbar elements</h3>
+          <p>Is composed by a group of elements which one of them is going to be hidden(<code>"page-title"</code>) on small devices.<br></p>
+          <p>Desktop View<br><img src="assets/img/docs/img2.png" alt="Navbar Collapse"></p>
+          <p>Small View<br><img src="assets/img/docs/img3.png" alt="Navbar Collapse"></p>
+          <h1 id="general_javascript">JavaScript</h1>
+          <p>In every page, we are calling an object method which handles the basic template interaction. It's written with "The Module Pattern" which encapsulates certain code, allowing to be used when it's needed.</p>
+          <p>We use a global javascript object called "App", it provides a modular structure that we use to initialize the demo Js plugins on each demo page. You can find several modules in <code>"assets/js"</code> inside the <b>html</b> folder. </p>
+          <p>Said that you'll notice that there are different Js modules for some of the demo pages, all of them are optional, exept the <code>"app.js"</code> or <code>"app.min.js"</code> in case you want to use the minified version.</p>
+          <div role="information" class="alert alert-info"><b>Important!</b> <br> Please don't add any custom Js code inside this file because you'll lose it when you update the template.</div>
+          <h3 id="init_method">init() Method</h3>
+          <p>This method is responsible for some of the bootstrap plugins initializing, both sidebars functionality and other responsive tasks. That's why this is the core method of this template.</p>
+          <p>You can add it at the end of the page like this:</p>
+          <div class="code-panel">
+            <div class="code-panel__heading"><span>Footer Scripts</span></div>
+            <div class="code-panel__content">
+              <pre class="prettyprint">&lt;script type=&quot;text/javascript&quot;&gt;
+  $(document).ready(function(){
+    App.init();
+  });
+&lt;/script&gt;
+</pre>
+            </div>
+          </div>
+          <h3>Demo modules & methods</h3>
+          <p>In order to call the following methods you'll need to include the script reference of the JavaScript file, after that you can call it after the init method this way: <code>App.methodName();</code></p>
+          <p>Each of these modules contain the JS init for the demo plugins, feel free to copy and modify according to your needs.</p>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th width="20%">File Name</th>
+                <th width="20%">Method</th>
+                <th width="20%">Page</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>app-dashboard.js</td>
+                <td>dashboard</td>
+                <td>index.html</td>
+              </tr>
+              <tr>
+                <td>app-ui-notifications.js</td>
+                <td>uiNotifications</td>
+                <td>ui-notifications.html</td>
+              </tr>
+              <tr>
+                <td>app-ui-nestable-lists.js</td>
+                <td>uiNestableLists</td>
+                <td>ui-nestable-lists.html</td>
+              </tr>
+              <tr>
+                <td>app-charts.js</td>
+                <td>charts</td>
+                <td>charts.html</td>
+              </tr>
+              <tr>
+                <td>app-charts-morris.js</td>
+                <td>chartsMorris</td>
+                <td>charts-morris.html</td>
+              </tr>
+              <tr>
+                <td>app-charts-sparkline.js</td>
+                <td>chartsSparklines</td>
+                <td>charts-sparkline.html</td>
+              </tr>
+              <tr>
+                <td>app-form-elements.js</td>
+                <td>formElements</td>
+                <td>form-elements.html</td>
+              </tr>
+              <tr>
+                <td>app-form-wizard.js</td>
+                <td>wizard</td>
+                <td>form-wizard.html</td>
+              </tr>
+              <tr>
+                <td>app-form-masks.js</td>
+                <td>masks</td>
+                <td>form-masks.html</td>
+              </tr>
+              <tr>
+                <td>app-form-wysiwyg.js</td>
+                <td>textEditors</td>
+                <td>form-wysiwyg.html</td>
+              </tr>
+              <tr>
+                <td>app-icons.js</td>
+                <td>IconsFilter</td>
+                <td>ui-icons.html</td>
+              </tr>
+              <tr>
+                <td>app-mail-inbox.js</td>
+                <td>mailInbox</td>
+                <td>email-inbox.html</td>
+              </tr>
+              <tr>
+                <td>app-mail-compose.js</td>
+                <td>mailCompose</td>
+                <td>email-compose.html</td>
+              </tr>
+              <tr>
+                <td>app-tables-datatables.js</td>
+                <td>dataTables</td>
+                <td>tables-datatables.html</td>
+              </tr>
+              <tr>
+                <td>app-pages-profile.js</td>
+                <td>pageProfile</td>
+                <td>pages-profile.html</td>
+              </tr>
+              <tr>
+                <td>app-pages-calendar.js</td>
+                <td>pageCalendar</td>
+                <td>pages-calendar.html</td>
+              </tr>
+              <tr>
+                <td>app-pages-gallery.js</td>
+                <td>pageGallery</td>
+                <td>pages-gallery.html</td>
+              </tr>
+              <tr>
+                <td>app-maps-google.js</td>
+                <td>mapsGoogle</td>
+                <td>maps-google.html</td>
+              </tr>
+              <tr>
+                <td>app-maps-vector.js</td>
+                <td>mapsVector</td>
+                <td>maps-vector.html</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Create an App module</h3>
+          <p>You can extend the App modular structure easily by creating your own modules like this:</p>
+          <div class="code-panel">
+            <div class="code-panel__heading"><span>Footer Scripts</span></div>
+            <div class="code-panel__content">
+              <pre class="prettyprint">var App = (function () {
+
+  App.moduleName = function( ){
+    'use strict'
+
+    //Js Code
+    
+  };
+
+  return App;
+})(App || {});</pre>
+            </div>
+          </div>
+        </div>
+        <div id="getting_started">
+          <h1>Getting Started</h1>
+          <p>There are three different ways to use this template in your next project:</p>
+          <ul>
+            <li>Basic Setup</li>
+            <li>Using SASS files</li>
+            <li>Using Grunt.js</li>
+          </ul>
+          <h2 id="gs_basic_setup">Basic Setup</h2>
+          <p>This is the quickest way to setup the template, you just have to copy the <b>"starter"</b> folder content into your project root folder and start working on the <code>index.html</code> file.</p>
+          <div role="alert" class="alert alert-danger"><strong>Important!<br></strong> Using this method you'll need to add your custom styles in a different css file, to avoid losing changes when you update the template.</div>
+          <p>Be sure to include the <a href="#required_dependencies">essentials scripts</a> in your document to get things work properly. After that you're ready to start building.</p>
+          <h3>Cons</h3>
+          <p>This method is perfect if you think you are not going to make several changes to the original version and use it "as is", otherwise we suggest to use one of the following methods.</p>
+          <h2 id="gs_grunt_setup">Using Grunt</h2>
+          <p>Grunt is a task runner which allows to build a complete and automatic workflow.</p>
+          <blockquote>
+            <p>In one word: automation. The less work you have to do when performing repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes. After you've configured it through a Gruntfile, a task runner can do most of that mundane work for you—and your team—with basically zero effort.</p>
+            <footer>Taken from <a href="http://gruntjs.com/">gruntjs.com</a></footer>
+          </blockquote>
+          <p>If you haven't used Grunt before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a> as well as install and use Grunt plugins.</p>
+          <p>Supposing that you already are familiar with Grunt, we are going to explain step by step how to get started with the built-in workflow.</p>
+          <h3>Install Node & Grunt</h3>
+          <p>If you already have Node.js and Grunt.js installed you can skip this step.</p>
+          <ol class="xs-mt-20">
+            <li class="xs-mb-15">Be sure to have the latest version of <a href="https://nodejs.org">Node.js</a> installed & running in your computer. We are going to use <a href="https://www.npmjs.com/">npm</a> that comes with Node.js installation.</li>
+            <li class="xs-mb-15">Now open your terminal and enter <code>npm install -g grunt-cli</code> to install <b>Grunt</b> globally.</li>
+          </ol>
+          <h3 id="gs_grunt_install_dependencies">Install npm dependencies</h3>
+          <p>In your root folder enter the following command to install the project dependencies: <code>npm install</code>, this command will install all the template libraries inside the source folder: <code>src/assets/libs</code>, you need to run this command before you run <code>grunt dist</code> tasks in order to include dependencies in distribution.</p>
+          <h3 id="gs_grunt_setup_sass">Setup SASS development environment</h3>
+          <p>In case you don't know nothing about css pre-processors, this is a brief description about what it is:</p>
+          <blockquote>
+            <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
+            <footer>Taken from <a href="http://sass-lang.com/">sass-lang.com</a></footer>
+          </blockquote>
+          <p>In other words with css-preprocessors you can change the full color theme of this template by just changing a few lines of code.</p>
+          <h3>Setting up your css file</h3>
+          <ol class="xs-mt-20">
+            <li class="xs-mb-15">In the sass folder <code>src/sass/</code> you'll find a file called <code>app.scss</code>.</li>
+            <li class="xs-mb-15">Rename it to a different name, for example <code>app.scss</code> => <code>beagle.scss</code>.</li>
+            <li class="xs-mb-15">Then create a new file called <code>app.scss</code> which you are going to use it to modify variables and create your custom code.</li>
+            <li class="xs-mb-15">
+              <p>After that, you'll need to include the original main SASS file into the new file like this:</p>
+              <div class="code-panel">
+                <div class="code-panel__heading"><span>app.scss</span></div>
+                <div class="code-panel__content">
+                  <pre class="prettyprint lang-css">// Import the template source code
+@import &quot;beagle&quot;;
+
+// Your custom code goes here
+</pre>
+                </div>
+              </div>
+              <p>Inside this file you can modify the bootstrap and template variables values for example to change the color palette:</p>
+              <div class="code-panel">
+                <div class="code-panel__heading"><span>app.scss</span></div>
+                <div class="code-panel__content">
+                  <pre class="prettyprint lang-css">// Modify template colors
+$primary-color: 	&#35;595BD4;
+$danger-color: 		&#35;FD3D39;
+$warning-color: 	&#35;FFCB2F;
+$success-color: 	&#35;53D86A;
+
+// Import the template source code
+@import &quot;beagle&quot;;
+</pre>
+                </div>
+              </div>
+            </li>
+          </ol>
+          <h3 id="gs_sass_variables">Variables</h3>
+          <p>The template comes with several variables that you can use to customize and create your own version, alongside with the Bootstrap default variables.</p>
+          <p>To see what variables are available go to  <code>"src/sass/config/_variables.scss"</code>.</p>
+          <h3 id="gs_grunt_tasks">Available Tasks</h3>
+          <p>After install dependencies now you can run the automated taks, here are the available commands:</p>
+          <h4>Custom tasks</h4>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th width="20%">Command</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>npm install</td>
+                <td>Install and move all the template libraries into <code>src/assets/lib</code> using the <b>npmcopy</b> task.</td>
+              </tr>
+              <tr>
+                <td>grunt</td>
+                <td>It runs the watch command and an express development server in <code>'http://localhost:8080/index.html'</code>, this way you can modify your sass files and it automatically runs the sass compiler task designed for development.</td>
+              </tr>
+              <tr>
+                <td>grunt dist</td>
+                <td>Generate the end-compiled-ready-to-use distribution <code>dist</code> folder in your project root.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3 id="gs_grunt_add_new_dependencies">Adding new dependencies</h3>
+          <p>You can add new dependencies easily using npm, just open your terminal in your root path and install the dependency as usual using <code>npm install dependency-name</code>, then you'll need to add a <b>npmcopy</b> entry.</p>
+          <h4>Adding a npmcopy entry</h4>
+          <p>We use npmcopy to filter which files do we really want to be copied to our development/production environment reducing the unnecessary load of unused files.</p>
+          <p>Open the <code>src/grunt/tasks/npmcopy.js</code> file and add a new json entry like this:</p>
+          <div class="code-panel">
+            <div class="code-panel__heading"><span>npmcopy.js</span></div>
+            <div class="code-panel__content">
+              <pre class="prettyprint">&quot;npm-package-name&quot;: {
+  &quot;files&quot;:{
+    &quot;npm-dependency-destination/css&quot; : &quot;npm-dependency-name/css&quot;,
+    &quot;npm-dependency-destination/js&quot; : &quot;bootstrap/dist&quot;
+  }
+}
+</pre>
+            </div>
+          </div>
+          <p>This way the new dependency will be moved from <code>node_modules/npm-dependency-name/</code> to <code>src/assets/lib/npm-dependency-destination/</code> and only the files you specified in the new npmcopy entry will be moved to the <b>lib</b> folder.</p>
+          <p>For more information about how npmcopy works you can go to the <a href="https://github.com/timmywil/grunt-npmcopy">official documentation</a>.</p>
+        </div>
+        <div id="plugins">
+          <h1 id="plugins">Plugins</h1>
+          <p>This template comes with four <a href="#required_dependencies">main dependencies</a>, and several plugins for the demo pages, here is the plugin list with the official documentation for each one.</p>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th width="25%">Name</th>
+                <th width="60%">Documentation</th>
+                <th class="number">Version</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>jQuery</td>
+                <td><a href="https://jquery.com/">https://jquery.com/</a></td>
+                <td class="number">>= 1.9.1</td>
+              </tr>
+              <tr>
+                <td>Bootstrap</td>
+                <td><a href="http://getbootstrap.com/">http://getbootstrap.com/</a></td>
+                <td class="number">4.0.0</td>
+              </tr>
+              <tr>
+                <td>perfect-scrollbar</td>
+                <td><a href="https://github.com/noraesae/perfect-scrollbar">https://github.com/noraesae/perfect-scrollbar</a></td>
+                <td class="number">0.6.16</td>
+              </tr>
+              <tr>
+                <td>countUp.js</td>
+                <td><a href="https://inorganik.github.io/countUp.js/">https://inorganik.github.io/countUp.js/</a></td>
+                <td class="number">1.5.3</td>
+              </tr>
+              <tr>
+                <td>dataTables</td>
+                <td><a href="http://datatables.net/">http://datatables.net/</a></td>
+                <td class="number">1.10.16</td>
+              </tr>
+              <tr>
+                <td>dataTables Buttons</td>
+                <td><a href="https://github.com/DataTables/Buttons">https://github.com/DataTables/Buttons</a></td>
+                <td class="number">1.4.2</td>
+              </tr>
+              <tr>
+                <td>Dropzone</td>
+                <td><a href="http://www.dropzonejs.com">http://www.dropzonejs.com</a></td>
+                <td class="number">4.3.0</td>
+              </tr>
+              <tr>
+                <td>CurvedLines</td>
+                <td><a href="http://curvedlines.michaelzinsmaier.de/">http://curvedlines.michaelzinsmaier.de/</a></td>
+                <td class="number">1.1.1</td>
+              </tr>
+              <tr>
+                <td>Gritter</td>
+                <td><a href="https://github.com/jboesch/Gritter">https://github.com/jboesch/Gritter</a></td>
+                <td class="number">1.7.4</td>
+              </tr>
+              <tr>
+                <td>Fuel UX</td>
+                <td><a href="http://getfuelux.com/">http://getfuelux.com/</a></td>
+                <td class="number">3.15.11</td>
+              </tr>
+              <tr>
+                <td>FullCalendar</td>
+                <td><a href="http://arshaw.com/fullcalendar/">http://arshaw.com/fullcalendar/</a></td>
+                <td class="number">3.8.0</td>
+              </tr>
+              <tr>
+                <td>jQuery Bootstrap 4 Breakpoint Check</td>
+                <td><a href="https://github.com/foxythemes/bs4-breakpoint-check">https://github.com/foxythemes/bs4-breakpoint-check</a></td>
+                <td class="number">1.0.5</td>
+              </tr>
+              <tr>
+                <td>jQuery Nestable</td>
+                <td><a href="https://github.com/thesabbir/jquery-nestable">https://github.com/thesabbir/jquery-nestable</a></td>
+                <td class="number">1.0</td>
+              </tr>
+              <tr>
+                <td>jQuery Nifty Modals</td>
+                <td><a href="https://github.com/foxythemes/jquery-niftymodals">https://github.com/foxythemes/jquery-niftymodals</a></td>
+                <td class="number">1.3.1</td>
+              </tr>
+              <tr>
+                <td>jQuery UI</td>
+                <td><a href="https://jqueryui.com/">https://jqueryui.com/</a></td>
+                <td class="number">1.11.4</td>
+              </tr>
+              <tr>
+                <td>jQuery Masked Input</td>
+                <td><a href="https://github.com/digitalBush/jquery.maskedinput">https://github.com/digitalBush/jquery.maskedinput</a></td>
+                <td class="number">1.4.1</td>
+              </tr>
+              <tr>
+                <td>jVectorMap</td>
+                <td><a href="https://github.com/bjornd/jvectormap/">https://github.com/bjornd/jvectormap/</a></td>
+                <td class="number">1.2.2</td>
+              </tr>
+              <tr>
+                <td>jQuery Vector Map</td>
+                <td><a href="https://github.com/manifestinteractive/jqvmap">https://github.com/manifestinteractive/jqvmap</a></td>
+                <td class="number">1.5.1</td>
+              </tr>
+              <tr>
+                <td>jQuery Sparkline</td>
+                <td><a href="https://github.com/kapusta/jquery.sparkline">https://github.com/kapusta/jquery.sparkline</a></td>
+                <td class="number">2.1.3</td>
+              </tr>
+              <tr>
+                <td>Magnific Popup</td>
+                <td><a href="http://dimsemenov.com/plugins/magnific-popup/">http://dimsemenov.com/plugins/magnific-popup/</a></td>
+                <td class="number">1.0.0</td>
+              </tr>
+              <tr>
+                <td>Masonry</td>
+                <td><a href="http://masonry.desandro.com/">http://masonry.desandro.com/</a></td>
+                <td class="number">4.1.0</td>
+              </tr>
+              <tr>
+                <td>Moment</td>
+                <td><a href="http://momentjs.com/">http://momentjs.com/</a></td>
+                <td class="number">2.14.1</td>
+              </tr>
+              <tr>
+                <td>Parsley</td>
+                <td><a href="http://parsleyjs.org/">http://parsleyjs.org/</a></td>
+                <td class="number">2.4.3</td>
+              </tr>
+              <tr>
+                <td>Bootstrap Slider</td>
+                <td><a href="http://seiyria.github.io/bootstrap-slider/">http://seiyria.github.io/bootstrap-slider/</a></td>
+                <td class="number">10.0.0</td>
+              </tr>
+              <tr>
+                <td>Select2</td>
+                <td><a href="https://select2.github.io/">https://select2.github.io/</a></td>
+                <td class="number">4.0.3</td>
+              </tr>
+              <tr>
+                <td>Tiny Color</td>
+                <td><a href="http://bgrins.github.io/TinyColor/">http://bgrins.github.io/TinyColor/</a></td>
+                <td class="number">1.2.1</td>
+              </tr>
+              <tr>
+                <td>Flot Charts</td>
+                <td><a href="http://www.flotcharts.org/">http://www.flotcharts.org/</a></td>
+                <td class="number">0.8.3</td>
+              </tr>
+              <tr>
+                <td>Morris.js</td>
+                <td><a href="https://github.com/morrisjs/morris.js">https://github.com/morrisjs/morris.jsTouchSwipe-Jquery-Plugin</a></td>
+                <td class="number">0.5.1</td>
+              </tr>
+              <tr>
+                <td>Chart.js</td>
+                <td><a href="https://github.com/chartjs/Chart.js">https://github.com/chartjs/Chart.js</a></td>
+                <td class="number">2.7.1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="support">
+          <h1 id="support">Support</h1>
+          <p>We are here to assist you, thank you for report any bug/issue to our email <b>support@foxythemes.net</b>.</p>
+          <p>What support includes?</p>
+          <ul>
+            <li>Availability to answer questions</li>
+            <li>Answering technical questions about item's features</li>
+            <li>Assistance with reported bugs and issues</li>
+            <li>Help with included 3rd party assets</li>
+          </ul>
+          <p>What support doesn't include:</p>
+          <ul>
+            <li>Customization services</li>
+            <li>Installation services</li>
+          </ul>
+          <p>If you already read the documentation and you still need assistance, please send us your purchase data to <b>support@foxythemes.net</b> and we'll be glad to help you.</p>
+        </div>
+        <div id="changelog">
+          <h1 id="changelog">Changelog</h1>
+          <table class="table table-striped table-condensed">
+            <thead>
+              <tr>
+                <th width="20%">Version 1.4.2 - 20 February 2018</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fixed: Error on Chart.js page</td>
+              </tr>
+              <tr>
+                <td>Improvement: Added chart tooltips</td>
+              </tr>
+              <tr>
+                <td>Added: Boxed layout</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-striped table-condensed">
+            <thead>
+              <tr>
+                <th width="20%">Version 1.4.1 - 24 January 2018</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fixed: Left sidebar menu not showing on mobile</td>
+              </tr>
+              <tr>
+                <td>Fixed: White corners on modals</td>
+              </tr>
+              <tr>
+                <td>Fixed: Differences between LESS & SASS source code</td>
+              </tr>
+              <tr>
+                <td>Improvement: Rename 'light' directory by 'starter'</td>
+              </tr>
+              <tr>
+                <td>Improvement: Change the logo</td>
+              </tr>
+              <tr>
+                <td>Updated: Bootstrap to v4.0.0</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-striped table-condensed">
+            <thead>
+              <tr>
+                <th width="20%">Version 1.4.0 - 16 Jan 2018</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fixed: Improve print stylesheet for invoice page</td>
+              </tr>
+              <tr>
+                <td>Fixed: Select2 arrow position when allowClear is enabled</td>
+              </tr>
+              <tr>
+                <td>Fixed: Remove box-shadow in btn-link</td>
+              </tr>
+              <tr>
+                <td>Fixed: Gallery hover container not centered</td>
+              </tr>
+              <tr>
+                <td>Fixed: Missing hover style on disabled wizard tab</td>
+              </tr>
+              <tr>
+                <td>Fixed: Nifty modal closes when clicking on itself</td>
+              </tr>
+              <tr>
+                <td>Fixed: Wrong modals width on small devices</td>
+              </tr>
+              <tr>
+                <td>Fixed: Modal custom width not working</td>
+              </tr>
+              <tr>
+                <td>Updated: Fullcalendar to v3.8.0</td>
+              </tr>
+              <tr>
+                <td>Updated: grunt-sass to v2.0.0</td>
+              </tr>
+              <tr>
+                <td>Added: Support for Bootstrap 4 (v4.0.0-beta.2)</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-striped table-condensed">
+            <thead>
+              <tr>
+                <th width="20%">Version 1.3.0 - 2 Jun 2017</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Added: Sub navigation layout</td>
+              </tr>
+              <tr>
+                <td>Added: Loaders page</td>
+              </tr>
+              <tr>
+                <td>Added: Code editor page</td>
+              </tr>
+              <tr>
+                <td>Added: Booking page</td>
+              </tr>
+              <tr>
+                <td>Added: Table filters page</td>
+              </tr>
+              <tr>
+                <td>Added: Add dropdown menus panel icon</td>
+              </tr>
+              <tr>
+                <td>Added: Support for SASS</td>
+              </tr>
+              <tr>
+                <td>Fixed: Text overflow ellipsis in collapsed sidebar</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-striped table-condensed">
+            <thead>
+              <tr>
+                <th width="20%">Version 1.2.1 - 18 Apr 2017</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fixed: Wrong position in date range picker caret</td>
+              </tr>
+              <tr>
+                <td>Fixed: Wrong wizard complete hover color</td>
+              </tr>
+              <tr>
+                <td>Fixed: Wrong margin left in colllapsible sidebar</td>
+              </tr>
+              <tr>
+                <td>Fixed: Dropzone upload not working on mobile</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-striped table-condensed">
+            <thead>
+              <tr>
+                <th width="20%">Version 1.2.0 - 29 Dec 2016</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Added: Collapsible left sidebar support </td>
+              </tr>
+              <tr>
+                <td>Added: Multilevel support in left sidebar menu</td>
+              </tr>
+              <tr>
+                <td>Added: Left sidebar perfect scrollbar window resize sync</td>
+              </tr>
+              <tr>
+                <td>Added: Integrate Multiselect plugin</td>
+              </tr>
+              <tr>
+                <td>Added: Bootstrap X Editable form</td>
+              </tr>
+              <tr>
+                <td>Added: Bootstrap date range picker</td>
+              </tr>
+              <tr>
+                <td>Added: Bootstrap file input</td>
+              </tr>
+              <tr>
+                <td>Added: Off-canvas menu layout</td>
+              </tr>
+              <tr>
+                <td>Added: Panel full width style</td>
+              </tr>
+              <tr>
+                <td>Added: Search input in top header</td>
+              </tr>
+              <tr>
+                <td>Added: Include development workflow in dist(src) folder</td>
+              </tr>
+              <tr>
+                <td>Fixed: Missing table-responsive class in responsive table</td>
+              </tr>
+              <tr>
+                <td>Fixed: Missing horizontal padding in datetime picker</td>
+              </tr>
+              <tr>
+                <td>Fixed: Fixed left sidebar perfect scrollbar window resize sync</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-striped table-condensed">
+            <thead>
+              <tr>
+                <th width="20%">Version 1.1.1 - 27 Oct 2016</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fixed: Open right sidebar on swipe left not working</td>
+              </tr>
+              <tr>
+                <td>Fixed: Right sidebar toggle button problem on close</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-striped table-condensed">
+            <thead>
+              <tr>
+                <th width="20%">Version 1.1 - 25 Oct 2016</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Added: Option to disable close right sidebar on click outside</td>
+              </tr>
+              <tr>
+                <td>Added: Timeline page</td>
+              </tr>
+              <tr>
+                <td>Added: Timeline page version 2</td>
+              </tr>
+              <tr>
+                <td>Added: Typography page</td>
+              </tr>
+              <tr>
+                <td>Added: Invoice page</td>
+              </tr>
+              <tr>
+                <td>Fixed: Content overflow problem</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-striped table-condensed">
+            <thead>
+              <tr>
+                <th width="20%">Version 1.0 - 28 Sep 2016</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Initial Release</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="assets/lib/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="assets/js/app.js" type="text/javascript"></script>
+    <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/lib/prettify/prettify.js" type="text/javascript"></script>
+    <script src="assets/lib/prettify/lang-css.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+      	//initialize the javascript
+      	App.init();
+      });
+      
+    </script>
+  </body>
+</html>

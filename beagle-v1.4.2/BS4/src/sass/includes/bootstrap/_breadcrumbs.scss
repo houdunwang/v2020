@@ -1,0 +1,23 @@
+
+/*Breadcrumbs*/
+.breadcrumb{
+	background-color: $breadcrumb-bg;
+	margin-bottom: 18px;
+	padding: $breadcrumb-padding-y $breadcrumb-padding-x ($breadcrumb-padding-y - 1);
+	line-height: 16px;
+
+	.icon{
+		font-size: 1.231rem;
+	}
+
+	> li {
+
+    + li:before {
+      color:  $breadcrumb-active-color;
+    }
+  }
+
+  > .active {
+    color: $breadcrumb-active-color;
+  }
+}

@@ -1,0 +1,87 @@
+/*------------------------------------------------------------------
+  [dataTables]
+*/
+table.dataTable {
+	margin: 0 !important;
+	border-collapse: collapse !important;
+
+	thead {
+
+		.sorting:before,
+		.sorting:after,		
+		.sorting_asc:before,
+		.sorting_asc:after,
+		.sorting_desc:before, 
+		.sorting_desc:after {
+			font-size: 1.538rem;
+			bottom: .5rem;
+		}
+	}
+}
+
+div.dataTables_wrapper {
+	flex-flow: column;
+	align-items: stretch;
+	padding-left: 0;
+	padding-right: 0;
+
+	div.dataTables_info {
+		color: lighten($body-color, 13%);
+		padding-top: 5px;
+	}
+
+	div.dataTables_paginate {
+
+		ul.pagination {
+			margin: 0;
+			justify-content: flex-end;
+		}
+	}
+
+	div.dataTables_length label, div.dataTables_filter label {
+		margin-bottom: 0;
+		font-size: 1rem;
+		color: lighten($body-color, 13%);
+	}
+
+	div.dataTables_length label {
+		justify-content: flex-start;
+
+		select.form-control-sm {
+			height: 37px;
+			padding: 2px;
+			margin: 0 5px;
+		}
+	}
+
+	div.dataTables_filter label {
+		justify-content: flex-end;
+
+		select {
+			padding: 2px;
+		}
+	}
+}
+
+.be-datatable-header {
+  border-bottom: 1px solid $table-border-color;
+  margin: 2px 0 0;
+  padding: 15px 10px 22px;
+
+  .dt-buttons {
+
+		.btn {
+
+			embed{
+				outline: none;
+			}
+		}
+  }
+}
+
+.be-datatable-footer {
+	margin: 0;
+	padding: 15px 3px 13px;
+	background-color: darken(theme-color("light"), 3%);
+	border-top: 1px solid $table-border-color;
+}

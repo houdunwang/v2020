@@ -1,0 +1,283 @@
+/*------------------------------------------------------------------
+  [Alerts]
+*/
+.alert{
+	padding: 0;
+	position: relative;
+	line-height: 25px;
+	border-width: 0;
+	margin-bottom: 18px;
+	color: theme-color("light");
+
+
+	.icon{
+		width: $alert-icon-width - 5;
+		font-size: 1.846rem;
+		vertical-align: middle;
+		text-align: center;
+		line-height: 22px;
+		display: table-cell;
+		cursor: default;	
+		padding-top: 1px;
+			
+			span {
+				width: 25px;
+			}
+	}
+
+	.close{
+		position: absolute;
+		font-size: 1.538rem;
+		right: $alert-padding-x;
+		text-shadow: none;
+		padding: ($alert-padding-y + .1538rem) 0;
+		opacity: .2;
+	}
+	
+	.message{
+		display: table-cell;
+		padding: $alert-padding-y ($alert-padding-x + .7692rem) $alert-padding-y ($alert-padding-x - 1.154rem);
+		border-left-width: 0;
+
+		@include phone {
+			padding: $alert-padding-y ($alert-padding-x + 1.154rem) $alert-padding-y ($alert-padding-x - 1.154rem);			
+		}
+
+		// Improve alignment and spacing of inner content
+	  > p,
+	  > ul {
+	    margin-bottom: 0;
+	  }
+
+	  > p + p {
+	    margin-top: 5px;
+	  }
+	}
+}
+
+.alert-primary {
+	@include contrast-alert-variation($alert-primary-bg);
+}
+
+.alert-success {
+	@include contrast-alert-variation($alert-success-bg);
+}
+
+.alert-info {
+	@include contrast-alert-variation($alert-info-bg);
+}
+
+.alert-warning {
+	@include contrast-alert-variation($alert-warning-bg);
+}
+
+.alert-danger {
+	@include contrast-alert-variation($alert-danger-bg);
+}
+
+.alert-dismissible{
+
+	&.alert-primary{
+		@include dismissible-variation($alert-primary-bg)
+	}
+
+	&.alert-success{
+		@include dismissible-variation($alert-success-bg)
+	}
+
+	&.alert-warning{
+		@include dismissible-variation($alert-warning-bg)
+	}
+
+	&.alert-danger{
+		@include dismissible-variation($alert-danger-bg)
+	}
+}
+
+.alert-contrast{
+	padding: 0;
+	position: relative;
+
+	> .icon{
+		display: table-cell;
+		width: $alert-icon-width;
+		text-align: center;
+		vertical-align: middle;
+		background-color: rgba(255, 255, 255, 0.08);
+	}
+
+	> .message{
+		display: table-cell;
+		padding: $alert-padding-y $alert-padding-x;
+		border-left-width: 0;
+		color: theme-color("light");
+
+		@include phone {
+			padding: $alert-padding-y ($alert-padding-x + 1.154rem) $alert-padding-y $alert-padding-x;			
+		}
+	}	
+}
+
+.alert-icon{
+	background-color: theme-color("light");
+	border: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	display: table;
+	table-layout: fixed;
+	box-shadow: 0.5px 0.9px 0 rgba(0, 0, 0, 0.07);
+
+	> .icon{
+		position: relative;
+		display: table-cell;
+		width: $alert-icon-width;
+		text-align: center;
+		vertical-align: middle;
+		cursor: default;
+		color: theme-color("light");
+
+		&:after{
+			position: absolute;
+			right: -10px;
+			top: 50%;
+			margin-top: -10px;
+			@include triangle(right, theme-color("light"), 11px);
+		}
+	}
+
+	> .message{
+		display: table-cell;
+		padding: $alert-padding-y $alert-padding-x;
+		color: $body-color;
+		border: 1px solid darken(theme-color("light"), 17%);
+		border-left-width: 0;
+
+		@include phone {
+			padding: $alert-padding-y ($alert-padding-x + 1.154rem) $alert-padding-y $alert-padding-x;			
+		}
+	}
+
+	&.alert-dismissible{
+
+		.close{ 
+			color: $body-color;
+			opacity: 0.35;
+
+			&:hover{
+				opacity: 0.5;
+			}
+		}
+	}
+
+	//Colors
+	&.alert-primary{
+		@include icon-alert-variation($alert-primary-bg)
+	}
+	
+	&.alert-success{
+		@include icon-alert-variation($alert-success-bg)
+	}
+
+	&.alert-warning{
+		@include icon-alert-variation($alert-warning-bg)
+	}
+
+	&.alert-danger{
+		@include icon-alert-variation($alert-danger-bg)
+	}
+}
+
+.alert-icon-border{
+
+	&.alert-primary{
+
+		.message{
+			border-color: $alert-primary-bg;
+		}
+	}
+	
+	&.alert-success{
+
+		.message{
+			border-color: $alert-success-bg;
+		}
+	}
+
+	&.alert-warning{
+
+		.message{
+			border-color: $alert-warning-bg;
+		}
+	}
+
+	&.alert-danger{
+
+		.message{
+			border-color: $alert-danger-bg;
+		}
+	}
+}
+
+.alert-icon.alert-icon-colored{
+	border: 1px solid darken(theme-color("light"), 17%);
+
+	> .icon{
+		position: relative;
+		background-color: darken(theme-color("light"), 2.8%);
+		border-width: 0;
+
+		&:after{
+			border-left-color: darken(theme-color("light"), 2.8%);
+			position: absolute;
+			right: -11px;
+			top: 50%;
+			margin-top: -11px;
+			@include triangle(right, darken(theme-color("light"), 2.8%), 11px);
+		}
+	}
+
+	> .message{
+		border-width: 0;
+	}
+
+	&.alert-primary{
+		@include alert-icon-colored($alert-primary-bg);
+	}
+
+	&.alert-success{
+		@include alert-icon-colored($alert-success-bg);
+	}
+
+	&.alert-warning{
+		@include alert-icon-colored($alert-warning-bg);
+	}
+
+	&.alert-danger{
+		@include alert-icon-colored($alert-danger-bg);
+	}
+}
+
+.alert-simple{
+
+	border: 1px solid darken(theme-color("light"), 17%);
+	background-color: theme-color("light");
+	color: $body-color;
+	box-shadow: 0.5px 0.9px 0 rgba(0, 0, 0, 0.07);
+	
+	&.alert-primary{
+		@include alert-icon-colored($alert-primary-bg)
+	}
+
+	&.alert-success{
+		@include alert-icon-colored($alert-success-bg)
+	}
+
+	&.alert-warning{
+		@include alert-icon-colored($alert-warning-bg)
+	}
+
+	&.alert-danger{
+		@include alert-icon-colored($alert-danger-bg)
+	}
+}

@@ -1,0 +1,68 @@
+/*------------------------------------------------------------------
+  [Page head]
+*/
+
+.page-head {
+	padding: 20px $content-padding 10px;
+	position: relative;
+
+	@media #{$print} {
+		display: none;	
+	}
+
+	&-title{
+		display: block;
+		margin-bottom: 5px;
+		margin-top: 6px;
+		font-weight: $font-weight-light;
+		letter-spacing: -1px;
+		@include font-size-large(13px);
+		color: hsl(0, 0%, 42%);
+		line-height: 36px; 
+	}
+
+	&-description{
+		display: block;
+		color: hsl(0, 0%, 43%);
+		@include font-size(1px);
+		font-weight: $font-weight-light;
+	}
+
+	.breadcrumb{
+		background-color: transparent;
+		padding: 3px 0;
+		margin-bottom: 7px;
+
+		> li{
+			@include font-size(1px);
+			font-weight: $font-weight-light;
+
+			& + li:before{
+				padding: 0 2px;
+				color: hsl(0, 0%, 64%);
+			}
+
+			> a{
+				color: hsl(0,0%,37%);
+
+				&:hover{
+					color: hsl(0, 0%, 19%);
+				}
+			}
+		}
+
+		> .active{
+			color: hsl(0, 0%, 48%);
+		}
+	}
+
+	@media #{$phone} {
+		padding: 18px $content-padding-phone 0;
+		display: none;
+
+		&-title{
+			@include font-size-large(9px);
+			line-height: 28px;
+		}
+	}
+}

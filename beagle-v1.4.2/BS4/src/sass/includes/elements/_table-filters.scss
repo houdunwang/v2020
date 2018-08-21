@@ -1,0 +1,32 @@
+.table-filters-container {
+	margin: 0;
+	border-bottom: 1px solid darken(theme-color("light"), 10%);
+
+		.custom-checkbox {
+			white-space: nowrap;
+		}
+}
+
+.table-filters {
+	padding: $table-filters-padding;
+	display: flex;
+	flex-direction: column;
+}
+
+.table-filter-title {
+  flex: 0 0 auto;
+  margin-bottom: 20px;
+	font-size: $table-filter-title-font-size;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  color: lighten($black, 47%);
+}
+
+#slider-value {
+	font-size: 1.462rem;
+	font-weight: $font-weight-normal;
+}
+
+.filter-container {
+	padding: $table-container-filter-padding;
+}

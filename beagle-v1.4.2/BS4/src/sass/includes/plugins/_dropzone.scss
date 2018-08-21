@@ -1,0 +1,77 @@
+/*------------------------------------------------------------------
+  [DropZone]
+*/
+form.dropzone{
+	position: relative;
+	border: 2px dashed darken($body-background, 16.8%);
+	padding: 70px 60px 80px;
+	background: transparent;
+
+	.icon{
+		background-color: darken(theme-color("light"), 10%);
+		border-radius: 50%;
+		display: inline-block;
+		height: 100px;
+		width: 100px;
+		margin-bottom: 15px;
+		padding: 20px;
+		text-align: center;
+
+		span{
+			font-size: 4.615rem;
+			color: lighten(theme-color("dark"), 17%);
+		}
+	}
+
+	h2{
+		margin-bottom: 30px;
+		font-size: 3.077rem;
+		font-weight: $font-weight-light;
+	}
+
+	.note{
+		font-size: 1.231rem;
+	}
+
+	.dz-preview {	
+		
+		&.dz-file-preview, &.dz-image-preview {
+
+			.dz-image {
+				border: 3px solid theme-color("primary");
+				border-radius: 3px;
+				background: darken(theme-color("light"), 7%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			&.dz-error .dz-image {
+				border-color: theme-color("danger");
+			}
+			&.dz-success .dz-image {
+				border-color: theme-color("primary");
+			}
+		}
+
+		.dz-details {
+				
+			.dz-filename span, .dz-size span {
+				background: transparent;
+			}
+		}
+
+		.dz-error-message {
+			word-break: break-word;
+		}
+	}
+}
+
+// Absoluted positioned element to fix the problem with fastclick (https://github.com/enyo/dropzone/issues/935#issuecomment-147223543)
+.dropzone-mobile-trigger {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}

@@ -1,0 +1,68 @@
+/*------------------------------------------------------------------
+  [Main content]
+*/
+.be-content{
+	position: relative;
+	left: 0;
+	margin-left: $left-sidebar-width;
+	min-height: 100%;
+
+	@include tablet {
+		margin-left: 0;
+	}
+
+	@media #{$print} {
+		margin-left: 0;
+	}
+
+	.be-nosidebar-left & {
+		margin-left: 0;
+	}
+
+	.be-collapsible-sidebar-collapsed & {
+		margin-left: $left-sidebar-collapsed-width;
+
+		@include tablet {
+			margin-left: 0;
+		}
+	}
+
+	.be-offcanvas-menu & {
+		margin-left: 0;
+	}
+
+	@include non-responsive{
+		.be-boxed-layout & {
+			margin-left: 0;
+			overflow: hidden;
+		}
+	}
+}
+
+.main-content{
+	padding: $grid-gutter-width - 5;
+
+	@include laptop {
+		padding-left: $grid-gutter-width - 5;
+		padding-right: $grid-gutter-width - 5;
+		padding-top: $grid-gutter-width;
+	}
+
+	@include tablet {
+		height: 100%;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		padding-left: $grid-gutter-width - 15;
+		padding-right: $grid-gutter-width - 15;
+		padding-top: 20px;
+	}
+
+	@include phone {
+		padding-right: $grid-gutter-width - 20;
+		padding-left: $grid-gutter-width - 20;
+	}
+
+	.be-no-padding &{
+		padding: 0;
+	}
+}

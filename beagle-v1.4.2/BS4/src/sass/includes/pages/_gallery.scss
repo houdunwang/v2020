@@ -1,0 +1,184 @@
+/*------------------------------------------------------------------
+  [Gallery]
+*/
+.gallery-container{
+
+	.item{
+		width: 25%;
+	  margin-bottom: 20px;
+	  padding: 0 10px;
+
+	  .photo{
+	  	background: theme-color("light");
+
+	  	.img{
+	  		position: relative;
+
+	  		img{
+	  			width: 100%;
+	  		}
+
+	  		.over{
+	  			top:0;
+				  opacity:0;
+				  position:absolute;
+				  height:100%;
+				  width:100%;
+				  background: rgba(red(theme-color("primary")), green(theme-color("primary")), blue(theme-color("primary")), 0.8);
+				  transition: opacity 300ms ease;
+				  -webkit-transition: opacity 300ms ease;
+				  overflow: hidden;
+
+				  .info-wrapper{
+						display: table;
+						height: 100%;
+						width:100%;
+						margin-top: -80px;
+						transition: margin-top 200ms ease-in-out;
+				  }
+
+					.info{
+						display: table-cell;
+						vertical-align: middle;
+					  position: relative;
+					  top: 0;
+					  text-align: center;
+					  color: theme-color("light");
+					  padding: 0 10px;
+					}
+
+					.title{
+						font-size: 1.38462rem;
+						font-weight: $font-weight-light;
+					}
+
+					.description{
+						margin: 10px 0 18px;
+						line-height: 15px;
+					}
+
+	  			.func{
+
+					  a{
+					  	display: inline-block;
+					  	height: 30px;
+					  	width: 30px;
+					  	margin-right: 10px;
+					  	background: rgba(255,255,255,0.2);
+					  	border-radius: 50%;
+
+					   	&:hover{
+								background: rgba(255,255,255,0.3);
+							}
+
+							i{
+							  font-size: 1.385rem;
+							  color: theme-color("light");
+							  line-height: 30px;
+							}
+						}
+					}
+				}
+
+				&:hover{
+					
+					.over{
+						opacity: 1;
+
+						.info-wrapper{
+						  margin-top: 0;
+						}
+					}
+				}
+	  	}
+
+	  	.description{
+			  line-height: 20px;
+			  display: table;
+			  width: 100%;
+
+			  .icon{
+					display: table-cell;
+					background-color: darken(theme-color("light"), 10%);
+					padding: 20px;
+					vertical-align: middle;
+					width: 20px;
+
+					a{
+						color: lighten($body-color, 5%);
+
+						i{
+							font-size: 2.308rem;
+
+							@include phone{
+								font-size: 1.538rem;
+							}
+						}
+
+						&:hover{
+							color: theme-color("primary");
+						}
+					}
+
+					@include phone{
+						padding: 15px;
+					}
+			  }
+			  
+			  .desc{
+ 					display: table-cell;
+ 					padding: 10px 20px;
+ 					vertical-align: middle;
+
+ 					 h4{
+				  	margin: 0;
+	 					font-size: 1.385rem;
+
+	 					@include phone{
+	 						font-size: 1.154rem;
+	 					}
+				  }
+
+				  span{
+				  	color: lighten(theme-color("dark"), 30%); 
+					  font-size: .9231rem;
+	 					font-weight: 300;
+				  }
+
+				  @include phone{
+				  	padding: 10px;
+				  }
+				}
+			}
+	  }
+	}
+
+	.item.w2{
+	 width: 50%;
+	}
+
+	@include desktop {
+		.item {
+			width: 33.333%;
+		}
+	}
+	
+	@include laptop{
+		.item{
+			width: 50%;
+		}
+	}
+
+	@include phone{
+		max-width: 767px;
+
+  	.item{
+	  	width: 100%;
+	  	padding: 0;
+	  }
+
+	  .item.w2{ 
+	  	width: 100%; 
+	  }
+	}
+}

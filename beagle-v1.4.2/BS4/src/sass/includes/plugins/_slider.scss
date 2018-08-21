@@ -1,0 +1,43 @@
+/*------------------------------------------------------------------
+  [Slider]
+*/
+/*Slider*/
+.slider {
+	
+	&.slider-vertical {
+		margin-right: 13px;
+
+		.slider-handle {
+    	margin-left: -1px;
+		}
+	}
+
+	&.slider-horizontal{ 
+		height: 24px;
+
+		.slider-track {
+			height: 8px;
+		}
+	}
+}
+
+.slider-selection {
+	background: theme-color("primary");
+	border: 1px solid theme-color("primary");
+	box-shadow: none;
+}
+
+.slider-track {
+	background: darken(theme-color("light"), 5%);
+	box-shadow: none;
+}
+
+.slider-handle {
+	opacity: 1;
+	background: theme-color("light");
+	border: 1px solid darken(theme-color("light"), 6%);
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.12);
+	height: 22px;
+	width: 22px;
+	transition: box-shadow 200ms ease-in-out;
+}

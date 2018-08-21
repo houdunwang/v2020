@@ -1,0 +1,30 @@
+/*------------------------------------------------------------------
+  [Vector Maps]
+*/
+.jvectormap-zoomin,
+.jvectormap-zoomout {
+	line-height: 11px;
+}
+
+.jqvmap-zoomin,
+.jqvmap-zoomout {
+	width: @vector-map-zoom-button-size;
+	height: @vector-map-zoom-button-size;
+	background-color: hsl(0, 0%, 85%);
+	color: #7a7a7a;
+	font-size: @vector-map-zoom-font-size;
+	line-height: @vector-map-zoom-line-height;
+	text-align: center;
+	border-radius: 0;
+	top: auto;
+	left: 0;
+	bottom: 0;
+
+	&:hover{
+		background-color: hsl(0, 0%, 79%);
+	}
+}
+
+.jqvmap-zoomin{
+	left: @vector-map-zoom-button-size + 13px;
+}

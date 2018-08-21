@@ -1,0 +1,29 @@
+/*------------------------------------------------------------------
+  [Badges]
+*/
+.badge{
+	font-size: $font-size-small - 1px;
+	font-weight: $font-weight-bold;
+	color: $badge-color;
+	border: 1px solid darken($light-color, 15%);
+}
+
+.badge-primary{
+ @include badge-color($primary-color-text); 
+}
+
+.badge-success{
+ @include badge-color($success-color-text); 
+}
+
+.badge-info{
+ @include badge-color($info-color-text); 
+}
+
+.badge-warning{
+ @include badge-color($warning-color-text); 
+}
+
+.badge-danger{
+ @include badge-color($danger-color-text); 
+}

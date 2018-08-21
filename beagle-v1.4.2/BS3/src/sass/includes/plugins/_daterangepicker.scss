@@ -1,0 +1,48 @@
+.reportrange {
+	background: #fff; 
+	cursor: pointer; 
+	padding: 10px 12px; 
+	border: 1px solid #ccc;
+	border-radius: $border-radius-base;
+	width: 100%;
+	font-size: $font-size-large;
+
+	i {
+		margin-right: 8px;
+	}
+}
+
+.daterangepicker {
+
+	&.dropdown-menu{
+		min-width: inherit;
+		padding: 8px 5px;
+	}
+}
+
+td.active {
+	.daterangepicker &,
+	.daterangepicker &:hover {
+		background-color: $primary-color;
+	}
+}
+td.available {
+	.daterangepicker &:hover {
+		background-color: $primary-color;
+		color: $light-color; 
+	}
+}
+
+li {
+	.ranges &.active,
+	.ranges &:hover {
+		background-color: $primary-color;
+	}
+}
+
+.caret {
+	.reportrange & {
+		margin-top: 8px;
+		float: right;
+	}
+}

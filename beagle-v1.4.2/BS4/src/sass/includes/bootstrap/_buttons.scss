@@ -1,0 +1,308 @@
+/*------------------------------------------------------------------
+  [Buttons]
+*/
+.btn{
+	box-shadow: $btn-box-shadow-base;
+	border: 1px solid transparent;
+	@include button-size($btn-padding-vertical, $btn-padding-horizontal, $btn-font-size-base, $btn-line-height-base, $btn-border-radius-base);
+
+  &:active,
+	&.active{
+		box-shadow: none;
+  }
+
+  &:active:focus{
+  	outline: none;
+  }
+}
+
+.btn-secondary, .btn-light {
+  color: $btn-secondary-color;
+  background-color: $btn-secondary-bg;
+  border-color: $btn-secondary-border;
+
+  &:focus,
+  &.focus {
+  	color: $btn-secondary-color;
+    background-color: $btn-secondary-bg;
+  	border-color: $btn-secondary-border;
+  	box-shadow: $btn-box-shadow-base;
+  }
+
+  &:hover, &.hover{
+  	color: $btn-secondary-color;
+		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  	background-color: $btn-secondary-bg;
+		border-color: darken($btn-secondary-border, 13%);
+  }
+	
+  &:active,
+  &.active,
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active,
+  .show > &.dropdown-toggle {
+  	box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.06);
+    color: darken($btn-secondary-color, 10%);
+    background-color: darken($btn-secondary-bg, 11%);
+    border-color: darken($btn-secondary-border, 13%);
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: darken($btn-secondary-color, 10%);
+      background-color: darken($btn-secondary-bg, 11%);
+     	border-color: darken($btn-secondary-border, 13%);
+     	box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  &:active,
+  &.active,
+  .show > &.dropdown-toggle {
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active {
+      background-color: $btn-secondary-bg;
+          border-color: $btn-secondary-border;
+    }
+  }
+
+	//icon color
+	.icon{
+		color: lighten($btn-secondary-color, 14%);
+	}
+
+	&:active{
+
+		.icon{
+			color: lighten($btn-secondary-color, 4%);
+		}
+	}
+
+  .badge {
+    color: $btn-secondary-bg;
+    background-color: $btn-secondary-color;
+  }
+}
+
+//Alternative color styles
+.btn-primary{
+	@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+
+.btn-danger{
+	@include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+}
+
+.btn-warning{
+	@include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+}
+
+.btn-success{
+	@include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+
+//Button sizes
+.btn-xs{
+	@include button-size($btn-padding-vertical, $btn-xs-padding-horizontal, $btn-xs-font-size, $btn-xs-line-height, $btn-xs-border-radius);
+}
+
+.btn-sm{
+	@include button-size($btn-padding-vertical, $btn-sm-padding-horizontal, $btn-sm-font-size, $btn-sm-line-height, $btn-sm-border-radius);
+}
+
+.btn-lg{
+	@include button-size($btn-padding-vertical, $btn-lg-padding-horizontal, $btn-lg-font-size, $btn-lg-line-height, $btn-lg-border-radius);
+	font-weight: $font-weight-medium;
+}
+
+.btn-xl{
+	@include button-size($btn-padding-vertical, $btn-xl-padding-horizontal, $btn-xl-font-size, $btn-xl-line-height, $btn-xl-border-radius);
+	font-weight: $font-weight-medium;
+}
+
+//Button with rounded borders
+.btn-rounded{
+	border-radius: ceil( ($btn-line-height-base + 2) / 2 );
+
+	&.btn-xs{
+		border-radius: ceil( ($btn-xs-line-height + 2) / 2 );
+	}
+
+	&.btn-sm{
+		border-radius: ceil( ($btn-sm-line-height + 2) / 2);
+	}
+
+	&.btn-lg{
+		border-radius: ceil( ($btn-lg-line-height + 2) / 2 );
+	}
+}
+
+//Buton spacer helpers
+.btn-hspace{
+	margin-right: 5px;
+}
+
+.btn-vspace{
+	margin-bottom: 5px;
+}
+
+.btn-space{
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+
+//Social buttons colors
+.btn-facebook{ .icon{ color: $facebook; } @include button-icon-active-color($facebook) }
+.btn-twitter{ .icon{ color: $twitter; } @include button-icon-active-color($twitter) }
+.btn-google-plus{ .icon{ color: $google-plus; } @include button-icon-active-color($google-plus) }
+.btn-dribbble{ .icon{ color: $dribbble; } @include button-icon-active-color($dribbble) }
+.btn-flickr{ .icon{ color: $flickr; } @include button-icon-active-color($flickr) }
+.btn-linkedin{ .icon{ color: $linkedin; } @include button-icon-active-color($linkedin) }
+.btn-youtube{ .icon{ color: $youtube; } @include button-icon-active-color($youtube) }
+.btn-pinterest{ .icon{ color: $pinterest; } @include button-icon-active-color($pinterest) }
+.btn-github{ .icon{ color: $github; } @include button-icon-active-color($github) }
+.btn-tumblr{ .icon{ color: $tumblr; } @include button-icon-active-color($tumblr) }
+.btn-dropbox{ .icon{ color: $dropbox; } @include button-icon-active-color($dropbox) }
+.btn-evernote{ .icon{ color: $evernote; } @include button-icon-active-color($evernote) }
+
+//Social buttons
+.btn-social{
+	min-width: 31px;
+	padding: 0 8px;
+
+	.icon{
+		font-size: 1.308rem;
+	}
+}
+
+.btn-color.btn-facebook{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $facebook, $facebook); }
+.btn-color.btn-twitter{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $twitter, $twitter);  }
+.btn-color.btn-google-plus{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $google-plus, $google-plus); }
+.btn-color.btn-dribbble{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $dribbble, $dribbble); }
+.btn-color.btn-flickr{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $flickr, $flickr); }
+.btn-color.btn-linkedin{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $linkedin, $linkedin); }
+.btn-color.btn-youtube{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $youtube, $youtube); }
+.btn-color.btn-pinterest{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $pinterest, $pinterest); }
+.btn-color.btn-github{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $github, $github); }
+.btn-color.btn-tumblr{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $tumblr, $tumblr); }
+.btn-color.btn-dropbox{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $dropbox, $dropbox); }
+.btn-color.btn-evernote{ .icon{ color: theme-color("light"); } @include button-variant(theme-color("light"), $evernote, $evernote); }
+
+//Icons inside buttons
+.btn{
+
+	.icon{
+		font-size: 1.231rem;
+		line-height: 15px;
+		vertical-align: middle;
+
+		&.icon-left{
+			margin-right: $btn-icon-margin;
+		}
+
+		&.icon-right{
+			margin-left: $btn-icon-margin;
+		}
+
+		&.fa{
+			font-size: 1.154rem;
+		}
+	}
+
+	&.btn-lg .icon{
+		font-size: 1.615rem;
+		line-height: 20px;
+	}
+
+	&.btn-sm .icon{
+		font-size: 1.154rem;
+		line-height: 15px;
+	}
+
+	&.btn-xs .icon{
+		font-size:  1.077rem;
+		line-height: 14px;
+	}
+}
+
+//Butons dropdown
+.btn.dropdown-toggle {
+
+	.btn-group &.btn-primary,
+	.btn-group &.btn-success,
+	.btn-group &.btn-warning,
+	.btn-group &.btn-danger {
+		border-right-color: transparent;
+
+		&:hover{
+			border-right-color: transparent;
+		}
+	}
+
+	.mdi-chevron-down,
+	.mdi-chevron-up {
+	 	font-size: 1.385rem;
+	 	vertical-align: middle;
+	 	line-height: 17px;
+	}
+
+	.icon-dropdown {
+		font-size: 1.385rem;
+		line-height: 17px;
+		margin-left: 6px;
+
+		&-left {
+			margin-left: 0;
+			margin-right: 6px;
+		}
+	}
+}
+
+//Big buttons
+.btn-big{
+	padding: 10px 13px;
+	text-align: center;
+	line-height: 13px;
+	min-width: 62px;
+
+	> .icon{
+		display: block;
+		font-size: 2rem;
+		line-height: 20px;
+		margin-bottom: 7px;
+	}
+}
+
+//Button outline
+.btn-outline {
+	
+	&.btn-primary {
+		@include btn-transparent-outline($primary-color-text);
+	}
+
+	&.btn-secondary {
+		@include btn-transparent-outline(darken(theme-color("light"), 15%));
+	}
+
+	&.btn-success {
+		@include btn-transparent-outline($success-color-text);
+	}
+
+	&.btn-warning {
+		@include btn-transparent-outline($warning-color-text);
+	}
+
+	&.btn-danger {
+		@include btn-transparent-outline($danger-color-text);
+	}
+}

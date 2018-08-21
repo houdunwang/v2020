@@ -1,0 +1,16 @@
+//Colored Labels Mixin
+.tabs-color(@color){
+  > li{
+
+		a:hover{
+			color: @color;
+		}
+
+		&.active{
+
+			a, a:hover, a:focus{
+				border-bottom: 2px solid @color;
+			}
+		}
+	}
+}

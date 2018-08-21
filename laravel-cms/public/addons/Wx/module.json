@@ -1,0 +1,16 @@
+{
+    "name": "Wx",
+    "alias": "wx",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Wx\\Providers\\WxServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

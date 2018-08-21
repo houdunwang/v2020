@@ -1,0 +1,238 @@
+/*------------------------------------------------------------------
+  [Cards]
+*/
+.card{
+	background-color: theme-color("light");
+	margin-bottom: $card-margin-bottom;
+	box-shadow: $card-box-shadow;
+	border-width: 0;
+	border-radius: $card-border-radius;
+	display: block;
+
+	th {
+		border-top: 0;
+		vertical-align: middle;
+	}
+}
+
+//Card body
+.card-body{
+	padding: $card-body-top-padding $card-body-horizontal-padding $card-body-bottom-padding;
+	border-radius: 0 0 $card-border-radius $card-border-radius;
+}
+
+//Card heading
+.card-header{
+	font-size: $card-heading-font-size;
+	font-weight: $card-heading-font-weight;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: $card-heading-top-padding;
+	margin: 0 $card-heading-horizontal-padding;
+	border-bottom-width: 0;
+	border-radius: $card-border-radius $card-border-radius 0 0;
+	background-color: transparent;
+
+	.tools{
+		float: right;
+		font-size: 0;
+
+		> a{
+			display: inline-block;
+		}
+
+		.icon{
+			display: inline-block;
+			font-size: $card-heading-icon-size;
+			line-height: $card-heading-icon-line-height;
+			vertical-align: middle;
+			cursor: pointer;
+			color: $card-heading-icon-color;
+			min-width: $card-heading-icon-size;
+			text-align: center;
+
+			& + .icon{
+				margin-left: $card-heading-icon-separation;
+			}
+
+			&:hover{
+				color: $card-heading-icon-hover;
+			}
+		}
+	}
+}
+
+//Card title
+.card-title{
+	font-size: $card-heading-font-size;
+	font-weight: $card-heading-font-weight;
+	display: block;
+	margin: 0;
+}
+
+//Card subtitle
+.card-subtitle{
+	display: block;
+	font-size: $font-size-base;
+	color: darken(theme-color("light"), 56%);
+	margin-top: 0;
+	margin-bottom: $card-heading-subtitle-margin;
+}
+
+//Card heading divider
+.card-header-divider{
+	border-bottom: 1px solid darken(theme-color("light"), 15%);
+  margin: 0 $card-heading-horizontal-padding $card-body-top-padding;
+  padding-left: 0;
+  padding-right: 0;
+	padding-bottom: $card-heading-bottom-padding + $card-heading-subtitle-margin;
+
+  .card-subtitle {
+  	margin-top: 0;
+  	margin-bottom: 0;
+  }
+}
+
+//Card flat
+.card-flat{
+	border: none;
+	box-shadow: none;
+}
+
+//Card border
+.card-border{
+	box-shadow: none;
+	border: 1px solid darken(theme-color("light"),17%);
+}
+
+//Card contrast
+.card-contrast{
+
+	.card-header{
+		margin: 0;
+		padding: 20px 20px 11px;
+	}
+
+	.card-body{
+		padding-top: 16px; 
+	}
+}
+
+//Card heading contrast
+.card-header-contrast{
+	background-color: darken(theme-color("light"), 4%);
+}
+
+//Card body contrast
+.card-body-contrast{
+	background-color: darken(theme-color("light"), 4%);
+}
+
+//Card border color
+.card-border-color{
+	border-top: 3px solid darken(theme-color("light"), 21%);
+}
+
+//Card border danger
+.card-border-color-primary{
+	border-top-color: theme-color("primary");
+}
+
+//Card border danger
+.card-border-color-danger{
+	border-top-color: theme-color("danger");
+}
+
+//Card border warning
+.card-border-color-warning{
+	border-top-color: theme-color("warning");
+}
+
+//Card border success
+.card-border-color-success{
+	border-top-color: theme-color("success");
+}
+
+//Card border dark
+.card-border-color-dark{
+	border-top-color: theme-color("dark");
+}
+
+//Card full colors
+.card-full{
+	
+	.card-header{
+		margin: 0;
+		padding-left: $card-heading-horizontal-padding;
+		padding-right: $card-heading-horizontal-padding;
+
+		.card-title{
+			border-width: 0;
+		}
+	}
+}
+
+//Card colors
+.card-full-color{
+	
+	.card-header{
+		color: theme-color("light");
+		padding: 27px 20px 15px;
+		margin: 0;
+
+		.card-subtitle, .icon{
+			color: theme-color("light"); 
+		}
+	}
+
+	.card-body{
+		padding: 20px;
+	}
+}
+
+//Full color style
+.card-full-primary{
+	@include card-full-color($primary-color-text);
+}
+
+.card-full-success{
+	@include card-full-color($success-color-text);
+}
+
+.card-full-warning{
+	@include card-full-color($warning-color-text);
+}
+
+.card-full-danger{
+	@include card-full-color($danger-color-text);
+}
+
+.card-full{
+	@include card-full-color($grey-color-text);
+}
+
+.card-full-dark{
+	@include card-full-color($dark-color-text);
+}
+
+//Table Card
+.card-table{
+
+	.card-body{
+		padding: 0;
+	}
+}
+
+// Full width card
+.card-fullwidth {
+
+	.card-header {
+		margin: 0;
+		padding-left: $card-heading-horizontal-padding;
+		padding-right: $card-heading-horizontal-padding;
+	}
+
+	.card-body {
+		padding-top: $card-body-top-padding * 2;
+	}
+}

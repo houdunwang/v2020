@@ -1,0 +1,100 @@
+/*------------------------------------------------------------------
+  [Tile widgets]
+*/
+.widget.widget-tile{
+	padding: 24px 20px;
+	margin-bottom: @widget-margin-bottom;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+
+	.data-info{
+		display: table-cell;
+		text-align: right;
+
+		.value{
+			.font-size-large(7px);
+			font-weight: @font-weight-light;
+		}
+
+		.indicator{
+			.font-size-large(10px);
+			margin-right: 7px;
+			line-height: 24px;
+			vertical-align: middle;
+
+			&-equal{
+				color: @primary-color;
+			}
+
+			&-positive{
+				color: @success-color;
+			}
+
+			&-negative{
+				color: @danger-color;
+			}
+		}
+
+		.desc{
+			.font-size(1px);
+			line-height: 18px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+
+	.chart{
+		width: 85px;
+		min-height: 45px;
+		padding: 5px 0;
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	&.widget-tile-wide{
+		display: table;
+		width: 100%;
+		
+		> div{
+			display: table-cell;
+			width: 50%;
+			vertical-align: middle;
+		}
+
+		.data-info{
+			vertical-align: top;
+
+			.title{
+				font-size: 16px;
+		    line-height: 22px;
+		    margin-bottom: 2px;
+			}
+
+			.desc{
+				color: darken(@light-color, 50%);
+				font-size: 12px;
+			}
+		}
+
+		.tile-value{
+			text-align: right;
+
+			> span{
+				display: block;
+				padding-right: 10px;
+				font-weight: 300;
+				font-size: 31px;
+			}
+		}
+
+		.icon{
+			float: none;
+			line-height: 43px;
+			vertical-align: top;
+			margin-right: 5px;
+		}
+	}
+}
+

@@ -1,0 +1,27 @@
+//Colored alerts Mixin
+.icon-alert-variation(@color){
+
+	> .icon{
+		background-color: @color;
+
+		&:after{
+			border-left-color: @color;
+		}
+	}
+}
+
+//Dismissible alerts color variations
+.dismissible-variation(@color){
+
+	.close{ 
+		color: darken(@color, 30%);
+	}
+}
+
+//Alert Color Icon Bg
+.alert-icon-colored(@color){
+
+	> .icon{
+		color: @color;
+	}
+}

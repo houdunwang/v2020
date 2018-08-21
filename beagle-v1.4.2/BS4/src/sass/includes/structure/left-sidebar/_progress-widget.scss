@@ -1,0 +1,61 @@
+.be-left-sidebar{
+
+	.progress-widget{
+		padding: 20px;
+		cursor: pointer;
+
+		.be-collapsible-sidebar-collapsed & {
+			padding: 13px 14px;
+			margin-top: 25px;
+		}
+
+		.be-fixed-sidebar & {
+			margin-top: 0;
+		}
+		
+		.progress-data{
+			color: $left-sidebar-color;
+		}
+
+		.progress-value{
+			float: right;
+
+			.be-collapsible-sidebar-collapsed & {
+				float: none;
+				display: block;
+				text-align: center;
+				font-size: .8462rem;
+			}
+		}
+
+		.name {
+			.be-collapsible-sidebar-collapsed & { 
+				display: none; 
+			}
+		}
+
+		.progress{
+			margin: 10px 0 0;
+			height: 8px;
+			background-color: darken($left-sidebar-bg, 4%);
+			border-radius: 2px;
+
+			.be-collapsible-sidebar-collapsed & { 
+				height: 5px;
+				margin-top: 7px;
+			}
+		}
+
+		&:hover{
+			background-color: darken($left-sidebar-bg, 2%);
+
+			.progress{
+				background-color: darken($left-sidebar-bg, 6%);
+			}
+		}
+
+		@include tablet {
+			display: none;
+		}
+	}
+}

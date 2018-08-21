@@ -1,0 +1,34 @@
+//Color shades
+$primary-color-dark: 			darken(theme-color("primary"), 10%);
+$primary-color-darkest: 	darken(theme-color("primary"), 20%);
+$primary-color-light: 		lighten(theme-color("primary"), 10%);
+$primary-color-lightest: 	lighten(theme-color("primary"), 20%);
+
+$danger-color-dark: 			darken(theme-color("danger"), 10%);
+$danger-color-darkest: 		darken(theme-color("danger"), 20%);
+$danger-color-light: 			lighten(theme-color("danger"), 10%);
+$danger-color-lightest: 	lighten(theme-color("danger"), 20%);
+
+$warning-color-dark: 			darken(theme-color("warning"), 10%);
+$warning-color-darkest: 	darken(theme-color("warning"), 20%);
+$warning-color-light: 		lighten(theme-color("warning"), 10%);
+$warning-color-lightest: 	lighten(theme-color("warning"), 20%);
+
+$success-color-dark: 			darken(theme-color("success"), 10%);
+$success-color-darkest: 	darken(theme-color("success"), 20%);
+$success-color-light: 		lighten(theme-color("success"), 10%);
+$success-color-lightest: 	lighten(theme-color("success"), 20%);
+
+$grey-color-dark: 				darken(theme-color("grey"), 10%);
+$grey-color-darkest: 			darken(theme-color("grey"), 20%);
+$grey-color-light: 				lighten(theme-color("grey"), 10%);
+$grey-color-lightest: 		lighten(theme-color("grey"), 20%);
+
+//Text contrast
+$primary-color-text: 			#5f99f5;
+$success-color-text: 			#37b358;	
+$info-color-text: 				theme-color("info");	
+$warning-color-text: 			#f6c163;	
+$danger-color-text: 			#eb6357;	
+$grey-color-text: 				darken(theme-color("grey"), 6%);
+$dark-color-text: 				#333333;

@@ -1,0 +1,39 @@
+/*------------------------------------------------------------------
+  [List group]
+*/
+.list-group-item {
+	padding: 13px 15px;
+
+	&.active{
+		.icon{
+			color: theme-color("light") !important;
+		}
+
+		.badge {
+			background: theme-color("light");
+			color: theme-color("primary");
+		}
+
+		& + .active {
+			border-top: solid 1px theme-color("light");
+		}
+	}
+
+	.icon{
+		margin-right: 18px;
+		font-size: 1.231rem;
+	}
+
+	.text {
+		flex: 1 1 auto;
+	}
+
+	.badge {
+		flex: 0 0 auto;
+
+		.active & {
+			background: theme-color("light");
+			color: theme-color("primary");
+		}
+	}	
+}

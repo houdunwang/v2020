@@ -1,0 +1,152 @@
+/*------------------------------------------------------------------
+  [Typography]
+*/
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+
+  small,
+  .small {
+  	font-weight: @font-weight-light;
+  }
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+
+}
+
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+
+}
+
+// Body text
+// -------------------------
+
+p {
+	margin: 0 0 @paragraph-margin;
+}
+
+.lead {
+	font-size: floor((@font-size-base * 1.65));
+	line-height: 26px;
+}
+
+// Emphasis & misc
+// -------------------------
+small,
+.small {
+  font-size: 11px;
+}
+
+mark,
+.mark {
+  background-color: @state-warning-bg;
+  padding: 0;
+}
+
+.text-bold {
+	font-weight: @font-weight-medium !important;
+}
+
+// Contextual colors
+.text-success {
+  .text-emphasis-variant(@success-color);
+}
+
+.text-warning {
+  .text-emphasis-variant(@warning-color);
+}
+
+.text-danger {
+  .text-emphasis-variant(@danger-color);
+}
+
+// Lists
+// -------------------------
+
+// Unordered and Ordered lists
+ul,
+ol {
+	line-height: @list-lineheight;
+
+	ul,
+	ol {
+		padding-left: 25px;
+	}
+}
+
+// List options
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+.list-unstyled {
+  ul, 
+  ol {
+  	padding-left: 40px;
+  }
+}
+
+// Misc
+// -------------------------
+
+// Blockquotes
+blockquote { 
+
+	p{
+		margin-bottom: 18px;
+	}
+
+	p,
+  ul,
+  ol {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+	footer,
+  small,
+  .small {
+  	font-size: 13px;
+  }
+}
+
+
+//Display Heading
+// -------------------------
+.display-heading{
+	font-size: @display-heading-size;
+	font-weight: @font-weight-thin;
+	margin: @display-heading-margin;
+
+	@media @phone{
+		font-size: ceil(@display-heading-size - (@display-heading-size * 0.2));
+	}
+}
+
+//Display Description
+// -------------------------
+
+.display-description{
+	font-size: @display-description-size;
+	font-weight: @font-weight-thin;
+	line-height: @display-description-line-height;
+	margin: @display-description-margin;
+
+	@media @phone{
+		font-size: ceil(@display-description-size - (@display-description-size * 0.2));
+		line-height: ceil(@display-description-line-height - (@display-description-line-height * 0.2));
+	}
+}
+
+// Addresses
+
+address {
+  line-height: 20px;
+}

@@ -1,0 +1,68 @@
+/*------------------------------------------------------------------
+  [Splash screen]
+*/
+.be-splash-screen{
+	background-color: $splash-screen-bg;
+
+	.be-wrapper{
+		padding-top: 0;
+
+		.be-content{
+			margin: 0;
+		}
+	}
+}
+
+//Centered container
+.splash-container{
+	max-width: $login-width;
+	margin: $login-margin-top auto;
+
+	.card{
+		margin-bottom: 30px;
+
+		.card-header{
+			text-align: center;
+			margin-bottom: 20px;
+			padding-top: 40px;
+			padding-bottom: 0;
+		}
+
+		.card-body{
+			padding: 20px 30px 15px;
+
+			.custom-checkbox{
+				display: inline-block;
+				margin: 0;
+			}
+		}
+	}
+
+	@include tablet {
+		margin-top: 50px;
+	}
+}
+
+//Title
+.splash-title{
+	text-align: center;
+	display: block;
+	font-size: 1.308rem;
+	font-weight: $font-weight-light;
+}
+
+//Description text
+.splash-description{
+	text-align: center;
+	display: block;
+	line-height: 20px;
+	font-size: $font-size-base;
+	color: lighten($body-color, 10%);
+	margin-top: 11px;
+	padding-bottom: 10px;
+}
+
+//Footer
+.splash-footer{
+	text-align: center;
+}

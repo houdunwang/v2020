@@ -1,0 +1,49 @@
+.dropdown-menu {
+	&.multiselect-container {
+		padding: 0;
+
+		> li {
+
+			> a {
+				padding: 5px 0;
+			}
+
+			&.active {
+
+				label {
+					color: $light-color;
+				}
+			}
+		}
+	}
+}
+
+.form-control {
+	&.multiselect-search {
+		height: 30px;
+	}
+}
+
+.btn {
+	&.multiselect {
+		padding: 4px 10px;
+		box-shadow: none;
+	}
+
+	&.multiselect-clear-filter {
+		height: 30px;
+	}
+}
+
+.input-group-btn {
+	.multiselect-item.filter & {
+		vertical-align: top;
+	}
+}
+
+.input-group-addon {
+	.multiselect-item.filter & {
+		font-size: $font-size-base;
+		padding: ($padding-base-vertical / 2) $padding-base-horizontal;
+	}
+}

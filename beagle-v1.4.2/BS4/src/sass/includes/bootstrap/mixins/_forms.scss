@@ -1,0 +1,70 @@
+@mixin custom-form-validation-state($state, $color) {
+  // Color the label and help text
+  .form-control-feedback,
+  .col-form-label,
+  .form-check-label,
+  .custom-control {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      color: $body-color;
+    }
+  }
+
+  .form-control,
+  .custom-select {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      border-color: $color;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .custom-file-input {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      ~ .custom-file-control {
+        border-color: $color;
+
+        &::before { border-color: inherit; }
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .custom-control-input {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      ~ .custom-control-label {
+        color: theme-color("noir");
+
+        &::after {
+          color: $color; 
+        }
+
+        &::before {
+          background-color: theme-color("light");
+          border-color: $color;
+          color: $color;
+        }
+      }
+    }
+  }
+
+  .custom-control-input:checked {
+    .was-validated &:#{$state},
+    &.is-#{$state} {
+      ~ .custom-control-color {
+        
+        &::after {
+          background-color: $color;
+          color: theme-color("light");
+        }        
+      }
+    }
+  }
+}

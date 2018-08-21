@@ -1,0 +1,27 @@
+/*------------------------------------------------------------------
+  [Perfect Scrollbar]
+*/
+/*Perfect Scrollbar*/
+
+.ps-container {
+
+  > .ps-scrollbar-y-rail{
+    width: @scroller-size;
+    background-color: rgba(0,0,0, 0.1);
+
+    > .ps-scrollbar-y{
+      right: 0;
+      height: @scroller-size;
+      width: @scroller-size;
+      border-radius: 3px;
+      background-color: rgba(0,0,0, 0.25);
+    }
+
+    &:hover, &:active{
+
+      > .ps-scrollbar-y{
+        width: @scroller-size;
+      }
+    }
+  }
+}

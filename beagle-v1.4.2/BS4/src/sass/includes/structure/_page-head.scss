@@ -1,0 +1,69 @@
+/*------------------------------------------------------------------
+  [Page head]
+*/
+
+.page-head {
+	padding: 20px ($grid-gutter-width - 5) 10px;
+	position: relative;
+
+	@media #{$print} {
+		display: none;	
+	}
+
+	&-title{
+		display: block;
+		margin-bottom: 5px;
+		margin-top: 6px;
+		font-weight: $font-weight-light;
+		letter-spacing: -1px;
+		font-size: 2.154rem;
+		color: hsl(0, 0%, 42%);
+		line-height: 36px; 
+	}
+
+	&-description{
+		display: block;
+		color: hsl(0, 0%, 43%);
+		font-size: 1.077rem;
+		font-weight: $font-weight-light;
+	}
+
+	.breadcrumb{
+		background-color: transparent;
+		padding: 3px 0;
+		margin-bottom: 7px;
+		line-height: 16px;
+
+		> li{
+			font-size: 1.077rem;
+			font-weight: $font-weight-light;
+
+			& + li:before{
+				padding: 0 5px;
+				color: hsl(0, 0%, 64%);
+			}
+
+			> a{
+				color: hsl(0,0%,37%);
+
+				&:hover{
+					color: hsl(0, 0%, 19%);
+				}
+			}
+		}
+
+		> .active{
+			color: hsl(0, 0%, 48%);
+		}
+	}
+
+	@include tablet {
+		padding: 18px ($grid-gutter-width - 20) 0;
+		display: none;
+
+		&-title{
+			font-size: 1.846rem;
+			line-height: 28px;
+		}
+	}
+}

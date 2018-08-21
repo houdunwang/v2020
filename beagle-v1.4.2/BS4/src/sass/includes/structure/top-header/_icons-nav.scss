@@ -1,0 +1,245 @@
+//Icons nav
+.be-icons-nav{
+
+	.be-top-header & {
+		margin-right: 20px;
+	}
+
+	@include non-responsive {
+		.be-right-navbar-flex & {
+			flex: 0 0 auto;
+		}
+	}
+
+	@include laptop {
+
+		.be-top-header & {
+			margin-right: 10px;
+		}
+	}
+
+	> li.dropdown{
+		position: static;
+
+		> a{
+			
+			position: relative;
+
+			.navbar-expand & {
+				padding: 0 10px;
+			}			
+
+			.icon{
+				font-size: 1.846rem;
+				vertical-align: middle;
+				color: $icon-default-color;
+
+				&.mdi-comment-more{
+					font-size: 1.538rem;
+					position: relative;
+					top: 1px;
+				}
+			}
+
+			.indicator{
+				background-color: theme-color("primary");
+				border-radius: 50%;
+				display: block;
+				height: 6px;
+				width: 6px;
+				position: absolute;
+				top: 18px;
+				right: 6px;
+			}
+
+			&:after{
+				display: none;
+		    font-size: 1.231rem;
+		    margin-left: 6px;
+
+		    @include tablet {
+		    	display: inline-block;
+		    }
+			}
+		}
+
+		.dropdown-toggle {
+		
+			&:after{
+				content: '';
+				margin: 0;
+				border: 0;
+			}
+		}
+		
+		&.show{
+			
+			> a:after, > a:before{
+				border-bottom: 8px solid theme-color("light");
+		    border-left: 8px solid transparent;
+		    border-right: 8px solid transparent;
+		    bottom: -13px;
+		    content: "";
+		    display: inline-block;
+		    left: 50%;
+		    margin-left: -8px;
+		    position: absolute;
+		    z-index: $zindex-dropdown + 1;
+			}
+
+			> a:before{
+				border-bottom-width: 9px;
+				border-left-width: 9px;
+				border-right-width: 9px;
+				border-bottom-color: $dropdown-border-color;
+				margin-left: -9px;
+				bottom: -12px;
+			}
+		}
+
+		.dropdown-menu{
+			width: $icons-nav-dropdown-width;
+			border-radius: 3px;
+			padding: 0;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+			border: 1px solid hsl(0, 0%, 88%);
+			box-sizing: content-box;
+
+			.title{
+				font-size: 1rem;
+				color: darken(theme-color("light"), 45.7%);
+				text-align: center;
+				padding: 10px 0 8px;
+				border-bottom: 1px solid darken(theme-color("light"), 7.7%);
+
+				.badge{
+					font-size: $font-size-sm - 0.1538rem;
+					line-height: 10px;
+					vertical-align: middle;
+					margin-left: 4px;
+					background-color: darken(theme-color("light"), 10.5%);
+					color: darken(theme-color("light"), 45.7%);
+					min-width: 17px;
+					height: 17px;
+					text-align: center;
+					padding: 3px 6px;
+
+					&-new{
+						background-color: theme-color("primary");
+						border-color: theme-color("primary");
+						color: theme-color("light");
+					}
+				}
+			}
+
+			.footer{
+
+				a{
+					background-color: darken(theme-color("light"), 2%);
+					font-size: 1rem;
+					color: darken(theme-color("light"), 45.7%);
+					text-align: center;
+					padding: 10px 0;
+					border-top: 1px solid darken(theme-color("light"), 7.7%);
+					display: block;
+					outline: none;
+
+					&:hover{
+						background-color: darken(theme-color("light"), 4%);
+					}
+				}	
+			}
+
+			.be-top-header & {
+				&:after, &:before{
+					display: none;
+				}
+			}
+		}
+
+		&.show{
+
+			> a{
+				background-color: transparent;
+
+				.icon{
+					color: theme-color("primary");
+
+					@include tablet {
+						color: theme-color("light");
+					}
+				}
+			}
+		}
+	}
+
+	@include tablet {
+		float: right;
+		flex: 0 0 auto;
+
+		.be-top-header & {
+			margin: 0 5px 0 0;
+		}
+
+		> li.dropdown{
+			display: inline-block;
+			margin-left: 3px;
+
+			> a{
+
+				.navbar-expand & {
+					padding: 0 7px;
+				}
+
+				.icon{
+					color: theme-color("light");
+				}
+
+				.indicator{
+					right: 2px;
+					background-color: theme-color("light");
+				}
+			}
+		}
+	}
+
+	@include phone {
+
+		> li.dropdown{
+
+			.dropdown-menu{
+				left: 0;
+				top: $top-header-height;
+				width: 100%;
+				box-shadow: none;
+				border-width: 0;
+
+				.be-top-header & {
+					border-radius: 0;
+					margin-top: 1px;
+				}
+
+				.footer{
+
+					a{
+						border-bottom: 1px solid darken(theme-color("light"), 7.7%);
+					}
+				}
+			}
+
+			&.show{
+				
+				> a{
+					
+					&:before{
+						display: none;
+					}
+
+					&:after{
+						bottom: -1px;
+					}
+				}
+			}
+		}
+	}
+}

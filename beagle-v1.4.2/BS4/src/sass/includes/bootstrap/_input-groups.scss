@@ -1,0 +1,75 @@
+/*------------------------------------------------------------------
+  [Input Groups]
+*/
+
+//Search input component
+.input-search {
+
+  input{
+    border: 1px solid $input-border-color;
+    border-radius: 0;
+    display: block;
+    font-size: $font-size-base;
+
+    &:focus{
+      background-color: transparent;
+    }
+  }
+
+  .input-group-btn {
+    position: absolute;
+    right: 0;
+    display: block;
+    width: auto;
+    top: 1px;
+    right: 1px;
+    z-index: 3;
+
+    button{
+      box-shadow: none;
+      border: none;
+      height: $input-height - .1538rem;
+
+      &:active{
+        background-color: transparent;
+        box-shadow: none;
+      }
+
+      .icon{
+        font-size: 1.923rem;
+        color: lighten($body-color, 20%);
+      }
+
+      &:hover{
+
+      	.icon{
+      		color: lighten($body-color, 10%);
+      	}
+      }
+    }
+  }
+
+  &.input-group-lg{
+
+  	.input-group-btn {
+
+  		button{
+  			height: $input-height-lg - .1538rem;
+  		}
+  	}
+  }
+
+  &.input-group-sm{
+
+  	.input-group-btn{
+
+  		button{
+  			height: $input-height-sm - 1.692rem;
+
+  			.icon{
+  				font-size: 1.692rem;
+  			}
+  		}
+  	}
+  }
+}

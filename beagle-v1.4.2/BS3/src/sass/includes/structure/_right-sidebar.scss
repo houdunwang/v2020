@@ -1,0 +1,212 @@
+/*------------------------------------------------------------------
+  [Right sidebar]
+*/
+//Sidebar Structure
+.be-right-sidebar {
+  position: fixed;
+  background-color: $right-sidebar-background;
+  margin-top: $top-header-height + 1px;
+  padding-bottom: $top-header-height + 1px;
+  width: $right-sidebar-width;
+  height: 100%;
+  right: -$right-sidebar-width;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid darken($right-sidebar-background, 7%);
+  z-index: $right-sidebar-z-index;
+
+  .be-animate & {
+    transition: $sidebars-push-effect;
+  }
+}
+
+
+//Push sidebar animation
+body.open-right-sidebar{
+
+  @media #{$non-responsive} {
+    @include right-sidebar-animation(false);
+  }
+
+  @media #{$phone} {
+    @include right-sidebar-animation($sidebars-hardware-accelerated-animation);
+  }
+}
+
+//Sidebar Style
+.be-right-sidebar{
+
+  .sb-content{
+    display: table;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+  }
+
+  .tab-navigation{
+
+    .nav-tabs{
+      background-color: transparent;
+      border-bottom: 0;
+      padding: 0;
+
+      > li{
+
+        > a{
+          background-color: darken($right-sidebar-background, 3%);
+          border-width: 0;
+          padding: 14px 10px;
+          min-width: auto;
+          font-size: 14px;
+
+          .icon{
+            font-size: 25px;
+            color: $right-sidebar-icons-color;
+          }
+
+          &:hover{
+            border: 0;
+            background-color: darken($right-sidebar-background, 1.5%);
+            color: darken($body-color, 2%);
+          }
+
+          &:focus{
+            border: 0;
+          }
+        }
+
+        &.active{
+
+          > a{
+            color: $primary-color;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    @media #{$phone} {
+
+      .nav-justified{
+        display: table;
+
+        > li{
+          display: table-cell;
+
+          > a{
+            margin-bottom: 0;
+            min-width: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .tab-panel{
+    height: 100%;
+    display: table-row;
+
+    .tab-content{
+      height: 100%;
+      position: relative;
+      width: 100%;
+      padding: 0;
+      background: transparent;
+      display: table-cell;
+      overflow: hidden;
+
+      .tab-pane{
+        height: 100%;
+        position: relative;
+        width: 100%;
+
+        > .content{
+          overflow: auto;
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+        h2{
+          font-size: 15px;
+          font-weight: $font-weight-regular;
+          padding-bottom: 15px;
+          border-bottom: 1px solid darken($right-sidebar-background, 6%);
+          padding-left: 5px;
+          margin-bottom: 20px;
+          margin-top: 18px;
+        }
+      }
+      
+      //Search input at the bottom of the sb
+      .bottom-input{
+        position: relative;
+        border-top: 1px solid darken($right-sidebar-background, 3%);
+
+        > input{
+          border: 0;
+          background-color: $right-sidebar-background;
+          color:$body-color;
+          width: 100%;
+          font-size: 13px;
+          font-weight: $font-weight-regular;
+          padding: 15px 20px;
+          outline: none;
+        }
+
+        > span{
+          position: absolute;
+          color: $right-sidebar-icons-color;
+          right: 15px;
+          top: 50%;
+          font-size: 20px;
+          margin-top: -10px;
+          cursor: pointer;
+
+          &:hover{
+            color: lighten($right-sidebar-icons-color, 15%);
+          }
+        }
+      }
+    }
+  }
+
+  @media #{$phone} {
+    width: $right-sidebar-width-phone;
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+    margin-top: 0;
+    padding-bottom: 0;
+
+    .tab-panel{
+
+      .tab-content{
+
+        > .chat{
+          width: 100%;
+
+          .chat-contacts, .chat-window{
+            width: 100%;
+          }
+
+          .chat-window{
+            left: 100%;
+          }
+
+          &.chat-opened{
+            
+            .chat-contacts{
+              left: -100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    width: 90%;
+  }
+}

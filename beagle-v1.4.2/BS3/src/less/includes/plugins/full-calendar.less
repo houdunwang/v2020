@@ -1,0 +1,171 @@
+/*------------------------------------------------------------------
+  [Full calendar]
+*/
+.full-calendar{
+
+	.fc-toolbar{
+		padding-top: 25px;
+		margin-bottom: 30px;
+	}
+
+	.fc-view-container{
+		
+		.fc-event-container{
+
+			.fc-event{
+			  background: @primary-color;
+			  border-color: darken(@primary-color, 8%);
+			  color: @light-color;
+			  border-radius: 0;
+			}
+		}
+		
+		.fc-border-separate{
+			.fc-today{
+				background-color: darken(@light-color, 3%);
+			}
+		}
+
+		.fc-cell-overlay{
+			background-color: fade(@primary-color, 50%);
+		}
+	}
+
+	.fc-button{
+	  color: @btn-default-color;
+	  background: @btn-default-bg;
+	  border-color: @btn-default-border;
+		height: auto;
+		padding: 10px;
+	  font-size: @btn-font-size-base;
+	  line-height: @btn-line-height-base;
+
+	  &:focus,
+	  &.focus {
+	  	color: @btn-default-color;
+	    background-color: @btn-default-bg;
+	  	border-color: @btn-default-border;
+	  	box-shadow: @btn-box-shadow-base;
+	  }
+
+	  &:hover, &.hover{
+			box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+	  	background-color: @btn-default-bg;
+			border-color: darken(@btn-default-border, 13%);
+	  }
+
+	  &:active,
+	  &.fc-state-active,
+	  &.active,
+	  .open > .dropdown-toggle& {
+	  	box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.06);
+	    color: darken(@btn-default-color, 10%);
+	    background-color: darken(@btn-default-bg, 11%);
+	    border-color: darken(@btn-default-border, 13%);
+
+	    &:hover,
+	    &:focus,
+	    &.focus {
+	      color: darken(@btn-default-color, 10%);
+	      background-color: darken(@btn-default-bg, 11%);
+	     	border-color: darken(@btn-default-border, 13%);
+	     	box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.06);
+	    }
+	  }
+
+	  &:active,
+	  &.active,
+	  .open > .dropdown-toggle& {
+	    background-image: none;
+	  }
+
+	  &.disabled,
+	  &[disabled],
+	  fieldset[disabled] & {
+	    &,
+	    &:hover,
+	    &:focus,
+	    &.focus,
+	    &:active,
+	    &.active {
+	      background-color: @btn-default-bg;
+	          border-color: @btn-default-border;
+	    }
+	  }
+
+	  &.fc-prev-button,
+	  &.fc-next-button {
+			padding-left: 7px;
+			padding-right: 7px;
+	  }
+
+	  .fc-icon{
+
+	  	&:after{
+	  		position: static;
+	  		font-weight: @font-weight-regular;
+	  		font-size: 21px;
+	  	}
+	  }
+	}
+
+	.fc-state-default{
+
+		&.fc-corner-left{
+			border-top-left-radius: @btn-border-radius-base;
+    	border-bottom-left-radius: @btn-border-radius-base;
+		}
+
+		&.fc-corner-right{
+			border-top-right-radius: @btn-border-radius-base;
+    	border-bottom-right-radius: @btn-border-radius-base;
+		}
+	}
+
+	@media @phone{
+		max-width: 767px;
+
+	  .fc-toolbar{
+			
+			.fc-left, .fc-center, .fc-right{
+		    text-align: center;
+		    display: block;
+		    width: 100%;
+		  }
+
+		  .fc-left{
+		  	padding-bottom: 20px;
+		  }
+  	
+	  	.fc-center{
+			  padding: 0;
+			}
+		}
+	}
+}
+
+//External events panel
+.fullcalendar-external-events{
+
+	.fc-event{
+		margin: 2px 0;
+	  padding: 5px;
+	  background: @primary-color;
+	  color: @light-color;
+	  font-size: .85em;
+	  cursor: pointer;
+	  display: inline-block;
+	  border-width: 0;
+	}
+
+	p{
+		input{
+			margin-top: 15px;
+		}
+
+		label{
+			font-weight: 300;
+			vertical-align: middle;
+		}
+	}
+}

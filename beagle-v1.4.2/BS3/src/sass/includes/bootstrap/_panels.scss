@@ -1,0 +1,228 @@
+/*------------------------------------------------------------------
+  [Panels]
+*/
+.panel{
+	background-color: $light-color;
+	margin-bottom: $panel-margin-bottom;
+	box-shadow: $panel-box-shadow;
+	border-width: 0;
+	border-radius: $panel-border-radius;
+}
+
+//Panel body
+.panel-body{
+	padding: $panel-body-top-padding $panel-body-horizontal-padding $panel-body-bottom-padding;
+	border-radius: 0 0 $panel-border-radius $panel-border-radius;
+}
+
+//Panel heading
+.panel-heading{
+	font-size: $panel-heading-font-size;
+	font-weight: $panel-heading-font-weight;
+	padding-left: 0;
+	padding-right: 0;
+	margin: 0 $panel-heading-horizontal-padding;
+	border-bottom-width: 0;
+	border-radius: $panel-border-radius $panel-border-radius 0 0;
+
+	.tools{
+		float: right;
+		font-size: 0;
+
+		> a{
+			display: inline-block;
+		}
+
+		.icon{
+			display: inline-block;
+			font-size: $panel-heading-icon-size;
+			line-height: $panel-heading-icon-line-height;
+			vertical-align: middle;
+			cursor: pointer;
+			color: $panel-heading-icon-color;
+			min-width: $panel-heading-icon-size;
+			text-align: center;
+
+			& + .icon{
+				margin-left: $panel-heading-icon-separation;
+			}
+
+			&:hover{
+				color: $panel-heading-icon-hover;
+			}
+		}
+	}
+}
+
+//Panel title
+.panel-title{
+	font-size: $panel-heading-font-size;
+	font-weight: $panel-heading-font-weight;
+	display: block;
+	margin: 0;
+}
+
+//Panel subtitle
+.panel-subtitle{
+	display: block;
+	font-size: $font-size-base;
+	color: darken($light-color, 56%);
+	margin-bottom: $panel-heading-subtitle-margin;
+}
+
+//Panel heading divider
+.panel-heading-divider{
+	border-bottom: 1px solid darken($light-color, 15%);
+  margin: 0 $panel-heading-horizontal-padding $panel-body-top-padding;
+  padding-left: 0;
+  padding-right: 0;
+	padding-bottom: $panel-heading-bottom-padding + $panel-heading-subtitle-margin;
+
+  .panel-subtitle {
+  	margin-bottom: 0;
+  }
+}
+
+//Panel flat
+.panel-flat{
+	border: none;
+	box-shadow: none;
+}
+
+//Panel border
+.panel-border{
+	box-shadow: none;
+	border: 1px solid darken($light-color,17%);
+}
+
+//Panel contrast
+.panel-contrast{
+
+	.panel-heading{
+		margin: 0;
+		padding: 20px 20px 11px;
+	}
+
+	.panel-body{
+		padding-top: 16px; 
+	}
+}
+
+//panel heading contrast
+.panel-heading-contrast{
+	background-color: darken($light-color, 4%);
+}
+
+//Panel body contrast
+.panel-body-contrast{
+	background-color: darken($light-color, 4%);
+}
+
+//panel border color
+.panel-border-color{
+	border-top: 3px solid darken($light-color, 21%);
+}
+
+//Panel border danger
+.panel-border-color-primary{
+	border-top-color: $primary-color;
+}
+
+//Panel border danger
+.panel-border-color-danger{
+	border-top-color: $danger-color;
+}
+
+//Panel border warning
+.panel-border-color-warning{
+	border-top-color: $warning-color;
+}
+
+//Panel border success
+.panel-border-color-success{
+	border-top-color: $success-color;
+}
+
+//Panel border dark
+.panel-border-color-dark{
+	border-top-color: $dark-color;
+}
+
+//Panel full colors
+.panel-full{
+	
+	.panel-heading{
+		margin: 0;
+		padding-left: $panel-heading-horizontal-padding;
+		padding-right: $panel-heading-horizontal-padding;
+
+		.panel-title{
+			border-width: 0;
+		}
+	}
+}
+
+//Panel colors
+.panel-full-color{
+	
+	.panel-heading{
+		color: $light-color;
+		padding: 27px 20px 15px;
+		margin: 0;
+
+		.panel-subtitle, .icon{
+			color: $light-color; 
+		}
+	}
+
+	.panel-body{
+		padding: 20px;
+	}
+}
+
+//Full color style
+.panel-full-primary{
+	@include panel-full-color($primary-color-text);
+}
+
+.panel-full-success{
+	@include panel-full-color($success-color-text);
+}
+
+.panel-full-warning{
+	@include panel-full-color($warning-color-text);
+}
+
+.panel-full-danger{
+	@include panel-full-color($danger-color-text);
+}
+
+.panel-full{
+	@include panel-full-color($grey-color-text);
+}
+
+.panel-full-dark{
+	@include panel-full-color($dark-color-text);
+}
+
+//Table Panel
+.panel-table{
+
+	.panel-body{
+		padding: 0;
+	}
+}
+
+// Full width panel
+.panel-fullwidth {
+
+	.panel-heading {
+		margin: 0;
+		padding-left: $panel-heading-horizontal-padding;
+		padding-right: $panel-heading-horizontal-padding;
+	}
+
+	.panel-body {
+		padding-top: $panel-body-top-padding * 2;
+	}
+}

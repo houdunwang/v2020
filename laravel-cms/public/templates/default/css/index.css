@@ -1,0 +1,8 @@
+* {
+  border-radius: 0 !important;
+}
+.list-group-item {
+  border-left: none;
+  border-right: none;
+}
+/*# sourceMappingURL=index.css.map */

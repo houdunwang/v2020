@@ -1,0 +1,159 @@
+/*------------------------------------------------------------------
+  [Bootstrap dateTime Picker]
+*/
+.datetimepicker {
+	padding: 4px 12px;
+
+	&.input-group {
+		padding: 4px 0;
+	}
+
+	.input-group-append {
+		
+		> button {
+			padding: 0 13px;
+			font-size: 1.846rem;
+			line-height: 23px;
+
+			> i{
+				vertical-align: middle;
+			}
+		}
+	}
+
+	&.input-group-sm {
+
+		.input-group-append {
+
+			> button {
+				font-size: 1.538rem;
+				line-height: 21px;
+				padding: 0 11px;
+			}
+		}
+	}
+
+	&.input-group-lg {
+
+		.input-group-append {
+
+			> button {
+				padding: 0 15px;
+			}
+		}
+	}
+
+	//Table
+	table{
+		border-collapse: separate;
+		border-spacing: 7px 2px;
+
+		thead{
+
+			tr{
+
+				th{
+					padding: 10px 4px 8px;
+
+					&.prev, &.next{
+						padding: 0;
+						
+						> .icon{
+							font-size: 1.615rem;
+						}
+
+						&:hover{
+							background-color: transparent;
+							color: theme-color("primary");
+						}
+					}
+
+					&.switch{
+						font-weight: 600;
+						font-size: 1.077rem;
+
+						&:hover{
+							background-color: transparent;
+							color: lighten($body-color, 10%);
+						}
+					}
+
+					&.dow{
+						font-weight: 400;
+						font-size: 1.077rem;
+						padding-top: 10px;
+					}
+				}
+			}
+		}
+
+		tbody{
+
+			tr{
+
+				td{
+					line-height: 31px;
+  				padding: 0 8px;
+
+  				&.day{
+  					border-radius: 50%;
+  					color: lighten($body-color, 20%);
+
+  					&.old, &.new{
+  						color: lighten($body-color, 45%);
+  					}
+
+  					&.active{
+  						background: theme-color("primary");
+  						color: theme-color("light");
+  						text-shadow: none;
+
+  						&:hover{
+  							background: darken(theme-color("primary"), 10%);
+  						}
+  					}
+  				}
+
+  				.year, .month, .hour, .minute{
+  					color: lighten($body-color, 20%);
+
+  					&.old, &.new{
+  						color: lighten($body-color, 45%);
+  					}
+
+  					&.active{
+  						background: theme-color("primary");
+  						color: theme-color("light");
+  						text-shadow: none;
+
+  						&:hover{
+  							background: darken(theme-color("primary"), 10%);
+  						}
+  					}
+  				}
+
+  				fieldset{
+
+  					legend{
+  						font-size: 1.308rem;
+  						font-weight: 400;
+  						color: lighten($body-color, 10%);
+  						margin-bottom: 5px;
+  					}
+  				}
+				}
+			}
+		}
+	}
+
+	//Datepicker dropdown
+	&.dropdown-menu{
+		@include box-shadow(0 2px 4px rgba(0,0,0,.08));
+		border-color: rgba(0, 0, 0, 0.1);
+		padding: 10px;
+
+		&:before{
+			border-bottom-color: rgba(0, 0, 0, 0.08);
+		}
+	}
+}

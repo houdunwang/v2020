@@ -1,0 +1,186 @@
+.be-booking-promos.row {
+	padding: $booking-container-padding;
+
+	@media #{$phone} {
+		margin: 0;
+		padding: $booking-container-padding-responsive;
+	}
+}
+
+.be-booking-promo {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-radius: $booking-promo-border-radius;
+	background-color: $booking-promo-bg;
+	border-left: 3px solid $primary-color;
+	padding: $booking-promo-padding;
+	margin-bottom: 26px;
+
+	@media #{$small-phone}  {
+		flex-direction: column;
+	}
+
+	&.be-booking-promo-danger {
+		border-left-color: $danger-color;
+	}
+
+	&.be-booking-promo-warning {
+		border-left-color: $warning-color;
+	}
+
+	&.be-booking-promo-success {
+		border-left-color: $success-color;
+	}
+
+	&.be-booking-promo-soldout {
+		border-left-color: darken($light-color, 11%);
+
+		&:before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: block;
+			content: '';
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 72px 72px 0;
+			border-color: transparent;
+			border-right-color: darken($light-color, 11%);
+		}
+
+		.be-soldout-title {
+			position: absolute;
+			font-size: 11px;
+			color: darken($light-color, 41%);
+			top: 20px;
+			right: 5px;
+			transform: rotate(45deg);
+		}
+	}
+}
+
+.be-booking-desc {
+	flex: 0 1 60%;
+
+	@media #{$small-phone}  {
+		margin-bottom: 20px;
+		text-align: center;
+	}
+}
+
+.be-booking-desc-title {
+	padding-bottom: 15px;
+	font-size: 20px;
+	margin: 0 0 13px;
+	border-bottom: 1px solid darken($light-color, 8%)
+}
+
+.be-booking-desc-details {
+	font-size: 14px;
+}
+
+.be-booking-promo-price {
+	text-align: center;
+}
+
+.be-booking-promo-amount {
+	position: relative;
+	margin: 3px 0 19px;
+
+	.be-booking-promo-soldout & {
+		margin-top: 41px
+	}
+
+	.currency {
+		font-size: 15px;
+		line-height: 1;
+		vertical-align: top;
+	}
+
+	.price {
+		font-size: 41px;
+		line-height: 1;
+	}
+
+	.frecuency {
+		font-size: 23px;
+		line-height: 1;
+		font-weight: $font-weight-light;
+	}
+}
+
+.btn.be-booking-btn-price {
+	padding: 0 21px;
+	line-height: 34px;
+}
+
+.be-booking-promo-big {
+	padding: 25px 30px 35px;
+	margin-top: -5px;
+	margin-bottom: 20px;
+
+	.be-booking-desc-title {
+		font-size: 20px;
+		font-weight: 400;
+	}
+
+	.be-promo-big-title {
+		position: absolute;
+		font-size: 19px;
+		color: $light-color;
+		top: 13px;
+		right: 14px;
+	}
+
+	&:before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: block;
+		content: '';
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 72px 72px 0;
+		border-color: transparent;
+	}
+
+	&.be-booking-promo-danger {
+		@include big-promo($danger-color);
+	}
+
+	&.be-booking-promo-primary {
+		@include big-promo($primary-color);
+	}
+
+	&.be-booking-promo-success {
+		@include big-promo($success-color);
+	}
+
+	&.be-booking-promo-warning {
+		@include big-promo($warning-color);
+	}
+}
+
+.be-booking-promo-color {
+	color: $light-color;
+
+	&.be-booking-promo-danger {
+		background-color: $danger-color;
+	}
+
+	&.be-booking-promo-primary {
+		background-color: $primary-color;
+	}
+
+	&.be-booking-promo-success {
+		background-color: $success-color;
+	}
+
+	&.be-booking-promo-warning {
+		background-color: $warning-color;
+	}
+}
