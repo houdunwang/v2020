@@ -1,0 +1,85 @@
+{
+  "_args": [
+    [
+      "dropzone@4.3.0",
+      "/home/miguel/projects/beagle"
+    ]
+  ],
+  "_from": "dropzone@4.3.0",
+  "_id": "dropzone@4.3.0",
+  "_inBundle": false,
+  "_integrity": "sha1-SLC48q0JKHLktTW2cqfD8aHWfJE=",
+  "_location": "/dropzone",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "dropzone@4.3.0",
+    "name": "dropzone",
+    "escapedName": "dropzone",
+    "rawSpec": "4.3.0",
+    "saveSpec": null,
+    "fetchSpec": "4.3.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/dropzone/-/dropzone-4.3.0.tgz",
+  "_spec": "4.3.0",
+  "_where": "/home/miguel/projects/beagle",
+  "bugs": {
+    "url": "https://github.com/enyo/dropzone/issues",
+    "email": "m@tias.me"
+  },
+  "contributors": [
+    {
+      "name": "Matias Meno",
+      "email": "m@tias.me",
+      "url": "http://www.matiasmeno.com"
+    }
+  ],
+  "dependencies": {},
+  "description": "Handles drag and drop of files for you.",
+  "devDependencies": {
+    "chai": "1.7.x",
+    "grunt": "^0.4.4",
+    "grunt-contrib-coffee": "^0.10.1",
+    "grunt-contrib-concat": "^0.4.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "mocha": "^1.18.2",
+    "mocha-phantomjs": "^3.3.2",
+    "sinon": "1.9.1"
+  },
+  "homepage": "http://www.dropzonejs.com",
+  "keywords": [
+    "dragndrop",
+    "drag and drop",
+    "file upload",
+    "upload"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./dist/dropzone.js",
+  "maintainers": [
+    {
+      "name": "Matias Meno",
+      "email": "m@tias.me",
+      "url": "http://www.matiasmeno.com"
+    }
+  ],
+  "name": "dropzone",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enyo/dropzone.git"
+  },
+  "scripts": {
+    "test": "./test.sh"
+  },
+  "version": "4.3.0"
+}

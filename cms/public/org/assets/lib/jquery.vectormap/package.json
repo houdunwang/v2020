@@ -1,0 +1,45 @@
+{
+  "_from": "git+https://github.com/foxythemes/jvectormap.git#master",
+  "_id": "jvectormap@1.0.0",
+  "_inBundle": false,
+  "_location": "/jvectormap",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "jvectormap@git+https://github.com/foxythemes/jvectormap.git#master",
+    "name": "jvectormap",
+    "escapedName": "jvectormap",
+    "rawSpec": "git+https://github.com/foxythemes/jvectormap.git#master",
+    "saveSpec": "git+https://github.com/foxythemes/jvectormap.git#master",
+    "fetchSpec": "https://github.com/foxythemes/jvectormap.git",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/foxythemes/jvectormap.git#467a493d82641f1ab3d105c82861ef0449cfdd06",
+  "_spec": "jvectormap@git+https://github.com/foxythemes/jvectormap.git#master",
+  "_where": "/home/miguel/projects/beagle",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/foxythemes/jvectormap/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "jVectorMap is a vector-based, cross-browser and cross-platform component for interactive geography-related data visualization on the web. It provides numerious features like smooth zooming and panning, fully-customizable styling, markers, labels and tooltips.",
+  "directories": {
+    "test": "tests"
+  },
+  "homepage": "https://github.com/foxythemes/jvectormap#readme",
+  "license": "ISC",
+  "main": "jquery-jvectormap.js",
+  "name": "jvectormap",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foxythemes/jvectormap.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

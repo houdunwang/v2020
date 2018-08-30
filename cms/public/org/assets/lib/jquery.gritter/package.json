@@ -1,0 +1,80 @@
+{
+  "_from": "git+https://github.com/foxythemes/Gritter.git#master",
+  "_id": "Gritter@1.7.4",
+  "_inBundle": false,
+  "_location": "/Gritter",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "Gritter@git+https://github.com/foxythemes/Gritter.git#master",
+    "name": "Gritter",
+    "escapedName": "Gritter",
+    "rawSpec": "git+https://github.com/foxythemes/Gritter.git#master",
+    "saveSpec": "git+https://github.com/foxythemes/Gritter.git#master",
+    "fetchSpec": "https://github.com/foxythemes/Gritter.git",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/foxythemes/Gritter.git#22fd3938317fa2bf1cc25528c9ae1c3af28f4b90",
+  "_spec": "Gritter@git+https://github.com/foxythemes/Gritter.git#master",
+  "_where": "/home/miguel/projects/beagle",
+  "bugs": {
+    "url": "https://github.com/jboesch/Gritter/issues"
+  },
+  "bundleDependencies": false,
+  "categories": [
+    "UI"
+  ],
+  "contributors": [
+    {
+      "name": "Jordan Boesch",
+      "url": "http://boedesign.com"
+    }
+  ],
+  "deprecated": false,
+  "description": "A small growl-like notification plugin for jQuery",
+  "github": "https://github.com/jboesch/Gritter",
+  "homepage": "http://boedesign.com/blog/2009/07/11/growl-for-jquery-gritter/",
+  "jam": {
+    "dependencies": {
+      "jquery": ">1.4.2"
+    },
+    "main": "js/jquery.gritter.js",
+    "shim": {
+      "deps": [
+        "jquery"
+      ],
+      "exports": "Gritter"
+    }
+  },
+  "keywords": [
+    "package",
+    "gritter"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "Jordan Boesch",
+      "url": "http://boedesign.com"
+    }
+  ],
+  "name": "Gritter",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git+https://github.com/jboesch/Gritter.git"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jboesch/Gritter.git"
+  },
+  "version": "1.7.4"
+}
