@@ -8,7 +8,7 @@
                         <li class="divider">系统模块</li>
                         <li class="active"><a href="/"><i class="icon mdi mdi-home"></i><span>网站首页</span></a>
                         </li>
-                        <li class="parent open"><a href="#"><i class="icon mdi mdi-border-all"></i><span>系统管理</span></a>
+                        <li class="parent "><a href="#"><i class="icon mdi mdi-border-all"></i><span>系统管理</span></a>
                             <ul class="sub-menu">
                                 <li><a href="{{route('config.edit',['name'=>'site'])}}">网站配置</a></li>
                                 <li><a href="{{route('config.edit',['name'=>'mail'])}}">邮箱配置</a></li>
@@ -62,3 +62,13 @@
         </div>
     </div>
 </div>
+@push('js')
+    <script>
+        require(['jquery'], function ($) {
+            $('.parent').click(function(){
+                $('.parent').removeClass('open');
+                $(this).addClass('open')
+            })
+        })
+    </script>
+@endpush

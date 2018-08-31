@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('org/assets')}}/lib/jquery.vectormap/jquery-jvectormap-1.2.2.css"/>
     <link rel="stylesheet" type="text/css" href="{{asset('org/assets')}}/lib/jqvmap/jqvmap.min.css"/>
     <link rel="stylesheet" type="text/css" href="{{asset('org/assets')}}/lib/datetimepicker/css/bootstrap-datetimepicker.min.css"/>
-
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     @include('layouts._hdjs')
     <link rel="stylesheet" href="{{asset('org/assets')}}/css/app.css" type="text/css"/>
     @stack('css')

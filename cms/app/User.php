@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Attachment;
 use App\Observers\UserObServer;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -35,5 +36,10 @@ class User extends Authenticatable
     {
         parent::boot();
         User::observe(UserObServer::class);
+    }
+
+    public function attachment()
+    {
+        return $this->hasMany(Attachment::class);
     }
 }
