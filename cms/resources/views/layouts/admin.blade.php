@@ -1,336 +1,763 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="{{asset('org/assets')}}/img/logo-fav.png">
-    <title>{{hd_config('site.webname')}}</title>
-    <link rel="stylesheet" type="text/css" href="{{asset('org/assets')}}/lib/perfect-scrollbar/css/perfect-scrollbar.min.css"/>
-    <link rel="stylesheet" type="text/css" href="{{asset('org/assets')}}/lib/material-design-icons/css/material-design-iconic-font.min.css"/>
-    <link rel="stylesheet" type="text/css" href="{{asset('org/assets')}}/lib/jquery.vectormap/jquery-jvectormap-1.2.2.css"/>
-    <link rel="stylesheet" type="text/css" href="{{asset('org/assets')}}/lib/jqvmap/jqvmap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="{{asset('org/assets')}}/lib/datetimepicker/css/bootstrap-datetimepicker.min.css"/>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    @include('layouts._hdjs')
-    <link rel="stylesheet" href="{{asset('org/assets')}}/css/app.css" type="text/css"/>
-    @stack('css')
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/fonts/feather/feather.min.css">
+    <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/libs/highlight/styles/vs2015.min.css">
+    <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/libs/quill/dist/quill.core.css">
+    <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/libs/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/libs/flatpickr/dist/flatpickr.min.css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/css/theme.min.css">
+    <title>Dashkit</title>
 </head>
 <body>
-<div class="be-wrapper be-fixed-sidebar">
-    <nav class="navbar navbar-expand fixed-top be-top-header">
-        <div class="container-fluid">
-            <div class="be-navbar-header"><a href="index.html" class="navbar-brand"></a>
-            </div>
-            <div class="be-right-navbar">
-                <ul class="nav navbar-nav float-right be-user-nav">
-                    <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><img src="{{asset('org/assets')}}/img/avatar.png" alt="Avatar"><span class="user-name">Túpac Amaru</span></a>
-                        <div role="menu" class="dropdown-menu">
-                            <div class="user-info">
-                                <div class="user-name">Túpac Amaru</div>
-                                <div class="user-position online">Available</div>
-                            </div><a href="pages-profile.html" class="dropdown-item"><span class="icon mdi mdi-face"></span> Account</a>
-                            <a href="#" class="dropdown-item"><span class="icon mdi mdi-settings"></span> Settings</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                <span class="icon mdi mdi-power"></span>退出</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
+
+<!-- MODALS
+================================================== -->
+<!-- Modal: Members -->
+<div class="modal fade" id="modalMembers" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-card card" data-toggle="lists" data-lists-values='["name"]'>
+                <div class="card-header">
+                    <div class="row align-items-center">
+                        <div class="col">
+
+                            <!-- Title -->
+                            <h4 class="card-header-title" id="exampleModalCenterTitle">
+                                Add a member
+                            </h4>
+
                         </div>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav float-right be-icons-nav">
-                    <li class="nav-item dropdown"><a href="#" role="button" aria-expanded="false" class="nav-link be-toggle-right-sidebar"><span class="icon mdi mdi-settings"></span></a></li>
-                    <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span class="icon mdi mdi-notifications"></span><span class="indicator"></span></a>
-                        <ul class="dropdown-menu be-notifications">
-                            <li>
-                                <div class="title">Notifications<span class="badge badge-pill">3</span></div>
-                                <div class="list">
-                                    <div class="be-scroller">
-                                        <div class="content">
-                                            <ul>
-                                                <li class="notification notification-unread"><a href="#">
-                                                        <div class="image"><img src="{{asset('org/assets')}}/img/avatar2.png" alt="Avatar"></div>
-                                                        <div class="notification-info">
-                                                            <div class="text"><span class="user-name">Jessica Caruso</span> accepted your invitation to join the team.</div><span class="date">2 min ago</span>
-                                                        </div></a></li>
-                                                <li class="notification"><a href="#">
-                                                        <div class="image"><img src="{{asset('org/assets')}}/img/avatar3.png" alt="Avatar"></div>
-                                                        <div class="notification-info">
-                                                            <div class="text"><span class="user-name">Joel King</span> is now following you</div><span class="date">2 days ago</span>
-                                                        </div></a></li>
-                                                <li class="notification"><a href="#">
-                                                        <div class="image"><img src="{{asset('org/assets')}}/img/avatar4.png" alt="Avatar"></div>
-                                                        <div class="notification-info">
-                                                            <div class="text"><span class="user-name">John Doe</span> is watching your main repository</div><span class="date">2 days ago</span>
-                                                        </div></a></li>
-                                                <li class="notification"><a href="#">
-                                                        <div class="image"><img src="{{asset('org/assets')}}/img/avatar5.png" alt="Avatar"></div>
-                                                        <div class="notification-info"><span class="text"><span class="user-name">Emily Carter</span> is now following you</span><span class="date">5 days ago</span></div></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer"> <a href="#">View all notifications</a></div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span class="icon mdi mdi-apps"></span></a>
-                        <ul class="dropdown-menu be-connections">
-                            <li>
-                                <div class="list">
-                                    <div class="content">
-                                        <div class="row">
-                                            <div class="col"><a href="#" class="connection-item"><img src="{{asset('org/assets')}}/img/github.png" alt="Github"><span>GitHub</span></a></div>
-                                            <div class="col"><a href="#" class="connection-item"><img src="{{asset('org/assets')}}/img/bitbucket.png" alt="Bitbucket"><span>Bitbucket</span></a></div>
-                                            <div class="col"><a href="#" class="connection-item"><img src="{{asset('org/assets')}}/img/slack.png" alt="Slack"><span>Slack</span></a></div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col"><a href="#" class="connection-item"><img src="{{asset('org/assets')}}/img/dribbble.png" alt="Dribbble"><span>Dribbble</span></a></div>
-                                            <div class="col"><a href="#" class="connection-item"><img src="{{asset('org/assets')}}/img/mail_chimp.png" alt="Mail Chimp"><span>Mail Chimp</span></a></div>
-                                            <div class="col"><a href="#" class="connection-item"><img src="{{asset('org/assets')}}/img/dropbox.png" alt="Dropbox"><span>Dropbox</span></a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer"> <a href="#">More</a></div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-@include('layouts._admin_menu')
-    <div class="be-content">
-        <div class="main-content container-fluid">
-            @include('layouts._message')
-            @yield('content')
-        </div>
-    </div>
-    <nav class="be-right-sidebar">
-        <div class="sb-content">
-            <div class="tab-navigation">
-                <ul role="tablist" class="nav nav-tabs nav-justified">
-                    <li role="presentation" class="nav-item"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab" class="nav-link active">Chat</a></li>
-                    <li role="presentation" class="nav-item"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab" class="nav-link">Todo</a></li>
-                    <li role="presentation" class="nav-item"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab" class="nav-link">Settings</a></li>
-                </ul>
-            </div>
-            <div class="tab-panel">
-                <div class="tab-content">
-                    <div id="tab1" role="tabpanel" class="tab-pane tab-chat active">
-                        <div class="chat-contacts">
-                            <div class="chat-sections">
-                                <div class="be-scroller">
-                                    <div class="content">
-                                        <h2>Recent</h2>
-                                        <div class="contact-list contact-list-recent">
-                                            <div class="user"><a href="#"><img src="{{asset('org/assets')}}/img/avatar1.png" alt="Avatar">
-                                                    <div class="user-data"><span class="status away"></span><span class="name">Claire Sassu</span><span class="message">Can you share the...</span></div></a></div>
-                                            <div class="user"><a href="#"><img src="{{asset('org/assets')}}/img/avatar2.png" alt="Avatar">
-                                                    <div class="user-data"><span class="status"></span><span class="name">Maggie jackson</span><span class="message">I confirmed the info.</span></div></a></div>
-                                            <div class="user"><a href="#"><img src="{{asset('org/assets')}}/img/avatar3.png" alt="Avatar">
-                                                    <div class="user-data"><span class="status offline"></span><span class="name">Joel King		</span><span class="message">Ready for the meeti...</span></div></a></div>
-                                        </div>
-                                        <h2>Contacts</h2>
-                                        <div class="contact-list">
-                                            <div class="user"><a href="#"><img src="{{asset('org/assets')}}/img/avatar4.png" alt="Avatar">
-                                                    <div class="user-data2"><span class="status"></span><span class="name">Mike Bolthort</span></div></a></div>
-                                            <div class="user"><a href="#"><img src="{{asset('org/assets')}}/img/avatar5.png" alt="Avatar">
-                                                    <div class="user-data2"><span class="status"></span><span class="name">Maggie jackson</span></div></a></div>
-                                            <div class="user"><a href="#"><img src="{{asset('org/assets')}}/img/avatar6.png" alt="Avatar">
-                                                    <div class="user-data2"><span class="status offline"></span><span class="name">Jhon Voltemar</span></div></a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bottom-input">
-                                <input type="text" placeholder="Search..." name="q"><span class="mdi mdi-search"></span>
-                            </div>
+                        <div class="col-auto">
+
+                            <!-- Close -->
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
                         </div>
-                        <div class="chat-window">
-                            <div class="title">
-                                <div class="user"><img src="{{asset('org/assets')}}/img/avatar2.png" alt="Avatar">
-                                    <h2>Maggie jackson</h2><span>Active 1h ago</span>
-                                </div><span class="icon return mdi mdi-chevron-left"></span>
-                            </div>
-                            <div class="chat-messages">
-                                <div class="be-scroller">
-                                    <div class="content">
-                                        <ul>
-                                            <li class="friend">
-                                                <div class="msg">Hello</div>
-                                            </li>
-                                            <li class="self">
-                                                <div class="msg">Hi, how are you?</div>
-                                            </li>
-                                            <li class="friend">
-                                                <div class="msg">Good, I'll need support with my pc</div>
-                                            </li>
-                                            <li class="self">
-                                                <div class="msg">Sure, just tell me what is going on with your computer?</div>
-                                            </li>
-                                            <li class="friend">
-                                                <div class="msg">I don't know it just turns off suddenly</div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="chat-input">
-                                <div class="input-wrapper"><span class="photo mdi mdi-camera"></span>
-                                    <input type="text" placeholder="Message..." name="q" autocomplete="off"><span class="send-msg mdi mdi-mail-send"></span>
+                    </div> <!-- / .row -->
+                </div>
+                <div class="card-header">
+
+                    <!-- Form -->
+                    <form>
+                        <div class="input-group input-group-flush input-group-merge">
+                            <input type="search" class="form-control form-control-prepended search" placeholder="Search">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <span class="fe fe-search"></span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="tab2" role="tabpanel" class="tab-pane tab-todo">
-                        <div class="todo-container">
-                            <div class="todo-wrapper">
-                                <div class="be-scroller">
-                                    <div class="todo-content"><span class="category-title">Today</span>
-                                        <ul class="todo-list">
-                                            <li>
-                                                <label class="custom-checkbox custom-control custom-control-sm"><span class="delete mdi mdi-delete"></span>
-                                                    <input type="checkbox" checked="" class="custom-control-input"><span class="custom-control-label">Initialize the project</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="custom-checkbox custom-control custom-control-sm"><span class="delete mdi mdi-delete"></span>
-                                                    <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Create the main structure							</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="custom-checkbox custom-control custom-control-sm"><span class="delete mdi mdi-delete"></span>
-                                                    <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Updates changes to GitHub							</span>
-                                                </label>
-                                            </li>
-                                        </ul><span class="category-title">Tomorrow</span>
-                                        <ul class="todo-list">
-                                            <li>
-                                                <label class="custom-checkbox custom-control custom-control-sm"><span class="delete mdi mdi-delete"></span>
-                                                    <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Initialize the project							</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="custom-checkbox custom-control custom-control-sm"><span class="delete mdi mdi-delete"></span>
-                                                    <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Create the main structure							</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="custom-checkbox custom-control custom-control-sm"><span class="delete mdi mdi-delete"></span>
-                                                    <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Updates changes to GitHub							</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label class="custom-checkbox custom-control custom-control-sm"><span class="delete mdi mdi-delete"></span>
-                                                    <input type="checkbox" class="custom-control-input"><span title="This task is too long to be displayed in a normal space!" class="custom-control-label">This task is too long to be displayed in a normal space!							</span>
-                                                </label>
-                                            </li>
-                                        </ul>
-                                    </div>
+                    </form>
+
+                </div>
+                <div class="card-body">
+
+                    <!-- List group -->
+                    <ul class="list-group list-group-flush list my--3">
+                        <li class="list-group-item px-0">
+
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+
+                                    <!-- Avatar -->
+                                    <a href="profile-posts.html" class="avatar">
+                                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </a>
+
                                 </div>
-                            </div>
-                            <div class="bottom-input">
-                                <input type="text" placeholder="Create new task..." name="q"><span class="mdi mdi-plus"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab3" role="tabpanel" class="tab-pane tab-settings">
-                        <div class="settings-wrapper">
-                            <div class="be-scroller"><span class="category-title">General</span>
-                                <ul class="settings-list">
-                                    <li>
-                                        <div class="switch-button switch-button-sm">
-                                            <input type="checkbox" checked="" name="st1" id="st1"><span>
-                            <label for="st1"></label></span>
-                                        </div><span class="name">Available</span>
-                                    </li>
-                                    <li>
-                                        <div class="switch-button switch-button-sm">
-                                            <input type="checkbox" checked="" name="st2" id="st2"><span>
-                            <label for="st2"></label></span>
-                                        </div><span class="name">Enable notifications</span>
-                                    </li>
-                                    <li>
-                                        <div class="switch-button switch-button-sm">
-                                            <input type="checkbox" checked="" name="st3" id="st3"><span>
-                            <label for="st3"></label></span>
-                                        </div><span class="name">Login with Facebook</span>
-                                    </li>
-                                </ul><span class="category-title">Notifications</span>
-                                <ul class="settings-list">
-                                    <li>
-                                        <div class="switch-button switch-button-sm">
-                                            <input type="checkbox" name="st4" id="st4"><span>
-                            <label for="st4"></label></span>
-                                        </div><span class="name">Email notifications</span>
-                                    </li>
-                                    <li>
-                                        <div class="switch-button switch-button-sm">
-                                            <input type="checkbox" checked="" name="st5" id="st5"><span>
-                            <label for="st5"></label></span>
-                                        </div><span class="name">Project updates</span>
-                                    </li>
-                                    <li>
-                                        <div class="switch-button switch-button-sm">
-                                            <input type="checkbox" checked="" name="st6" id="st6"><span>
-                            <label for="st6"></label></span>
-                                        </div><span class="name">New comments</span>
-                                    </li>
-                                    <li>
-                                        <div class="switch-button switch-button-sm">
-                                            <input type="checkbox" name="st7" id="st7"><span>
-                            <label for="st7"></label></span>
-                                        </div><span class="name">Chat messages</span>
-                                    </li>
-                                </ul><span class="category-title">Workflow</span>
-                                <ul class="settings-list">
-                                    <li>
-                                        <div class="switch-button switch-button-sm">
-                                            <input type="checkbox" name="st8" id="st8"><span>
-                            <label for="st8"></label></span>
-                                        </div><span class="name">Deploy on commit</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                                <div class="col ml--2">
+
+                                    <!-- Title -->
+                                    <h4 class="mb-1 name">
+                                        <a href="profile-posts.html">Miyah Myles</a>
+                                    </h4>
+
+                                    <!-- Time -->
+                                    <p class="small mb-0">
+                                        <span class="text-success">●</span> Online
+                                    </p>
+
+                                </div>
+                                <div class="col-auto">
+
+                                    <!-- Button -->
+                                    <a href="#!" class="btn btn-sm btn-white">
+                                        Add
+                                    </a>
+
+                                </div>
+                            </div> <!-- / .row -->
+
+                        </li>
+                        <li class="list-group-item px-0">
+
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+
+                                    <!-- Avatar -->
+                                    <a href="profile-posts.html" class="avatar">
+                                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-6.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </a>
+
+                                </div>
+                                <div class="col ml--2">
+
+                                    <!-- Title -->
+                                    <h4 class="mb-1 name">
+                                        <a href="profile-posts.html">Ryu Duke</a>
+                                    </h4>
+
+                                    <!-- Time -->
+                                    <p class="small mb-0">
+                                        <span class="text-success">●</span> Online
+                                    </p>
+
+                                </div>
+                                <div class="col-auto">
+
+                                    <!-- Button -->
+                                    <a href="#!" class="btn btn-sm btn-white">
+                                        Add
+                                    </a>
+
+                                </div>
+                            </div> <!-- / .row -->
+
+                        </li>
+                        <li class="list-group-item px-0">
+
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+
+                                    <!-- Avatar -->
+                                    <a href="profile-posts.html" class="avatar">
+                                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-7.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </a>
+
+                                </div>
+                                <div class="col ml--2">
+
+                                    <!-- Title -->
+                                    <h4 class="mb-1 name">
+                                        <a href="profile-posts.html">Glen Rouse</a>
+                                    </h4>
+
+                                    <!-- Time -->
+                                    <p class="small mb-0">
+                                        <span class="text-warning">●</span> Busy
+                                    </p>
+
+                                </div>
+                                <div class="col-auto">
+
+                                    <!-- Button -->
+                                    <a href="#!" class="btn btn-sm btn-white">
+                                        Add
+                                    </a>
+
+                                </div>
+                            </div> <!-- / .row -->
+
+                        </li>
+                        <li class="list-group-item px-0">
+
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+
+                                    <!-- Avatar -->
+                                    <a href="profile-posts.html" class="avatar">
+                                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-8.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </a>
+
+                                </div>
+                                <div class="col ml--2">
+
+                                    <!-- Title -->
+                                    <h4 class="mb-1 name">
+                                        <a href="profile-posts.html">Grace Gross</a>
+                                    </h4>
+
+                                    <!-- Time -->
+                                    <p class="small mb-0">
+                                        <span class="text-danger">●</span> Offline
+                                    </p>
+
+                                </div>
+                                <div class="col-auto">
+
+                                    <!-- Button -->
+                                    <a href="#!" class="btn btn-sm btn-white">
+                                        Add
+                                    </a>
+
+                                </div>
+                            </div> <!-- / .row -->
+
+                        </li>
+                    </ul>
+
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
 </div>
-{{--<script src="{{asset('org/assets')}}/lib/jquery/jquery.min.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/js/app.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/jquery-flot/jquery.flot.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/jquery-flot/jquery.flot.pie.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/jquery-flot/jquery.flot.time.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/jquery-flot/jquery.flot.resize.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/jquery-flot/plugins/jquery.flot.orderBars.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/jquery-flot/plugins/curvedLines.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/jquery-flot/plugins/jquery.flot.tooltip.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/jquery.sparkline/jquery.sparkline.min.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/countup/countUp.min.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/jqvmap/jquery.vmap.min.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/lib/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>--}}
-{{--<script src="{{asset('org/assets')}}/js/app-dashboarddashboard.js" type="text/javascript"></script>--}}
-<script type="text/javascript">
-    require(['hdjs','jquery','lodash','bootstrap'],function(hdjs,$,_){
-    });
-    // $(document).ready(function(){
-    //     //initialize the javascript
-    //     App.init();
-    //     // App.dashboard();
-    // });
+
+<!-- Modal: Search -->
+<div class="modal fade" id="sidebarModalSearch" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-vertical" role="document">
+        <div class="modal-content">
+            <div class="modal-body" data-toggle="lists" data-lists-values='["name"]'>
+
+                <!-- Form -->
+                <form class="mb-4">
+                    <div class="input-group input-group-merge">
+                        <input type="search" class="form-control form-control-prepended search" placeholder="Search">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fe fe-search"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- List group -->
+                <div class="my--3">
+                    <div class="list-group list-group-flush list">
+                        <a href="team-overview.html" class="list-group-item px-0">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+
+                                    <!-- Avatar -->
+                                    <div class="avatar">
+                                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/teams/team-logo-1.jpg" alt="..." class="avatar-img rounded">
+                                    </div>
+
+                                </div>
+                                <div class="col ml--2">
+
+                                    <!-- Title -->
+                                    <h4 class="text-body mb-1 name">
+                                        Airbnb
+                                    </h4>
+
+                                    <!-- Time -->
+                                    <p class="small text-muted mb-0">
+                                        <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>
+                                    </p>
+
+                                </div>
+                            </div> <!-- / .row -->
+                        </a>
+                        <a href="team-overview.html" class="list-group-item px-0">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+
+                                    <!-- Avatar -->
+                                    <div class="avatar">
+                                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/teams/team-logo-2.jpg" alt="..." class="avatar-img rounded">
+                                    </div>
+
+                                </div>
+                                <div class="col ml--2">
+
+                                    <!-- Title -->
+                                    <h4 class="text-body mb-1 name">
+                                        Medium Corporation
+                                    </h4>
+
+                                    <!-- Time -->
+                                    <p class="small text-muted mb-0">
+                                        <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>
+                                    </p>
+
+                                </div>
+                            </div> <!-- / .row -->
+                        </a>
+                        <a href="project-overview.html" class="list-group-item px-0">
+
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+
+                                    <!-- Avatar -->
+                                    <div class="avatar avatar-4by3">
+                                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/projects/project-1.jpg" alt="..." class="avatar-img rounded">
+                                    </div>
+
+                                </div>
+                                <div class="col ml--2">
+
+                                    <!-- Title -->
+                                    <h4 class="text-body mb-1 name">
+                                        Homepage Redesign
+                                    </h4>
+
+                                    <!-- Time -->
+                                    <p class="small text-muted mb-0">
+                                        <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
+                                    </p>
+
+                                </div>
+                            </div> <!-- / .row -->
+
+                        </a>
+                        <a href="project-overview.html" class="list-group-item px-0">
+
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+
+                                    <!-- Avatar -->
+                                    <div class="avatar avatar-4by3">
+                                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/projects/project-2.jpg" alt="..." class="avatar-img rounded">
+                                    </div>
+
+                                </div>
+                                <div class="col ml--2">
+
+                                    <!-- Title -->
+                                    <h4 class="text-body mb-1 name">
+                                        Travels & Time
+                                    </h4>
+
+                                    <!-- Time -->
+                                    <p class="small text-muted mb-0">
+                                        <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
+                                    </p>
+
+                                </div>
+                            </div> <!-- / .row -->
+
+                        </a>
+                        <a href="project-overview.html" class="list-group-item px-0">
+
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+
+                                    <!-- Avatar -->
+                                    <div class="avatar avatar-4by3">
+                                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/projects/project-3.jpg" alt="..." class="avatar-img rounded">
+                                    </div>
+
+                                </div>
+                                <div class="col ml--2">
+
+                                    <!-- Title -->
+                                    <h4 class="text-body mb-1 name">
+                                        Safari Exploration
+                                    </h4>
+
+                                    <!-- Time -->
+                                    <p class="small text-muted mb-0">
+                                        <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
+                                    </p>
+
+                                </div>
+                            </div> <!-- / .row -->
+
+                        </a>
+                        <a href="profile-posts.html" class="list-group-item px-0">
+
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+
+                                    <!-- Avatar -->
+                                    <div class="avatar">
+                                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+
+                                </div>
+                                <div class="col ml--2">
+
+                                    <!-- Title -->
+                                    <h4 class="text-body mb-1 name">
+                                        Dianna Smiley
+                                    </h4>
+
+                                    <!-- Status -->
+                                    <p class="text-body small mb-0">
+                                        <span class="text-success">●</span> Online
+                                    </p>
+
+                                </div>
+                            </div> <!-- / .row -->
+
+                        </a>
+                        <a href="profile-posts.html" class="list-group-item px-0">
+
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+
+                                    <!-- Avatar -->
+                                    <div class="avatar">
+                                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
+                                    </div>
+
+                                </div>
+                                <div class="col ml--2">
+
+                                    <!-- Title -->
+                                    <h4 class="text-body mb-1 name">
+                                        Ab Hadley
+                                    </h4>
+
+                                    <!-- Status -->
+                                    <p class="text-body small mb-0">
+                                        <span class="text-danger">●</span> Offline
+                                    </p>
+
+                                </div>
+                            </div> <!-- / .row -->
+
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Activity -->
+<div class="modal fade" id="sidebarModalActivity" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-vertical" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <!-- Title -->
+                <h4 class="modal-title">
+                    Notifications
+                </h4>
+
+                <!-- Close -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">
+                &times;
+              </span>
+                </button>
+
+            </div>
+            <div class="modal-body">
+
+                <!-- List group -->
+                <div class="list-group list-group-flush my--3">
+                    <a class="list-group-item px-0" href="#!">
+
+                        <div class="row">
+                            <div class="col-auto">
+
+                                <!-- Avatar -->
+                                <div class="avatar avatar-sm">
+                                    <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                                </div>
+
+                            </div>
+                            <div class="col ml--2">
+
+                                <!-- Content -->
+                                <div class="small text-muted">
+                                    <strong class="text-body">Dianna Smiley</strong> shared your post with <strong class="text-body">Ab Hadley</strong>, <strong class="text-body">Adolfo Hess</strong>, and <strong class="text-body">3 others</strong>.
+                                </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                                <small class="text-muted">
+                                    2m
+                                </small>
+
+                            </div>
+                        </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item px-0" href="#!">
+
+                        <div class="row">
+                            <div class="col-auto">
+
+                                <!-- Avatar -->
+                                <div class="avatar avatar-sm">
+                                    <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
+                                </div>
+
+                            </div>
+                            <div class="col ml--2">
+
+                                <!-- Content -->
+                                <div class="small text-muted">
+                                    <strong class="text-body">Ab Hadley</strong> reacted to your post with a 😍
+                                </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                                <small class="text-muted">
+                                    2m
+                                </small>
+
+                            </div>
+                        </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item px-0" href="#!">
+
+                        <div class="row">
+                            <div class="col-auto">
+
+                                <!-- Avatar -->
+                                <div class="avatar avatar-sm">
+                                    <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-3.jpg" alt="..." class="avatar-img rounded-circle">
+                                </div>
+
+                            </div>
+                            <div class="col ml--2">
+
+                                <!-- Content -->
+                                <div class="small text-muted">
+                                    <strong class="text-body">Adolfo Hess</strong> commented <blockquote class="text-body">“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...” </blockquote>
+                                </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                                <small class="text-muted">
+                                    2m
+                                </small>
+
+                            </div>
+                        </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item px-0" href="#!">
+
+                        <div class="row">
+                            <div class="col-auto">
+
+                                <!-- Avatar -->
+                                <div class="avatar avatar-sm">
+                                    <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-4.jpg" alt="..." class="avatar-img rounded-circle">
+                                </div>
+
+                            </div>
+                            <div class="col ml--2">
+
+                                <!-- Content -->
+                                <div class="small text-muted">
+                                    <strong class="text-body">Daniela Dewitt</strong> subscribed to you.
+                                </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                                <small class="text-muted">
+                                    2m
+                                </small>
+
+                            </div>
+                        </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item px-0" href="#!">
+
+                        <div class="row">
+                            <div class="col-auto">
+
+                                <!-- Avatar -->
+                                <div class="avatar avatar-sm">
+                                    <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle">
+                                </div>
+
+                            </div>
+                            <div class="col ml--2">
+
+                                <!-- Content -->
+                                <div class="small text-muted">
+                                    <strong class="text-body">Miyah Myles</strong> shared your post with <strong class="text-body">Ryu Duke</strong>, <strong class="text-body">Glen Rouse</strong>, and <strong class="text-body">3 others</strong>.
+                                </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                                <small class="text-muted">
+                                    2m
+                                </small>
+
+                            </div>
+                        </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item px-0" href="#!">
+
+                        <div class="row">
+                            <div class="col-auto">
+
+                                <!-- Avatar -->
+                                <div class="avatar avatar-sm">
+                                    <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-6.jpg" alt="..." class="avatar-img rounded-circle">
+                                </div>
+
+                            </div>
+                            <div class="col ml--2">
+
+                                <!-- Content -->
+                                <div class="small text-muted">
+                                    <strong class="text-body">Ryu Duke</strong> reacted to your post with a 😍
+                                </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                                <small class="text-muted">
+                                    2m
+                                </small>
+
+                            </div>
+                        </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item px-0" href="#!">
+
+                        <div class="row">
+                            <div class="col-auto">
+
+                                <!-- Avatar -->
+                                <div class="avatar avatar-sm">
+                                    <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-7.jpg" alt="..." class="avatar-img rounded-circle">
+                                </div>
+
+                            </div>
+                            <div class="col ml--2">
+
+                                <!-- Content -->
+                                <div class="small text-muted">
+                                    <strong class="text-body">Glen Rouse</strong> commented <blockquote class="text-body">“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...” </blockquote>
+                                </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                                <small class="text-muted">
+                                    2m
+                                </small>
+
+                            </div>
+                        </div> <!-- / .row -->
+
+                    </a>
+                    <a class="list-group-item px-0" href="#!">
+
+                        <div class="row">
+                            <div class="col-auto">
+
+                                <!-- Avatar -->
+                                <div class="avatar avatar-sm">
+                                    <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-8.jpg" alt="..." class="avatar-img rounded-circle">
+                                </div>
+
+                            </div>
+                            <div class="col ml--2">
+
+                                <!-- Content -->
+                                <div class="small text-muted">
+                                    <strong class="text-body">Grace Gross</strong> subscribed to you.
+                                </div>
+
+                            </div>
+                            <div class="col-auto">
+
+                                <small class="text-muted">
+                                    2m
+                                </small>
+
+                            </div>
+                        </div> <!-- / .row -->
+
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SIDEBAR
+================================================== -->
+<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white">
+    <div class="container-fluid">
+
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">
+            <img src="{{asset('images/logo.png')}}" class="navbar-brand-img mx-auto" alt="...">
+        </a>
+
+        <!-- User (xs) -->
+        <div class="navbar-user d-md-none">
+
+            <!-- Dropdown -->
+            <div class="dropdown">
+
+                <!-- Toggle -->
+                <a href="#!" id="sidebarIcon" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="avatar avatar-sm avatar-online">
+                        <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                    </div>
+                </a>
+
+                <!-- Menu -->
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sidebarIcon">
+                    <a href="profile-posts.html" class="dropdown-item">Profile</a>
+                    <a href="settings.html" class="dropdown-item">Settings</a>
+                    <hr class="dropdown-divider">
+                    <a href="sign-in.html" class="dropdown-item">Logout</a>
+                </div>
+
+            </div>
+
+        </div>
+
+     @include('layouts.admin_menu')
+
+    </div> <!-- / .container-fluid -->
+</nav>
+
+<div class="main-content">
+    <div class="container-fluid">
+     @yield('content')
+    </div> <!-- / .container-fluid -->
+</div> <!-- / .main-content -->
+
+<!-- JAVASCRIPT
+================================================== -->
+
+<!-- Libs JS -->
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/libs/jquery/dist/jquery.min.js"></script>--}}
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>--}}
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/libs/chart.js/dist/Chart.min.js"></script>--}}
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/libs/chart.js/Chart.extension.min.js"></script>--}}
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/libs/highlight/highlight.pack.min.js"></script>--}}
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/libs/flatpickr/dist/flatpickr.min.js"></script>--}}
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>--}}
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/libs/list.js/dist/list.min.js"></script>--}}
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/libs/quill/dist/quill.min.js"></script>--}}
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/libs/dropzone/dist/min/dropzone.min.js"></script>--}}
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/libs/select2/dist/js/select2.min.js"></script>--}}
+
+<!-- Theme JS -->
+{{--<script src="{{asset('org/Dashkit-1.1.2')}}/js/theme.min.js"></script>--}}
+@include('layouts._hdjs')
+<script>
+    require(['jquery','bootstrap'])
 </script>
-@stack('js')
 </body>
 </html>

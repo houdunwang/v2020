@@ -16,11 +16,13 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
+            $table->string('mobile')->unique()->nullable();
             $table->string('password');
             $table->string('token')->comment('邮箱验证码');
             $table->tinyInteger('is_admin')->default(0)->comment('管理员');
             $table->tinyInteger('email_valid')->default(0)->comment('邮箱验证状态');
+            $table->tinyInteger('mobile_valid')->default(0)->comment('手机验证状态');
             $table->rememberToken();
             $table->timestamps();
         });

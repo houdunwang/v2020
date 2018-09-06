@@ -11,8 +11,14 @@
 |
 */
 Auth::routes();
-Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'Video\HomeController@index')->name('home');
+Route::get('/home', 'Video\HomeController@index')->name('home');
+
+//用户登录退出
+Route::get('login', 'LoginController@login')->name('login');
+
+//用户管理
+Route::resource('user','UserController');
 
 Route::get('user/show_token', 'UserController@showToken')->name('user.show_token');
 Route::post('user/send_token', 'UserController@send')->name('user.send_token');
@@ -21,6 +27,8 @@ Route::get('user/check_mail/{token}', 'UserController@checkMail')->name('user.ch
 Route::group(['prefix' => 'util', 'namespace' => 'Util'], function () {
     Route::post('upload', 'UploadController@upload')->name('upload');
     Route::any('upload/lists', 'UploadController@lists')->name('upload.lists');
+
+    Route::any('code/send','CodeController@send')->name('code.send');
 });
 //文章系统路由列表
 Route::group(['namespace' => 'Article', 'prefix' => 'article', 'middleware' => ['user.check_mail']], function () {

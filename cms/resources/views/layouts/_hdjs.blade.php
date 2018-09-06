@@ -1,5 +1,4 @@
 <meta name="csrf-token" content="{{csrf_token()}}">
-<link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
 <script>
     window.hdjs = {};
     //组件目录必须绝对路径
