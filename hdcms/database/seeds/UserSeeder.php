@@ -11,10 +11,16 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $users = factory(\App\User::class,3)->create();
-        $users[0]['name'] = '向军大叔';
-        $users[0]['email'] = '2300071698@qq.com';
-        $users[0]['is_admin'] = true;
-        $users[0]->save();
+        factory(\App\User::class, 3)->create();
+        $user = \App\User::find(1);
+        $user['name'] = '向军大叔';
+        $user['email'] = '2300071698@qq.com';
+        $user['is_admin'] = true;
+        $user->save();
+        $user = \App\User::find(2);
+        $user['name'] = '李四';
+        $user['email'] = '931241005@qq.com';
+        $user['is_admin'] = true;
+        $user->save();
     }
 }

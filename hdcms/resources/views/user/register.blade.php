@@ -32,7 +32,7 @@
             <p class="text-muted text-center mb-5">
                 注册帐号参与学习讨论
             </p>
-            <form method="post" action="{{route('user.store')}}">
+            <form method="post" action="{{route('register')}}">
                 @csrf
                 <div class="form-group">
                     <label>昵称</label>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="form-group">
                     <label>帐号</label>
-                    <input type="text"  value="{{old('account')}}" class="form-control" name="account" placeholder="请输入邮箱或手机号">
+                    <input type="password"  value="{{old('account')}}" class="form-control" name="account" placeholder="请输入邮箱或手机号">
                 </div>
                 <div class="form-group">
                     <label>密码</label>
@@ -82,7 +82,7 @@
             //后台链接
             url: '{{route('util.code.send')}}',
             //验证码等待发送时间
-            timeout: 1,
+            timeout: "{{hd_config('base.code_expire')}}",
             data: {"_token": "{{csrf_token()}}"},
             //表单，手机号或邮箱的INPUT表单
             input: '[name="account"]'

@@ -13,17 +13,21 @@
     <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/libs/flatpickr/dist/flatpickr.min.css">
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/css/theme.min.css">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <title>{{hd_config('site.webname')}}</title>
+    @include('layouts.hdjs')
+    @include('layouts.message')
 </head>
 <body>
-@include('video.layouts._header')
+@include('edu.layouts._header')
 <div class="container mt-3">
     @yield('content')
 </div>
-@include('video.layouts._footer')
-@include('layouts.hdjs')
+@include('edu.layouts._footer')
 <script>
     require(['jquery','bootstrap'])
 </script>
+@stack('js')
 </body>
 </html>

@@ -1,4 +1,4 @@
-@extends('video.layouts.master')
+@extends('edu.layouts.master')
 @section('content')
         <div class="row">
             <div class="col-12">

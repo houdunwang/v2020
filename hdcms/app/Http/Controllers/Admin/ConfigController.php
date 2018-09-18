@@ -17,6 +17,7 @@ class ConfigController extends Controller
     public function update($name, Request $request)
     {
         Config::updateOrCreate(['name' => $name], ['name' => $name, 'data' => $request->all()]);
+        hd_edit_env($request->all());
         return back()->with('success', '配置项保存成功');
     }
 }

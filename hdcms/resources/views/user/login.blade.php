@@ -54,8 +54,8 @@
                 </button>
                 <p class="text-center">
                     <small class="text-muted text-center">
-                        没有帐号? <a href="{{route('user.create')}}">注册</a>.
-                        <a href="{{route('user.create')}}">找回密码</a>.
+                        没有帐号? <a href="{{route('register')}}">注册</a>.
+                        <a href="{{route('register')}}">找回密码</a>.
                         <a href="/">返回首页</a>
                     </small>
                 </p>

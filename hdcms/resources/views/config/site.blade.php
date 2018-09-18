@@ -6,19 +6,19 @@
                 @csrf
                 <div class="form-group">
                     <label>网站名称</label>
-                    <input type="text" class="form-control" name="webname" value="{{$config['data']['webname']}}">
+                    <input type="text" class="form-control" name="webname" value="{{$config['data']['webname']??''}}">
                 </div>
                 <div class="form-group">
                     <label>网站关键字</label>
-                    <input type="text" class="form-control" name="keywords" value="{{$config['data']['keywords']}}">
+                    <input type="text" class="form-control" name="keywords" value="{{$config['data']['keywords']??''}}">
                 </div>
                 <div class="form-group">
                     <label>网站介绍</label>
-                    <textarea rows="3" class="form-control" name="description">{{$config['data']['description']}}</textarea>
+                    <textarea rows="3" class="form-control" name="description">{{$config['data']['description']??''}}</textarea>
                 </div>
                 <div class="form-group">
                     <label>备案号</label>
-                    <input type="text" class="form-control" name="icp" value="{{$config['data']['icp']}}">
+                    <input type="text" class="form-control" name="icp" value="{{$config['data']['icp']??''}}">
                 </div>
                 <div class="form-group">
                     <label>咨询热线</label>

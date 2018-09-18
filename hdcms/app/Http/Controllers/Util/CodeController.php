@@ -11,10 +11,11 @@ use App\Http\Controllers\Controller;
 
 class CodeController extends Controller
 {
-    protected $expire = 3;
+    protected $expire;
 
     public function __construct()
     {
+        $this->expire = hd_config('base.code_expire');
     }
 
     public function send(Request $request)

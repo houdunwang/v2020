@@ -13,15 +13,35 @@ function hd_random($num)
     return $str;
 }
 
-//hd_config('site.webname')
+/**
+ * 获取配置项
+ * @param $path string 配置项
+ * @return null
+ */
 function hd_config($path)
 {
     static $cache = [];
     $info = explode('.', $path);
     $name = $info[0];
-    if (!isset($cache[$name])) {
-        $config = \App\Models\Config::where('name', $name)->value('data');
-        $cache[$name] = $config;
+    if (empty($cache)) {
+        $cache = Cache::get('hd_config', function () {
+            return \App\Models\Config::pluck('data', 'name');
+        });
     }
-    return $cache[$name][$info[1]];
+    return $cache[$name][$info[1]] ?? null;
+}
+
+/**
+ * 获取模型类或模型实例对象
+ * @return string\
+ */
+function hd_model()
+{
+    $name = Request::query('model');
+    $id = Request::query('id');
+    if (!strpos($name, '-')) {
+        $name = 'App-Models-' . $name;
+    }
+    $class = '\\' . str_replace('-', '\\', $name);
+    return $class::find($id);
 }
