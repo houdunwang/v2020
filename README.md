@@ -4,7 +4,7 @@
 
 
 
-> [向军大叔每天免费直播实战开发，助你提升开发技能！http://www.aoxiangjun.com](http://www.aoxiangjun.com) 
+> [向军大叔每天免费直播实战开发，助你提升开发技能！](http://www.aoxiangjun.com) 
 
 
 
