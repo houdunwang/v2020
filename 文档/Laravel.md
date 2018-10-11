@@ -4,8 +4,6 @@
 
 > 后盾人 www.houdunren.com  作者：向军大叔
 
-
-
 ## 介绍
 
 Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它可以让你从面条一样杂乱的代码中解脱出来；它可以帮你构建一个完美的网络APP，而且每行代码都可以简洁、富于表达力。
@@ -46,7 +44,7 @@ APP_NAME=后盾人
 APP_URL=http://houdunren.com
 ```
 
-**Mysql低版本**
+## Mysql低版本
 
 如果你是在版本低于 5.7.7 的 MySQL release 上创建索引，那就需要你手动配置迁移生成的默认字符串长度。
 
@@ -185,6 +183,107 @@ include用于加载外部模板
 @includeWhen($boolean, 'view.name', ['some' => 'data'])
 ```
 
+#### stack
+
+Blade 可以被推送到在其他视图或布局中的其他位置渲染的命名堆栈。这在子视图中指定所需的 JavaScript 库时非常有用：
+
+父模板使用
+
+```
+<head>
+    <!-- Head Contents -->
+    @stack('scripts')
+</head>
+```
+
+子模板
+
+```
+@push('scripts')
+    <script src="/example.js"></script>
+@endpush
+```
+
+#### component&slot
+
+组件相比 @extends 更灵活些，下面是定义一个 `modal` 组件。
+
+组件中的变量可以在调用组件时传参数
+
+```
+@component('components.modal',['title'=>'你好','url'=>route('home')])
+```
+
+也可以使用 `slot` 标签赋值
+
+```
+@slot('footer')
+<button type="button" data-dismiss="modal" class="btn btn-secondary md-close">cancel</button>
+@endslot
+```
+
+**示例**
+
+定义一个模态框组件 `view/components/modal.blade.php`
+
+```
+<form action="{{$url}}" method="post" {!!isset($id)?"id=\"$id\"":''!!}>
+    @csrf
+    @isset($method) @method($method) @endif
+    <div id="form-bp1" tabindex="-1" role="dialog" class="modal fade colored-header colored-header-primary">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-colored">
+                    <h3 class="modal-title">
+                        @isset($title) {{$title}} @endisset
+                    </h3>
+                    <button type="button" data-dismiss="modal" aria-hidden="true" class="close md-close"><span class="mdi mdi-close"></span></button>
+                </div>
+                <div class="modal-body">
+                    {{$slot}}
+                </div>
+                <div class="modal-footer">
+                    @isset($footer)
+                        {{$footer}}
+                    @else
+                        <button type="button" data-dismiss="modal" class="btn btn-secondary md-close">关闭</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-primary md-close">保存</button>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+```
+
+模板中调用 `modal` 组件
+
+```
+@component('components.modal',['title'=>'你好','url'=>route('home'),'method'=>'PUT'])
+<div class="form-group row">
+ <label for="inputText3" class="col-12 col-sm-3 col-form-label text-sm-right">
+   Input Text
+ </label>
+ <div class="col-12 col-sm-12 col-lg-6">
+  <input id="inputText3" type="text" class="form-control form-control-sm">
+ </div>
+</div>
+@slot('footer')
+<button type="button" data-dismiss="modal" class="btn btn-secondary md-close">cancel</button>
+<button type="button" data-dismiss="modal" class="btn btn-primary md-close">save</button>
+@endslot
+@endcomponent
+```
+
+### 动态视图目录
+
+有时我们需要经常改变视图目录
+
+```
+$finder = app('view')->getFinder();
+$finder->prependLocation(public_path('templates/'));
+```
+
 ## 脚手架
 
 安装cnpm 使用国内镜像，安装速度快。
@@ -276,6 +375,15 @@ php artisan migrate
 php artisan migrate:rollback
 ```
 
+#### 关联外键约束
+
+下面是文章表category_id与栏目表的id关联约束设置，当栏目删除时栏目下的所有文章自动删除。
+
+```
+$table->unsignedInteger('category_id')->comment('栏目');
+$table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+```
+
 ## 模型
 
 Laravel 的 Eloquent ORM 提供了漂亮、简洁的 ActiveRecord 实现来和数据库交互。每个数据库表都有一个对应的「模型」用来与该表交互。你可以通过模型查询数据表中的数据，并将新记录添加到数据表中。
@@ -337,6 +445,75 @@ class User extends Model
 ```
 $users = App\User::active(1)->get();
 ```
+
+#### associate
+
+当更新 `belongsTo` 关联时，可以使用 `associate` 方法。此方法将会在子模型中设置外键：
+
+```
+$account = App\Account::find(10);
+
+$user->account()->associate($account);
+
+$user->save();
+```
+
+#### 软删除
+
+软件删除不是真正删除数据，只是在表中更改 deleted_at 状态完成，步骤如下：
+
+**修改模型**
+
+在模型上使用 `Illuminate\Database\Eloquent\SoftDeletes` trait 并把 `deleted_at` 字段加入 `$dates` 属性：
+
+```
+...
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Video extends Model
+{
+    use SoftDeletes;
+    ...
+}
+```
+
+**修改迁移文件**
+
+```
+Schema::create('videos', function (Blueprint $table) {
+    $table->softDeletes();
+});
+```
+
+现在，模型调用 `delete` 方法，当前日期时间会写入 `deleted_at` 字段。同时，查询出来的结果也会自动剔除软删除的模型。
+
+**包括软删除的模型**
+
+```
+ App\Videos::withTrashed()->get();
+```
+
+`withTrashed` 方法也可以用在关联查询：
+
+**只检索软删除的模型**
+
+```
+App\Videos::onlyTrashed()->get();
+```
+
+**恢复软删除模型**
+
+```
+App\Videos::get()->restore();
+```
+
+**永久删除**
+
+```
+$videos->forceDelete();
+```
+
+> 基本上软删除都可以用在关联操作中
 
 ## 分页
 
@@ -850,10 +1027,30 @@ class UserObserver{
 
 #### 声明事件
 
-在模型或AppServiceProvicer服务提供者的 `boot` 方法执行以下代码
+在AppServiceProvicer服务提供者的 `boot` 方法执行以下代码
 
 ```
 User::observe(UserObserver::class)
+```
+
+或者在模型中定义
+
+```
+namespace App;
+
+use App\Observers\UserServer;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+    ...
+    protected static function boot()
+    {
+        parent::boot();
+        User::observe(UserServer::class);
+    }
+}
 ```
 
 ## 权限策略
@@ -930,7 +1127,6 @@ MAIL_ENCRYPTION=tls
 
 ```
 php artisan make:mail regMail
-
 ```
 
 ```
@@ -1099,7 +1295,6 @@ $user->roles()->syncWithoutDetaching([1, 2, 3]);
 
 ```
 $user->roles()->allRelatedIds();
-
 ```
 
 #### toggle
@@ -1120,7 +1315,7 @@ php artisan make:notification FindPasswordNotify
 
 这个命令会在 `app/Notifications` 目录下生成一个新的通知类。 
 
-#### 数据库通知
+### 数据库通知
 
 `database` 通知渠道在一张数据库表里存储通知信息。该表以自定义的 JSON 格式，存储如通知类型等描述通知的信息。需要先创建一个数据库表来存放这些通知。
 
@@ -1140,67 +1335,6 @@ public function via($notifiable)
 ```
 
 然后定义 `toArray` 方法返回用于储存到数据表中的通知数据。
-
-#### 邮件通知
-
-修改通知类中的 `toMail` 与 `__construct` 方法
-
-```
-public function __construct($token)
-{
-	$this->token=$token;
-}
-public function toMail($notifiable)
-{
-	return (new MailMessage)
-		->subject('后盾人-向军')
-		->greeting('后盾人')->line('点击链接重设密码')
-		->action('重置密码',url(route('password.change', $this->token)))
-		->line('感谢使用后盾人');
-}
-```
-
-**自定义模板**
-
-你可以通过发布通知包的资源来修改 HTML 模板和纯文本模板。运行这个命令后，邮件通知模板就被放在了 `resources/views/vendor/notifications` 文件夹下： 
-
-```
-php artisan vendor:publish --tag=laravel-notifications
-```
-
-#### 发送通知
-
-**使用 Notifiable Trait**
-
-通知可以通过两种方法发送： `Notifiable` trait 的`notify` 方法或 `Notification` [facade](https://laravel-china.org/docs/laravel/5.6/facades)。首先，让我们探索使用 trait ：
-
-```
-<?php namespace App;
-
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-
-class User extends Authenticatable
-{
-    use Notifiable;
-}
-```
-
-默认的 `App\User` 模型中使用了这个 trait，它包含着一个可以用来发通知的方法：`notify` 。 `notify` 方法需要一个通知实例做参数：
-
-```
-use App\Notifications\InvoicePaid;
-
-$user->notify(new InvoicePaid($invoice));
-```
-
-**使用 Notification Facade**
-
-另外，你可以通过 `Notification` `facade` 来发送通知。它主要用在当你给多个可接收通知的实体发送通知的时候，比如给用户集合发通知。要用 facade 发送通知的话，要把可接收通知的实体和通知的实例传递给 `send` 方法：
-
-```
-Notification::send($users, new InvoicePaid($invoice));
-```
 
 #### 存取通知
 
@@ -1240,7 +1374,68 @@ foreach ($user->unreadNotifications as $notification) {
 $user->unreadNotifications->markAsRead();
 ```
 
-#### 队列化通知
+### 邮件通知
+
+修改通知类中的 `toMail` 与 `__construct` 方法
+
+```
+public function __construct($token)
+{
+	$this->token=$token;
+}
+public function toMail($notifiable)
+{
+	return (new MailMessage)
+		->subject('验证邮箱')
+		->greeting(config('app.name'))->line('点击下面的链接重设密码')
+		->action('重置密码',url(route('password.change', $this->token)))
+		->line('感谢使用后盾人');
+}
+```
+
+**自定义模板**
+
+你可以通过发布通知包的资源来修改 HTML 模板和纯文本模板。运行这个命令后，邮件通知模板就被放在了 `resources/views/vendor/notifications` 文件夹下： 
+
+```
+php artisan vendor:publish --tag=laravel-notifications
+```
+
+### 发送通知
+
+**使用 Notifiable Trait**
+
+通知可以通过两种方法发送： `Notifiable` trait 的`notify` 方法或 `Notification` [facade](https://laravel-china.org/docs/laravel/5.6/facades)。首先，让我们探索使用 trait ：
+
+```
+<?php namespace App;
+
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
+{
+    use Notifiable;
+}
+```
+
+默认的 `App\User` 模型中使用了这个 trait，它包含着一个可以用来发通知的方法：`notify` 。 `notify` 方法需要一个通知实例做参数：
+
+```
+use App\Notifications\InvoicePaid;
+
+$user->notify(new InvoicePaid($invoice));
+```
+
+**使用 Notification Facade**
+
+另外，你可以通过 `Notification` `facade` 来发送通知。它主要用在当你给多个可接收通知的实体发送通知的时候，比如给用户集合发通知。要用 facade 发送通知的话，要把可接收通知的实体和通知的实例传递给 `send` 方法：
+
+```
+Notification::send($users, new InvoicePaid($invoice));
+```
+
+### 队列化通知
 
 发送通知可能很耗时，尤其是是当频道需要一个额外的 API 来发送通知。要加速你的应用响应时间，让你的通知继承 `ShouldQueue` 接口 并且在你的类中添加 `Queueable` trait。这些接口和 trait 已经被使用 `make:notification` 生成的所有通知引入了，所以你可以直接将他们添加到你的通知类：
 
@@ -1552,15 +1747,13 @@ export EDITOR=vi && crontab -e
 * * * * * php /home/vagrant/code/bbs/artisan schedule:run >> /dev/null 2>&1
 ```
 
-
-
 ## Laravel Plugin
 
 在phpstorm中安装 `laravel plugin` 插件.
 
 `Settings > Languages & Frameworks > PHP > Laravel `  点击开启 `Enable for this project`
 
-![1525704374890](phpstorm.assets/1525704374890.png)
+![1525704374890](assets/1525704374890-1710462.png)
 
 ## laravel-ide-helper 
 
@@ -1651,6 +1844,26 @@ composer require caouecs/laravel-lang:~3.0
 
 在模板中就可以使用 `{{__('Login')}}`  调用了，Laravel 默认的登录模板大量使用了 JSON 语言包
 
+## SESSION
+
+默认Laravel使用文件管理会话，下面是我们改为更高效的数据库管理。
+
+创建数据表
+
+```
+php artisan session:table
+composer dump-autoload
+php artisan migrate
+```
+
+修改.env 中的驱动
+
+```
+...
+SESSION_DRIVER=database
+...
+```
+
 ## 验证码
 
 https://github.com/mewebstudio/captcha 
@@ -1675,7 +1888,285 @@ $rules = ['captcha' => 'required|captcha'];
 $validator = Validator::make(Input::all(), $rules);
 ```
 
-## 权限管理
+## 用户认证
+
+### 重定向未认证用户
+
+当 `auth` 中间件判定某个用户未认证，会返回一个 JSON `401` 响应，或者，如果不是 Ajax 请求的话，将用户重定向到 `login` 命名路由。
+
+你可以通过在 `app/Exceptions/Handler.php` 文件中定义一个 `unauthenticated` 方法来改变这一行为：
+
+```
+use IlluminateAuthAuthenticationException;
+
+protected function unauthenticated($request, AuthenticationException $exception)
+{
+    return $request->expectsJson()
+                ? response()->json(['message' => $exception->getMessage()], 401)
+                : redirect()->guest(route('login'));
+}
+```
+
+### 事件 
+
+Laravel 在认证过程中引发了各种各样的事件。你可以在 `EventServiceProvider` 中对这些事件做监听：
+
+```
+/**
+ * 应用程序的事件监听器映射。
+ *
+ * @var array
+ */
+protected $listen = [
+    'Illuminate\Auth\Events\Registered' => [
+        'App\Listeners\LogRegisteredUser',
+    ],
+
+    'Illuminate\Auth\Events\Attempting' => [
+        'App\Listeners\LogAuthenticationAttempt',
+    ],
+
+    'Illuminate\Auth\Events\Authenticated' => [
+        'App\Listeners\LogAuthenticated',
+    ],
+
+    'Illuminate\Auth\Events\Login' => [
+        'App\Listeners\LogSuccessfulLogin',
+    ],
+
+    'Illuminate\Auth\Events\Failed' => [
+        'App\Listeners\LogFailedLogin',
+    ],
+
+    'Illuminate\Auth\Events\Logout' => [
+        'App\Listeners\LogSuccessfulLogout',
+    ],
+
+    'Illuminate\Auth\Events\Lockout' => [
+        'App\Listeners\LogLockout',
+    ],
+
+    'Illuminate\Auth\Events\PasswordReset' => [
+        'App\Listeners\LogPasswordReset',
+    ],
+];
+```
+
+## 异常处理Excepton
+
+异常处理通常是防止未知错误产生所采取的处理措施。异常处理的好处是你不用再绞尽脑汁去考虑各种错误，这为处理某一类错误提供了一个很有效的方法，使编程效率大大提高。
+
+### 创建异常类
+
+```
+php artisan artisan make:exception UploadException
+```
+
+定义类内容如下
+
+```
+<?php
+
+namespace App\Exceptions;
+
+use Exception;
+use Throwable;
+
+class UploadException extends Exception
+{
+    public function __construct(string $message = "", int $code = 403, Throwable $previous = null)
+    {
+        parent::__construct($message, $code, $previous);
+    }
+	
+	//报告或者通过日志记录一个异常
+    public function report(Exception $exception)
+    {
+        parent::report($exception);
+    }
+    
+	//将异常通过 Http 返回
+    public function render()
+    {
+        return response()->json(['message' => $this->getMessage(), 'code' => 403], $this->code);
+    }
+}
+
+```
+
+### 异常日志
+
+当发生异常时会在 `storage/logs/laravel.log` 文件中记录异常。
+
+如果不想执行异常记录需要在 `app/Exceptions/Handler.php` 异常处理器文件的 `$dontReport` 属性声明。
+
+```
+class Handler extends ExceptionHandler
+{
+   ...
+   protected $dontReport = [
+   	UploadException::class,
+   ];
+   ...
+}
+```
+
+## 全站动态
+
+使用 https://github.com/spatie/laravel-activitylog 组件构成，可查看 https://docs.spatie.be/laravel-activitylog/v2/introduction 文档学习使用该组件。
+
+安装组件
+
+```
+composer require spatie/laravel-activitylog
+```
+
+创建数据迁移文件并执行
+
+```
+php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="migrations"
+
+php artisan migrate
+```
+
+### 记录动态
+
+**基本使用**
+
+```
+activity()
+   ->performedOn($someContentModel)//主题比如评论模型
+   ->causedBy($userModel)//用户模型，不设置时为当前登录用户
+   ->log('edited');
+```
+
+**设置自定义属性**
+
+```
+activity()
+   ->performedOn($someContentModel)
+   ->withProperties(['key' => 'value'])//设置自定义属性
+   ->log('edited');
+   
+//返回最后动态
+$activity = Activity::all()->last();
+
+//获取用户模型
+$activity->causer
+
+//获取日志名
+$activity->log_name
+
+//获取属性
+$activity->getExtraProperty('key');  
+
+//获取自定属性 'key' 为 'value' 的所有动态
+$activity->where('properties->key', 'value')->get();
+
+//返回模型实例
+$activity->subject;
+```
+
+### 记录模型事件
+
+程序包可以自动记录事件，例如创建，更新和删除模型时。
+
+```
+use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+
+class NewsItem extends Model
+{
+    use LogsActivity;
+
+    protected $fillable = ['name', 'text'];
+
+	//设置动态记录的属性
+    protected static $logAttributes = ['name', 'text'];
+}
+```
+
+如果要记录`$fillable`对模型的所有属性的更改，可以`protected static $logFillable = true;`
+
+
+
+```
+$newsItem = NewsItem::create([
+   'name' => 'original name',
+   'text' => 'Lorum'
+]);
+
+$activity = Activity::all()->last();
+
+//返回 'created'
+$activity->description;
+
+//返回创建的NewsItem实例
+$activity->subject;
+
+//返回模型NewsItem属性 ['attributes' => ['name' => 'original name', 'text' => 'Lorum']];
+$activity->changes();
+```
+
+### 自定义要记录的事件
+
+默认情况下，包将记录`created`，`updated`，`deleted`的事件。您可以通过`$recordEvents`在模型上设置属性来修改此行为。
+
+```php
+use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+
+class NewsItem extends Model
+{
+    use LogsActivity;
+
+    //only the `deleted` event will get logged automatically
+    protected static $recordEvents = ['created','updated'];
+}
+```
+
+### 自定义日志名称
+
+指定`$logName`使模型使用除默认名称之外的其他名称。
+
+```php
+use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+
+class NewsItem extends Model
+{
+    use LogsActivity;
+
+    protected static $logName = 'system';
+}
+```
+
+## Markdown转HTML
+
+Parsedown 组件用于将 `markdown` 内容转为 `html`
+
+**安装组件**
+
+```
+composer require erusev/parsedown
+```
+
+**模型中使用**
+
+```
+class Article extends Model
+{
+   ...
+	public function getMarkdownAttribute()
+    {
+        $Parsedown = new \Parsedown();
+        return $Parsedown->text($this['content']);
+    }
+    ..
+}
+```
+
+## 角色权限
 
 https://github.com/spatie/laravel-permission#installation
 
@@ -1684,14 +2175,15 @@ https://github.com/spatie/laravel-permission#installation
 ```
 composer require spatie/laravel-permission
 
+#生成迁移文件，根据业务需要可以随意添加表字段
 php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
 
 php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="config"
 
-php artisan migrate
+php artisan  migrate
 ```
 
-#### 缓存
+#### 基本使用
 
 缓存角色和权限数据以加速性能。当你使用提供的方法来操作角色和权限时，缓存会自动为您重置：
 
@@ -1711,12 +2203,19 @@ $permission->syncRoles(params);
 
 #### 手动缓存重置
 
+缓存角色和权限数据以加速性能。当你使用提供的方法来操作角色和权限时，缓存会自动为您重置。
+
 要手动重置此软件包的缓存，请运行：
 
 ```
 php artisan cache:forget spatie.permission.cache
 ```
 
+代码删除缓存
+
+```
+app()['cache']->forget('spatie.permission.cache');
+```
 
 #### 模型动作
 
@@ -1748,7 +2247,7 @@ $user->removeRole('writer');
 角色也可以同步：
 
 ```
-// 所有当前角色将从用户中删除，并替换为给定的数组中的角色
+//所有当前角色将从用户中删除，并替换为给定的数组中的角色
 $user->syncRoles(['writer', 'admin']); 
 ```
 
@@ -1792,6 +2291,9 @@ $user->assignRole('admin');
 
 // 数组形式的多个角色
 $user->assignRole(['super_user', 'admin']);
+
+// 同步角色(不存在添加，存在忽略)
+auth()->user()->syncRoles(['admin']);
 ```
 
 #### 添加用户权限
@@ -1835,10 +2337,16 @@ $user->hasPermissionTo(Permission::find(1)->id);
 $user->hasPermissionTo($somePermission->id); 
 ```
 
-如果用户有多个权限：
+如果用户有任何一个权限即通过：
 
 ```
 $user->hasAnyPermission(['edit articles', 'publish articles', 'unpublish articles']);
+```
+
+用户必须拥有所有权限时通过：
+
+```
+$user->hasAllPermissions(['edit articles', 'publish articles', 'unpublish articles']);
 ```
 
 你也可以传递整数以通过权限 ID 进行查找
@@ -2005,17 +2513,26 @@ $user->created_at->diffForHumans()
 
 ## Debugbar
 
-安装
+https://github.com/barryvdh/laravel-debugbar
+
+**安装**
 
 ```
 composer require barryvdh/laravel-debugbar --dev
 php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
 ```
 
+修改 `.env` 配置文件 
+
+```
+DEBUGBAR_ENABLED=true
+```
 
 ## 模块化设计 
 
 https://github.com/houdunwang/laravel-module
+
+模块是在 [nwidart.com/laravel-modules](https://nwidart.com/laravel-modules/v3/advanced-tools/artisan-commands) 和 [laravel-permission](https://github.com/spatie/laravel-permission#installation) 组件基础上扩展了一些功能，所以需要先安装这两个组件
 
 ## webpack
 
@@ -2026,8 +2543,6 @@ laravel前端使用webpack工具构建，我们介绍几个常用动作
 ```
 mix.copyDirectory('assets/img', 'public/img');
 ```
-
-
 
 ## Doctrine/dbal
 
@@ -2119,10 +2634,10 @@ http://guzzle-cn.readthedocs.io/zh_CN/latest/
 
 https://github.com/viacreative/sudo-su
 
-安装
+安装软件包
 
 ```
-
+composer require viacreative/sudo-su
 ```
 
 Add the package's service provider to your app in your project's `AppServiceProvider`:
@@ -2142,7 +2657,7 @@ class AppServiceProvider extends ServiceProvider
 发布
 
 ```
-
+php artisan vendor:publish
 ```
 
 **配置**
@@ -2150,7 +2665,15 @@ class AppServiceProvider extends ServiceProvider
 修改配置文件 `config/sudosu.php` 添加允许使用的域名后缀
 
 ```
+'allowed_tlds' => ['dev', 'local','hd'],
+```
 
+**guard**
+
+如果用户模型不是User 也需要在配置文件中修改
+
+```
+'user_model' => \Modules\Admin\Entities\Admin::class
 ```
 
 **使用**
@@ -2159,7 +2682,7 @@ class AppServiceProvider extends ServiceProvider
 
 ```
 @if (config('app.debug'))
-    @include('sudosu::user-selector')
+ @include('sudosu::user-selector')
 @endif
 ```
 
@@ -2173,12 +2696,12 @@ http://simditor.tower.im/
 
 **配置**
 
-1. 复制`site/assets/scripts` 目录为Laravel项目的 `resources/assets/js/simditor` 目录
+1. 复制`site/assets/scripts` 目录为Laravel项目的 `resources/plugin/simditor/scripts` 目录
 
-2. 复制`site/assets/styles` 目录为Laravel项目的 `resource/assets/simditor` 目录
+2. 复制`site/assets/styles` 目录为Laravel项目的 `resource/plugin/simditor/styles` 目录
 3. 修改 `webpack.mix.js`
 	```	.mix.copyDirectory('resources/assets/js/simditor','public/js/simditor')
-.mix.copy('resources/assets/sass/simditor.css','public/css/simditor.css')
+.mix.copy('resources/plugin','public/plugin')
 	```
 
 创建控制器
@@ -2275,3 +2798,43 @@ composer require "predis/predis:~1.0"
 判断移动、平板设备等场景还是很常见的。
 
 Github：https://github.com/hisorange/browser-detect
+
+## 宝塔设置
+
+**域名设置**
+
+Laravel 使用public 目录访问，需要将域名绑定在public 目录
+
+![image-20180727145019669](assets/image-20180727145019669.png)
+
+**打包上传**
+
+1. 将本地 Laravel 项目打成zip包
+2. 在宝塔中的文件菜单选择你的网站目录，然后上传zip文件
+3. 上传后解压释放即可
+
+**伪静态**
+
+在网站菜单选择需要修改的网站，进行以下设置
+
+![image-20180727144658866](assets/image-20180727144658866.png)
+
+**Mysql**
+
+宝塔的mysql版本低，运行会出错。
+
+1. 先在宝塔后台升级mysql
+
+2. 在Laravel 的 AppServiceProvider.php 文件里的 boot 方法里设置 
+
+   ```
+   public function boot()
+   {
+    	\Schema::defaultStringLength(191);
+   }
+   ```
+
+## 常见错误
+
+1. 有时执行 composer 意外中断或卡住，删除 vendor与composer.lock 后重新执行
+2. 使用模块化开发时模块下的 node_modules 严重影响 composer 执行，可以先删除模块下的node_modules 再执行 composer install 、composer dumpautoload 等命令
