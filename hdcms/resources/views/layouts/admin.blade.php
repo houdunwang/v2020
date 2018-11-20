@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/libs/select2/dist/css/select2.min.css">
     <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/libs/flatpickr/dist/flatpickr.min.css">
     <meta name="csrf-token" content="{{csrf_token()}}">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/css/theme.min.css">
     <title>{{hd_config('site.webname')}}</title>
@@ -332,7 +333,7 @@
         </button>
 
         <!-- Brand -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/">
             <img src="{{asset('images/logo.png')}}" class="navbar-brand-img
           mx-auto" alt="...">
         </a>
@@ -401,5 +402,6 @@
 <script>
     require(['jquery', 'bootstrap'])
 </script>
+@stack('js')
 </body>
 </html>

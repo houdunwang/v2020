@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except' => 'show']);
+        $this->middleware('auth', ['except' => ['show', 'fans', 'follower']]);
     }
 
     public function index()
@@ -31,7 +31,7 @@ class UserController extends Controller
 
     public function show(User $user)
     {
-        //
+        return view('user.show', compact('user'));
     }
 
     public function edit(User $user, Request $request)
@@ -58,8 +58,20 @@ class UserController extends Controller
 
     public function follow(User $user)
     {
-        $this->authorize('follow',$user);
+        $this->authorize('follow', $user);
         auth()->user()->follower()->toggle([$user->id]);
         return back();
+    }
+
+    public function fans(User $user)
+    {
+        $fans = $user->fans()->paginate(1);
+        return view('user.fans', compact('fans', 'user'));
+    }
+
+    public function follower(User $user)
+    {
+        $followers = $user->follower()->paginate(1);
+        return view('user.follower', compact('followers', 'user'));
     }
 }

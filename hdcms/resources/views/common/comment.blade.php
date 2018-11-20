@@ -26,8 +26,7 @@
                                 </time>
                             </div>
                         </div>
-                        <p class="comment-text">
-                            @{{ comment.content }}
+                        <p class="comment-text" v-html="comment.content">
                         </p>
                     </div>
                 </div>
@@ -37,21 +36,32 @@
             <span class="mr-3"> #@{{ key+1 }}</span> <span class="fe fe-thumbs-up"></span> @{{comment.zan_num}}个赞
         </a>
     </div>
-    <form action="" @submit.prevent="send" method="post">
-        <div class="card">
-            <div class="card-body">
-                <div id="commentEditor">
-                    <textarea style="display:none;"></textarea>
+    @auth
+        <form action="" @submit.prevent="send" method="post">
+            <div class="card">
+                <div class="card-body">
+                    <div id="commentEditor">
+                        <textarea style="display:none;"></textarea>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <button class="btn btn-white">发表评论</button>
                 </div>
             </div>
-            <div class="card-footer text-muted">
-                <button class="btn btn-white">发表评论</button>
+        </form>
+    @else
+        <div class="card">
+            <div class="card-body text-center">
+                请 <a href="{{route('login')}}">登录</a> 后评论
             </div>
         </div>
-    </form>
+        <div id="commentEditor" hidden>
+            <textarea style="display:none;"></textarea>
+        </div>
+    @endauth
 </div>
 <script>
-    require(['hdjs', 'jquery', 'vue', 'axios', 'moment'], function (hdjs, $, Vue, axios, moment) {
+    require(['hdjs', 'jquery', 'vue', 'axios', 'moment', 'MarkdownIt'], function (hdjs, $, Vue, axios, moment, MarkdownIt) {
         vm = new Vue({
             el: '#comment',
             //common/comment
@@ -60,6 +70,10 @@
                 this.model = "{{str_replace('\\','-',get_class($model))}}";
                 axios.get("/common/comment?model=" + this.model + "&id={{$model['id']}}").then((response) => {
                     this.comments = response.data.comments;
+                    this.comments.forEach(function (comment) {
+                        let md = new MarkdownIt();
+                        comment.content = md.render(comment.content);
+                    })
                 });
                 //评论编辑器
                 hdjs.editormd("commentEditor", {
@@ -80,8 +94,8 @@
                     }
                 });
             },
-            updated(){
-                hdjs.scrollTo('body',location.hash,1000, {queue:true});
+            updated() {
+                hdjs.scrollTo('body', location.hash, 1000, {queue: true});
             },
             methods: {
                 zan(comment) {
@@ -99,10 +113,13 @@
                         }
                         url = '/common/comment' + "?model=" + this.model + "&id={{$model['id']}}";
                         axios.post(url, this.field).then((response) => {
-                            this.comments.push(response.data.comment);
+                            let comment = response.data.comment;
+                            let md = new MarkdownIt();
+                            comment.content = md.render(comment.content);
+                            this.comments.push(comment);
                             //提交高清除原内容
-                            this.field.content='';
-                            commentEditor.setSelection({line:0, ch:0}, {line:9999, ch:9999});
+                            this.field.content = '';
+                            commentEditor.setSelection({line: 0, ch: 0}, {line: 9999, ch: 9999});
                             commentEditor.replaceSelection('');
                         });
                     }

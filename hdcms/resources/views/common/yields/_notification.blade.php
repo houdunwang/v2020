@@ -21,7 +21,7 @@
             <div class="card-body">
                 <div class="list-group list-group-flush my--3">
                     @foreach(auth()->user()->unreadNotifications()->limit(3)->get() as $notification)
-                        <a class="list-group-item px-0" href="{{$notification->data['link']}}">
+                        <a class="list-group-item px-0" href="{{route('common.notification.show',$notification)}}">
                             <div class="row">
                                 <div class="col-auto">
                                     <div class="avatar avatar-sm">

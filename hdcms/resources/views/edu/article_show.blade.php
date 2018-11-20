@@ -27,13 +27,16 @@
                         </h2>
                         <p class="card-text small text-muted mb-1">
                             <span class="fe fe-user"></span> {{$article->user->name}} .
-                            <span class="fe fe-clock"></span>  {{$article->updated_at->diffForHumans()}}
+                            <span class="fe fe-clock"></span> {{$article->updated_at->diffForHumans()}}
                         </p>
                     </div>
                 </div>
                 <hr>
                 <div class="content mt-3">
-                    {{$article['content']}}
+                    <div id="markdown">
+                        {!! $article['Markdown'] !!}
+                    </div>
+                    {{--{{$article['content']}}--}}
                 </div>
                 @auth
                     <div class="text-center mt-5">
@@ -81,3 +84,25 @@
         </div>
     </div>
 @endsection
+@push('js')
+    <script>
+        require(['hdjs', 'marked', 'highlight'], function (hdjs, marked) {
+            $(document).ready(function () {
+                $('pre code').each(function (i, block) {
+                    hljs.highlightBlock(block);
+                });
+            });
+        })
+    </script>
+@endpush
+@push('css')
+    <style>
+        img {
+            max-width: 90%;
+        }
+
+        code {
+            line-height: 2em;
+        }
+    </style>
+@endpush

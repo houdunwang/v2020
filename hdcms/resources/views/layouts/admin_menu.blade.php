@@ -51,25 +51,6 @@
                 </ul>
             </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#sidebarAuth" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
-                <i class="fe fe-file"></i> 文章系统
-            </a>
-            <div class="collapse" id="sidebarAuth">
-                <ul class="nav nav-sm flex-column">
-                    <li class="nav-item">
-                        <a href="feed.html" class="nav-link ">
-                            栏目管理
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="feed.html" class="nav-link ">
-                            文章管理
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </li>
         <li class="nav-item dropdown">
             <a class="nav-link" href="#sidebarLayouts" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLayouts">
                 <i class="fe fe-user"></i> 会员粉丝
@@ -93,6 +74,11 @@
                     <li class="nav-item">
                         <a href="index.html" class="nav-link">
                             视频管理
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('edu.category.index')}}" class="nav-link">
+                            贴子分类
                         </a>
                     </li>
                 </ul>
@@ -134,7 +120,6 @@
             </a>
         </li>
     </ul>
-
 
 
     <!-- User (md) -->

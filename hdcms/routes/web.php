@@ -16,10 +16,17 @@ Route::get('/home', 'Edu\HomeController@index')->name('home');
 
 //在线教育
 Route::group(['namespace' => 'Edu', 'prefix' => 'edu', 'as' => 'edu.'], function () {
+    Route::get('/', 'HomeController@index')->name('home');
     Route::resource('article', 'ArticleController');
     Route::get('article/zan/{article}', 'ArticleController@zan')->name('article.zan');
-
+    Route::resource('category', 'CategoryController');
+    Route::resource('topic', 'TopicController');
+    Route::get('lesson/lists', 'LessonController@lists')->name('lesson.lists');
+    Route::resource('lesson', 'LessonController');
+    Route::resource('video', 'VideoController');
+    Route::get('search', 'SearchController@lists')->name('search');
 });
+
 //公共控制器
 Route::group(['prefix' => 'common', 'namespace' => "Common", 'as' => 'common.'], function () {
     Route::resource('comment', 'CommentController');
@@ -40,6 +47,8 @@ Route::group(['middleware' => [], 'prefix' => 'member', 'namespace' => 'User', '
     Route::get('/', 'UserController@index')->name('index');
     Route::resource('user', 'UserController');
     Route::get('follow/{user}', 'UserController@follow')->name('follow');
+    Route::get('fans/{user}', 'UserController@fans')->name('fans');
+    Route::get('follower/{user}', 'UserController@follower')->name('follower');
 });
 
 //工具类

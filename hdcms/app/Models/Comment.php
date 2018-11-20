@@ -5,10 +5,16 @@ namespace App\Models;
 use App\Observers\CommentObserver;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Comment extends Model
 {
+    use LogsActivity;
     protected $fillable = ['content', 'user_id'];
+
+    protected static $logFillable = true;
+    protected static $recordEvents = ['created', 'updated'];
+    protected static $logName = 'comment';
 
     protected static function boot()
     {

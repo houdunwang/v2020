@@ -20,7 +20,6 @@ class NotificationController extends Controller
 
     public function show(DatabaseNotification $notification)
     {
-//        dd($notification->toArray());
         $notification->markAsRead();
         return redirect($notification['data']['link']);
     }

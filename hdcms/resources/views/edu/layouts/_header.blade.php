@@ -11,220 +11,32 @@
             <img src="{{asset('images/logo.png')}}" alt="..." class="navbar-brand-img">
         </a>
         <!-- Form -->
-        <form class="form-inline mr-4 d-none d-lg-flex">
+        <form class="form-inline mr-4 d-none d-lg-flex" method="get" action="{{route('edu.search')}}" id="searchForm">
             <div class="input-group input-group-rounded input-group-merge" data-toggle="lists" data-lists-values='["name"]'>
-
-                <!-- Input -->
-                <input type="search" class="form-control form-control-prepended  dropdown-toggle search"
-                       data-toggle="dropdown" placeholder="搜索" aria-label="Search">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <i class="fe fe-search"></i>
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" name="w">
+                    <input type="hidden" name="t" hidden>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">搜索</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#" onclick="searched('article')">文章</a>
+                            <a class="dropdown-item" href="#" onclick="searched('topic')">话题</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" onclick="searched('video')">视频</a>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Menu -->
-                <div class="dropdown-menu dropdown-menu-card">
-                    <div class="card-body">
-
-                        <!-- List group -->
-                        <div class="list-group list-group-flush list my--3">
-                            <a href="team-overview.html" class="list-group-item px-0">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-
-                                        <!-- Avatar -->
-                                        <div class="avatar">
-                                            <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/teams/team-logo-1.jpg" alt="..." class="avatar-img rounded">
-                                        </div>
-
-                                    </div>
-                                    <div class="col ml--2">
-
-                                        <!-- Title -->
-                                        <h4 class="text-body mb-1 name">
-                                            Airbnb
-                                        </h4>
-
-                                        <!-- Time -->
-                                        <p class="small text-muted mb-0">
-                                            <span class="fe fe-clock"></span>
-                                            <time datetime="2018-05-24">Updated 2hr ago</time>
-                                        </p>
-
-                                    </div>
-                                </div> <!-- / .row -->
-                            </a>
-                            <a href="team-overview.html" class="list-group-item px-0">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-
-                                        <!-- Avatar -->
-                                        <div class="avatar">
-                                            <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/teams/team-logo-2.jpg" alt="..." class="avatar-img rounded">
-                                        </div>
-
-                                    </div>
-                                    <div class="col ml--2">
-
-                                        <!-- Title -->
-                                        <h4 class="text-body mb-1 name">
-                                            Medium Corporation
-                                        </h4>
-
-                                        <!-- Time -->
-                                        <p class="small text-muted mb-0">
-                                            <span class="fe fe-clock"></span>
-                                            <time datetime="2018-05-24">Updated 2hr ago</time>
-                                        </p>
-
-                                    </div>
-                                </div> <!-- / .row -->
-                            </a>
-                            <a href="project-overview.html" class="list-group-item px-0">
-
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-4by3">
-                                            <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/projects/project-1.jpg" alt="..." class="avatar-img rounded">
-                                        </div>
-
-                                    </div>
-                                    <div class="col ml--2">
-
-                                        <!-- Title -->
-                                        <h4 class="text-body mb-1 name">
-                                            Homepage Redesign
-                                        </h4>
-
-                                        <!-- Time -->
-                                        <p class="small text-muted mb-0">
-                                            <span class="fe fe-clock"></span>
-                                            <time datetime="2018-05-24">Updated 4hr ago</time>
-                                        </p>
-
-                                    </div>
-                                </div> <!-- / .row -->
-
-                            </a>
-                            <a href="project-overview.html" class="list-group-item px-0">
-
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-4by3">
-                                            <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/projects/project-2.jpg" alt="..." class="avatar-img rounded">
-                                        </div>
-                                    </div>
-                                    <div class="col ml--2">
-
-                                        <!-- Title -->
-                                        <h4 class="text-body mb-1 name">
-                                            Travels & Time
-                                        </h4>
-
-                                        <!-- Time -->
-                                        <p class="small text-muted mb-0">
-                                            <span class="fe fe-clock"></span>
-                                            <time datetime="2018-05-24">Updated 4hr ago</time>
-                                        </p>
-
-                                    </div>
-                                </div> <!-- / .row -->
-
-                            </a>
-                            <a href="project-overview.html" class="list-group-item px-0">
-
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-
-                                        <!-- Avatar -->
-                                        <div class="avatar avatar-4by3">
-                                            <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/projects/project-3.jpg" alt="..." class="avatar-img rounded">
-                                        </div>
-
-                                    </div>
-                                    <div class="col ml--2">
-
-                                        <!-- Title -->
-                                        <h4 class="text-body mb-1 name">
-                                            Safari Exploration
-                                        </h4>
-
-                                        <!-- Time -->
-                                        <p class="small text-muted mb-0">
-                                            <span class="fe fe-clock"></span>
-                                            <time datetime="2018-05-24">Updated 4hr ago</time>
-                                        </p>
-
-                                    </div>
-                                </div> <!-- / .row -->
-
-                            </a>
-                            <a href="profile-posts.html" class="list-group-item px-0">
-
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-
-                                        <!-- Avatar -->
-                                        <div class="avatar">
-                                            <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
-                                        </div>
-
-                                    </div>
-                                    <div class="col ml--2">
-
-                                        <!-- Title -->
-                                        <h4 class="text-body mb-1 name">
-                                            Dianna Smiley
-                                        </h4>
-
-                                        <!-- Status -->
-                                        <p class="text-body small mb-0">
-                                            <span class="text-success">●</span> Online
-                                        </p>
-
-                                    </div>
-                                </div> <!-- / .row -->
-
-                            </a>
-                            <a href="profile-posts.html" class="list-group-item px-0">
-
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-
-                                        <!-- Avatar -->
-                                        <div class="avatar">
-                                            <img src="{{asset('org/Dashkit-1.1.2')}}/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
-                                        </div>
-
-                                    </div>
-                                    <div class="col ml--2">
-
-                                        <!-- Title -->
-                                        <h4 class="text-body mb-1 name">
-                                            Ab Hadley
-                                        </h4>
-
-                                        <!-- Status -->
-                                        <p class="text-body small mb-0">
-                                            <span class="text-danger">●</span> Offline
-                                        </p>
-
-                                    </div>
-                                </div> <!-- / .row -->
-
-                            </a>
-                        </div>
-
-                    </div>
-                </div> <!-- / .dropdown-menu -->
-
             </div>
         </form>
-
+        <script>
+            function searched(t){
+                require(['jquery'],function($){
+                    $("[name='t']").val(t);
+                    $("#searchForm").submit();
+                })
+                return false;
+            }
+        </script>
         <div class="navbar-user">
             @include('common.yields._notification')
             @auth
@@ -233,8 +45,14 @@
                         <span class="fe fe-edit mr-4"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a href="{{route('edu.article.create')}}" class="dropdown-item">发表文章</a>
-                        <a href="settings.html" class="dropdown-item">发布话题</a>
+                        <a href="{{route('edu.article.create')}}" class="dropdown-item">
+                            <i class="fa fa-file-pdf-o" aria-hidden="true"></i> 发表文章
+                        </a>
+                        @foreach(\App\Models\Category::get() as $category)
+                            <a href="{{route('edu.topic.create',['category_id'=>$category['id']])}}" class="dropdown-item">
+                                <i class="{{$category['icon']}}" aria-hidden="true"></i> {{$category['title']}}
+                            </a>
+                        @endforeach
                     </div>
                 </div>
         @endauth
@@ -247,7 +65,8 @@
                     <!-- Menu -->
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="{{route('member.user.edit',[auth()->user(),'type'=>'password'])}}" class="dropdown-item">修改密码</a>
-                        <a href="settings.html" class="dropdown-item">学习记录</a>
+                        <a href="{{route('member.user.show',auth()->user())}}" class="dropdown-item">个人空间</a>
+                        <a href="{{route('edu.lesson.lists')}}" class="dropdown-item">内容管理</a>
                         <a href="settings.html" class="dropdown-item">课程收藏</a>
                         @if(auth()->user()->is_admin)
                             <a href="{{route('admin.index')}}" class="dropdown-item">后台管理</a>
@@ -287,21 +106,23 @@
                         话题
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="topnavPages">
-                        <li>
-                            <a class="dropdown-item" href="pricing.html">
-                                技术分享
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="pricing.html">
-                                问答求助
-                            </a>
-                        </li>
+                        @foreach(\App\Models\Category::get() as $category)
+                            <li>
+                                <a href="{{route('edu.topic.index',['id'=>$category])}}" class="dropdown-item" href="pricing.html">
+                                    <i class="{{$category['icon']}}" aria-hidden="true"></i> {{$category['title']}}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </li>
                 <li class="nav-item mr-4">
                     <a class="nav-link" href="{{route('edu.article.index')}}">
                         文章
+                    </a>
+                </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="{{route('edu.lesson.index')}}">
+                        教程
                     </a>
                 </li>
                 <li class="nav-item">

@@ -14,10 +14,12 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{asset('org/Dashkit-1.1.2')}}/css/theme.min.css">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <meta name="csrf-token" content="{{csrf_token()}}">
     <title>{{hd_config('site.webname')}}</title>
     @include('layouts.hdjs')
     @include('layouts.message')
+    @stack('css')
 </head>
 <body>
 @include('edu.layouts._header')
