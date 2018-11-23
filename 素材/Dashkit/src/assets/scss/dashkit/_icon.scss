@@ -1,0 +1,46 @@
+//
+// icon.scss
+// Dashkit component
+//
+
+// Icon
+//
+// General styles
+
+.icon {
+  display: inline-block;
+
+  &.active {
+    position: relative;
+
+    // Indicator
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 10%; right: 30%;
+      width: 20%; height: 20%;
+      border-radius: 50%;
+      background-color: $primary;
+    }
+
+    // Icon
+
+    .fe {
+      display: block;
+      min-width: 1em * $line-height-base;
+      min-height: 1em * $line-height-base;
+      font-size: $font-size-lg;
+      mask-image: url(../img/masks/icon-status.svg);
+      mask-size: 100% 100%;
+    }
+  }
+}
+
+// Feather icons
+//
+// Fixes icon / font vertical alignment issue
+
+.fe {
+  line-height: inherit;
+}

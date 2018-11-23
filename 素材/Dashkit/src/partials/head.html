@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+
+<!-- Libs CSS -->
+<!-- build:css assets/fonts/feather/feather.min.css -->
+<link rel="stylesheet" href="assets/fonts/feather/feather.css">
+<!-- endbuild -->
+<link rel="stylesheet" href="node_modules/highlight.js/styles/vs2015.css">
+<link rel="stylesheet" href="node_modules/quill/dist/quill.core.css">
+<link rel="stylesheet" href="node_modules/select2/dist/css/select2.min.css">
+<link rel="stylesheet" href="node_modules/flatpickr/dist/flatpickr.min.css">
+
+<!-- Theme CSS -->
+@@if (colorScheme=="light" && !demoMode) {
+<!-- build:css assets/css/theme.min.css -->
+<link rel="stylesheet" href="assets/css/theme.css" id="stylesheetLight">
+<!-- endbuild -->
+
+<script>var colorScheme = 'light';</script>
+} @@if (colorScheme=="dark" && !demoMode) {
+<!-- build:css assets/css/theme-dark.min.css -->
+<link rel="stylesheet" href="assets/css/theme-dark.css" id="stylesheetDark">
+<!-- endbuild -->
+
+
+<script>var colorScheme = 'dark';</script>
+} @@if (demoMode) {
+<!-- build:css assets/css/theme.min.css id="stylesheetLight" -->
+<link rel="stylesheet" href="assets/css/theme.css" id="stylesheetLight">
+<!-- endbuild -->
+
+<!-- build:css assets/css/theme-dark.min.css id="stylesheetDark" -->
+<link rel="stylesheet" href="assets/css/theme-dark.css" id="stylesheetDark">
+<!-- endbuild -->
+
+<style>body { display: none; }</style>
+
+<script>
+  var colorScheme = ( localStorage.getItem('dashkitColorScheme') ) ? localStorage.getItem('dashkitColorScheme') : 'light';
+</script>
+}
+
+<title>@@title</title>

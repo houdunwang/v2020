@@ -1,0 +1,30 @@
+/**
+ * Dashkit v1.3.0
+ *
+ * Custom variables followed by Dashkit variables followed by Bootstrap variables
+ * to ensure cascade of styles.
+ */
+
+// Bootstrap functions
+@import '../../../node_modules/bootstrap/scss/functions';
+
+// Custom variables
+@import 'user-variables';
+
+// Dark mode variables
+@import 'dashkit/dark/variables-dark';
+
+// Dashkit variables
+@import 'dashkit/variables';
+
+// Bootstrap core
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+// Dashkit core
+@import 'dashkit/dashkit';
+
+// Dark mode overrides
+@import 'dashkit/dark/overrides-dark';
+
+// Custom core
+@import 'user';
