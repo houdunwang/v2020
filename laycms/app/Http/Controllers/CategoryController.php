@@ -4,13 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use App\Repository\CategoryRepository;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    //仓库
+    protected $repository;
+
+    public function __construct(CategoryRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     public function index()
     {
-        $categories = Category::get();
+        $categories = $this->repository->all();
         return view('category.index', compact('categories'));
     }
 
@@ -23,7 +32,8 @@ class CategoryController extends Controller
     //保存数据
     public function store(CategoryRequest $request)
     {
-        Category::create($request->all());
+        $this->repository->create($request->all());
+        //闪存
         return redirect(route('content.category.index'))->with('success', '添加成功');
     }
 

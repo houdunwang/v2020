@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,11 +21,11 @@
         // var colorScheme = ( localStorage.getItem('dashkitColorScheme') ) ? localStorage.getItem('dashkitColorScheme') : 'light';
     </script>
 
-
     <title>Dashkit</title>
+    @include('layouts._hdjs')
 </head>
 <body>
-
+@include('layouts._message')
 <!-- MODALS
 ================================================== -->
 
@@ -354,7 +353,8 @@
 
                                     <!-- Time -->
                                     <p class="small text-muted mb-0">
-                                        <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>
+                                        <span class="fe fe-clock"></span>
+                                        <time datetime="2018-05-24">Updated 2hr ago</time>
                                     </p>
 
                                 </div>
@@ -379,7 +379,8 @@
 
                                     <!-- Time -->
                                     <p class="small text-muted mb-0">
-                                        <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 2hr ago</time>
+                                        <span class="fe fe-clock"></span>
+                                        <time datetime="2018-05-24">Updated 2hr ago</time>
                                     </p>
 
                                 </div>
@@ -405,7 +406,8 @@
 
                                     <!-- Time -->
                                     <p class="small text-muted mb-0">
-                                        <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
+                                        <span class="fe fe-clock"></span>
+                                        <time datetime="2018-05-24">Updated 4hr ago</time>
                                     </p>
 
                                 </div>
@@ -432,7 +434,8 @@
 
                                     <!-- Time -->
                                     <p class="small text-muted mb-0">
-                                        <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
+                                        <span class="fe fe-clock"></span>
+                                        <time datetime="2018-05-24">Updated 4hr ago</time>
                                     </p>
 
                                 </div>
@@ -459,7 +462,8 @@
 
                                     <!-- Time -->
                                     <p class="small text-muted mb-0">
-                                        <span class="fe fe-clock"></span> <time datetime="2018-05-24">Updated 4hr ago</time>
+                                        <span class="fe fe-clock"></span>
+                                        <time datetime="2018-05-24">Updated 4hr ago</time>
                                     </p>
 
                                 </div>
@@ -624,7 +628,8 @@
 
                                 <!-- Content -->
                                 <div class="small text-muted">
-                                    <strong class="text-body">Adolfo Hess</strong> commented <blockquote class="text-body">“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...” </blockquote>
+                                    <strong class="text-body">Adolfo Hess</strong> commented
+                                    <blockquote class="text-body">“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...”</blockquote>
                                 </div>
 
                             </div>
@@ -740,7 +745,8 @@
 
                                 <!-- Content -->
                                 <div class="small text-muted">
-                                    <strong class="text-body">Glen Rouse</strong> commented <blockquote class="text-body">“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...” </blockquote>
+                                    <strong class="text-body">Glen Rouse</strong> commented
+                                    <blockquote class="text-body">“I don’t think this really makes sense to do without approval from Johnathan since he’s the one...”</blockquote>
                                 </div>
 
                             </div>
