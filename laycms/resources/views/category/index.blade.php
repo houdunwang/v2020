@@ -30,11 +30,11 @@
                     @foreach($categories as $category)
                         <tr>
                             <td>{{$category['id']}}</td>
-                            <td>{{$category['name']}}</td>
+                            <td>{{$category['_name']}}</td>
                             <td>{{$category->created_at}}</td>
                             <td>
                                 <div class="btn-group mr-2 btn-group-sm" role="group" aria-label="First group">
-                                    <a class="btn btn-white">编辑</a>
+                                    <a class="btn btn-white" href="{{route('content.category.edit',$category)}}">编辑</a>
                                     <a class="btn btn-light">删除</a>
                                     <a class="btn btn-white">查看</a>
                                 </div>

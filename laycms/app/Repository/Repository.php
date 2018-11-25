@@ -12,6 +12,7 @@ abstract class Repository
 {
     //模型类
     protected $name;
+
     protected $model;
 
     public function __construct()
@@ -24,18 +25,28 @@ abstract class Repository
         $this->model->create($attributes);
     }
 
+    /**
+     * @param $model
+     * @param array $attributes
+     * @return mixed
+     */
     public function update($model, array $attributes)
     {
         return $model->update($attributes);
     }
 
-    public function all($attributes = ['*'])
+    public function all($columns = ['*'])
     {
-        return $this->model->get($attributes);
+        return $this->model->get($columns);
     }
 
-    public function find(int $id)
+    public function find(int $id, array $columns = ['*'])
     {
-        return $this->model->find($id);
+        return $this->model->find($id, $columns);
+    }
+
+    public function paginate($row = 10, array $columns = ['*'])
+    {
+        return $this->model->paginate($row, $columns);
     }
 }
