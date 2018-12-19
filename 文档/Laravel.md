@@ -1,4 +1,4 @@
-# LARAVEL 5.6
+# LARAVEL 教程文档
 
 ![houdunren](assets/houdunren-0343039.jpg)
 
@@ -514,6 +514,30 @@ $videos->forceDelete();
 ```
 
 > 基本上软删除都可以用在关联操作中
+
+## 登录历史跳转
+
+使用系统 auth 验证时，会自动 记录当前的url，然后登录成功后使用以下代码就会跳转到来源地址。
+
+```
+return redirect()->intended('/');
+```
+
+inteded方法参数默认为 `/` ，即没有历史来源时的跳转地址。
+
+如果是自定义的验证，则需要使用以下代码记录来源地址。登录成功后还是使用上面代码跳转就可以了。
+
+```
+return redirect()->guest(route('login'))->with('error', '请登录后操作');
+```
+
+guest参数必填即登录地址。
+
+如果想自行定义登录后的回调地址使用下面方法
+
+```
+session(['url.intended'=>$request->getRequestUri()]);
+```
 
 ## 分页
 
@@ -1493,13 +1517,23 @@ Gui 图形管理工具
 
 ## 队列
 
-队列用于异步执行消耗时间多的工作，比如发送邮件等操作，好处是可以快速为客户响应结果，具体处理异步后台操作。
+队列用于异步执行消耗时间多的工作，比如发送邮件，商城定单处理等操作，好处是可以快速为客户响应结果，具体处理异步后台操作。
 
 下面的操作使用高效的redis完成处理，所以需要安装相应扩展包
 
 ```
 composer require "predis/predis:~1.0"
 ```
+
+#### 配置
+
+修改 `config/queue.php` 队列配置文件。
+
+```
+'default' => env('QUEUE_DRIVER', 'sync'),
+```
+
+sync 为同步可更改为 database 或 redis即为后台异步操作 ，需要先在 `config/database.php` 文件中将连接设置好。
 
 #### 处理失败任务
 
@@ -2088,8 +2122,6 @@ class NewsItem extends Model
 
 如果要记录`$fillable`对模型的所有属性的更改，可以`protected static $logFillable = true;`
 
-
-
 ```
 $newsItem = NewsItem::create([
    'name' => 'original name',
@@ -2180,7 +2212,7 @@ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvid
 
 php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="config"
 
-php artisan  migrate
+php artisan migrate
 ```
 
 #### 基本使用
@@ -2470,7 +2502,9 @@ or
 
 ## 图片处理
 
-http://image.intervention.io/ 用于裁切缩放等图片处理操作
+### Intervention/image 
+
+https://github.com/Intervention/image 用于裁切缩放等图片处理操作
 
 安装
 
@@ -2492,6 +2526,10 @@ $img->resize(null, 400, function ($constraint) {
 });
 $img->save($file);
 ```
+
+### spatie/image
+
+https://github.com/spatie/image
 
 ## 日期处理
 
