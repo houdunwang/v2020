@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e15a5a00-6fed-480a-8378-633b89918178" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/3/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3/2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3/3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4/2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/4/3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1220/1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../cms/public/org/hdjs" beforeDir="false" afterPath="$PROJECT_DIR$/../../cms/public/org/hdjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../laravel-cms/public/plugin/hdjs" beforeDir="false" afterPath="$PROJECT_DIR$/../../laravel-cms/public/plugin/hdjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,31 +17,33 @@
     <session id="-1556761960">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.3" value="2" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="7" />
+          <entry key="php" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="7" />
+          <entry key="PHP" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="1593" />
+          <entry key="php" value="1725" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="1593" />
+          <entry key="PHP" value="1725" />
         </counts>
       </usages-collector>
     </session>
@@ -53,10 +51,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/4/3.php">
+        <entry file="file://$PROJECT_DIR$/1220/1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+            <state relative-caret-position="217">
+              <caret line="7" column="19" lean-forward="true" selection-end-line="7" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -75,6 +73,7 @@
         <option value="$PROJECT_DIR$/4/1.php" />
         <option value="$PROJECT_DIR$/4/2.php" />
         <option value="$PROJECT_DIR$/4/3.php" />
+        <option value="$PROJECT_DIR$/1220/1.php" />
       </list>
     </option>
   </component>
@@ -85,8 +84,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="504" />
-    <option name="y" value="104" />
+    <option name="x" value="242" />
+    <option name="y" value="130" />
     <option name="width" value="1202" />
     <option name="height" value="865" />
   </component>
@@ -109,7 +108,7 @@
             <path>
               <item name="php7" type="b2602c69:ProjectViewProjectNode" />
               <item name="php7" type="462c0819:PsiDirectoryNode" />
-              <item name="4" type="462c0819:PsiDirectoryNode" />
+              <item name="1220" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="php7" type="b2602c69:ProjectViewProjectNode" />
@@ -125,10 +124,15 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/wamp64/www/php7" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\23000\code\live\php7" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -154,15 +158,17 @@
       <updated>1544789258158</updated>
       <workItem from="1544789259360" duration="3572000" />
       <workItem from="1544941280994" duration="330000" />
-      <workItem from="1545221689548" duration="2581000" />
+      <workItem from="1545221689548" duration="3815000" />
+      <workItem from="1545295120124" duration="599000" />
+      <workItem from="1545307770452" duration="421000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6483000" />
+    <option name="totallyTimeSpent" value="8737000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="504" y="104" width="1202" height="865" extended-state="0" />
+    <frame x="242" y="130" width="1202" height="865" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16610456" />
@@ -230,8 +236,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/4/3.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        <state relative-caret-position="248">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1220/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="7" column="19" lean-forward="true" selection-end-line="7" selection-end-column="19" />
         </state>
       </provider>
     </entry>
