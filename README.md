@@ -2,7 +2,15 @@
 
 本项目为向军大叔的视频代码或直播课程代码，希望大家能给个 `star` 这是对我们最好的鼓励和肯定。
 
-> [向军大叔每天免费直播实战开发，助你提升开发技能！](http://www.aoxiangjun.com) 
+Github仓库：https://github.com/houdunwang/codeing
+
+Gitee仓库：https://gitee.com/houdunren/code
+
+## 晚八点直播
+
+我会在每天晚上八点直播（注：特殊情况会请假），大家可以在[后盾人](https://www.houdunren.com/)或我的[B站直播间](https://live.bilibili.com/8176658)观看。
+
+也可以通过[我的主页]( http://www.aoxiangjun.com )了解我的动态。
 
 ![image-20181010222329263](http://www.aoxiangjun.com/images/xj.jpeg)
 
