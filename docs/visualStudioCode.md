@@ -31,6 +31,29 @@ VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。使�
 
 
 
+### 重置软件
+
+有时编辑器安装插件过多，造成异常时就需要重置了
+
+1. 删除软件
+2. 删除配置荐
+   苹果系统执行` rm ~/.vscode`
+   Windows 执行 `C:\Users\pcName\AppData\Roaming\Code\User（ 注意替换pcName为自己电脑设置的名称）`
+
+
+
 ### 设置风格
 
 安装 `ayu` 插件来设置风格 https://marketplace.visualstudio.com/items?itemName=teabyii.ayu
+
+
+
+### 常用插件
+
+1. [Laravel代码片段](https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-blade)
+2. [WakaTime记录工作数据报表](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime)
+3. [Vetur一个好用的Vue.js开发插件](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+4. [Code Runner 支持多种语言的代码的立即执行](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+5. [Code Spell Checker 用于检测代码语法](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+6. [VS Color Picker 选择颜色](https://marketplace.visualstudio.com/items?itemName=lihui.vs-color-picker)
+7. [vscode-fileheader 设置文件头](https://marketplace.visualstudio.com/items?itemName=mikey.vscode-fileheader)
