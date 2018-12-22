@@ -20,7 +20,27 @@ Vagrant 是用来管理虚拟机的工具，支持当前主流的虚拟机系统
 可以在下面网站上搜索需要的vagrant box
 https://app.vagrantup.com/boxes/search
 
+#### 卸载程序和依赖
+
+在下载的安装包里有一个删除工具，可以直播删除 Vagrant软件。
+
+![image-20181110171158894](assets/image-20181110171158894.png)
+
+也可以使用下面命令删除
+
+```
+# 删除软件
+rm -rf /opt/vagrant
+rm -f /usr/local/bin/vagrant
+sudo pkgutil --forget com.vagrant.vagrant
+
+#删除用户数据
+rm -rf ~/.vagrant 
+rm -rf ~/.vagrant.d
+```
+
 ## Homestead box
+
 Homestead是一个官方预封装的 Vagrant box，它为你提供了一个完美的开发环境，而无需在本地机器安装 PHP 、Web 服务器和其他服务器软件。不用担心会搞乱你的操作系统！Vagrant boxes 是一次性的。如果出现问题，你可以在几分钟内销毁并创建 Box!
 
 内置软件：Ubuntu 16.04、Git、PHP 7.2、PHP 7.1、Nginx、Apache (Optional)、MySQL ……
@@ -86,14 +106,19 @@ folders:
 ```
 #启动 如果加上 --provision 选项那么添加的新站点会发布到虚拟机上。
 cd ~/Homestead && vagrant up
+
 #关闭
 vagrant halt
+
 #通过 SSH 登录 vagrant（需要先启动 vagrant）
 vagrant ssh
+
 #查看目前安装的box列表
 vagrant box list
+
 #删除box镜像
 vagrant box remove laravel/homestead
+
 #查看当前 Homestead 虚拟机的状态。
 vagrant status
 ```
@@ -154,24 +179,6 @@ homestead up
 
 要在360或腾讯电脑管家中的启动项中不要禁用。
 
-## 配置域名
-
-修改 `c:/windows/System32/drivers/etc/hosts` 文件，因为 `hosts` 文件不能直接修改，需要先移动到桌面或其他文件夹，然后添加如下内容，添加好后再将文件移动回来。
-
-```
-192.168.10.10  hdcms.hd
-```
-
-上面定义了一个域名 hdcms.hd 指向我们的homestead服务器，在homestead.yaml文件内定义域名解析配置：
-
-```
-sites:
-    - map: hdcms.hd
-      to: /home/vagrant/code/hdcms
-```
-
-现在当我们访问 hdcms.hd 时会访问到 homestead服务器下的 `/home/vagrant/code/hdcms` 目录
-
 ## 响应缓慢
 
 解决WINDOS系统下Homestead运行缓慢的问题
@@ -217,6 +224,24 @@ folders:
 ```
 
 重启 Homestead 使配置文件生效，大功告成。
+
+## 配置域名
+
+修改 `c:/windows/System32/drivers/etc/hosts` 文件，因为 `hosts` 文件不能直接修改，需要先移动到桌面或其他文件夹，然后添加如下内容，添加好后再将文件移动回来。
+
+```
+192.168.10.10  hdcms.hd
+```
+
+上面定义了一个域名 hdcms.hd 指向我们的homestead服务器，在homestead.yaml文件内定义域名解析配置：
+
+```
+sites:
+    - map: hdcms.hd
+      to: /home/vagrant/code/hdcms
+```
+
+现在当我们访问 hdcms.hd 时会访问到 homestead服务器下的 `/home/vagrant/code/hdcms` 目录
 
 ## Win10安装错误
 
@@ -302,8 +327,10 @@ Homestead.yaml 文件的 folders 属性里列出所有与 Homestead 环境共享
 folders:
     - map: ~/Code  
       to: /home/vagrant/Code
+      type: nfs
 # map 对应的是我们本机的文件夹
-* to 对应的是 Homestead 上的文件夹
+# to 对应的是 Homestead 上的文件夹
+# type 这样可以提升加载速度
 ```
 
 ## SSH 秘钥登录
@@ -322,17 +349,23 @@ ssh-keygen -t rsa -C "2300071698@qq.com"
 ```
 
 ## vagrant命令
+
 ```
 #启动 如果加上 --provision 选项那么添加的新站点会发布到虚拟机上。
 cd ~/Homestead && vagrant up
+
 #关闭
 vagrant halt
+
 #通过 SSH 登录 vagrant（需要先启动 vagrant）
 vagrant ssh
+
 #查看目前安装的box列表
 vagrant box list
+
 #删除box镜像
 vagrant box remove laravel/homestead
+
 #查看当前 Homestead 虚拟机的状态。
 vagrant status
 ```
@@ -357,7 +390,6 @@ vagrant ssh
 sites:
     - map: hdcms.hd
       to: /home/vagrant/code/hdcms
-
 ```
 
 现在当我们访问 hdcms.hd 时会访问到 homestead服务器下的 `/home/vagrant/code/hdcms` 目录
