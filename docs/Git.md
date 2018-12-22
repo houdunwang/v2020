@@ -290,6 +290,18 @@ ssh-keygen -t rsa
 
 4. 本地ask分支关联远程分支并推送 `git push --set-upstream origin ask`
 
+### 提交多个库
+
+我可以将代码提交到多个远程版本库中，比如后盾人的 [课程代码](https://gitee.com/houdunren/code) 就提交到了Github与Gitee两个库中。
+
+```
+# 增加一个远程库
+git remote add github git@github.com:houdunwang/coding.git
+
+# 提交到远程库
+git push github
+```
+
 ## 自动部署
 
 GitHub设置 `WebHook`
