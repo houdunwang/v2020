@@ -56,12 +56,13 @@ VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。使�
 2. [PHP Debug](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug)
 3. [Laravel代码片段](https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-blade)
 4. [Laravel Artisan](https://marketplace.visualstudio.com/items?itemName=ryannaddy.laravel-artisan)
-5. [WakaTime记录工作数据报表](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime)，需要到[官方网站](https://wakatime.com/)注册并获取key
-6. [Vetur一个好用的Vue.js开发插件](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
-7. [Code Runner 支持多种语言的代码的立即执行](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
-8. [Code Spell Checker 用于检测代码语法](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
-9. [VS Color Picker 选择颜色](https://marketplace.visualstudio.com/items?itemName=lihui.vs-color-picker)
-10. [vscode-fileheader 设置文件头](https://marketplace.visualstudio.com/items?itemName=mikey.vscode-fileheader)
+5. [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced) Markdown预览
+6. [WakaTime记录工作数据报表](https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime)，需要到[官方网站](https://wakatime.com/)注册并获取key
+7. [Vetur一个好用的Vue.js开发插件](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+8. [Code Runner 支持多种语言的代码的立即执行](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+9. [Code Spell Checker 用于检测代码语法](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+10. [VS Color Picker 选择颜色](https://marketplace.visualstudio.com/items?itemName=lihui.vs-color-picker)
+11. [vscode-fileheader 设置文件头](https://marketplace.visualstudio.com/items?itemName=mikey.vscode-fileheader)
 
 
 
