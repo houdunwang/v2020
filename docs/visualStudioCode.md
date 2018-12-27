@@ -2,7 +2,9 @@
 
 ### 安装软件
 
-VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。使用 https://code.visualstudio.com/ 下载安装。
+VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。
+
+官方提供 [稳定的发行版本](https://code.visualstudio.com/) 与 [最新测试版本](https://code.visualstudio.com/insiders/) 两个版本。
 
 ![image-20181020195230055](assets/image-20181020195230055.png)
 
@@ -14,11 +16,7 @@ VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。使�
 
    > 也可以点击上面链接在浏览器中直播安装
 
-2. 使用快捷键组合【Ctrl+Shift+p】，在搜索框中输入“configure display language”，点击确定后；
-
-3. 修改locale.json文件下的属性“locale”为“zh-CN”，按下Ctrl+Shift+P來呼叫命令框 ，选择 Change Language Mode 在文件中设置"locale": "zh-cn"
-	![image-20181020194927317](assets/image-20181020194927317.png)
-5. 重启vscode工具完成
+2. 重启vscode工具完成
 
 ### 全局命令
 
@@ -37,7 +35,7 @@ VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。使�
 
 1. 删除软件
 2. 苹果系统执行` rm ~/.vscode`
-3. window删除 `C:\Users\23000\.code`  与  `C:\Users\23000\AppData\Roaming\Code` 文件夹，将`23000` 换成你的帐号
+3. window删除 `C:\Users\23000\.vscode`  与  `C:\Users\23000\AppData\Roaming\Code` 文件夹，将`23000` 换成你的帐号
 
 
 
