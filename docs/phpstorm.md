@@ -80,6 +80,34 @@ windows10 更改 Shell（用于全局使用ls，rm等Linux命令），Mac与Linu
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 ```
 
+## 字体大小设置
+
+鼠标滚动改变大小
+
+```
+Preferences | Editor | Font >Change font Size(Zoom)...
+```
+
+改变编辑区大小
+
+```
+Preferences | Editor | Font
+```
+
+改变终端字体大小
+
+```
+Preferences | Editor | Color Scheme | Console Font
+```
+
+改变文件列表等dialog字体大小
+
+```
+Preferences | Appearance & Behavior | Appearance > Use custom font
+```
+
+>  一般我录制课程的设置是 编辑区 25，终端20，文件列表20
+
 ## PHP命令
 
 Phpstorm中大量使用composer或命令行指令，所以需要设置合适的php命令
