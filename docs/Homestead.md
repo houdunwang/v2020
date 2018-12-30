@@ -102,7 +102,28 @@ folders:
 * to 对应的是 Homestead 上的文件夹
 ```
 
+## 显示文件列表
+
+在开发环境下我们希望在浏览器中显示文件列表
+
+```
+vim /etc/nginx/nginx.conf
+```
+
+添加
+
+```
+http {
+	...
+	autoindex on; # 显示文件列表
+	...
+}
+```
+
+
+
 ## vagrant命令
+
 ```
 #启动 如果加上 --provision 选项那么添加的新站点会发布到虚拟机上。
 cd ~/Homestead && vagrant up
