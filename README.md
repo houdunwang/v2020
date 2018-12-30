@@ -2,7 +2,7 @@
 
 本项目为向军大叔的视频代码或直播课程代码，希望大家能给个 `star` 这是对我们最好的鼓励和肯定。
 
-Github仓库：https://github.com/houdunwang/codeing
+Github仓库：https://github.com/houdunwang/coding
 
 Gitee仓库：https://gitee.com/houdunren/code
 
