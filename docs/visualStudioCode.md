@@ -1,6 +1,6 @@
-## VisualStudio Code
+## EVisual Studio Code
 
-### 安装软件
+## 安装软件
 
 VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。
 
@@ -8,7 +8,7 @@ VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。
 
 ![image-20181020195230055](assets/image-20181020195230055.png)
 
-### 中文语言
+## 中文语言
 
 1. 扩展中搜索 `chinese` 即中文语言包![image-20181020194746230](assets/image-20181020194746230.png)
 
@@ -18,7 +18,33 @@ VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。
 
 2. 重启vscode工具完成
 
-### 全局命令
+## 基本设置
+
+**隐藏行号**
+
+```
+设置 > 用户设置 > Line Numbers
+```
+
+导航设置
+
+```
+设置 > 工作台 > 导航路径 > (Breadcrumbs: Enabled & Breadcrumbs: File Path)
+```
+
+滚动缩放
+
+```
+文本编辑器 > Editor: Mouse Wheel Zoom
+```
+
+资源管理器按最新修改排序
+
+```
+功能 > 资源管理器 > Sort Order[modified]
+```
+
+## 全局命令
 
 在windows 系统中在安装 VisualStudio Code 时选择设置PATH就可以在命令行全局使用了。
 
@@ -27,9 +53,7 @@ VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。
 1. 修改 `vim ~/.bash_profile`  如果安装了 `zsh` 修改 `vim ~/.zshrc`
 2. 添加 `export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH`
 
-
-
-### 重置软件
+## 重置软件
 
 有时编辑器安装插件过多，造成异常时就需要重置了
 
@@ -37,18 +61,14 @@ VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。
 2. 苹果系统执行` rm ~/.vscode`
 3. window删除 `C:\Users\23000\.vscode`  与  `C:\Users\23000\AppData\Roaming\Code` 文件夹，将`23000` 换成你的帐号
 
-
-
-### 设置风格
+## 设置风格
 
 下面的两款风格插件都不错，里面有多个主题。
 
 1. [Ayu](https://marketplace.visualstudio.com/items?itemName=teabyii.ayu)
 2. [Material Theme](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme)
 
-
-
-### 常用插件
+## 常用插件
 
 1. [PHP IntelliSense PHP](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-intellisense) 
 
@@ -82,9 +102,7 @@ VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。
 
 16. [vscode-fileheader 设置文件头](https://marketplace.visualstudio.com/items?itemName=mikey.vscode-fileheader)
 
-
-
-## 快捷键
+##  快捷键
 
 这是官方提供的 [快捷键速查表](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf) ，下面是中文快捷键说明。
 

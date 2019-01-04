@@ -377,7 +377,7 @@ sudo -u www git pull
 
 现在向GitHub 推送代码后，服务器将自动执行代码拉取，自动部署功能设置完成了。
 
-## GItHub
+## GitHub
 
 #### 接口
 
