@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc786c27-79ba-4902-8b47-73fa8fbf7990" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/22/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/23/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/23/aa.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/23/fds.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/23/ff.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/24/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/24/2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/24/3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/25/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/26/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/27/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/28/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/29/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/29/2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../docs/php7/基础知识.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../docs/php7/基础知识.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/25/1.php" beforeDir="false" afterPath="$PROJECT_DIR$/25/1.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +49,11 @@
         <option value="$PROJECT_DIR$/24/2.php" />
         <option value="$PROJECT_DIR$/24/3.php" />
         <option value="$PROJECT_DIR$/25/1.php" />
+        <option value="$PROJECT_DIR$/26/1.php" />
+        <option value="$PROJECT_DIR$/27/1.php" />
+        <option value="$PROJECT_DIR$/28/1.php" />
+        <option value="$PROJECT_DIR$/29/1.php" />
+        <option value="$PROJECT_DIR$/29/2.php" />
       </list>
     </option>
   </component>
@@ -71,8 +73,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="php7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php7" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php7" type="462c0819:PsiDirectoryNode" />
+              <item name="29" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -109,12 +126,17 @@
       <workItem from="1546562694233" duration="5413000" />
       <workItem from="1546577079822" duration="2981000" />
       <workItem from="1546589975477" duration="1487000" />
-      <workItem from="1547024470878" duration="149000" />
+      <workItem from="1547024470878" duration="719000" />
+      <workItem from="1547126412571" duration="25000" />
+      <workItem from="1547126453955" duration="3538000" />
+      <workItem from="1547225737357" duration="652000" />
+      <workItem from="1547227950749" duration="3250000" />
+      <workItem from="1547310674392" duration="1082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10688000" />
+    <option name="totallyTimeSpent" value="19805000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="23" width="960" height="1057" extended-state="0" />
@@ -254,7 +276,46 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/25/1.php">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/26/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/27/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/28/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/29/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/29/2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
