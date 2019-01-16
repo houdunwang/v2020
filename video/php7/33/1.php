@@ -1,7 +1,5 @@
 <?php
-function user()
-{
-    //return '向军大叔';
+$name = 'houdunren.com';
+if(!@include 'index.html'){
+    include 'default.html';
 }
-
-var_dump(user());
