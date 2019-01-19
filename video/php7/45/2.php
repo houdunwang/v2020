@@ -10,8 +10,8 @@ $users = [
 //    next($users);
 //endwhile;
 
-foreach($users as $key=>$user){
-    $users[$key]['age'] +=50;
+foreach ($users as $key => $user) {
+    $users[$key]['age'] += 50;
 //    $user['age']+=50;
 //    echo $key.'='.$user['name'].'<br/>';
 }
