@@ -140,6 +140,9 @@ vagrant box list
 #删除box镜像
 vagrant box remove laravel/homestead
 
+#删除指定版本
+vagrant box remove laravel/homestead --box-version 6.4.0
+
 #查看当前 Homestead 虚拟机的状态。
 vagrant status
 ```
@@ -386,6 +389,9 @@ vagrant box list
 
 #删除box镜像
 vagrant box remove laravel/homestead
+
+#删除指定版本
+vagrant box remove laravel/homestead --box-version 6.4.0
 
 #查看当前 Homestead 虚拟机的状态。
 vagrant status

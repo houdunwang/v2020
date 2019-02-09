@@ -1,4 +1,4 @@
-# PHPSTORM
+#  PHPSTORM
 
 ![1526631364812](assets/1526631364812-1710492.png)
 
@@ -106,7 +106,7 @@ Preferences | Editor | Color Scheme | Console Font
 Preferences | Appearance & Behavior | Appearance > Use custom font
 ```
 
->  一般我录制课程的设置是 编辑区 25，终端20，文件列表20
+>  一般我录制课程的设置是 编辑区 35，终端35，文件列表25
 
 ## PHP命令
 
@@ -122,7 +122,9 @@ Phpstorm中大量使用composer或命令行指令，所以需要设置合适的p
 
 ![image-20180617102725524](assets/image-20180617102725524.png)
 
-## Laravel Plugin
+## Laravel
+
+### Laravel Plugin
 
 在phpstorm中安装 `laravel plugin` 插件.
 
@@ -130,33 +132,14 @@ Phpstorm中大量使用composer或命令行指令，所以需要设置合适的p
 
 ![1525704374890](assets/1525704374890-1710462.png)
 
-## laravel-ide-helper
+### laravel-ide-helper
 
-laravel-ide-helper 用于实现方便的代码提示功能。
+laravel-ide-helper 用于实现方便的代码提示功能，详细[查看插件官网](https://github.com/barryvdh/laravel-ide-helper)
 
 使用composer安装插件
 
 ```
 composer require --dev barryvdh/laravel-ide-helper
-```
-
-在 `config\app.php` 文件 providers 添加 
-
-```
-Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-```
-
-在 **app/Providers/AppServiceProvider.php** 文件中注册 
-
-```
-public function register()
-{
-    if ($this->app->environment() !== 'production') {
-        $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
-    }
-    // ...
-}
-
 ```
 
 生成代码跟踪支持 
@@ -165,7 +148,14 @@ public function register()
 php artisan ide-helper:generate
 ```
 
-#### laravel artisan 命令提示
+### 其他插件
+
+在 IDE 中设置中搜索插件 `Preferences | Plugins`需要安装的插件列表如下：
+
+- Laravel Plugin
+- Laravel Snippets
+
+### 命令提示
 
 `settings>Tools>Command Line Tool Support` 
 

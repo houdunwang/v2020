@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc786c27-79ba-4902-8b47-73fa8fbf7990" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/53/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/53/2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/53/3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/54/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/55/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/56/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/57/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/58/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/59/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/60/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/60/2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/61/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/62/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/63/1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../docs/php7/基础知识.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../docs/php7/基础知识.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -21,13 +21,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/57/1.php">
+        <entry file="file://$PROJECT_DIR$/63/1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#6#24#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="639">
+              <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -55,13 +52,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/27/1.php" />
-        <option value="$PROJECT_DIR$/28/1.php" />
-        <option value="$PROJECT_DIR$/29/1.php" />
-        <option value="$PROJECT_DIR$/29/2.php" />
-        <option value="$PROJECT_DIR$/30/1.php" />
-        <option value="$PROJECT_DIR$/31/1.php" />
-        <option value="$PROJECT_DIR$/31/2.php" />
         <option value="$PROJECT_DIR$/32/1.php" />
         <option value="$PROJECT_DIR$/33/1.html" />
         <option value="$PROJECT_DIR$/33/1.php" />
@@ -106,14 +96,20 @@
         <option value="$PROJECT_DIR$/55/1.php" />
         <option value="$PROJECT_DIR$/56/1.php" />
         <option value="$PROJECT_DIR$/57/1.php" />
+        <option value="$PROJECT_DIR$/58/1.php" />
+        <option value="$PROJECT_DIR$/59/1.php" />
+        <option value="$PROJECT_DIR$/60/1.php" />
+        <option value="$PROJECT_DIR$/60/2.php" />
+        <option value="$PROJECT_DIR$/61/1.php" />
+        <option value="$PROJECT_DIR$/62/1.php" />
+        <option value="$PROJECT_DIR$/63/1.php" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="203" />
     <option name="y" value="23" />
-    <option name="width" value="1717" />
-    <option name="height" value="1057" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -124,25 +120,7 @@
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="php7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="php7" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="php7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="php7" type="462c0819:PsiDirectoryNode" />
-              <item name="57" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -205,17 +183,20 @@
       <workItem from="1547910956953" duration="1134000" />
       <workItem from="1547913160726" duration="7555000" />
       <workItem from="1547998048867" duration="2942000" />
+      <workItem from="1548131072953" duration="6415000" />
+      <workItem from="1548340425046" duration="2756000" />
+      <workItem from="1514798891161" duration="14000" />
+      <workItem from="1549121062148" duration="22000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54714000" />
+    <option name="totallyTimeSpent" value="63921000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="203" y="23" width="1717" height="1057" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2446127" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24391848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -240,56 +221,18 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/60/1.php</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/29/2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/27/1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/30/1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/31/1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/31/2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/32/1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/33/default.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/33/1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -581,11 +524,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/57/1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="-405">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/58/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/59/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/60/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding>
             <element signature="e#6#24#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/60/2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/61/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/62/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/63/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
         </state>
       </provider>
     </entry>
