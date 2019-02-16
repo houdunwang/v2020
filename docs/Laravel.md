@@ -2502,6 +2502,12 @@ or
 
 ## 图片处理
 
+### [spatie](https://github.com/spatie)/image
+
+https://github.com/spatie/image 用于提供丰富的图片处理方式
+
+
+
 ### Intervention/image 
 
 https://github.com/Intervention/image 用于裁切缩放等图片处理操作
@@ -2557,7 +2563,6 @@ https://github.com/barryvdh/laravel-debugbar
 
 ```
 composer require barryvdh/laravel-debugbar --dev
-php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
 ```
 
 修改 `.env` 配置文件 
