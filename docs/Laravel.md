@@ -2,7 +2,7 @@
 
 ![houdunren](assets/houdunren-0343039.jpg)
 
-> 后盾人 www.houdunren.com  作者：向军大叔
+> 后盾人 www.houdunren.com  作者：[向军大叔](http://www.aoxiangjun.com)
 
 ## 介绍
 
@@ -2573,9 +2573,7 @@ DEBUGBAR_ENABLED=true
 
 ## 模块化设计 
 
-https://github.com/houdunwang/laravel-module
-
-模块是在 [nwidart.com/laravel-modules](https://nwidart.com/laravel-modules/v3/advanced-tools/artisan-commands) 和 [laravel-permission](https://github.com/spatie/laravel-permission#installation) 组件基础上扩展了一些功能，所以需要先安装这两个组件
+ [nwidart.com/laravel-modules](https://nwidart.com/laravel-modules/v3/advanced-tools/artisan-commands) 
 
 ## webpack
 

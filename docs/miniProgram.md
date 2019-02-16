@@ -1,5 +1,7 @@
 ## 小程序
 
+> 后盾人 www.houdunren.com  作者：[向军大叔](http://www.aoxiangjun.com)
+
 ### 申请帐号
 
 点击 <https://mp.weixin.qq.com/wxopen/waregister?action=step1> 根据指引填写信息和提交相应的资料，就可以拥有自己的小程序帐号。

@@ -1,5 +1,7 @@
 ## EVisual Studio Code
 
+> 后盾人 www.houdunren.com  作者：[向军大叔](http://www.aoxiangjun.com)
+
 ## 安装软件
 
 VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。

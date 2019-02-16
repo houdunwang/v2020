@@ -2,7 +2,7 @@
 
 ![1526631364812](assets/1526631364812-1710492.png)
 
-> 后盾人 www.houdunren.com  作者：向军大叔
+> 后盾人 www.houdunren.com  作者：[向军大叔](http://www.aoxiangjun.com)
 
 下面在windows系统中介绍PHPSTORM使用,MAC使用与windows只是键盘布局差异。所以就不重复介绍了。 
 
