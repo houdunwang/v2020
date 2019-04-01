@@ -2047,7 +2047,7 @@ class Handler extends ExceptionHandler
 
 ## 全站动态
 
-使用 https://github.com/spatie/laravel-activitylog 组件构成，可查看 https://docs.spatie.be/laravel-activitylog/v2/introduction 文档学习使用该组件。
+使用 https://github.com/spatie/laravel-activitylog 组件构成，可查看 https://docs.spatie.be/laravel-activitylog/v3/introduction 文档学习使用该组件。
 
 安装组件
 
@@ -2502,11 +2502,9 @@ or
 
 ## 图片处理
 
-### [spatie](https://github.com/spatie)/image
+### spatie/image
 
-https://github.com/spatie/image 用于提供丰富的图片处理方式
-
-
+https://docs.spatie.be/image/v1/usage/basic-usage  用于提供丰富的图片处理方式
 
 ### Intervention/image 
 
@@ -2573,7 +2571,7 @@ DEBUGBAR_ENABLED=true
 
 ## 模块化设计 
 
- [nwidart.com/laravel-modules](https://nwidart.com/laravel-modules/v3/advanced-tools/artisan-commands) 
+https://nwidart.com/laravel-modules/v4/installation-and-setup
 
 ## webpack
 

@@ -1,0 +1,31 @@
+html{
+  font-size: 14px;
+}
+[v-cloak]{
+  display: none;
+}
+//面包屑导航
+.breadcrumb {
+  a {
+    //color: #666 !important;
+  }
+}
+
+a {
+  color: #6c757d;
+  text-decoration: none !important;
+}
+.card{
+  border-radius:0;
+}
+.nav-tabs {
+  .nav-link {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    &.active {
+      background: #e4eaec !important;
+      border-color: #dee2e6 #dee2e6 #dee2e6;
+    }
+  }
+}

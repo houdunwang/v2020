@@ -135,7 +135,7 @@ composer config repositories.arr path ~/code/houdunwang/arr
 安装本地包与远程包没有什么区别。
 
 ```
-composer require houdunwang/arr
+composer require houdunwang/arr:dev-master
 ```
 
 至些我们已经完成了，直接在 houdunwang/arr 目录中开发就可以了，而非 `vendor/houdunwang/module` 目录。
