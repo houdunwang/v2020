@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4cb54807-329f-40e3-8aa8-a7d0d32bc9c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../video/php7/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../video/php7/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../video/php7/.idea/webServers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../video/php7/64/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../video/php7/64/2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../video/php7/65/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../video/php7/66/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../video/php7/67/1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docs/php7/基础知识.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../docs/php7/基础知识.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../video/php7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../video/php7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../video/php7/.vscode/launch.json" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>模型</find>
+      <find>$models</find>
+      <find>model</find>
+      <find>$model</find>
+      <find>houdunwang</find>
+      <find>外部链接</find>
+      <find>url</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>栏目</replace>
+      <replace>$categories</replace>
+      <replace>category</replace>
+      <replace>$category</replace>
+    </replaceStrings>
+  </component>
+  <component name="FrameworkCommandLineHistory">
+    <commandsHistory>
+      <command text="artisan module:make-request ModelRequest Article" />
+      <command text="artisan module:make-model ArticleCategory Article" />
+      <command text="artisan module:make-model -m  ArticleCategory Article" />
+      <command text="artisan module:migrate Article" />
+      <command text="artisan module:make-controller Admin/CategoryController Article" />
+      <command text="artisan module:make-request CategoryRequest Article" />
+      <command text="artisan module:migrate-refresh Article" />
+      <command text="artisan module:migrate-refresh  Article" />
+      <command text="artisan module:make-controller ContentController Article" />
+      <command text="artisan module:make-controller Admin/ContentController Article" />
+      <command text="artisan module:make-model  -m ArticleContent Article" />
+      <command text="artisan module:migrate Article" />
+    </commandsHistory>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/public/a.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Http/Controllers/Admin/ModelController.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Resources/views/admin/category/create.blade.php" />
+        <option value="$PROJECT_DIR$/database.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Resources/views/admin/category/edit.blade.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Resources/views/admin/category/_tab.blade.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Repositories/CategoryRepository.php" />
+        <option value="$PROJECT_DIR$/public/js/util.js" />
+        <option value="$PROJECT_DIR$/modules/Article/Http/Requests/CategoryRequest.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Database/Migrations/2019_03_28_204947_create_article_categories_table.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Repositories/ModelRepository.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Http/Controllers/Admin/CategoryController.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Resources/views/admin/category/_form.blade.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Entities/ArticleCategory.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Resources/views/admin/category/index.blade.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Routes/web.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Config/business.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Entities/ArticleContent.php" />
+        <option value="$PROJECT_DIR$/modules/Article/Database/Migrations/2019_03_31_210115_create_article_contents_table.php" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="344" />
+    <option name="width" value="1592" />
+    <option name="height" value="1087" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="hdcms" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hdcms" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/hdcms" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\23000\code\live\hdcms\modules\Article\Resources\views\admin\category" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4cb54807-329f-40e3-8aa8-a7d0d32bc9c3" name="Default Changelist" comment="" />
+      <created>1552650510580</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1552650510580</updated>
+      <workItem from="1552650511808" duration="1826000" />
+      <workItem from="1553772620033" duration="5691000" />
+      <workItem from="1553860652557" duration="4675000" />
+      <workItem from="1553919128134" duration="836000" />
+      <workItem from="1553920073516" duration="37000" />
+      <workItem from="1553920148644" duration="484000" />
+      <workItem from="1553920653345" duration="671000" />
+      <workItem from="1553921647786" duration="15000" />
+      <workItem from="1553921800020" duration="679000" />
+      <workItem from="1554032274670" duration="5932000" />
+      <workItem from="1554082592506" duration="693000" />
+      <workItem from="1554086781262" duration="43000" />
+      <workItem from="1554120136409" duration="899000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="22481000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="344" y="0" width="1592" height="1087" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19796954" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.029325513" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="12" visible="true" weight="0.2922776" />
+      <window_info anchor="bottom" id="File Transfer" order="13" weight="0.09970675" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32942328" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.611691" />
+      <window_info anchor="right" id="Remote Host" order="4" weight="0.3296875" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/CmsCreateUpdateFile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1630" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/updateHouDunRen.php" />
+    <entry file="file://$PROJECT_DIR$/app/Servers/NotifyServer.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_06_234437_create_favours_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/seeds/CloudSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package/wechat/tests/CustomMessageTest.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/components/keyword.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/a.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Resources/views/admin/model/index.blade.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Resources/views/admin/model/_tab.blade.php" />
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/InstallMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Article/Http/Controllers/Admin/ModelController.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Http/Requests/ModelRequest.php" />
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/CreateModule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="57" column="36" lean-forward="true" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Site.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="e#30#43#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/ModuleMiddleware.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/message.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="4" column="46" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Article/Resources/views/admin/category/edit.blade.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Resources/views/admin/category/_tab.blade.php" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="71" column="9" lean-forward="true" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Article/Resources/views/admin/category/create.blade.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/houdunwang/arr/src/Arr.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Repositories/CategoryRepository.php" />
+    <entry file="file://$PROJECT_DIR$/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/03b24a38-b03d-4454-bb19-9af1b6e9f423/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://03b24a38-b03d-4454-bb19-9af1b6e9f423/schema/dev_hdcms_com/table/migrations" />
+    <entry file="file://$PROJECT_DIR$/public/js/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="55" column="79" lean-forward="true" selection-start-line="55" selection-start-column="79" selection-end-line="55" selection-end-column="79" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://03b24a38-b03d-4454-bb19-9af1b6e9f423/schema/dev_hdcms_com/table/article_categories" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Http/Requests/CategoryRequest.php" />
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Repository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-606">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Article/Database/Migrations/2019_03_21_203517_create_article_models_table.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Entities/ArticleModel.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Repositories/ModelRepository.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Resources/views/admin/category/_form.blade.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Http/Controllers/Admin/CategoryController.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Entities/ArticleCategory.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Resources/views/admin/category/index.blade.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Http/Controllers/Admin/ContentController.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Routes/web.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Config/business.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Entities/ArticleContent.php" />
+    <entry file="file://$PROJECT_DIR$/app/helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="62" column="83" lean-forward="true" selection-start-line="61" selection-start-column="4" selection-end-line="62" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Article/Database/Migrations/2019_03_28_204947_create_article_categories_table.php" />
+    <entry file="file://$PROJECT_DIR$/modules/Article/Database/Migrations/2019_03_31_210115_create_article_contents_table.php" />
+    <entry file="das://03b24a38-b03d-4454-bb19-9af1b6e9f423/schema/dev_hdcms_com/table/article_contents" />
+    <entry file="file://$PROJECT_DIR$/app/Repositories/ChatRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/ConfigRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
