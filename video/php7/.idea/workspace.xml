@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc786c27-79ba-4902-8b47-73fa8fbf7990" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/77/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/77/users.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/77/xj.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/77/xj.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/78/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/78/2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/78/xj.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/79/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/79/2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/79/xj.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/80/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/80/2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/80/install.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/80/xj.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/81/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/81/2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/81/xj.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/82/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/82/2.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/82/2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/82/xj.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/83/1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/83/xj.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,10 +29,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/82/2.php">
+        <entry file="file://$PROJECT_DIR$/83/1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="2" column="15" lean-forward="true" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+            <state relative-caret-position="68">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -79,8 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/60/2.php" />
-        <option value="$PROJECT_DIR$/61/1.php" />
         <option value="$PROJECT_DIR$/62/1.php" />
         <option value="$PROJECT_DIR$/63/1.php" />
         <option value="$PROJECT_DIR$/64/2.php" />
@@ -130,6 +109,8 @@
         <option value="$PROJECT_DIR$/82/1.php" />
         <option value="$PROJECT_DIR$/82/2.blade.php" />
         <option value="$PROJECT_DIR$/82/2.php" />
+        <option value="$PROJECT_DIR$/83/xj.txt" />
+        <option value="$PROJECT_DIR$/83/1.php" />
       </list>
     </option>
   </component>
@@ -140,8 +121,9 @@
     <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-7" />
+    <option name="y" value="1" />
     <option name="width" value="1703" />
     <option name="height" value="1057" />
   </component>
@@ -166,7 +148,7 @@
             <path>
               <item name="php7" type="b2602c69:ProjectViewProjectNode" />
               <item name="php7" type="462c0819:PsiDirectoryNode" />
-              <item name="82" type="462c0819:PsiDirectoryNode" />
+              <item name="83" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -189,15 +171,15 @@
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\23000\code\video\php7" />
       <recent name="C:\Users\23000\code\video\php7\77" />
       <recent name="C:\Users\23000\code\video\php7\76" />
       <recent name="C:\Users\23000\code\video\php7\75" />
       <recent name="C:\Users\23000\code\video\php7\69" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -268,15 +250,17 @@
       <workItem from="1555984682411" duration="613000" />
       <workItem from="1555989005929" duration="10356000" />
       <workItem from="1556199837867" duration="894000" />
-      <workItem from="1556200743710" duration="2664000" />
+      <workItem from="1556200743710" duration="2710000" />
+      <workItem from="1556339731922" duration="619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121056000" />
+    <option name="totallyTimeSpent" value="121721000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1703" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" x="846" y="28" width="227" height="1023" id="Project" order="0" weight="0.17427386" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -291,7 +275,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.72865856" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.72865856" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="File Transfer" order="12" weight="0.3160569" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -317,13 +301,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/68/3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/69/3.php" />
     <entry file="file://$PROJECT_DIR$/69/1.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -560,13 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/80/1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/80/xj.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -594,9 +564,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/81/xj.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/81/xj.php" />
     <entry file="file://$PROJECT_DIR$/81/xj.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -634,8 +602,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/82/2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="130">
           <caret line="2" column="15" lean-forward="true" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/83/xj.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/83/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
