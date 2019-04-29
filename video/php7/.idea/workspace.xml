@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc786c27-79ba-4902-8b47-73fa8fbf7990" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/83/1.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/83/xj.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="cc786c27-79ba-4902-8b47-73fa8fbf7990" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/83/1.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -121,7 +117,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2" />
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="y" value="1" />
     <option name="width" value="1703" />
@@ -251,15 +247,15 @@
       <workItem from="1555989005929" duration="10356000" />
       <workItem from="1556199837867" duration="894000" />
       <workItem from="1556200743710" duration="2710000" />
-      <workItem from="1556339731922" duration="619000" />
+      <workItem from="1556339731922" duration="1289000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121721000" />
+    <option name="totallyTimeSpent" value="122391000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1703" height="1057" extended-state="0" />
+    <frame x="-7" y="1" width="1703" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" x="846" y="28" width="227" height="1023" id="Project" order="0" weight="0.17427386" />
@@ -613,7 +609,7 @@
     <entry file="file://$PROJECT_DIR$/83/1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
         </state>
       </provider>
     </entry>
