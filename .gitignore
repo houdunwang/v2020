@@ -1,0 +1,7 @@
+node_modules
+.env
+.phpunit.result.cache
+.idea
+!/.gitignore
+.DS_Store
+.vscode
