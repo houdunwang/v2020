@@ -1,5 +1,11 @@
 # Docker 
 
+> 后盾人 @ 版权所有 ，请尊重他人劳动成果，转载请注明出处 houdunren.com。
+>
+> 感谢你的支持与理解。
+
+![icon-s](../assets/icon-s.png)
+
 应用应该脱离底层硬件的限制，在任何时间与地点可以获取 ，Docker就是基于此思想 ，可以快速分发与部署。
 
 有了docker可以轻松将网站在不同操作系统，不同云服务器中迁移。只要把容器打包，就可以轻松部署。不需要像过去一样，重复安装 mysql/php/apache....。
@@ -264,7 +270,9 @@ docker exec -it 3c5e00452777 /bin/bash
  停止容器
 
 ```
-docker stop 3c5e00452777            
+docker stop 3c5e00452777
+# kill 立刻停止容器，类似于直接关机
+docker kill 3c5e00452777
 ```
 
 启动停止的容器
@@ -285,29 +293,27 @@ docker rm -f ubuntu:latest
 docker rm `docker ps -a -q`
 ```
 
-## Compose
-
-Docker Compose 是 Docker 容器进行编排的工具，定义和运行多容器的应用，可以一条命令启动多个容器。
-
-后面我们会单独一章节讲使用 composer 配置容器。
-
-### 安装
-
-下载安装
+指定容器名
 
 ```
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# 执行 ubuntu 镜像生成新容器 hd
+docker run -tid --name hd  ubuntu /bin/bash
 ```
 
-添加执行权限 
+查看容器进程
 
 ```
-sudo chmod +x /usr/local/bin/docker-compose
+docker top ubuntu
 ```
 
-查看安装版本
+查看容器端口映射
 
 ```
-docker-compose --version
+docker port hd
 ```
 
+查看容器元信息(如IP)
+
+```
+docker inspect hd 
+```

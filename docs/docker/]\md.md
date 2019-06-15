@@ -1,10 +1,14 @@
-# Docker 构建LAMP镜像
+## LAMP
 
-> 向军大叔 @  houdunren.com
+> 后盾人 @ 版权所有 ，请尊重他人劳动成果，转载请注明出处 houdunren.com。
+>
+> 感谢你的支持与理解。
+
+![icon-s](https://www.houdunren.com/xj.png)
 
 下面介绍自己开发一个运行 LAMP 环境的docker镜像及容器的使用，有关docker的使用已经在其他docker课程中介绍了，向军大叔在这里就不重复讲了。
 
-### 安装镜像
+## 安装镜像
 
 ```
 # 搜索镜像
@@ -17,7 +21,7 @@ docker pull ubuntu
 docker image
 ```
 
-### 启动容器
+## 启动容器
 
 以守护进程启动容器，如果ubuntu镜像本地不存在，将自动从 hub.docker.com下载。
 
@@ -41,7 +45,7 @@ docker exec -itd 3c5e00452777 /bin/bash
 
 -d 参数表示容器以守护进程方式启动。
 
-### 容器软件安装
+## 软件安装
 
 ```
 apt update
@@ -49,7 +53,7 @@ apt upgrade
 apt install -y nginx php vim mysql-client mysql-server redis cron php-gd php-fpm
 ```
 
-### Nginx&PHP
+## Nginx
 
 #### PHP socket连接
 
@@ -66,11 +70,11 @@ listen = /run/php/php7.2-fpm.sock
 ```
 location ~ \.php$ {
 		include snippets/fastcgi-php.conf;
-                # With php-fpm (or other unix sockets):
-                #  /run/php/php7.2-fpm.sock
-		fastcgi_pass unix:/run/php/php7.2-fpm.sock;
-                # With php-cgi (or other tcp sockets):
-                # fastcgi_pass 127.0.0.1:9000;
+			# With php-fpm (or other unix sockets):
+			#  /run/php/php7.2-fpm.sock
+			fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+			# With php-cgi (or other tcp sockets):
+			# fastcgi_pass 127.0.0.1:9000;
 }
 ```
 
@@ -117,7 +121,7 @@ phpinfo();
 
 在宿主机的浏览器访问 `localhost:8080`
 
-### Mysql
+##Mysql
 
 **root 帐号远程访问**
 
@@ -128,9 +132,7 @@ phpinfo();
 
     ```
      set global validate_password_policy=LOW;
-
-     grant all privileges on *.* to 'root'@'%' identified by 'admin888';
-
+ grant all privileges on *.* to 'root'@'%' identified by 'admin888';
      FLUSH PRIVILEGES;
     ```
 
@@ -145,23 +147,35 @@ vim /etc/mysql/mysql.conf.d/mysqld.cnf
 注释掉下面这行
 
 ```
-...
 # bind-address          = 127.0.0.1
-...
 ```
 
-可以使用软件或命令行在外部连接mysql
+**运行设置**
 
 ```
-mysql -uroot -p -P3309 -h127.0.0.1
+usermod -d /var/lib/mysql/ mysql
+chown -R mysql:mysql /var/lib/mysql
 ```
 
-### 制作镜像
+## 启动脚本 
+
+在容器要多目录创建 boot.sh 文件内容如下
+
+```
+chown -R mysql:mysql /var/lib/mysql
+service php7.2-fpm start
+service mysql start
+nginx -g 'daemon off;'
+```
+
+nginx -g 'daemon off; 是让nginx在前台执行，以保证容器启动时几个服务不退出。
+
+## 制作镜像
 
 刚刚安装软件的容器需要保存为镜像，否则每次都需要重新安装软件。
 
 ```
-docker commit -m="first commit" -a="houdunren" 3c5e00452777 houdunren/lamp:v2
+docker commit -m="first commit" -a="houdunren" 3c5e00452777 houdunren/web:v2
 ```
 
 各个参数说明：
@@ -172,8 +186,6 @@ docker commit -m="first commit" -a="houdunren" 3c5e00452777 houdunren/lamp:v2
 - **houdunren/ubuntu:v1**指定要创建的目标镜像名
 
 创建镜像后我们可以使用 **docker images** 命令来查看我们的新镜像 **houdunren/ubuntu:v2**：
-
-使用我们的新镜像 **runoob/ubuntu** 来启动一个容器
 
 ```
 docker run -tid houdunren/lamp:v2 /bin/bash
@@ -187,137 +199,49 @@ docker run -tid houdunren/lamp:v2 /bin/bash
 docker tag 3c5e00452777 houdunren/lamp
 ```
 
-### Dockerfile
+## 启动测试
 
-Dockerfile是由一系列命令和参数构成的脚本，这些命令应用于基础镜像并最终创建一个新的镜像。它们简化了从头到尾的流程并极大的简化了部署工作。
-
-下面创建 Dockerfile 配置文件如下
+**启动容器**
 
 ```
-# 使用的源镜像
-FROM    houdunren/lamp
-# RUN 执行的容器命令
-RUN     apt -y update
-RUN     apt -y upgrade
-RUN     apt install -f
-# 复制文件
-ADD    ./run.sh /run.sh
-RUN     chmod 755 /*.sh
-# 开放端口
-EXPOSE  80
-# 启动后执行的命令，在执行docker run ... 命令时添加 /bin/bash ，CMD设置将无效
-CMD     ["/run.sh"]
+docker run -tid -p 8088:80 -p 3308:3306 -v /www:/var/www/html --name hd houdunren/web /bin/bash boot.sh
 ```
 
-创建 `run.sh`文件
+**开启服务**
+
+如果没有创建启动脚本  boot.sh，需要登录容器执行以下命令。
 
 ```
-#!/bin/bash 
-service cron start
-service mysql start
+# 进入容器
 service php7.2-fpm start
-nginx -g 'daemon off;'
+service nginx start
+service mysql start
 ```
 
-#### 编译镜像
-
-在 Dockerfile 文件所在目录执行编译镜像操作。
+**宿主连接mysql**
 
 ```
-docker build -t houdunren/web . 
+mysql -uroot -p -P3309 -h127.0.0.1
 ```
 
-查看镜像编译是否成功
+## 发布镜像
 
-```
-docker images
-```
-
-### 使用镜像
-
-创建目录 
-
-```
-mkdir -p ~/www/nginx
-```
-
-在设置 ~/www/nginx 目录添加 nginx 配置文件内容如下:
-
-```
-server {
-       listen 80;
-       listen [::]:80;
-
-       server_name hdcms.test;
-
-       root /var/www/html/hdcms;
-       index index.php;
-
-       location / {
-               try_files $uri $uri/ =404;
-       }
-       location ~ \.php$ {
-                include snippets/fastcgi-php.conf;
-                fastcgi_pass unix:/run/php/php7.2-fpm.sock;
-        }
-}
-```
-
-修改 `/etc/hosts`添加 hdcms.test 本地域名的解析记录
-
-```
-...
-127.0.0.1       hdcms.test
-...
-```
-
-运行容器
-
-```
-docker run -tid -p 8081:80 -p 3309:3306 -v ~/www:/var/www/html -v ~/www/nginx:/etc/nginx/conf.d 3b23ea1068a8
-```
-
-宿主使用 `localhost:8081` (如果宿主机没有使用80也可以将80端口映射) 访问nginx
-
-### 镜像上传
-
-制作好的镜像可以上传到网上，以供其他人使用。
-
-登录 docker hub
+命令行登录docker
 
 ```
 docker login
-```
-
-推送镜像到仓库
-
-```
-docker push houdunren/lamp
-```
-
-登录 https:``//hub``.docker.com/ 就可以在 Repositories 中查看到刚者提交的镜像了。
-
-现在其他用户可以使用以下命令安装我们的镜像了。
-
-```
-docker pull houdunren/lamp
-```
-
-退出 docker hub
-
-```
+# 退出
 docker logout
 ```
 
-### 删除镜像
+**发布镜像到服务器**
 
-对于不使用的镜像可以使用 IMAGE-ID 	删除，要保证镜像没有被容器使用。
+如果不是以 `帐号/镜像` 形式的命名规则，将不能提交到docker
 
 ```
-docker rmi -f f1187f028843
+# 改镜像名，不设置tag 将为 latest版本
+docker tag 355f96772628 houdunren/web:v1
+
+# 发布提交
+docker push web:v1
 ```
-
-如果删除远程镜像可以使用 hub.docker.com 中操作。
-
-
-

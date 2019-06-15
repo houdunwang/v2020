@@ -89,6 +89,10 @@ VSCode 是微软推出的跨平台、扩展组件丰富的文本编辑器。
 15. [VS Color Picker 选择颜色](https://marketplace.visualstudio.com/items?itemName=lihui.vs-color-picker)
 16. [vscode-fileheader 设置文件头](https://marketplace.visualstudio.com/items?itemName=mikey.vscode-fileheader)
 
+## 代码提示
+
+默认 vscode 代码提示是 `ctrl+space` 我们可以在 `文件 > 键盘快捷方式` 搜索 `Suggest` 关键词后进行设置。
+
 ## FTP同步
 
 开发时经常需要本地代码与远程代码FTP同步操作。在vscode中使用ftp同步时每次需要连接，等待时间很长，所以需要使用sftp同步操作。

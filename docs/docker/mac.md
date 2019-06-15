@@ -4,7 +4,7 @@
 >
 > 感谢你的支持与理解。
 
-
+![icon-s](assets/icon-s.png)
 
 ## 安装
 
