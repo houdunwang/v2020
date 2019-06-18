@@ -1,1 +1,0 @@
-a:4:{s:4:"HOST";s:9:"localhoST";s:4:"poRT";i:3306;s:4:"uSer";s:4:"roOT";s:5:"cache";a:2:{s:4:"HoSt";s:13:"112.11.221.12";s:4:"uSER";s:5:"hdcms";}}
