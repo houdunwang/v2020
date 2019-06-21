@@ -1,7 +1,7 @@
 <?php
 class Captcha
 {
-    protected $width;
+    protected $width; 
     protected $height;
     protected $res;
     protected $code;
