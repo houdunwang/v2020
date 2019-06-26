@@ -1,0 +1,16 @@
+{
+    "name": "hd/8",
+    "authors": [{
+        "name": "houdunren.com",
+        "email": "2300071698@qq.com"
+    }],
+    "autoload": {
+        "files": [
+            "helper.php"
+        ],
+        "psr-4": {
+            "App\\": "app"
+        }
+    },
+    "require": {}
+}
