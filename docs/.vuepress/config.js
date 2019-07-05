@@ -2,7 +2,7 @@ module.exports = {
     title: '后盾人',
     description: '在线文档库',
     themeConfig: {
-        repo: 'houdunwang/coding',
+        repo: 'https://gitee.com/houdunren/code',
         docsDir: 'docs',
         repoLabel: '查看源码',
         editLinks: true,
