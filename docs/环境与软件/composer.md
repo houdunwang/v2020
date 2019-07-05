@@ -1,7 +1,5 @@
 # Composer
 
-![1526631364812](assets/1526631364812.png)
-
 > 后盾人 www.houdunren.com  作者：[向军大叔](http://www.aoxiangjun.com)
 
 ## 安装

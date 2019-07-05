@@ -1,6 +1,6 @@
 ## Api
 
-> 后盾人 houdunren.com @ 向军大叔
+> 创作不易，转载请注明出处： 后盾人 @ houdurnen.com
 
 REST是所有Web应用都应该遵守的架构设计指导原则。  Representational State Transfer，翻译是”表现层状态转化”。  
 
@@ -104,23 +104,23 @@ https://api.example.com/v1
 
 postman可以高效的测试和维护接口。https://www.getpostman.com/apps
 
-![image-20180628123448463](assets/image-20180628123448463.png)
+![image-20180628123448463](../assets/image-20180628123448463.png)
 
-![image-20180628123556704](assets/image-20180628123556704.png)
+![image-20180628123556704](../assets/image-20180628123556704.png)
 
 使用 `postMan` 工具测试结果
 
-![image-20180628122441329](assets/image-20180628122441329.png)
+![image-20180628122441329](../assets/image-20180628122441329.png)
 
 ### 环境变量
 
 我们在本地和服务器上都想测试接口，可以将域名定义为环境变量，这样我们只要改变环境域名就会自动变化。
 
-![image-20180628124151269](assets/image-20180628124151269.png)
+![image-20180628124151269](../assets/image-20180628124151269.png)
 
-![image-20180628124248502](assets/image-20180628124248502.png)
+![image-20180628124248502](../assets/image-20180628124248502.png)
 
-![image-20180628124449686](assets/image-20180628124449686.png)
+![image-20180628124449686](../assets/image-20180628124449686.png)
 
 ## Dingo
 
@@ -605,4 +605,4 @@ Authorization: Bearer 令牌数据
 
 在postman 工具中可以使用以下方式简化操作
 
-![image-20180810224729833](assets/image-20180810224729833.png)
+![image-20180810224729833](../assets/image-20180810224729833.png)

@@ -29,4 +29,3 @@ sudo apt-get install gnome-shell-extensions
 
 1. 下载releases 包
 2. 解包并执行 `./install.sh`
-

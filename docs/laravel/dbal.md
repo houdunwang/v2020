@@ -1,4 +1,4 @@
-# 方便的数据库管理驱动 doctrine/dbal
+# dbal
 
 dbal 是非常方便的数据库管理驱动
 

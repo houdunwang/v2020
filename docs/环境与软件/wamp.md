@@ -1,7 +1,5 @@
 # wamp
 
-![1526631364812](../assets/1526631364812-1710675.png)
-
 > 后盾人 www.houdunren.com  作者：[向军大叔](http://www.aoxiangjun.com)
 
 wamp是windows系统中老牌的也是优秀的集成化开发环境。
@@ -86,4 +84,3 @@ public function boot()
  	\Schema::defaultStringLength(191);
 }
 ```
-

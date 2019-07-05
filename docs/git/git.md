@@ -1,10 +1,8 @@
-## Git
-
-![1526631364812](../assets/1526631364812-1710307.png)
+# GIT
 
 > 后盾人 www.houdunren.com  作者：[向军大叔](http://www.aoxiangjun.com)
 
-#### 安装
+## 安装
 
 自诞生于 2005 年以来，Git 日臻成熟完善，在高度易用的同时，仍然保留着初期设定的目标。它的速度飞快，极其适合管理大项目 。
 
@@ -305,15 +303,13 @@ git push github
 alias gp="git push & git push github"
 ```
 
-
-
-## 自动部署
+# 自动部署
 
 GitHub设置 `WebHook`
 
 ![1526276371437](../assets/1526276371437.png)
 
-#### PHP
+## PHP
 
 项目中添加处理 webhook 的webhook.php文件内容如下，并提交到版本库。
 
@@ -374,7 +370,7 @@ sudo -u www git pull
 
 现在向GitHub 推送代码后，服务器将自动执行代码拉取，自动部署功能设置完成了。
 
-## GitHub
+# GitHub
 
 #### 接口
 
