@@ -1,0 +1,13 @@
+{
+    "name": "hd/app",
+    "authors": [{
+        "name": "houdunren.com",
+        "email": "2300071698@qq.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "App\\": "."
+        }
+    },
+    "require": {}
+}
