@@ -55,6 +55,7 @@ class Article extends Model
     use Searchable;
     ...
 }
+...
 ```
 
 **查询**
