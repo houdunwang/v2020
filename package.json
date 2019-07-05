@@ -1,0 +1,29 @@
+{
+  "name": "coding",
+  "version": "1.0.0",
+  "description": "本项目为向军大叔的视频代码或直播课程代码，希望大家能给个 `star` 这是对我们最好的鼓励和肯定。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vuepress": "^1.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/houdunwang/coding.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/houdunwang/coding/issues"
+  },
+  "homepage": "https://github.com/houdunwang/coding#readme"
+}
