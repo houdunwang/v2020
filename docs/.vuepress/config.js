@@ -14,7 +14,7 @@ module.exports = {
             {
                 text: '文档列表',
                 items: [
-                    { text: 'PHP', link: '/php/1 前言' }
+                    { text: 'PHP', link: '/php/1' }
                 ]
             },
             {
