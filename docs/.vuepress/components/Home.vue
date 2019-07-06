@@ -59,7 +59,7 @@
     <div class="container links pb-5">
       <div class="card-deck mb-4 bg-white border p-5 row">
         <div class="col-4 mb-3" v-for="(v,k) in links">
-          <a :href="v.link+'.html'" class="card p-1 shadow-sm">
+          <a :href="base+'/'+v.link+'.html'" class="card p-1 shadow-sm">
             <div class="card-body">
               <header class="card-title h4 font-weight-normal">{{v.text}}</header>
               <p class="card-text text-secondary font-weight-normal">{{v.desc}}</p>
@@ -124,16 +124,12 @@
 <script>
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.min.css";
-import links from "../config";
+import config from "../config";
 export default {
   data() {
     return {
-      links: links.themeConfig.nav[0].items
-      //  [
-      //   { title: "PHP教程", link: "/php/1", desc: "系统学习pHP" },
-      //   { title: "PHP教程", link: "http://houdunren.com", desc: "系统学习pHP" },
-      //   { title: "PHP教程", link: "http://houdunren.com", desc: "系统学习pHP" }
-      // ]
+      links: config.themeConfig.nav[0].items,
+      base: config.base
     };
   },
   mounted() {
