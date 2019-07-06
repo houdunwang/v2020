@@ -1,7 +1,7 @@
 module.exports = {
     title: 'houdunren',
     description: '在线文档库',
-    base: '/',
+    base: '/code/',
     themeConfig: {
         updatePopup: true,
         title: '后盾人 - ',
