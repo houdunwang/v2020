@@ -1,7 +1,7 @@
 module.exports = {
     title: '后盾人',
     description: '在线文档库',
-    base:'/',
+    // base: '/coding/',
     themeConfig: {
         updatePopup: true,
         title: '后盾人 - ',
@@ -12,71 +12,71 @@ module.exports = {
         editLinks: true,
         editLinkText: '帮助我们改善此页面！',
         nav: [{
-                text: '文档列表',
-                items: [{
-                        text: 'PHP',
-                        link: '/php/1 前言',
-                        desc: "系统学习PHP"
-                    },
-                    {
-                        text: 'Linux',
-                        link: '/linux/ubuntu',
-                        desc: "高效使用Linux"
-                    },
-                    {
-                        text: '环境与软件',
-                        link: '/environment/composer',
-                        desc: "配置高效的开发环境与工具软件"
-                    },
-                    {
-                        text: 'Docker',
-                        link: '/docker/laradock',
-                        desc: "开源的应用容器引擎DOKER"
-                    },
-                    {
-                        text: 'GIT',
-                        link: '/git/git',
-                        desc: "学习使用版本控制"
-                    }, {
-                        text: 'Laravel',
-                        link: '/laravel/Laravel',
-                        desc: "高效的后台开发框架"
-                    },
-                    {
-                        text: 'HDCMS',
-                        link: '/hdcms/HDCMS',
-                        desc: "模块化可扩展内容管理系统"
-                    }
-                ]
-            },
-            // {
-            //     text: '其他功能',
-            //     items: [{
-            //             text: '实战课程',
-            //             link: 'https://www.houdunren.com/edu/front/lesson?sid=1&mid=2'
-            //         },
-            //         {
-            //             text: '最近更新',
-            //             link: 'https://www.houdunren.com/edu/front/video?sid=1&mid=2'
-            //         },
-            //         {
-            //             text: '话题讨论',
-            //             link: 'https://www.houdunren.com/edu/front/topic'
-            //         },
-            //         {
-            //             text: '签到打卡',
-            //             link: 'https://www.houdunren.com/edu/front/sign'
-            //         },
-            //     ]
-            // },
-            {
-                text: '在线学习',
-                link: 'https://www.houdunren.com'
+            text: '文档列表',
+            items: [{
+                text: 'PHP',
+                link: '/php/1 前言',
+                desc: "系统学习PHP"
             },
             {
-                text: '八点直播',
-                link: 'https://www.houdunren.com/edu/front/live'
+                text: 'Linux',
+                link: '/linux/ubuntu',
+                desc: "高效使用Linux"
+            },
+            {
+                text: '环境与软件',
+                link: '/environment/composer',
+                desc: "配置高效的开发环境与工具软件"
+            },
+            {
+                text: 'Docker',
+                link: '/docker/laradock',
+                desc: "开源的应用容器引擎DOKER"
+            },
+            {
+                text: 'GIT',
+                link: '/git/git',
+                desc: "学习使用版本控制"
+            }, {
+                text: 'Laravel',
+                link: '/laravel/Laravel',
+                desc: "高效的后台开发框架"
+            },
+            {
+                text: 'HDCMS',
+                link: '/hdcms/HDCMS',
+                desc: "模块化可扩展内容管理系统"
             }
+            ]
+        },
+        // {
+        //     text: '其他功能',
+        //     items: [{
+        //             text: '实战课程',
+        //             link: 'https://www.houdunren.com/edu/front/lesson?sid=1&mid=2'
+        //         },
+        //         {
+        //             text: '最近更新',
+        //             link: 'https://www.houdunren.com/edu/front/video?sid=1&mid=2'
+        //         },
+        //         {
+        //             text: '话题讨论',
+        //             link: 'https://www.houdunren.com/edu/front/topic'
+        //         },
+        //         {
+        //             text: '签到打卡',
+        //             link: 'https://www.houdunren.com/edu/front/sign'
+        //         },
+        //     ]
+        // },
+        {
+            text: '在线学习',
+            link: 'https://www.houdunren.com'
+        },
+        {
+            text: '八点直播',
+            link: 'https://www.houdunren.com/edu/front/live'
+        }
         ],
         lastUpdated: 'Last Updated',
         sidebarDepth: 2,
