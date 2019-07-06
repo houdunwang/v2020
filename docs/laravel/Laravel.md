@@ -150,3 +150,187 @@ App\Http\Controllers\TestController::lists
 	<h1>首页1</h1>
 @endsection
 ```
+
+#### include
+
+include用于加载外部模板
+
+```
+@include('user.show')
+```
+
+被引入的视图会继承父视图中的所有数据，同时也可以向引入的视图传递额外的数组数据：
+
+```
+@include('view.name', ['some' => 'data'])
+```
+
+#### includeIf
+
+当然，如果尝试使用 `@include` 去引入一个不存在的视图，Laravel 会抛出错误。如果想引入一个可能存在或可能不存在的视图，就使用 `@includeIf` 指令:
+
+```
+@includeIf('view.name', ['some' => 'data'])
+```
+
+#### includeWhen
+
+如果要根据给定的布尔条件 `@include` 视图，可以使用 `@includeWhen` 指令：
+
+```
+@includeWhen($boolean, 'view.name', ['some' => 'data'])
+```
+
+#### stack
+
+Blade 可以被推送到在其他视图或布局中的其他位置渲染的命名堆栈。这在子视图中指定所需的 JavaScript 库时非常有用：
+
+父模板使用
+
+```
+<head>
+    <!-- Head Contents -->
+    @stack('scripts')
+</head>
+```
+
+子模板
+
+```
+@push('scripts')
+    <script src="/example.js"></script>
+@endpush
+```
+
+#### component&slot
+
+组件相比 @extends 更灵活些，下面是定义一个 `modal` 组件。
+
+组件中的变量可以在调用组件时传参数
+
+```
+@component('components.modal',['title'=>'你好','url'=>route('home')])
+```
+
+也可以使用 `slot` 标签赋值
+
+```
+@slot('footer')
+<button type="button" data-dismiss="modal" class="btn btn-secondary md-close">cancel</button>
+@endslot
+```
+
+**示例**
+
+定义一个模态框组件 `view/components/modal.blade.php`
+
+```
+<form action="{{$url}}" method="post" {!!isset($id)?"id=\"$id\"":''!!}>
+    @csrf
+    @isset($method) @method($method) @endif
+    <div id="form-bp1" tabindex="-1" role="dialog" class="modal fade colored-header colored-header-primary">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header modal-header-colored">
+                    <h3 class="modal-title">
+                        @isset($title) {{$title}} @endisset
+                    </h3>
+                    <button type="button" data-dismiss="modal" aria-hidden="true" class="close md-close"><span class="mdi mdi-close"></span></button>
+                </div>
+                <div class="modal-body">
+                    {{$slot}}
+                </div>
+                <div class="modal-footer">
+                    @isset($footer)
+                        {{$footer}}
+                    @else
+                        <button type="button" data-dismiss="modal" class="btn btn-secondary md-close">关闭</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-primary md-close">保存</button>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+```
+
+模板中调用 `modal` 组件
+
+```
+@component('components.modal',['title'=>'你好','url'=>route('home'),'method'=>'PUT'])
+<div class="form-group row">
+ <label for="inputText3" class="col-12 col-sm-3 col-form-label text-sm-right">
+   Input Text
+ </label>
+ <div class="col-12 col-sm-12 col-lg-6">
+  <input id="inputText3" type="text" class="form-control form-control-sm">
+ </div>
+</div>
+@slot('footer')
+<button type="button" data-dismiss="modal" class="btn btn-secondary md-close">cancel</button>
+<button type="button" data-dismiss="modal" class="btn btn-primary md-close">save</button>
+@endslot
+@endcomponent
+```
+
+### 动态视图目录
+
+有时我们需要经常改变视图目录
+
+```
+$finder = app('view')->getFinder();
+$finder->prependLocation(public_path('templates/'));
+```
+
+## 脚手架
+
+安装cnpm 使用国内镜像，安装速度快。
+
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+根据packagist.json 安装前端库
+
+```
+cnpm install
+cnpm install cross-env
+```
+
+我们需要在 resources/assets 目录下的js 与 css 目录中编写前端文件。
+
+**执行编译**
+
+编写好文件事我们需要执行编译操作，生成可供浏览器访问的文件，默认生成在 public/css 与 public/js目录中
+
+```
+npm run dev
+```
+
+引入编译好的样式文件
+
+```
+<link rel="stylesheet" href="/css/app.css">
+```
+
+文件监听**
+
+每次修改都手动编译效率很低，执行以下命令后Webpack 会在检测到文件更改时自动重新编译资源：
+
+```
+npm run watch
+```
+
+在某些环境中，当文件更改时，Webpack 不会更新。如果系统出现这种情况，请考虑使用 `watch-poll` 命令：
+
+```
+npm run watch-poll
+```
+
+**Bootstrap**
+
+在app.scss 文件中定义：
+
+```
+@import '~bootstrap/scss/bootstrap'; 
+```
