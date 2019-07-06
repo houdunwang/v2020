@@ -57,16 +57,17 @@
       </div>
     </div>
     <div class="container links pb-5">
-      <div class="card-deck mb-4 bg-white border p-5">
-        <a v-for="(v,k) in links" class="card p-2" :href="v.link">
-          <div class="card-body">
-            <header class="card-title h4 font-weight-normal">{{v.text}}</header>
-            <p class="card-text text-secondary font-weight-normal">{{v.desc}}</p>
-          </div>
-        </a>
+      <div class="card-deck mb-4 bg-white border p-5 row">
+        <div class="col-4 mb-3" v-for="(v,k) in links">
+          <a :href="v.link" class="card p-2">
+            <div class="card-body">
+              <header class="card-title h4 font-weight-normal">{{v.text}}</header>
+              <p class="card-text text-secondary font-weight-normal">{{v.desc}}</p>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
-
     <div class="container-fluid bg-white shadow-sm border-top text-secondary p-4">
       <div class="container">
         <div class="text-center p-3 p-sm-3">
@@ -86,7 +87,6 @@
             src="http://tajs.qq.com/stats?sId=63802236"
             charset="UTF-8"
           ></script>
-
           <script type="text/javascript">
   var cnzz_protocol =
     "https:" == document.location.protocol ? "https://" : "http://";

@@ -9,11 +9,11 @@ Laravel是一套简洁、优雅的PHP Web开发框架(PHP Web Framework)。它�
 Laravel 是 基于 PHP 语言的 Web 开源框架，采用了 MVC 的架构模式，在 2011 年 6 月正式发布了首个版本。
 深度集成 PHP 强大的扩展包（Composer）生态与 PHP 开发者广大的受众群，让 Laravel 在发布之后的短短几年时间得到了极其迅猛的发展。我们通过 Google Trends 提供的趋势图（图 1.1）可以看出，Laravel 框架在过去十年，其增长速度迅猛。
 
-![FA2AB3FA-2B6F-4BC0-881B-03CB09668B37](assets/FA2AB3FA-2B6F-4BC0-881B-03CB09668B37-0343581.png)
+![FA2AB3FA-2B6F-4BC0-881B-03CB09668B37](./assets/FA2AB3FA-2B6F-4BC0-881B-03CB09668B37-0343581.png)
 
 **laravel是GitHub上PHP项目排名第一的**
 
-![A7BA857C-974D-4B0D-A4F6-6D77E0F51743](assets/A7BA857C-974D-4B0D-A4F6-6D77E0F51743-0343658.png)
+![A7BA857C-974D-4B0D-A4F6-6D77E0F51743](./assets/A7BA857C-974D-4B0D-A4F6-6D77E0F51743-0343658.png)
 
 ## 版本
 
