@@ -59,7 +59,7 @@
     <div class="container links pb-5">
       <div class="card-deck mb-4 bg-white border p-5 row">
         <div class="col-4 mb-3" v-for="(v,k) in links">
-          <a :href="v.link" class="card p-2">
+          <a :href="v.link+'.html'" class="card p-1 shadow-sm">
             <div class="card-body">
               <header class="card-title h4 font-weight-normal">{{v.text}}</header>
               <p class="card-text text-secondary font-weight-normal">{{v.desc}}</p>
@@ -148,6 +148,7 @@ export default {
 .header {
   a {
     text-decoration: none !important;
+    border-bottom: none !important;
   }
   .border-bottom {
     border-width: 3px !important;
