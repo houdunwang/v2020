@@ -1,7 +1,7 @@
 module.exports = {
     title: '后盾人',
     description: '在线文档库',
-    // base: '/coding/',
+    // base: '/coding/', 
     themeConfig: {
         updatePopup: true,
         title: '后盾人 - ',
