@@ -5,4 +5,3 @@ node_modules
 !/.gitignore
 .DS_Store
 .vscode
-docs/.vuepress/dist
