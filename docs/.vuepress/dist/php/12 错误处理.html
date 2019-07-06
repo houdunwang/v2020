@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>错误处理 | 后盾人</title>
+    <meta name="description" content="在线文档库">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.58b89de0.css" as="style"><link rel="preload" href="/assets/js/app.ffc882f0.js" as="script"><link rel="preload" href="/assets/js/2.20ae6c44.js" as="script"><link rel="preload" href="/assets/js/42.1b9532e8.js" as="script"><link rel="prefetch" href="/assets/js/10.f808bf04.js"><link rel="prefetch" href="/assets/js/11.d71a23cb.js"><link rel="prefetch" href="/assets/js/12.ea5193db.js"><link rel="prefetch" href="/assets/js/13.86be5709.js"><link rel="prefetch" href="/assets/js/14.20dc16b2.js"><link rel="prefetch" href="/assets/js/15.3e8ad036.js"><link rel="prefetch" href="/assets/js/16.4aa83947.js"><link rel="prefetch" href="/assets/js/17.ac082550.js"><link rel="prefetch" href="/assets/js/18.f23cdbe9.js"><link rel="prefetch" href="/assets/js/19.73c246f3.js"><link rel="prefetch" href="/assets/js/20.13cfb666.js"><link rel="prefetch" href="/assets/js/21.4710d4c8.js"><link rel="prefetch" href="/assets/js/22.76d0b56c.js"><link rel="prefetch" href="/assets/js/23.335f6470.js"><link rel="prefetch" href="/assets/js/24.4023c03b.js"><link rel="prefetch" href="/assets/js/25.0af322a6.js"><link rel="prefetch" href="/assets/js/26.7689c457.js"><link rel="prefetch" href="/assets/js/27.7f8f23ce.js"><link rel="prefetch" href="/assets/js/28.e9441168.js"><link rel="prefetch" href="/assets/js/29.a4fe174a.js"><link rel="prefetch" href="/assets/js/3.3ab8b6b3.js"><link rel="prefetch" href="/assets/js/30.99e02f7e.js"><link rel="prefetch" href="/assets/js/31.789e54e7.js"><link rel="prefetch" href="/assets/js/32.13487b61.js"><link rel="prefetch" href="/assets/js/33.791cd66a.js"><link rel="prefetch" href="/assets/js/34.d855d362.js"><link rel="prefetch" href="/assets/js/35.26e630a1.js"><link rel="prefetch" href="/assets/js/36.f71a91e1.js"><link rel="prefetch" href="/assets/js/37.837e49c0.js"><link rel="prefetch" href="/assets/js/38.4f5e099b.js"><link rel="prefetch" href="/assets/js/39.1fbbdc22.js"><link rel="prefetch" href="/assets/js/4.6b56e9ac.js"><link rel="prefetch" href="/assets/js/40.4fd177bd.js"><link rel="prefetch" href="/assets/js/41.eb95f5c0.js"><link rel="prefetch" href="/assets/js/43.362fecf9.js"><link rel="prefetch" href="/assets/js/44.047ae178.js"><link rel="prefetch" href="/assets/js/45.c61dc499.js"><link rel="prefetch" href="/assets/js/46.b5e3fe36.js"><link rel="prefetch" href="/assets/js/47.1d6906ef.js"><link rel="prefetch" href="/assets/js/48.5cac608a.js"><link rel="prefetch" href="/assets/js/49.c5b2b426.js"><link rel="prefetch" href="/assets/js/5.2d93c381.js"><link rel="prefetch" href="/assets/js/50.96444fbe.js"><link rel="prefetch" href="/assets/js/51.390b8e94.js"><link rel="prefetch" href="/assets/js/52.8c13a68b.js"><link rel="prefetch" href="/assets/js/53.ef7ebbcf.js"><link rel="prefetch" href="/assets/js/54.a43d5307.js"><link rel="prefetch" href="/assets/js/55.97b9081c.js"><link rel="prefetch" href="/assets/js/56.e33e02d3.js"><link rel="prefetch" href="/assets/js/57.b67c1732.js"><link rel="prefetch" href="/assets/js/58.ee437297.js"><link rel="prefetch" href="/assets/js/59.afd1931e.js"><link rel="prefetch" href="/assets/js/6.2f3e6750.js"><link rel="prefetch" href="/assets/js/60.ff3fa6d4.js"><link rel="prefetch" href="/assets/js/61.2f570b7f.js"><link rel="prefetch" href="/assets/js/62.70f757a5.js"><link rel="prefetch" href="/assets/js/63.9aba24dc.js"><link rel="prefetch" href="/assets/js/7.ed9eceb0.js"><link rel="prefetch" href="/assets/js/8.a617ce81.js"><link rel="prefetch" href="/assets/js/9.cd0cd200.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.58b89de0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">后盾人</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1.html" class="nav-link">PHP</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">在线学习</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线教育
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/system?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  系统学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/lesson?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  实战课程
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/video?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  最近更新
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/topic" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  话题讨论
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/sign" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  签到打卡
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://gitee.com/houdunren/code" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1.html" class="nav-link">PHP</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">在线学习</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线教育
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/system?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  系统学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/lesson?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  实战课程
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/video?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  最近更新
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/topic" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  话题讨论
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/sign" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  签到打卡
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://gitee.com/houdunren/code" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>错误处理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/php/12%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86.html#错误显示" class="sidebar-link">错误显示</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/php/12%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86.html#错误类型" class="sidebar-link">错误类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/12%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86.html#语法错误" class="sidebar-link">语法错误</a></li><li class="sidebar-sub-header"><a href="/php/12%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86.html#运行错误" class="sidebar-link">运行错误</a></li><li class="sidebar-sub-header"><a href="/php/12%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86.html#逻辑错误" class="sidebar-link">逻辑错误</a></li></ul></li><li><a href="/php/12%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86.html#错误报告" class="sidebar-link">错误报告</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/12%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86.html#常见错误类型" class="sidebar-link">常见错误类型</a></li></ul></li><li><a href="/php/12%20%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86.html#处理引擎" class="sidebar-link">处理引擎</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="错误处理"><a href="#错误处理" aria-hidden="true" class="header-anchor">#</a> 错误处理</h1> <blockquote><p>创作不易，转载请注明出处： 后盾人 @ houdunren.com</p></blockquote> <p>PHP语言开发简单之处也体现在可以提供丰富的错误信息。</p> <h2 id="错误显示"><a href="#错误显示" aria-hidden="true" class="header-anchor">#</a> 错误显示</h2> <p>修改 <code>php.ini</code> 配置文件， <code>display_errors = On</code> 即开启错误显示。</p> <h2 id="错误类型"><a href="#错误类型" aria-hidden="true" class="header-anchor">#</a> 错误类型</h2> <h3 id="语法错误"><a href="#语法错误" aria-hidden="true" class="header-anchor">#</a> 语法错误</h3> <p>违背了程序语言的规则错误，称之为语法错误。比如不以分号结束的语句，或函数写错时都会出现语法错误。语法错误PHP会在运行前检测出来。</p> <p>下面代码没有以分号结束，将报语法错误</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+echo 'houdunren'
+</code></pre></div><p>错误内容如下</p> <div class="language- extra-class"><pre class="language-text"><code>( ! ) Parse error: syntax error, unexpected end of file, expecting ',' or ';' in C:\wamp64\www\php\index.php on line 3
+</code></pre></div><h3 id="运行错误"><a href="#运行错误" aria-hidden="true" class="header-anchor">#</a> 运行错误</h3> <p>经过语法错误检测后，将开始运行PHP代码，在此发生的错误为运行时错误。</p> <p>以下代码因为加载不存在文件，所以会发生运行时错误。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+require 'houdunren';
+</code></pre></div><p>错误内容如下</p> <div class="language- extra-class"><pre class="language-text"><code>( ! ) Warning: require(houdunren): failed to open stream: No such file or directory in C:\wamp64\www\php\index.php on line 2
+</code></pre></div><p>常见运行错误如下：</p> <ul><li>加载不存在文件</li> <li>连接数据库失败</li> <li>远程请求失败</li> <li>函数或类不存在</li></ul> <p>如果有用户数据参与的脚本，需要对数据进行校验。</p> <h3 id="逻辑错误"><a href="#逻辑错误" aria-hidden="true" class="header-anchor">#</a> 逻辑错误</h3> <p>逻辑错误是指软件开发工程师在业务逻辑开发中造成错误。</p> <p>下面展示一个工程师分析不到位，造成的逻辑错误示例。</p> <div class="language- extra-class"><pre class="language-text"><code>for ($i = 0; $i &lt; 5; $i--) {
+    echo $i;
+}
+</code></pre></div><h2 id="错误报告"><a href="#错误报告" aria-hidden="true" class="header-anchor">#</a> 错误报告</h2> <h3 id="常见错误类型"><a href="#常见错误类型" aria-hidden="true" class="header-anchor">#</a> 常见错误类型</h3> <table><thead><tr><th style="text-align:left;">值</th> <th style="text-align:left;">常量</th> <th style="text-align:left;">描述</th></tr></thead> <tbody><tr><td style="text-align:left;">1</td> <td style="text-align:left;">E_ERROR</td> <td style="text-align:left;">致命的运行时错误。这类错误一般是不可恢复的情况，例如内存分配导致的问题。后果是导致脚本终止不再继续运行</td></tr> <tr><td style="text-align:left;">2</td> <td style="text-align:left;">E_WARNING</td> <td style="text-align:left;">运行时警告 (非致命错误)。仅给出提示信息，但是脚本不会终止运行。</td></tr> <tr><td style="text-align:left;">8</td> <td style="text-align:left;">E_NOTICE</td> <td style="text-align:left;">运行时通知。表示脚本遇到可能会表现为错误的情况。</td></tr> <tr><td style="text-align:left;">64</td> <td style="text-align:left;">E_COMPILE_ERROR</td> <td style="text-align:left;">致命编译时错误。类似 E_ERROR</td></tr> <tr><td style="text-align:left;">2048</td> <td style="text-align:left;">E_STRICT</td> <td style="text-align:left;">启用 PHP 对代码的修改建议，以确保代码具有最佳的互操作性和向前兼容性。</td></tr> <tr><td style="text-align:left;">8192</td> <td style="text-align:left;">E_DEPRECATED</td> <td style="text-align:left;">运行时通知。启用后将会对在未来版本中可能无法正常工作的代码给出警告。</td></tr> <tr><td style="text-align:left;">8191</td> <td style="text-align:left;">E_ALL</td> <td style="text-align:left;">所有错误和警告，除级别 E_STRICT 以外。</td></tr></tbody></table> <p>关闭警告与致命错误</p> <div class="language- extra-class"><pre class="language-text"><code>error_reporting(~E_WARNING &amp; ~E_COMPILE_ERROR);
+require('a');
+</code></pre></div><p>显示除通知外的所有错误</p> <div class="language- extra-class"><pre class="language-text"><code>error_reporting(E_ALL &amp; ~E_NOTICE);
+echo $houdunren;
+</code></pre></div><p>关闭错误显示</p> <div class="language- extra-class"><pre class="language-text"><code>error_reporting(0);
+</code></pre></div><h2 id="处理引擎"><a href="#处理引擎" aria-hidden="true" class="header-anchor">#</a> 处理引擎</h2> <p>通过自定义错误与日志处理引擎，让错误处理个性化。同时有些错误是在用户访问发生的，通过日志可以更全面检测网站运行状态。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+namespace Core;
+class Error
+{
+	# debug 开启状态
+    protected $debug;
+    public function __construct($debug = true)
+    {
+        $this-&gt;debug = $debug;
+    }
+    public function bootstrap()
+    {
+        error_reporting(0);
+        # 自定义错误处理
+        set_error_handler([$this, 'error'], E_ALL | E_STRICT);
+    }
+    public function error($errno, $error, $file, $line)
+    {
+        $msg = $error . &quot;($errno)&quot; . $file . &quot; ($line).&quot;;
+        switch ($errno) {
+            case E_USER_ERROR:
+            case E_USER_NOTICE:
+                break;
+            case E_NOTICE:
+            	# 开启debug时显示提示消息
+                if ($this-&gt;debug)
+                    echo $msg;
+                break;
+            default:
+                if ($this-&gt;debug) {
+                    include 'debug.php';
+                } else {
+                    $file =  'logs/' . date('Y_m_d') . '.log';
+                    # 记录错误日志到文件
+                    error_log(date(&quot;[ c ]&quot;) . $msg . PHP_EOL, 3, $file, null);
+                }
+                die;
+        }
+    }
+}
+(new Error(false))-&gt;bootstrap();
+include('houdunren.com');
+
+</code></pre></div><p><strong>错误显示页面</strong></p> <p>debug.php用于显示开启debug时的错误显示页面。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;link href=&quot;https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class=&quot;container mt-3&quot;&gt;
+        &lt;div class=&quot;card&quot;&gt;
+            &lt;div class=&quot;card-header&quot;&gt;
+                &lt;?php echo 'File:' . $file . '  Line:' . $line; ?&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;card-body p-0&quot;&gt;
+                &lt;ul class=&quot;list-group list-group-flush&quot;&gt;
+                    &lt;?php foreach (debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS) as $id =&gt; $f) : ?&gt;
+                        &lt;li class=&quot;list-group-item&quot;&gt;
+                            &lt;?php echo &quot;#$id &quot; . $f['file'] . &quot;({$f['line']})&lt;br/&gt;&quot;; ?&gt;
+                        &lt;/li&gt;
+                    &lt;?php endforeach; ?&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://gitee.com/houdunren/code/edit/master/docs/php/12 错误处理.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">7/6/2019, 5:43:45 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ffc882f0.js" defer></script><script src="/assets/js/2.20ae6c44.js" defer></script><script src="/assets/js/42.1b9532e8.js" defer></script>
+  </body>
+</html>

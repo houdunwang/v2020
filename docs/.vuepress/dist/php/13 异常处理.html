@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>异常处理 | 后盾人</title>
+    <meta name="description" content="在线文档库">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.58b89de0.css" as="style"><link rel="preload" href="/assets/js/app.ffc882f0.js" as="script"><link rel="preload" href="/assets/js/2.20ae6c44.js" as="script"><link rel="preload" href="/assets/js/43.362fecf9.js" as="script"><link rel="prefetch" href="/assets/js/10.f808bf04.js"><link rel="prefetch" href="/assets/js/11.d71a23cb.js"><link rel="prefetch" href="/assets/js/12.ea5193db.js"><link rel="prefetch" href="/assets/js/13.86be5709.js"><link rel="prefetch" href="/assets/js/14.20dc16b2.js"><link rel="prefetch" href="/assets/js/15.3e8ad036.js"><link rel="prefetch" href="/assets/js/16.4aa83947.js"><link rel="prefetch" href="/assets/js/17.ac082550.js"><link rel="prefetch" href="/assets/js/18.f23cdbe9.js"><link rel="prefetch" href="/assets/js/19.73c246f3.js"><link rel="prefetch" href="/assets/js/20.13cfb666.js"><link rel="prefetch" href="/assets/js/21.4710d4c8.js"><link rel="prefetch" href="/assets/js/22.76d0b56c.js"><link rel="prefetch" href="/assets/js/23.335f6470.js"><link rel="prefetch" href="/assets/js/24.4023c03b.js"><link rel="prefetch" href="/assets/js/25.0af322a6.js"><link rel="prefetch" href="/assets/js/26.7689c457.js"><link rel="prefetch" href="/assets/js/27.7f8f23ce.js"><link rel="prefetch" href="/assets/js/28.e9441168.js"><link rel="prefetch" href="/assets/js/29.a4fe174a.js"><link rel="prefetch" href="/assets/js/3.3ab8b6b3.js"><link rel="prefetch" href="/assets/js/30.99e02f7e.js"><link rel="prefetch" href="/assets/js/31.789e54e7.js"><link rel="prefetch" href="/assets/js/32.13487b61.js"><link rel="prefetch" href="/assets/js/33.791cd66a.js"><link rel="prefetch" href="/assets/js/34.d855d362.js"><link rel="prefetch" href="/assets/js/35.26e630a1.js"><link rel="prefetch" href="/assets/js/36.f71a91e1.js"><link rel="prefetch" href="/assets/js/37.837e49c0.js"><link rel="prefetch" href="/assets/js/38.4f5e099b.js"><link rel="prefetch" href="/assets/js/39.1fbbdc22.js"><link rel="prefetch" href="/assets/js/4.6b56e9ac.js"><link rel="prefetch" href="/assets/js/40.4fd177bd.js"><link rel="prefetch" href="/assets/js/41.eb95f5c0.js"><link rel="prefetch" href="/assets/js/42.1b9532e8.js"><link rel="prefetch" href="/assets/js/44.047ae178.js"><link rel="prefetch" href="/assets/js/45.c61dc499.js"><link rel="prefetch" href="/assets/js/46.b5e3fe36.js"><link rel="prefetch" href="/assets/js/47.1d6906ef.js"><link rel="prefetch" href="/assets/js/48.5cac608a.js"><link rel="prefetch" href="/assets/js/49.c5b2b426.js"><link rel="prefetch" href="/assets/js/5.2d93c381.js"><link rel="prefetch" href="/assets/js/50.96444fbe.js"><link rel="prefetch" href="/assets/js/51.390b8e94.js"><link rel="prefetch" href="/assets/js/52.8c13a68b.js"><link rel="prefetch" href="/assets/js/53.ef7ebbcf.js"><link rel="prefetch" href="/assets/js/54.a43d5307.js"><link rel="prefetch" href="/assets/js/55.97b9081c.js"><link rel="prefetch" href="/assets/js/56.e33e02d3.js"><link rel="prefetch" href="/assets/js/57.b67c1732.js"><link rel="prefetch" href="/assets/js/58.ee437297.js"><link rel="prefetch" href="/assets/js/59.afd1931e.js"><link rel="prefetch" href="/assets/js/6.2f3e6750.js"><link rel="prefetch" href="/assets/js/60.ff3fa6d4.js"><link rel="prefetch" href="/assets/js/61.2f570b7f.js"><link rel="prefetch" href="/assets/js/62.70f757a5.js"><link rel="prefetch" href="/assets/js/63.9aba24dc.js"><link rel="prefetch" href="/assets/js/7.ed9eceb0.js"><link rel="prefetch" href="/assets/js/8.a617ce81.js"><link rel="prefetch" href="/assets/js/9.cd0cd200.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.58b89de0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">后盾人</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1.html" class="nav-link">PHP</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">在线学习</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线教育
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/system?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  系统学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/lesson?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  实战课程
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/video?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  最近更新
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/topic" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  话题讨论
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/sign" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  签到打卡
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://gitee.com/houdunren/code" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1.html" class="nav-link">PHP</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">在线学习</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线教育
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/system?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  系统学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/lesson?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  实战课程
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/video?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  最近更新
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/topic" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  话题讨论
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/sign" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  签到打卡
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://gitee.com/houdunren/code" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>异常处理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/php/13%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#异常说明" class="sidebar-link">异常说明</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/php/13%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#基本使用" class="sidebar-link">基本使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/13%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#try-catch" class="sidebar-link">try/catch</a></li><li class="sidebar-sub-header"><a href="/php/13%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#finally" class="sidebar-link">finally</a></li></ul></li><li><a href="/php/13%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#异常类" class="sidebar-link">异常类</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/13%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#基类方法" class="sidebar-link">基类方法</a></li><li class="sidebar-sub-header"><a href="/php/13%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#异常实例" class="sidebar-link">异常实例</a></li></ul></li><li><a href="/php/13%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#自定义异常" class="sidebar-link">自定义异常</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/13%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#目录结构" class="sidebar-link">目录结构</a></li><li class="sidebar-sub-header"><a href="/php/13%20%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html#文件内容" class="sidebar-link">文件内容</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="异常处理"><a href="#异常处理" aria-hidden="true" class="header-anchor">#</a> 异常处理</h1> <blockquote><p>创作不易，转载请注明出处： 后盾人 @ houdurnen.com</p></blockquote> <h2 id="异常说明"><a href="#异常说明" aria-hidden="true" class="header-anchor">#</a> 异常说明</h2> <p>异常是推荐的错误处理方式，传统的错误处理方式要判断并一层一层返回到调用点，如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+class Code
+{
+    protected $len;
+    public function make(int $len)
+    {
+        $this-&gt;len = $len;
+        if ($this-&gt;line() === false) {
+            return false;
+        }
+    }
+    public function line()
+    {
+        if ($this-&gt;len &gt; 5) {
+            return false;
+        }
+    }
+}
+$code = new Code;
+if ($code-&gt;make(10) === false) {
+    echo '验证码创建失败';
+}
+</code></pre></div><p>通过上面代码我们发布处理错误时及其不方便，需要多个判断语句。下面是改用异常的处理方式。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+class Code
+{
+    protected $len;
+    public function make(int $len)
+    {
+        $this-&gt;len = $len;
+        $this-&gt;line();
+    }
+    public function line()
+    {
+        if ($this-&gt;len &gt; 5) {
+            throw new Exception('长度不能超过五位');
+        }
+    }
+}
+try {
+    $code = new Code;
+    $code-&gt;make(10);
+} catch (Exception $e) {
+    echo $e-&gt;getMessage();
+}
+</code></pre></div><h2 id="基本使用"><a href="#基本使用" aria-hidden="true" class="header-anchor">#</a> 基本使用</h2> <h3 id="try-catch"><a href="#try-catch" aria-hidden="true" class="header-anchor">#</a> try/catch</h3> <p>PHP需要手动抛出异常，这与其他语言不同，异常使用try...cache触发。</p> <div class="language- extra-class"><pre class="language-text"><code>try{
+	...
+}catch(){
+	...
+}
+</code></pre></div><p>在 <code>try</code> 代码块中对出现的错误可以抛出异常，下面是手动抛出异常的方法。</p> <div class="language- extra-class"><pre class="language-text"><code>throw new Exception($message,$code)
+</code></pre></div><p><code>catch</code> 用于接收异常，可以设置多个<code>catch</code> 代码块，参数为 <code>Exception</code> 类或继承于 <code>Exception</code> 的类。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+class ValidateException extends Exception
+{ }
+try {
+    throw new ValidateException('is exception', 403);
+} catch (ValidateException $e) {
+    echo 'httpException' . $e-&gt;getMessage() . ';code:' . $e-&gt;getCode();
+} catch (Exception $e) {
+    echo $e-&gt;getMessage();
+} finally {
+    echo '无论是否抛出异常都将执行' . ';code:' . $e-&gt;getCode();;
+}
+</code></pre></div><h3 id="finally"><a href="#finally" aria-hidden="true" class="header-anchor">#</a> finally</h3> <p><code>finally</code>需要放在 <code>catch</code> 后，<code>finally</code>无论是否抛出异常都会执行。</p> <div class="language- extra-class"><pre class="language-text"><code>...
+} catch (Exception $e) {
+    echo $e-&gt;getMessage();
+} finally {
+    echo '无论是否抛出异常都将执行';
+}
+...
+</code></pre></div><h2 id="异常类"><a href="#异常类" aria-hidden="true" class="header-anchor">#</a> 异常类</h2> <h3 id="基类方法"><a href="#基类方法" aria-hidden="true" class="header-anchor">#</a> 基类方法</h3> <p>PHP为异常处理提供了基础类 <code>Exception</code>，Exception` 类可用方法如下：</p> <table><thead><tr><th>方法</th> <th>说明</th> <th>重写</th></tr></thead> <tbody><tr><td>getFile</td> <td>产生异常错误的文件</td> <td>NO,final</td></tr> <tr><td>getCode</td> <td>错误码</td> <td>NO,final</td></tr> <tr><td>getLine</td> <td>错误行号</td> <td>NO,final</td></tr> <tr><td>getMessage</td> <td>错误消息</td> <td>NO,final</td></tr> <tr><td>__toString</td> <td>对象转字符串后输出内容</td> <td>YES</td></tr></tbody></table> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+class ValidateException extends Exception
+{
+	//对象转字符串时执行的魔术方法
+    public function __toString()
+    {
+        return $this-&gt;getFile();
+    }
+}
+try {
+    throw new ValidateException('is exception', 403);
+} catch (ValidateException $e) {
+    echo &quot;文件:&quot; . $e-&gt;getFile() . &quot;&lt;hr/&gt;&quot;;
+    echo &quot;消息:&quot; . $e-&gt;getMessage() . &quot;&lt;hr/&gt;&quot;;
+    echo &quot;错误码:&quot; . $e-&gt;getCode() . &quot;&lt;hr/&gt;&quot;;
+    echo &quot;错误行:&quot; . $e-&gt;getLine() . &quot;&lt;hr/&gt;&quot;;
+    echo $e . &quot;&lt;hr/&gt;&quot;;
+}
+</code></pre></div><h3 id="异常实例"><a href="#异常实例" aria-hidden="true" class="header-anchor">#</a> 异常实例</h3> <p>实际开发中需要根据不同业务创建处理错误的异常类，推荐使用异常来处理错误而不是PHP的错误处理机制。</p> <p>因为代码量比较大，大家请查看视频教程来学习。</p> <h2 id="自定义异常"><a href="#自定义异常" aria-hidden="true" class="header-anchor">#</a> 自定义异常</h2> <p>下面是通过实例讲解自定义异常的使用方法。</p> <h3 id="目录结构"><a href="#目录结构" aria-hidden="true" class="header-anchor">#</a> 目录结构</h3> <div class="language- extra-class"><pre class="language-text"><code>app
+-- Exceptions
+	-- ValidateException.php
+	-- ViewException.php
+-- Servers
+	-- Validate.php
+	-- View.php
+-- vendor
+-- view
+	-- error.blade.php
+	-- index.blade.php
+	-- success.blade.php
+bootstrap.php
+composer.json
+controller.php
+index.php
+
+</code></pre></div><h3 id="文件内容"><a href="#文件内容" aria-hidden="true" class="header-anchor">#</a> 文件内容</h3> <h4 id="app-exceptions-validateexception-php"><a href="#app-exceptions-validateexception-php" aria-hidden="true" class="header-anchor">#</a> app\Exceptions\ValidateException.php</h4> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+namespace App\Exceptions;
+
+class ValidateException extends \Exception
+{
+    public function render()
+    {
+        $_SESSION['VALIDATE_ERROR'] = '表单参数错误';
+        header('location:index.php');
+    }
+}
+
+</code></pre></div><h4 id="app-exceptions-viewexception-php"><a href="#app-exceptions-viewexception-php" aria-hidden="true" class="header-anchor">#</a> app\Exceptions\ViewException.php</h4> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+namespace App\Exceptions;
+
+use App\Servers\View;
+
+class ViewException extends \Exception
+{
+    public function render()
+    {
+        View::make('error', ['error' =&gt; $this-&gt;getMessage()]);
+    }
+}
+</code></pre></div><h4 id="app-servers-validate-php"><a href="#app-servers-validate-php" aria-hidden="true" class="header-anchor">#</a> app\Servers\Validate.php</h4> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+namespace App\Servers;
+
+use App\Exceptions\ValidateException;
+
+class Validate
+{
+    public static function make()
+    {
+        $_SESSION['VALIDATE_ERROR'] = '';
+        if (empty($_POST['title'])) {
+            throw new ValidateException('表单错误');
+        }
+    }
+}
+</code></pre></div><h4 id="app-servers-view-php"><a href="#app-servers-view-php" aria-hidden="true" class="header-anchor">#</a> app\Servers\View.php</h4> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+namespace App\Servers;
+
+use App\Exceptions\ViewException;
+
+class View
+{
+    public static function make(string $tpl, array $vars = [])
+    {
+        $file = 'view/' . $tpl . '.blade.php';
+        if (!is_file($file)) {
+            throw new ViewException($file . '模板不存在');
+        }
+        include $file;
+    }
+}
+</code></pre></div><h4 id="app-view-error-blade-php"><a href="#app-view-error-blade-php" aria-hidden="true" class="header-anchor">#</a> app\view\error.blade.php</h4> <div class="language- extra-class"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;&lt;?php echo $vars['error'];?&gt;&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div><h4 id="app-view-index-blade-php"><a href="#app-view-index-blade-php" aria-hidden="true" class="header-anchor">#</a> app\view\index.blade.php</h4> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php if(isset($_SESSION['VALIDATE_ERROR'])):?&gt;
+&lt;?php echo $_SESSION['VALIDATE_ERROR'];?&gt;
+&lt;?php endif;?&gt;
+    &lt;form method=&quot;post&quot; action=&quot;controller.php&quot;&gt;
+        &lt;input type=&quot;text&quot; name=&quot;title&quot;&gt;
+        &lt;button&gt;提交&lt;/button&gt;
+    &lt;/form&gt;
+</code></pre></div><h4 id="app-view-error-blade-php-2"><a href="#app-view-error-blade-php-2" aria-hidden="true" class="header-anchor">#</a> app\view\error.blade.php</h4> <div class="language- extra-class"><pre class="language-text"><code>&lt;h1&gt;操作成功&lt;/h1&gt;
+</code></pre></div><h4 id="app-bootstrap-php"><a href="#app-bootstrap-php" aria-hidden="true" class="header-anchor">#</a> app\bootstrap.php</h4> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+session_start();
+include 'vendor/autoload.php';
+class Boot
+{
+    public function init()
+    {
+        set_exception_handler([$this, 'exception']);
+    }
+    public function exception($e)
+    {
+        if (method_exists($e, 'render')) {
+            $e-&gt;render();
+        }
+    }
+}
+(new Boot)-&gt;init();
+</code></pre></div><h4 id="composer-json"><a href="#composer-json" aria-hidden="true" class="header-anchor">#</a> composer.json</h4> <div class="language- extra-class"><pre class="language-text"><code>{
+    &quot;name&quot;: &quot;hd/app&quot;,
+    &quot;authors&quot;: [
+        {
+            &quot;name&quot;: &quot;houdunren.com&quot;,
+            &quot;email&quot;: &quot;2300071698@qq.com&quot;
+        }
+    ],
+    &quot;autoload&quot;: {
+        &quot;psr-4&quot;: {
+            &quot;App\\&quot;: &quot;.&quot;
+        }
+    },
+    &quot;require&quot;: {}
+}
+</code></pre></div><h4 id="controller-php"><a href="#controller-php" aria-hidden="true" class="header-anchor">#</a> controller.php</h4> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+include 'bootstrap.php';
+use App\Servers\Validate;
+use App\Servers\View;
+
+include 'vendor/autoload.php';
+// try {
+Validate::make();
+View::make('success');
+// } catch (ValidateException $e) {
+//     $e-&gt;render();
+// } catch (ViewException $e) {
+//     $e-&gt;render();
+// }
+
+</code></pre></div><h4 id="index-php"><a href="#index-php" aria-hidden="true" class="header-anchor">#</a> index.php</h4> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+namespace App;
+
+include 'bootstrap.php';
+use App\Servers\View;
+
+View::make('index');
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://gitee.com/houdunren/code/edit/master/docs/php/13 异常处理.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">7/6/2019, 5:43:45 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ffc882f0.js" defer></script><script src="/assets/js/2.20ae6c44.js" defer></script><script src="/assets/js/43.362fecf9.js" defer></script>
+  </body>
+</html>

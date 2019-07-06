@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>图像处理 | 后盾人</title>
+    <meta name="description" content="在线文档库">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.58b89de0.css" as="style"><link rel="preload" href="/assets/js/app.ffc882f0.js" as="script"><link rel="preload" href="/assets/js/2.20ae6c44.js" as="script"><link rel="preload" href="/assets/js/53.ef7ebbcf.js" as="script"><link rel="prefetch" href="/assets/js/10.f808bf04.js"><link rel="prefetch" href="/assets/js/11.d71a23cb.js"><link rel="prefetch" href="/assets/js/12.ea5193db.js"><link rel="prefetch" href="/assets/js/13.86be5709.js"><link rel="prefetch" href="/assets/js/14.20dc16b2.js"><link rel="prefetch" href="/assets/js/15.3e8ad036.js"><link rel="prefetch" href="/assets/js/16.4aa83947.js"><link rel="prefetch" href="/assets/js/17.ac082550.js"><link rel="prefetch" href="/assets/js/18.f23cdbe9.js"><link rel="prefetch" href="/assets/js/19.73c246f3.js"><link rel="prefetch" href="/assets/js/20.13cfb666.js"><link rel="prefetch" href="/assets/js/21.4710d4c8.js"><link rel="prefetch" href="/assets/js/22.76d0b56c.js"><link rel="prefetch" href="/assets/js/23.335f6470.js"><link rel="prefetch" href="/assets/js/24.4023c03b.js"><link rel="prefetch" href="/assets/js/25.0af322a6.js"><link rel="prefetch" href="/assets/js/26.7689c457.js"><link rel="prefetch" href="/assets/js/27.7f8f23ce.js"><link rel="prefetch" href="/assets/js/28.e9441168.js"><link rel="prefetch" href="/assets/js/29.a4fe174a.js"><link rel="prefetch" href="/assets/js/3.3ab8b6b3.js"><link rel="prefetch" href="/assets/js/30.99e02f7e.js"><link rel="prefetch" href="/assets/js/31.789e54e7.js"><link rel="prefetch" href="/assets/js/32.13487b61.js"><link rel="prefetch" href="/assets/js/33.791cd66a.js"><link rel="prefetch" href="/assets/js/34.d855d362.js"><link rel="prefetch" href="/assets/js/35.26e630a1.js"><link rel="prefetch" href="/assets/js/36.f71a91e1.js"><link rel="prefetch" href="/assets/js/37.837e49c0.js"><link rel="prefetch" href="/assets/js/38.4f5e099b.js"><link rel="prefetch" href="/assets/js/39.1fbbdc22.js"><link rel="prefetch" href="/assets/js/4.6b56e9ac.js"><link rel="prefetch" href="/assets/js/40.4fd177bd.js"><link rel="prefetch" href="/assets/js/41.eb95f5c0.js"><link rel="prefetch" href="/assets/js/42.1b9532e8.js"><link rel="prefetch" href="/assets/js/43.362fecf9.js"><link rel="prefetch" href="/assets/js/44.047ae178.js"><link rel="prefetch" href="/assets/js/45.c61dc499.js"><link rel="prefetch" href="/assets/js/46.b5e3fe36.js"><link rel="prefetch" href="/assets/js/47.1d6906ef.js"><link rel="prefetch" href="/assets/js/48.5cac608a.js"><link rel="prefetch" href="/assets/js/49.c5b2b426.js"><link rel="prefetch" href="/assets/js/5.2d93c381.js"><link rel="prefetch" href="/assets/js/50.96444fbe.js"><link rel="prefetch" href="/assets/js/51.390b8e94.js"><link rel="prefetch" href="/assets/js/52.8c13a68b.js"><link rel="prefetch" href="/assets/js/54.a43d5307.js"><link rel="prefetch" href="/assets/js/55.97b9081c.js"><link rel="prefetch" href="/assets/js/56.e33e02d3.js"><link rel="prefetch" href="/assets/js/57.b67c1732.js"><link rel="prefetch" href="/assets/js/58.ee437297.js"><link rel="prefetch" href="/assets/js/59.afd1931e.js"><link rel="prefetch" href="/assets/js/6.2f3e6750.js"><link rel="prefetch" href="/assets/js/60.ff3fa6d4.js"><link rel="prefetch" href="/assets/js/61.2f570b7f.js"><link rel="prefetch" href="/assets/js/62.70f757a5.js"><link rel="prefetch" href="/assets/js/63.9aba24dc.js"><link rel="prefetch" href="/assets/js/7.ed9eceb0.js"><link rel="prefetch" href="/assets/js/8.a617ce81.js"><link rel="prefetch" href="/assets/js/9.cd0cd200.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.58b89de0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">后盾人</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1.html" class="nav-link">PHP</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">在线学习</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线教育
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/system?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  系统学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/lesson?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  实战课程
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/video?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  最近更新
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/topic" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  话题讨论
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/sign" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  签到打卡
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://gitee.com/houdunren/code" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1.html" class="nav-link">PHP</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">在线学习</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线教育
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/system?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  系统学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/lesson?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  实战课程
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/video?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  最近更新
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/topic" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  话题讨论
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/sign" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  签到打卡
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://gitee.com/houdunren/code" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>图像处理</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#配置环境" class="sidebar-link">配置环境</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#使用方法" class="sidebar-link">使用方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#头信息" class="sidebar-link">头信息</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#创建画布" class="sidebar-link">创建画布</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#设置颜色" class="sidebar-link">设置颜色</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#填充颜色" class="sidebar-link">填充颜色</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#绘制矩形" class="sidebar-link">绘制矩形</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#绘制圆形" class="sidebar-link">绘制圆形</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#绘制线条" class="sidebar-link">绘制线条</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#绘制像素" class="sidebar-link">绘制像素</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#输出图像" class="sidebar-link">输出图像</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#释放图像" class="sidebar-link">释放图像</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#输入文本" class="sidebar-link">输入文本</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#外部图像" class="sidebar-link">外部图像</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#获得信息" class="sidebar-link">获得信息</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#图像复制" class="sidebar-link">图像复制</a></li><li class="sidebar-sub-header"><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#图片缩放" class="sidebar-link">图片缩放</a></li></ul></li><li><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#验证码" class="sidebar-link">验证码</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#水印类" class="sidebar-link">水印类</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/php/9%20%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86.html#缩略图" class="sidebar-link">缩略图</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="图像处理"><a href="#图像处理" aria-hidden="true" class="header-anchor">#</a> 图像处理</h1> <blockquote><p>创作不易，转载请注明出处： 后盾人 @ houdurnen.com</p></blockquote> <h2 id="配置环境"><a href="#配置环境" aria-hidden="true" class="header-anchor">#</a> 配置环境</h2> <p>PHP中图像处理需要GD库的支持。</p> <p>在windows系统中修改php.ini文件，删除 extension=php_gd2.dll 前面的<code>;</code>开启图像处理支持。</p> <p>centos中使用 <code>yum install php-gd*</code></p> <p>ubuntu系统中使用 <code>apt-get install php7.3-gd</code></p> <p><strong>检测GD库是否加载</strong></p> <div class="language- extra-class"><pre class="language-text"><code>$has = extension_loaded('GD');
+var_dump($has);
+</code></pre></div><h2 id="使用方法"><a href="#使用方法" aria-hidden="true" class="header-anchor">#</a> 使用方法</h2> <p>PHP创建图像步骤</p> <ol><li>发送HTTP头信息，声明内容为图像</li> <li>创建画布</li> <li>创建绘图所需要的颜色</li> <li>绘图（填充画布、画圆、画方块、画线条、画布上写字）</li> <li>输出图像</li> <li>释放画布资源</li></ol> <h3 id="头信息"><a href="#头信息" aria-hidden="true" class="header-anchor">#</a> 头信息</h3> <p>通过header() 函数告诉浏览器，输出的是一个图像而不是文本或HTML，这样浏览器就可以正常显示图像了。</p> <ul><li>header('Content-type:image/gif');</li> <li>header('Content-type:image/jpeg');</li> <li>header('Content-type:image/png');</li></ul> <div class="language- extra-class"><pre class="language-text"><code>header('Content-type:image/jpeg');
+readfile('user.jpeg');
+</code></pre></div><h3 id="创建画布"><a href="#创建画布" aria-hidden="true" class="header-anchor">#</a> 创建画布</h3> <p>imageCreateTrueColor(width,height)</p> <ul><li>传入的两个参数分别为画布的宽和高，在绘图时超出宽高的部分将不予显示，且此尺寸即为生成图片文件时的尺寸。</li> <li>返回值为资源类型。</li></ul> <h3 id="设置颜色"><a href="#设置颜色" aria-hidden="true" class="header-anchor">#</a> 设置颜色</h3> <p>imageColorAllocate(img_resource,R,G,B)</p> <ul><li>颜色从属于某个图像资源而存在。</li> <li>颜色实际上是一个整形数值。</li> <li>颜色的后三个参数需传入值的范围是0~255</li></ul> <h3 id="填充颜色"><a href="#填充颜色" aria-hidden="true" class="header-anchor">#</a> 填充颜色</h3> <p>imageFill(img_resource,x,y,color)</p> <ul><li>(x,y)表示从哪个点开始填充颜色的坐标</li> <li>不填充画布的话，默认是黑色</li></ul> <div class="language- extra-class"><pre class="language-text"><code>header('Content-type:image/jpeg');
+$res = imagecreatetruecolor(1000, 500);
+$red = imagecolorallocate($res, 255, 0, 0);
+imagefill($res, 0, 0, $red);
+imagejpeg($res);
+</code></pre></div><h3 id="绘制矩形"><a href="#绘制矩形" aria-hidden="true" class="header-anchor">#</a> 绘制矩形</h3> <p><strong>绘制空心矩形</strong></p> <ul><li>imageRectangle(img_res,x1,y1,x2,y2,color)</li></ul> <div class="language- extra-class"><pre class="language-text"><code>header('Content-type:image/jpeg');
+$res = imagecreatetruecolor(1000, 500);
+$red = imagecolorallocate($res, 255, 0, 0);
+$green = imagecolorallocate($res, 0, 255, 0);
+imagefill($res, 0, 0, $red);
+imagerectangle($res, 100, 100, 200, 200, $green);
+imagejpeg($res);
+</code></pre></div><p><strong>绘制填充好的实心矩形</strong></p> <p>imageFilledRectangle (img_res,x1,y1,x2,y2,color)</p> <ul><li>(x1,y1)为左上角坐标， (x2,y2)为右下角坐标</li></ul> <div class="language- extra-class"><pre class="language-text"><code>header('Content-type:image/jpeg');
+$res = imagecreatetruecolor(1000, 500);
+$red = imagecolorallocate($res, 255, 0, 0);
+$green = imagecolorallocate($res, 0, 255, 0);
+imagefill($res, 0, 0, $red);
+imagefilledrectangle($res, 100, 100, 300, 300, $green);
+imagejpeg($res);
+</code></pre></div><h3 id="绘制圆形"><a href="#绘制圆形" aria-hidden="true" class="header-anchor">#</a> 绘制圆形</h3> <p>绘制空心圆形</p> <ul><li>imageEllipse(img_res,x,y,w,h,color)</li></ul> <p>绘制填充好的实心圆</p> <ul><li>imageFilledEllipse(img_res,x,y,w,h,color)</li></ul> <p>说明：</p> <ul><li>(x,y)为圆心坐标。 w为宽度，h为高度</li></ul> <div class="language- extra-class"><pre class="language-text"><code>header('Content-type:image/jpeg');
+$res = imagecreatetruecolor(500, 500);
+$red = imagecolorallocate($res, 255, 0, 0);
+$green = imagecolorallocate($res, 0, 255, 0);
+imagefill($res, 0, 0, $red);
+imageellipse($res, 250, 250, 100, 100, $green);
+imagejpeg($res);
+</code></pre></div><h3 id="绘制线条"><a href="#绘制线条" aria-hidden="true" class="header-anchor">#</a> 绘制线条</h3> <p>imageLine(img_res,x1,y1,x2,y2,color)</p> <ul><li>(x1,y1)为起始点坐标</li> <li>(x2,y2)为结束点坐标</li></ul> <div class="language- extra-class"><pre class="language-text"><code>$res = imagecreatetruecolor(500, 500);
+$red = imagecolorallocate($res, 255, 0, 0);
+$green = imagecolorallocate($res, 0, 255, 0);
+imagefill($res, 0, 0, $red);
+imageline($res, 0, 0, 499, 499, $green);
+imagepng($res);
+</code></pre></div><h3 id="绘制像素"><a href="#绘制像素" aria-hidden="true" class="header-anchor">#</a> 绘制像素</h3> <p>bool imagesetpixel ( resource $image , int $x , int $y , int $color )</p> <ul><li>(x1,y1)为点坐标</li></ul> <div class="language- extra-class"><pre class="language-text"><code>header('Content-type:image/jpeg');
+$res = imagecreatetruecolor(500, 500);
+$red = imagecolorallocate($res, 255, 0, 0);
+$green = imagecolorallocate($res, 0, 255, 0);
+imagefill($res, 0, 0, $red);
+for ($i = 0; $i &lt; 600; $i++) {
+    imagesetpixel($res, mt_rand(0, 500), mt_rand(0, 500), $green);
+}
+imagepng($res);
+</code></pre></div><h3 id="输出图像"><a href="#输出图像" aria-hidden="true" class="header-anchor">#</a> 输出图像</h3> <p>输出不同格式的图像用不同的方法：</p> <ul><li>imagegif(img_resource[,filename])</li> <li>imagejpeg(img_resource[,filename])</li> <li>imagepng(img_resource[,filename])</li> <li>imagebmp(img_resource[,filename])</li> <li>当设置第二个参数时表示储存文件，如果存在同名文件会覆盖</li></ul> <h3 id="释放图像"><a href="#释放图像" aria-hidden="true" class="header-anchor">#</a> 释放图像</h3> <p>imageDestroy(img_resource)</p> <ul><li>图像输出完毕及时释放资源，把内存空间留给更需要的程序。</li></ul> <h3 id="输入文本"><a href="#输入文本" aria-hidden="true" class="header-anchor">#</a> 输入文本</h3> <p>array imagettftext ( resource $image , float $size , float $angle , int $x , int $y , int $color , string $fontfile , string $text )</p> <ul><li>参数说明：图像资源，字体尺寸，角度，第一个字符的基本点（大概是字符的左下角），Y 坐标（字体基线的位置），颜色 ，字体文件，文本字符串（UTF-8 编码）</li></ul> <div class="language- extra-class"><pre class="language-text"><code>header('Content-type:image/png');
+$res = imagecreatetruecolor(500, 500);
+$red = imagecolorallocate($res, 255, 0, 0);
+$green = imagecolorallocate($res, 0, 255, 0);
+imagefill($res, 0, 0, $red);
+$font = realpath('source.otf');
+imagettftext($res, 50, 0, 0, 50, $green, $font, 'houdunren.com');
+imagepng($res);
+imagedestroy($res);
+</code></pre></div><p>array imagettfbbox ( float $size , float $angle , string $fontfile , string $text )</p> <ul><li>文本范围的盒子大小，可以方便控制文本输出位置</li> <li>返回一个含有 8 个单元的数组表示了文本外框的四个角：</li></ul> <table><thead><tr><th>变量</th> <th>位置</th></tr></thead> <tbody><tr><td>0</td> <td>左下角 X 位置</td></tr> <tr><td>1</td> <td>左下角 Y 位置</td></tr> <tr><td>2</td> <td>右下角 X 位置</td></tr> <tr><td>3</td> <td>右下角 Y 位置</td></tr> <tr><td>4</td> <td>右上角 X 位置</td></tr> <tr><td>5</td> <td>右上角 Y 位置</td></tr> <tr><td>6</td> <td>左上角 X 位置</td></tr> <tr><td>7</td> <td>左上角 Y 位置</td></tr></tbody></table> <p>文字在画布右上角显示</p> <div class="language- extra-class"><pre class="language-text"><code>$font = realpath('source.otf');
+$text = 'houdunren.com';
+$size = 16;
+$box = imagettfbbox($size, 0, $font, 'houdunren.com');
+$width  = $box[2] - $box[0];
+$height = $box[0] - $box[7];
+imagettftext($res, $size, 0, 500 - $width, $height, $green, $font, 'houdunren.com');
+</code></pre></div><p>文字在画布中间显示</p> <div class="language- extra-class"><pre class="language-text"><code>...
+imagettftext($res, $size, 0, 250 - $width / 2, 250 - $height / 2, $green, $font, 'houdunren.com');
+...
+</code></pre></div><h3 id="外部图像"><a href="#外部图像" aria-hidden="true" class="header-anchor">#</a> 外部图像</h3> <p>打开图片文件</p> <ul><li>imageCreateFromgif(filename/url)</li> <li>imageCreateFromjpeg(filename/url)</li> <li>imageCreateFrompng(filename/url)</li> <li>imageCreateFrombmp(filename/url)</li> <li>返回一个资源类型</li></ul> <h3 id="获得信息"><a href="#获得信息" aria-hidden="true" class="header-anchor">#</a> 获得信息</h3> <p>imagesx(img_resource)</p> <ul><li>取得图像宽度</li></ul> <p>imagesy(img_resource)</p> <ul><li>取得图像高度</li></ul> <p>getimagesize(img_file)</p> <ul><li>array getimagesize ( string $filename [, array &amp;$imageinfo ] )</li></ul> <h3 id="图像复制"><a href="#图像复制" aria-hidden="true" class="header-anchor">#</a> 图像复制</h3> <p>拷贝图像的一部分</p> <ul><li>bool imagecopy ( resource $dst_im , resource $src_im , int $dst_x , int $dst_y , int $src_x , int $src_y , int $src_w , int $src_h )</li></ul> <p>拷贝并合并图像的一部分</p> <ul><li>bool imagecopymerge ( resource $dst_im , resource $src_im , int $dst_x , int $dst_y , int $src_x , int $src_y , int $src_w , int $src_h , int $pct )</li></ul> <h3 id="图片缩放"><a href="#图片缩放" aria-hidden="true" class="header-anchor">#</a> 图片缩放</h3> <p>拷贝部分图像并调整大小</p> <ul><li>bool imagecopyresampled ( resource $dst_image , resource $src_image , int $dst_x , int $dst_y , int $src_x , int $src_y , int $dst_w , int $dst_h , int $src_w , int $src_h )</li></ul> <h2 id="验证码"><a href="#验证码" aria-hidden="true" class="header-anchor">#</a> 验证码</h2> <p>使用方法</p> <div class="language- extra-class"><pre class="language-text"><code># 后台code.php
+include 'Captcha.php';
+$code = new Captcha(100, 30, 20);
+$code-&gt;make();
+
+# 前台
+&lt;img src=&quot;code.php&quot; alt=&quot;&quot;&gt;
+</code></pre></div><p>验证码类</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+class Captcha
+{
+    protected $width;
+    protected $height;
+    protected $res;
+    protected $len = 4;
+    protected $font;
+    protected $size;
+    public function __construct(int $width = 100, int $height = 30, $size = 20)
+    {
+        $this-&gt;width = $width;
+        $this-&gt;height = $height;
+        $this-&gt;font = realpath('source.otf');
+        $this-&gt;size = $size;
+    }
+    public function make()
+    {
+        $res = imagecreatetruecolor($this-&gt;width, $this-&gt;height);
+        imagefill($this-&gt;res = $res, 0, 0, imagecolorallocate($res, 200, 200, 200));
+        $this-&gt;text();
+        $this-&gt;line();
+        $this-&gt;pix();
+        $this-&gt;render();
+    }
+    protected function text()
+    {
+        $text = 'abcdefghigk123456789';
+
+        for ($i = 0; $i &lt; $this-&gt;len; $i++) {
+            $x = $this-&gt;width / $this-&gt;len * $i;
+            $box = imagettfbbox($this-&gt;size, 0, $this-&gt;font, $text[$i]);
+            imagettftext(
+                $this-&gt;res,
+                $this-&gt;size,
+                mt_rand(-20, 20),
+                $x,
+                $this-&gt;height / 2 + ($box[0] - $box[7]) / 2,
+                $this-&gt;textColor(),
+                $this-&gt;font,
+                strtoupper($text[$i])
+            );
+        }
+    }
+    protected function pix()
+    {
+        for ($i = 0; $i &lt; 300; $i++) {
+            imagesetpixel(
+                $this-&gt;res,
+                mt_rand(0, $this-&gt;width),
+                mt_rand(0, $this-&gt;height),
+                $this-&gt;color()
+            );
+        }
+    }
+    protected function line()
+    {
+        for ($i = 0; $i &lt; 6; $i++) {
+            imagesetthickness($this-&gt;res, mt_rand(1, 3));
+            imageline(
+                $this-&gt;res,
+                mt_rand(0, $this-&gt;width),
+                mt_rand(0, $this-&gt;height),
+                mt_rand(0, $this-&gt;width),
+                mt_rand(0, $this-&gt;height),
+                $this-&gt;color()
+            );
+        }
+    }
+    protected function color()
+    {
+        return imagecolorallocate($this-&gt;res, mt_rand(100, 200), mt_rand(100, 200), mt_rand(100, 200));
+    }
+    protected function textColor()
+    {
+        return imagecolorallocate($this-&gt;res, mt_rand(50, 150), mt_rand(50, 150), mt_rand(50, 150));
+    }
+    protected function render()
+    {
+        header('Content-type:image/png');
+        imagepng($this-&gt;res);
+    }
+}
+</code></pre></div><h2 id="水印类"><a href="#水印类" aria-hidden="true" class="header-anchor">#</a> 水印类</h2> <p>调用方式</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+include &quot;Water.php&quot;;
+$water = new Water(&quot;logo.png&quot;);
+$water-&gt;make('sun.png', '2.png', 5);
+</code></pre></div><p>水印类源码</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+class Water
+{
+    //水印资源
+    protected $water;
+    //水印图片
+    public function __construct(string $water)
+    {
+        $this-&gt;water = $water;
+    }
+    //入口方法
+    public function make(string $image, string $filename = null, int $pos = 9)
+    {
+        $res = $this-&gt;resource($image);
+        $water = $this-&gt;resource($this-&gt;water);
+        $postion = $this-&gt;position($res, $water, $pos);
+        imagecopy($res, $water,  $postion['x'], $postion['y'], 0, 0, imagesx($water), imagesy($water));
+        $this-&gt;showAction($image)($res, $filename ?: $image);
+    }
+    //获取资源对象
+    protected function resource($image)
+    {
+        $info = getimagesize($image);
+        $function = [1 =&gt; 'imagecreatefromgif', 2 =&gt; 'imagecreatefromjpeg', 3 =&gt; 'imagecreatefrompng'];
+        $call = $function[$info[2]];
+        return $call($image);
+    }
+    //根据类型输出图片
+    protected function showAction(string $image)
+    {
+        $info = getimagesize($image);
+        $function = [1 =&gt; 'imagegif', 2 =&gt; 'imagejpeg', 3 =&gt; 'imagepng'];
+        return $function[$info[2]];
+    }
+    //位置
+    protected function position($des,  $res, int $pos)
+    {
+        $info = ['x' =&gt; 0, 'y' =&gt; 0];
+        switch ($pos) {
+            case 1:
+                break;
+            case 2:
+                $info['x'] = (imagesx($des) - imagesx($res)) / 2;
+                break;
+            case 3:
+                $info['x'] = (imagesx($des) - imagesx($res));
+                break;
+            case 4:
+                $info['y'] = (imagesy($des) - imagesy($res)) / 2;
+                break;
+            case 5:
+                $info['x'] = (imagesx($des) - imagesx($res)) / 2;
+                $info['y'] = (imagesy($des) - imagesy($res)) / 2;
+                break;
+        }
+        return $info;
+    }
+}
+</code></pre></div><h2 id="缩略图"><a href="#缩略图" aria-hidden="true" class="header-anchor">#</a> 缩略图</h2> <p>调用方式</p> <div class="language- extra-class"><pre class="language-text"><code>include 'Resize.php';
+$image =  new Resize;
+
+$image-&gt;make('sun.png', '1.jpeg', 200, 200, 3);
+</code></pre></div><p>缩略图类源码</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+class Resize
+{
+    public function make(string $file, string $to = null, int $width = 200, int $height = 200, int $type = 3)
+    {
+        $image = $this-&gt;resource($file);
+        $info = $this-&gt;size($width, $height, imagesx($image), imagesy($image), $type);
+        $res = imagecreatetruecolor($info[0], $info[1]);
+        imagecopyresampled($res, $image, 0, 0, 0, 0, $info[0], $info[1], $info[2], $info[3]);
+        header('Content-type:image/jpeg');
+        imagejpeg($res);
+    }
+    protected function size($rw, $rh, $iw, $ih, int $type)
+    {
+        switch ($type) {
+            case 1:
+                //固定宽度，高度自动
+                $rh = $rw / $iw * $ih;
+                break;
+            case 2:
+                //高度固定，宽度自动 
+                $rw = $rh / $ih * $iw;
+                break;
+            case 3:
+                //固定宽度，高度裁切
+                $ih = $iw / $rw * $rh;
+                break;
+            default:
+                if (($iw / $rw) &gt; ($ih / $rh)) {
+                    $iw = $ih / $rh * $rh;
+                } else {
+                    $ih = $iw / $rw * $rw;
+                }
+        }
+
+        return [$rw, $rh, $iw, $ih];
+    }
+    protected function resource(string $image)
+    {
+        if (!file_exists($image) || getimagesize($image) === false) {
+            throw new Exception(&quot;file dont exists or it's not an image file&quot;);
+        }
+        $functions = [1 =&gt; 'imagecreatefromgif', 2 =&gt; 'imagecreatefromjpeg', 3 =&gt; 'imagecreatefrompng'];
+        $info = getimagesize($image);
+        $call = $functions[$info[2]];
+        return $call($image);
+    }
+}
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://gitee.com/houdunren/code/edit/master/docs/php/9 图像处理.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">7/6/2019, 5:43:45 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ffc882f0.js" defer></script><script src="/assets/js/2.20ae6c44.js" defer></script><script src="/assets/js/53.ef7ebbcf.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>扩展包开发 | 后盾人</title>
+    <meta name="description" content="在线文档库">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.58b89de0.css" as="style"><link rel="preload" href="/assets/js/app.ffc882f0.js" as="script"><link rel="preload" href="/assets/js/2.20ae6c44.js" as="script"><link rel="preload" href="/assets/js/32.13487b61.js" as="script"><link rel="prefetch" href="/assets/js/10.f808bf04.js"><link rel="prefetch" href="/assets/js/11.d71a23cb.js"><link rel="prefetch" href="/assets/js/12.ea5193db.js"><link rel="prefetch" href="/assets/js/13.86be5709.js"><link rel="prefetch" href="/assets/js/14.20dc16b2.js"><link rel="prefetch" href="/assets/js/15.3e8ad036.js"><link rel="prefetch" href="/assets/js/16.4aa83947.js"><link rel="prefetch" href="/assets/js/17.ac082550.js"><link rel="prefetch" href="/assets/js/18.f23cdbe9.js"><link rel="prefetch" href="/assets/js/19.73c246f3.js"><link rel="prefetch" href="/assets/js/20.13cfb666.js"><link rel="prefetch" href="/assets/js/21.4710d4c8.js"><link rel="prefetch" href="/assets/js/22.76d0b56c.js"><link rel="prefetch" href="/assets/js/23.335f6470.js"><link rel="prefetch" href="/assets/js/24.4023c03b.js"><link rel="prefetch" href="/assets/js/25.0af322a6.js"><link rel="prefetch" href="/assets/js/26.7689c457.js"><link rel="prefetch" href="/assets/js/27.7f8f23ce.js"><link rel="prefetch" href="/assets/js/28.e9441168.js"><link rel="prefetch" href="/assets/js/29.a4fe174a.js"><link rel="prefetch" href="/assets/js/3.3ab8b6b3.js"><link rel="prefetch" href="/assets/js/30.99e02f7e.js"><link rel="prefetch" href="/assets/js/31.789e54e7.js"><link rel="prefetch" href="/assets/js/33.791cd66a.js"><link rel="prefetch" href="/assets/js/34.d855d362.js"><link rel="prefetch" href="/assets/js/35.26e630a1.js"><link rel="prefetch" href="/assets/js/36.f71a91e1.js"><link rel="prefetch" href="/assets/js/37.837e49c0.js"><link rel="prefetch" href="/assets/js/38.4f5e099b.js"><link rel="prefetch" href="/assets/js/39.1fbbdc22.js"><link rel="prefetch" href="/assets/js/4.6b56e9ac.js"><link rel="prefetch" href="/assets/js/40.4fd177bd.js"><link rel="prefetch" href="/assets/js/41.eb95f5c0.js"><link rel="prefetch" href="/assets/js/42.1b9532e8.js"><link rel="prefetch" href="/assets/js/43.362fecf9.js"><link rel="prefetch" href="/assets/js/44.047ae178.js"><link rel="prefetch" href="/assets/js/45.c61dc499.js"><link rel="prefetch" href="/assets/js/46.b5e3fe36.js"><link rel="prefetch" href="/assets/js/47.1d6906ef.js"><link rel="prefetch" href="/assets/js/48.5cac608a.js"><link rel="prefetch" href="/assets/js/49.c5b2b426.js"><link rel="prefetch" href="/assets/js/5.2d93c381.js"><link rel="prefetch" href="/assets/js/50.96444fbe.js"><link rel="prefetch" href="/assets/js/51.390b8e94.js"><link rel="prefetch" href="/assets/js/52.8c13a68b.js"><link rel="prefetch" href="/assets/js/53.ef7ebbcf.js"><link rel="prefetch" href="/assets/js/54.a43d5307.js"><link rel="prefetch" href="/assets/js/55.97b9081c.js"><link rel="prefetch" href="/assets/js/56.e33e02d3.js"><link rel="prefetch" href="/assets/js/57.b67c1732.js"><link rel="prefetch" href="/assets/js/58.ee437297.js"><link rel="prefetch" href="/assets/js/59.afd1931e.js"><link rel="prefetch" href="/assets/js/6.2f3e6750.js"><link rel="prefetch" href="/assets/js/60.ff3fa6d4.js"><link rel="prefetch" href="/assets/js/61.2f570b7f.js"><link rel="prefetch" href="/assets/js/62.70f757a5.js"><link rel="prefetch" href="/assets/js/63.9aba24dc.js"><link rel="prefetch" href="/assets/js/7.ed9eceb0.js"><link rel="prefetch" href="/assets/js/8.a617ce81.js"><link rel="prefetch" href="/assets/js/9.cd0cd200.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.58b89de0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">后盾人</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1.html" class="nav-link">PHP</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">在线学习</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线教育
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/system?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  系统学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/lesson?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  实战课程
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/video?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  最近更新
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/topic" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  话题讨论
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/sign" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  签到打卡
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://gitee.com/houdunren/code" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1.html" class="nav-link">PHP</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">在线学习</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线教育
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/system?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  系统学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/lesson?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  实战课程
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/video?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  最近更新
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/topic" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  话题讨论
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/sign" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  签到打卡
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://gitee.com/houdunren/code" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>扩展包开发</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/laravel/package.html#软件特点" class="sidebar-link">软件特点</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/laravel/package.html#基础构建" class="sidebar-link">基础构建</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/laravel/package.html#创建目录" class="sidebar-link">创建目录</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#composer-配置" class="sidebar-link">composer 配置</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#目录结构" class="sidebar-link">目录结构</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#配置站点" class="sidebar-link">配置站点</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#安装依赖包" class="sidebar-link">安装依赖包</a></li></ul></li><li><a href="/laravel/package.html#业务实现" class="sidebar-link">业务实现</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/laravel/package.html#软件配置" class="sidebar-link">软件配置</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#异常处理" class="sidebar-link">异常处理</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#业务代码" class="sidebar-link">业务代码</a></li></ul></li><li><a href="/laravel/package.html#laravel集成" class="sidebar-link">Laravel集成</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/laravel/package.html#composer-json" class="sidebar-link">composer.json</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#provider" class="sidebar-link">Provider</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#facade" class="sidebar-link">Facade</a></li></ul></li><li><a href="/laravel/package.html#单元测试" class="sidebar-link">单元测试</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/laravel/package.html#命名规范" class="sidebar-link">命名规范</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#单元测试-2" class="sidebar-link">单元测试</a></li></ul></li><li><a href="/laravel/package.html#项目测试" class="sidebar-link">项目测试</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/laravel/package.html#生成配置文件" class="sidebar-link">生成配置文件</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#测试扩展包" class="sidebar-link">测试扩展包</a></li></ul></li><li><a href="/laravel/package.html#开源发布" class="sidebar-link">开源发布</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/laravel/package.html#github" class="sidebar-link">GitHub</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#packagist" class="sidebar-link">Packagist</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#version" class="sidebar-link">Version</a></li><li class="sidebar-sub-header"><a href="/laravel/package.html#图标" class="sidebar-link">图标</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="扩展包开发"><a href="#扩展包开发" aria-hidden="true" class="header-anchor">#</a> 扩展包开发</h1> <p>扩展包是对软件功能的扩充，下面我们开发一个多网关上传扩展包，目前支持阿里云OSS上传。</p> <p>本项目地址：<a href="https://github.com/houdunwang/uploader" target="_blank" rel="noopener noreferrer">https://github.com/houdunwang/uploader<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <blockquote><p>后盾人 www.houdunren.com  作者：<a href="http://www.aoxiangjun.com" target="_blank" rel="noopener noreferrer">向军大叔<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <h2 id="软件特点"><a href="#软件特点" aria-hidden="true" class="header-anchor">#</a> 软件特点</h2> <ul><li>支持多网关处理业务</li> <li>提供provider与facade支持，完美集成Laravel框架</li> <li>单元测试全覆盖，保证代码健壮</li> <li>发布到Github与packagist.org开源共享</li> <li>使用简单可快速集成到项目中</li></ul> <h2 id="基础构建"><a href="#基础构建" aria-hidden="true" class="header-anchor">#</a> 基础构建</h2> <h3 id="创建目录"><a href="#创建目录" aria-hidden="true" class="header-anchor">#</a> 创建目录</h3> <div class="language- extra-class"><pre class="language-text"><code>$ mkdir uploader
+</code></pre></div><h3 id="composer-配置"><a href="#composer-配置" aria-hidden="true" class="header-anchor">#</a> composer 配置</h3> <div class="language- extra-class"><pre class="language-text"><code>$ cd uploader
+$ composer init # 一直回车
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>This command will guide you through creating your composer.json config.
+
+Package name (&lt;vendor&gt;/&lt;name&gt;) [xj/uploader]: houdunwang/uploader 
+Description []:
+Author [houdunwang &lt;2300071698@qq.com&gt;, n to skip]:
+Minimum Stability []:
+Package Type (e.g. library, project, metapackage, composer-plugin) []:
+License []:
+
+Define your dependencies.
+
+Would you like to define your dependencies (require) interactively [yes]?
+Search for a package:
+Would you like to define your dev dependencies (require-dev) interactively [yes]?
+Search for a package:
+
+{
+    &quot;name&quot;: &quot;houdunwang/uploader&quot;,
+    &quot;authors&quot;: [
+        {
+            &quot;name&quot;: &quot;houdunwang&quot;,
+            &quot;email&quot;: &quot;2300071698@qq.com&quot;
+        }
+    ],
+    &quot;require&quot;: {},
+}
+
+Do you confirm generation [yes]?
+</code></pre></div><p>说明</p> <div class="language- extra-class"><pre class="language-text"><code># houdunwang为我Github帐号，你要填写你的Github库名称
+Author [houdunwang &lt;2300071698@qq.com&gt;, n to skip]: 你Github帐号
+剩下一直回车即可
+</code></pre></div><h3 id="目录结构"><a href="#目录结构" aria-hidden="true" class="header-anchor">#</a> 目录结构</h3> <div class="language- extra-class"><pre class="language-text"><code>├── config			# 配置文件目录
+├── composer.json  
+├── phpunit.xml		# 单元测试配置文件
+├── src				# 软件代码
+│   └── Exceptions  # 异常处理
+│   └── Services  # 处理服务类
+└── tests			# 测试代码
+</code></pre></div><p>修改 composer.json 设置自动加载</p> <div class="language- extra-class"><pre class="language-text"><code>...
+&quot;autoload&quot;: {
+	&quot;psr-4&quot;: {
+		&quot;Houdunwang\\Uploader\\&quot;: &quot;src/&quot;
+	}
+}
+...
+</code></pre></div><p>设置单元测试配置文件</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;phpunit backupGlobals=&quot;false&quot;
+         backupStaticAttributes=&quot;false&quot;
+         bootstrap=&quot;vendor/autoload.php&quot;
+         colors=&quot;true&quot;
+         convertErrorsToExceptions=&quot;true&quot;
+         convertNoticesToExceptions=&quot;true&quot;
+         convertWarningsToExceptions=&quot;true&quot;
+         processIsolation=&quot;false&quot;
+         stopOnFailure=&quot;false&quot;
+         syntaxCheck=&quot;false&quot;
+&gt;
+    &lt;testsuites&gt;
+        &lt;testsuite name=&quot;Prettus Repository Test Suite&quot;&gt;
+            &lt;directory suffix=&quot;.php&quot;&gt;./tests/&lt;/directory&gt;
+        &lt;/testsuite&gt;
+    &lt;/testsuites&gt;
+&lt;/phpunit&gt;
+</code></pre></div><h3 id="配置站点"><a href="#配置站点" aria-hidden="true" class="header-anchor">#</a> 配置站点</h3> <p>下面是我的 homestead 的配置，如果你使用 wamp 等集成开发环境可以省略这一步。</p> <div class="language- extra-class"><pre class="language-text"><code>sites:
+    - map: uploader.test
+      to: /home/vagrant/code/components/uploader
+</code></pre></div><p>配置 host 文件</p> <div class="language- extra-class"><pre class="language-text"><code>192.168.10.10   uploader.test
+</code></pre></div><h3 id="安装依赖包"><a href="#安装依赖包" aria-hidden="true" class="header-anchor">#</a> 安装依赖包</h3> <p>安装以下两个依赖包用于软件的单元测试</p> <div class="language- extra-class"><pre class="language-text"><code>$ composer require phpunit/phpunit mockery/mockery 
+$ composer require aliyuncs/oss-sdk-php  
+</code></pre></div><ul><li>phpunit/phpunit mockery/mockery 用于单元测试的组件</li> <li>aliyuncs/oss-sdk-php  阿里云提供的OSS上传库</li></ul> <h2 id="业务实现"><a href="#业务实现" aria-hidden="true" class="header-anchor">#</a> 业务实现</h2> <h3 id="软件配置"><a href="#软件配置" aria-hidden="true" class="header-anchor">#</a> 软件配置</h3> <p>配置文件定义在 <code>config/uploader.php</code>，内容如下：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+return [
+    'oss' =&gt; [
+        'accessKeyId' =&gt; '',
+        'accessKeySecret' =&gt; '',
+        'bucket' =&gt; '',
+        'endpoint' =&gt; '',
+    ],
+];
+</code></pre></div><h3 id="异常处理"><a href="#异常处理" aria-hidden="true" class="header-anchor">#</a> 异常处理</h3> <p>异常处理用于处理运行错误，比如用户参数错误、Http处理错误等。下面是我们定义的异常处理类</p> <div class="language- extra-class"><pre class="language-text"><code>src
+│   ├── Exceptions
+│   │   ├── Exception.php	# 基础异常
+│   │   ├── InvalidParamException.php # 参数错误异常
+│   │   └── ServerDisposeException.php # 服务网关异常(如调用阿里oss服务异常)
+</code></pre></div><p>下面是各个异常类</p> <div class="language- extra-class"><pre class="language-text"><code>namespace Houdunwang\Uploader\Exceptions;
+class Exception extends \Exception
+{
+
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>namespace Houdunwang\Uploader\Exceptions;
+class InvalidParamException extends Exception
+{
+
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>namespace Houdunwang\Uploader\Exceptions;
+class ServerDisposeException extends Exception
+{
+
+}
+</code></pre></div><h3 id="业务代码"><a href="#业务代码" aria-hidden="true" class="header-anchor">#</a> 业务代码</h3> <p><strong>扩展包入口类</strong></p> <p>因为上传支持多个服务，我们使用 <code>Uploader</code> 类统一调用处理。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+/** .-------------------------------------------------------------------
+ * |    Author: 向军 &lt;www.aoxiangjun.com&gt;
+ * |    WeChat: houdunren2018
+ * |      Date: 2018/11/12
+ * | Copyright (c) 2012-2019, www.houdunren.com. All Rights Reserved.
+ * '-------------------------------------------------------------------*/
+
+namespace Houdunwang\Uploader;
+
+use Houdunwang\Uploader\Exceptions\InvalidParamException;
+use Houdunwang\Uploader\Services\OssServer;
+
+class Uploader
+{
+    protected $config;
+
+    /**
+     * 服务列表
+     * @var array
+     */
+    protected $servers = [
+        'oss' =&gt; OssServer::class,
+    ];
+
+    public function config(array $config): Uploader
+    {
+        $this-&gt;config = $config;
+        return $this;
+    }
+
+    /**
+     * 上传处理
+     * @param string $file
+     * @param string $service
+     * @return string 文件
+     * @throws InvalidParamException
+     */
+    public function upload(string $file, string $service='oss'): string
+    {
+        if (!is_string($file) || !is_file($file)) {
+            throw new InvalidParamException('invalid file param');
+        }
+        if (!in_array($service, ['oss', 'local'])) {
+            throw new ServerDisposeException('service dones not exists' . $service);
+        }
+        try {
+            $serverInstance = new $this-&gt;servers[$service];
+            return $serverInstance-&gt;config($this-&gt;config[$service])-&gt;upload($file);
+        } catch (\Exception $e) {
+            throw new \Exception($e-&gt;getMessage(), $e-&gt;getCode(), $e);
+        }
+    }
+}
+
+</code></pre></div><p><strong>OSS</strong> 服务</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+/** .-------------------------------------------------------------------
+ * |  Software: [hdcms framework]
+ * |      Site: www.hdcms.com
+ * |-------------------------------------------------------------------
+ * |    Author: 向军 &lt;www.aoxiangjun.com&gt;
+ * |    WeChat: houdunren2018
+ * |      Date: 2018/11/12
+ * | Copyright (c) 2012-2019, www.houdunren.com. All Rights Reserved.
+ * '-------------------------------------------------------------------*/
+
+namespace Houdunwang\Uploader\Services;
+
+use Houdunwang\Uploader\Exceptions\HttpException;
+use Houdunwang\Uploader\Exceptions\InvalidParamException;
+use OSS\OssClient;
+
+class OssServer implements ServerInterface
+{
+    protected $config;
+
+    /**
+     * 设置配置
+     * @param array $config
+     * @return OssServer
+     * @throws InvalidParamException
+     */
+    public function config(array $config): ServerInterface
+    {
+        if (empty($config['accessKeyId']) || empty($config['accessKeySecret']) || empty($config['bucket']) || empty($config['endpoint'])) {
+            throw new InvalidParamException('server param invalid');
+        }
+        $this-&gt;config = $config;
+        return $this;
+    }
+
+    /**
+     * OSS服务
+     * @return OssClient
+     * @throws \OSS\Core\OssException
+     */
+    public function getHttpClient()
+    {
+        return new OssClient($this-&gt;config['accessKeyId'], $this-&gt;config['accessKeySecret'], $this-&gt;config['endpoint']);
+    }
+
+    /**
+     * 执行上传
+     * @param string $file
+     * @return string
+     * @throws HttpException
+     * @throws InvalidParamException
+     */
+    public function upload(string $file): string
+    {
+        if (!is_string($file) || !is_file($file)) {
+            throw new InvalidParamException($file . ' is not a file');
+        }
+        try {
+            $res = $this-&gt;getHttpClient()-&gt;uploadFile($this-&gt;config['bucket'], $this-&gt;getFileName($file), $file);
+            return $res['oss-request-url'];
+        } catch (\Exception $e) {
+            throw new HttpException($e-&gt;getMessage(), $e-&gt;getCode(), $e);
+        }
+    }
+
+    /**
+     * 随机文件名
+     * @param string $file
+     * @return string
+     */
+    public function getFileName(string $file): string
+    {
+        $extension = substr($file, strrpos($file, '.'));
+        return md5($file) . time() . $extension;
+    }
+}
+</code></pre></div><h2 id="laravel集成"><a href="#laravel集成" aria-hidden="true" class="header-anchor">#</a> Laravel集成</h2> <p>为了更好在Laravel框架中使用，我们需要添加 <code>provider</code> 与 <code>Facade</code> 支持，并在Laravel框架的 config 目录中生成扩展包配置文件。</p> <h3 id="composer-json"><a href="#composer-json" aria-hidden="true" class="header-anchor">#</a> composer.json</h3> <p>首先需要在 <code>composer.json</code> 文件中定义 <code>provider</code> 与 <code>facade</code> 配置项</p> <div class="language- extra-class"><pre class="language-text"><code>{
+   ...
+    &quot;extra&quot;: {
+        &quot;laravel&quot;: {
+            &quot;providers&quot;: [
+                &quot;Houdunwang\\Uploader\\ServiceProvider&quot;
+            ],
+            &quot;aliases&quot;: {
+                &quot;Uploader&quot;: &quot;Houdunwang\\Uploader\\Facade&quot;
+            }
+        }
+    },
+    ...
+}
+</code></pre></div><h3 id="provider"><a href="#provider" aria-hidden="true" class="header-anchor">#</a> Provider</h3> <p>创建 <code>src/ServiceProvider</code> 服务文件</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+/** .-------------------------------------------------------------------
+ * |    Author: 向军 &lt;www.aoxiangjun.com&gt;
+ * |    WeChat: houdunren2018
+ * |      Date: 2018/11/12
+ * | Copyright (c) 2012-2019, www.houdunren.com. All Rights Reserved.
+ * '-------------------------------------------------------------------*/
+
+namespace Houdunwang\Uploader;
+
+class ServiceProvider extends \Illuminate\Support\ServiceProvider
+{
+    protected $defer = true;
+
+    /**
+     * 服务引导方法
+     *
+     * @return void
+     */
+    public function boot(): void
+    {
+        //发布配置文件到项目的 config 目录中
+        $this-&gt;publishes([
+            __DIR__ . '/config/uploader.php' =&gt; config_path('uploader.php'),
+        ]);
+    }
+
+    /**
+     * 注册服务
+     */
+    public function register(): void
+    {
+        $this-&gt;app-&gt;singleton(Uploader::class, function () {
+            return new Uploader();
+        });
+    }
+}
+</code></pre></div><h3 id="facade"><a href="#facade" aria-hidden="true" class="header-anchor">#</a> Facade</h3> <p>创建 <code>src/Facade</code>外观文件（方便在Laravel中以像DB::table()形式使用扩展包）</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+/** .-------------------------------------------------------------------
+ * |    Author: 向军 &lt;www.aoxiangjun.com&gt;
+ * |    WeChat: houdunren2018
+ * |      Date: 2018/11/12
+ * | Copyright (c) 2012-2019, www.houdunren.com. All Rights Reserved.
+ * '-------------------------------------------------------------------*/
+
+namespace Houdunwang\Uploader;
+
+use Illuminate\Support\Facades\Facade as LaravelFacade;
+
+class Facade extends LaravelFacade
+{
+    /**
+     * 获取组件的注册名称。
+     *
+     * @return string
+     */
+    protected static function getFacadeAccessor()
+    {
+        return Uploader::class;
+    }
+}
+</code></pre></div><h2 id="单元测试"><a href="#单元测试" aria-hidden="true" class="header-anchor">#</a> 单元测试</h2> <p>使用单元测试程序的稳定性是软件开发中必不可少的环节。</p> <h3 id="命名规范"><a href="#命名规范" aria-hidden="true" class="header-anchor">#</a> 命名规范</h3> <ul><li>测试用例目录要与项目目录结构一致</li> <li>测试用户类名为：项目类名+Test.php</li> <li>测试用例要继承 <code>PHPUnit\Framework\TestCase</code> 类</li> <li>测试用户方法为：<code>test</code>+项目类方法</li></ul> <h3 id="单元测试-2"><a href="#单元测试-2" aria-hidden="true" class="header-anchor">#</a> 单元测试</h3> <p>对OssServer服务类测试</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+/** .-------------------------------------------------------------------
+ * |    Author: 向军 &lt;www.aoxiangjun.com&gt;
+ * |    WeChat: houdunren2018
+ * |      Date: 2018/11/12
+ * | Copyright (c) 2012-2019, www.houdunren.com. All Rights Reserved.
+ * '-------------------------------------------------------------------*/
+
+use PHPUnit\Framework\TestCase;
+use Houdunwang\Uploader\Services\OssServer;
+use Mockery\Matcher\AnyArgs;
+use Houdunwang\Uploader\Exceptions\InvalidParamException;
+
+class OssServerTest extends TestCase
+{
+    public function testConfig()
+    {
+        $this-&gt;expectException(InvalidParamException::class);
+        $this-&gt;expectExceptionMessage('server param invalid');
+        $oss = new OssServer();
+        $oss-&gt;config([
+            'accessKeyIda' =&gt; 'test',
+            'accessKeySecret' =&gt; 'test',
+            'bucket' =&gt; 'test',
+            'endpoint' =&gt; 'test',
+        ]);
+        $this-&gt;fail('config param exception fail');
+    }
+
+    public function testGetFileName()
+    {
+        $oss = Mockery::mock(OssServer::class)-&gt;makePartial();
+        $this-&gt;assertStringEndsWith('.jpeg', $oss-&gt;getFileName('a.jpeg'));
+    }
+
+    public function testUploadParamFile()
+    {
+        $oss = \Mockery::mock(OssServer::class)-&gt;makePartial();
+        $this-&gt;expectException(InvalidParamException::class);
+        $this-&gt;expectExceptionMessage('a.jpeg is not a file');
+        $oss-&gt;upload('a.jpeg');
+        $this-&gt;fail('ossClient request param invalid');
+    }
+
+    public function testUpload()
+    {
+        $client = \Mockery::mock(\OSS\OssClient::class);
+        $client-&gt;allows()-&gt;uploadFile(new AnyArgs())-&gt;andReturn([
+            'oss-request-url' =&gt; __FILE__,
+        ]);
+        $oss = \Mockery::mock(OssServer::class)-&gt;makePartial();
+        $oss-&gt;allows()-&gt;getHttpClient()-&gt;andReturn($client);
+        return $this-&gt;assertSame(__FILE__, $oss-&gt;upload(__FILE__));
+    }
+}
+
+</code></pre></div><p>对扩展包入口类测试</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+/** .-------------------------------------------------------------------
+ * |    Author: 向军 &lt;www.aoxiangjun.com&gt;
+ * |    WeChat: houdunren2018
+ * |      Date: 2018/11/12
+ * | Copyright (c) 2012-2019, www.houdunren.com. All Rights Reserved.
+ * '-------------------------------------------------------------------*/
+
+use PHPUnit\Framework\TestCase;
+use Houdunwang\Uploader\Exceptions\InvalidParamException;
+
+class UploaderTest extends TestCase
+{
+    public function testUploadParamException()
+    {
+        $uploader = new \Houdunwang\Uploader\Uploader([]);
+        $this-&gt;expectException(InvalidParamException::class);
+        $this-&gt;expectExceptionMessage('invalid file param');
+        $uploader-&gt;upload('test.php', 'oss');
+
+        $this-&gt;fail('server param exception');
+
+    }
+}
+</code></pre></div><p>测试结果：</p> <div class="language- extra-class"><pre class="language-text"><code>➜  uploader git:(master) ✗ phpunit
+PHPUnit 6.1.0 by Sebastian Bergmann and contributors.
+
+.....                                                               5 / 5 (100%)
+
+Time: 98 ms, Memory: 10.00MB
+
+OK (5 tests, 8 assertions)
+➜  uploader git:(master) 
+</code></pre></div><h2 id="项目测试"><a href="#项目测试" aria-hidden="true" class="header-anchor">#</a> 项目测试</h2> <p>下面我们在Laravel 项目中进行测试，首先使用以下命令安装laravel项目。</p> <div class="language- extra-class"><pre class="language-text"><code>composer create-project --prefer-dist laravel/laravel
+</code></pre></div><p>安装我们的本地扩展包</p> <div class="language- extra-class"><pre class="language-text"><code>$ composer config repositories.uploader path ../components/uploader
+$ composer require houdunwang/uploader:dev-master
+</code></pre></div><h3 id="生成配置文件"><a href="#生成配置文件" aria-hidden="true" class="header-anchor">#</a> 生成配置文件</h3> <p>组件会自动发布配置文件 <code>uploader.php</code> 到项目的 <code>config</code> 目录中，需要先进行相应配置。</p> <p>也可以使用以下方式手动发布配置：</p> <div class="language- extra-class"><pre class="language-text"><code>$ laravel php artisan vendor:publish
+
+Which provider or tag's files would you like to publish?:
+  [0 ] Publish files from all providers and tags listed below
+  [1 ] Provider: BeyondCode\DumpServer\DumpServerServiceProvider
+  [2 ] Provider: Fideloper\Proxy\TrustedProxyServiceProvider
+  [3 ] Provider: Illuminate\Mail\MailServiceProvider
+  [4 ] Provider: Illuminate\Notifications\NotificationServiceProvider
+  [5 ] Provider: Illuminate\Pagination\PaginationServiceProvider
+  [6 ] Provider: Laravel\Tinker\TinkerServiceProvider
+  [7 ] Tag: config
+  [8 ] Tag: laravel-mail
+  [9 ] Tag: laravel-notifications
+  [10] Tag: laravel-pagination
+ &gt; 7
+
+Publishing complete.
+</code></pre></div><p>设置  <code>config/uploader.php</code> 文件中的上传配置项。</p> <h4 id="阿里云"><a href="#阿里云" aria-hidden="true" class="header-anchor">#</a> 阿里云</h4> <ol><li>在 <code>访问控制</code> 中添加一个新帐号</li> <li>获得帐号的 <code>accessKeyId</code> 与 <code>accessKeySecret</code>资料设置到配置文件中</li> <li>赋予新增的帐号 <code>oss</code> 使用权限。</li> <li>在 <code>oss</code> 服务中新增 <code>bucket</code>  块</li> <li>为新增的 <code>bucket</code> 块配置跨域访问权限</li> <li>设置块为 <code>公共读</code></li> <li>将 <code>外网访问</code> 配置项中的 <code>EndPoint</code> 设置到配置文件中的 <code>endpoint</code> 项</li></ol> <h3 id="测试扩展包"><a href="#测试扩展包" aria-hidden="true" class="header-anchor">#</a> 测试扩展包</h3> <p>使用<code>Facade</code> 调用</p> <div class="language- extra-class"><pre class="language-text"><code>Route::get('/', function () {
+	return Uploader::config(config('uploader'))-&gt;upload('index.php');
+});
+</code></pre></div><p>使用 <code>provider</code> 服务调用</p> <div class="language- extra-class"><pre class="language-text"><code>Route::get('/', function () {
+	return app(\Houdunwang\Uploader\Uploader::class)-&gt;config(config('uploader'))-&gt;upload('index.php');
+});
+</code></pre></div><h2 id="开源发布"><a href="#开源发布" aria-hidden="true" class="header-anchor">#</a> 开源发布</h2> <h3 id="github"><a href="#github" aria-hidden="true" class="header-anchor">#</a> GitHub</h3> <p>在Github新建项目并执行以下命令提交代码到版本库。</p> <div class="language- extra-class"><pre class="language-text"><code>git init
+git add README.md
+git commit -m &quot;first commit&quot;
+git remote add origin https://github.com/houdunwang/uploader.git
+git push -u origin master
+</code></pre></div><blockquote><p>别忘记改成自己的github 库地址</p></blockquote> <h3 id="packagist"><a href="#packagist" aria-hidden="true" class="header-anchor">#</a> Packagist</h3> <p>将软件发布到 <a href="https://packagist.org/" target="_blank" rel="noopener noreferrer">https://packagist.org/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 用户就可以使用 <code>composer</code>进行安装或更新了。</p> <ol><li><p>使用 github 帐号登录 packagist</p></li> <li><p>点击 <a href="https://packagist.org/packages/submit" target="_blank" rel="noopener noreferrer">Submit<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 提交软件包，从github复制 https的地址</p></li> <li><p>点击 <a href="https://packagist.org/profile/" target="_blank" rel="noopener noreferrer">https://packagist.org/profile/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 页面的 <a href="https://packagist.org/trigger-github-sync/" target="_blank" rel="noopener noreferrer">https://packagist.org/trigger-github-sync/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 与 github 同步，同步后当github 代码提交时会自动通知 packagist。</p></li></ol> <h3 id="version"><a href="#version" aria-hidden="true" class="header-anchor">#</a> Version</h3> <p>版本号由含义指 <code>重构或不向下兼容版本号.新功能.修复版本</code>  上面我以最直白的方式进行的版本号的说明，严格定义版本号是对使用你开源项目作者的基本责任，乱定义版本号可能造成使用者在升级后无法运行，这方便知识需要了解一下 <code>composer</code> 中版本号的说明。</p> <p>下面我们为软件添加每一个版本</p> <div class="language- extra-class"><pre class="language-text"><code>$ git tag v1.0.0 # 添加版本号
+$ git push --tags # 向github发布
+</code></pre></div><p>发布后登录 <a href="https://packagist.org/packages/houdunwang/uploader" target="_blank" rel="noopener noreferrer">https://packagist.org/packages/houdunwang/uploader<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>就可以看到版本号了，我们软件的使用者可以使用 <code>composer update</code> 更新了。</p> <h3 id="图标"><a href="#图标" aria-hidden="true" class="header-anchor">#</a> 图标</h3> <p><a href="https://poser.pugx.org/" target="_blank" rel="noopener noreferrer">https://poser.pugx.org/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 搜索你的项目，可生成展示下载量、协议等信息的图标。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://gitee.com/houdunren/code/edit/master/docs/laravel/package.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">7/6/2019, 5:43:45 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ffc882f0.js" defer></script><script src="/assets/js/2.20ae6c44.js" defer></script><script src="/assets/js/32.13487b61.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>数组类型 | 后盾人</title>
+    <meta name="description" content="在线文档库">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.58b89de0.css" as="style"><link rel="preload" href="/assets/js/app.ffc882f0.js" as="script"><link rel="preload" href="/assets/js/2.20ae6c44.js" as="script"><link rel="preload" href="/assets/js/48.5cac608a.js" as="script"><link rel="prefetch" href="/assets/js/10.f808bf04.js"><link rel="prefetch" href="/assets/js/11.d71a23cb.js"><link rel="prefetch" href="/assets/js/12.ea5193db.js"><link rel="prefetch" href="/assets/js/13.86be5709.js"><link rel="prefetch" href="/assets/js/14.20dc16b2.js"><link rel="prefetch" href="/assets/js/15.3e8ad036.js"><link rel="prefetch" href="/assets/js/16.4aa83947.js"><link rel="prefetch" href="/assets/js/17.ac082550.js"><link rel="prefetch" href="/assets/js/18.f23cdbe9.js"><link rel="prefetch" href="/assets/js/19.73c246f3.js"><link rel="prefetch" href="/assets/js/20.13cfb666.js"><link rel="prefetch" href="/assets/js/21.4710d4c8.js"><link rel="prefetch" href="/assets/js/22.76d0b56c.js"><link rel="prefetch" href="/assets/js/23.335f6470.js"><link rel="prefetch" href="/assets/js/24.4023c03b.js"><link rel="prefetch" href="/assets/js/25.0af322a6.js"><link rel="prefetch" href="/assets/js/26.7689c457.js"><link rel="prefetch" href="/assets/js/27.7f8f23ce.js"><link rel="prefetch" href="/assets/js/28.e9441168.js"><link rel="prefetch" href="/assets/js/29.a4fe174a.js"><link rel="prefetch" href="/assets/js/3.3ab8b6b3.js"><link rel="prefetch" href="/assets/js/30.99e02f7e.js"><link rel="prefetch" href="/assets/js/31.789e54e7.js"><link rel="prefetch" href="/assets/js/32.13487b61.js"><link rel="prefetch" href="/assets/js/33.791cd66a.js"><link rel="prefetch" href="/assets/js/34.d855d362.js"><link rel="prefetch" href="/assets/js/35.26e630a1.js"><link rel="prefetch" href="/assets/js/36.f71a91e1.js"><link rel="prefetch" href="/assets/js/37.837e49c0.js"><link rel="prefetch" href="/assets/js/38.4f5e099b.js"><link rel="prefetch" href="/assets/js/39.1fbbdc22.js"><link rel="prefetch" href="/assets/js/4.6b56e9ac.js"><link rel="prefetch" href="/assets/js/40.4fd177bd.js"><link rel="prefetch" href="/assets/js/41.eb95f5c0.js"><link rel="prefetch" href="/assets/js/42.1b9532e8.js"><link rel="prefetch" href="/assets/js/43.362fecf9.js"><link rel="prefetch" href="/assets/js/44.047ae178.js"><link rel="prefetch" href="/assets/js/45.c61dc499.js"><link rel="prefetch" href="/assets/js/46.b5e3fe36.js"><link rel="prefetch" href="/assets/js/47.1d6906ef.js"><link rel="prefetch" href="/assets/js/49.c5b2b426.js"><link rel="prefetch" href="/assets/js/5.2d93c381.js"><link rel="prefetch" href="/assets/js/50.96444fbe.js"><link rel="prefetch" href="/assets/js/51.390b8e94.js"><link rel="prefetch" href="/assets/js/52.8c13a68b.js"><link rel="prefetch" href="/assets/js/53.ef7ebbcf.js"><link rel="prefetch" href="/assets/js/54.a43d5307.js"><link rel="prefetch" href="/assets/js/55.97b9081c.js"><link rel="prefetch" href="/assets/js/56.e33e02d3.js"><link rel="prefetch" href="/assets/js/57.b67c1732.js"><link rel="prefetch" href="/assets/js/58.ee437297.js"><link rel="prefetch" href="/assets/js/59.afd1931e.js"><link rel="prefetch" href="/assets/js/6.2f3e6750.js"><link rel="prefetch" href="/assets/js/60.ff3fa6d4.js"><link rel="prefetch" href="/assets/js/61.2f570b7f.js"><link rel="prefetch" href="/assets/js/62.70f757a5.js"><link rel="prefetch" href="/assets/js/63.9aba24dc.js"><link rel="prefetch" href="/assets/js/7.ed9eceb0.js"><link rel="prefetch" href="/assets/js/8.a617ce81.js"><link rel="prefetch" href="/assets/js/9.cd0cd200.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.58b89de0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">后盾人</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1.html" class="nav-link">PHP</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">在线学习</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线教育
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/system?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  系统学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/lesson?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  实战课程
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/video?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  最近更新
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/topic" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  话题讨论
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/sign" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  签到打卡
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://gitee.com/houdunren/code" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1.html" class="nav-link">PHP</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">在线学习</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线教育
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/system?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  系统学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/lesson?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  实战课程
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/video?sid=1&amp;mid=2" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  最近更新
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/topic" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  话题讨论
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://www.houdunren.com/edu/front/sign" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  签到打卡
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://gitee.com/houdunren/code" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>数组类型</span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="数组类型"><a href="#数组类型" aria-hidden="true" class="header-anchor">#</a> 数组类型</h1> <blockquote><p>创作不易，转载请注明出处： 后盾人 @ houdurnen.com</p></blockquote> <p>数组是在程序设计中，为了处理方便， 把若干变量按有序的形式组织起来的一种形式。
+按数组键值类型的不同，数组又可分为数值索引数组、字符关联数组。</p> <h3 id="基础知识"><a href="#基础知识" aria-hidden="true" class="header-anchor">#</a> 基础知识</h3> <ul><li>所谓的数组下标可以视为资料内容在此数组中的识别名称，通常被称为数组下标。</li> <li>当索引值为数值时，也代表此资料内容在数组中的储存位置。</li> <li>数组中有几个索引值就被称为几维数组。</li></ul> <p><strong>数组分类</strong>：</p> <p>在PHP中有两种数组：索引数组和关联数组。</p> <ul><li>索引（indexed）数组的索引值是整数，以0开始。当通过位置来标识东西时用索引数组。</li> <li>关联（associative）数组以字符串做为索引值，关联数组更像操作表。索引值为列名，用于访问列的数据</li></ul> <div class="language- extra-class"><pre class="language-text"><code>$arr 	= [1,2,3] // 索引数组
+$users 	= ['name'=&gt;'向军大叔','age'=&gt;99]; //关联数组
+</code></pre></div><p><strong>一维数组</strong></p> <p>数组值为单个变量（非数组）时，为一维数组</p> <div class="language- extra-class"><pre class="language-text"><code>$arr = ['name'=&gt;'向军','url'=&gt;'houdunren.com'];
+</code></pre></div><p><strong>多维数组</strong></p> <p>数组的值为数组时，这样的数组为多维数组，嵌套几层即几为数组</p> <div class="language- extra-class"><pre class="language-text"><code>$users = [
+	['name'=&gt;'向军'],
+	['name'=&gt;'李四']
+];
+</code></pre></div><p><strong>数组赋值</strong></p> <div class="language- extra-class"><pre class="language-text"><code>$arr = [];
+$arr[0] = '后盾人';
+$arr['url']=&gt;'houdunren.com';
+</code></pre></div><h3 id="读取元素"><a href="#读取元素" aria-hidden="true" class="header-anchor">#</a> 读取元素</h3> <p>key — 从关联数组中取得键名</p> <div class="language- extra-class"><pre class="language-text"><code>$arr = ['后盾人','HDCMS','向军大叔'];
+echo key($arr); //返回0
+</code></pre></div><p>current — 返回数组中的当前单元</p> <div class="language- extra-class"><pre class="language-text"><code>$arr = ['后盾人','HDCMS','向军大叔'];
+echo current($arr); //返回 '后盾人'
+</code></pre></div><p>next — 将数组中的内部指针向下移动一位，并返回值。没有更多单元时返回 <strong>FALSE</strong></p> <div class="language- extra-class"><pre class="language-text"><code>$arr = ['后盾人','HDCMS','向军大叔'];
+echo next($arr); //返回 'HDCMS'
+</code></pre></div><p>prev — 将数组的内部指针倒回一位，并返回值。没有更多单元时返回 <strong>FALSE</strong></p> <div class="language- extra-class"><pre class="language-text"><code>$arr = ['后盾人','HDCMS','向军大叔'];
+var_dump(prev($arr)); //返回 FALSE
+</code></pre></div><p><strong>指针遍历</strong></p> <div class="language- extra-class"><pre class="language-text"><code>$users = [
+    ['name'=&gt;'向军大叔','age'=&gt;16],
+    ['name'=&gt;'小明','age'=&gt;22],
+    ['name'=&gt;'李四','age'=&gt;34],
+    ['name'=&gt;'张三','age'=&gt;19],
+];
+?&gt;
+&lt;table border=&quot;1&quot;&gt;
+&lt;tr&gt;&lt;th&gt;编号&lt;/th&gt;&lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;年龄&lt;/th&gt;&lt;/tr&gt;
+&lt;?php while ($user = current($users)):?&gt;
+&lt;tr&gt;
+	&lt;td&gt;&lt;?php echo key($users)+1?&gt;&lt;/td&gt;
+	&lt;td&gt;&lt;?php echo $user['name']?&gt;&lt;/td&gt;
+	&lt;td&gt;&lt;?php echo $user['age']?&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;?php  next($users); endwhile;?&gt;
+&lt;/table&gt;
+</code></pre></div><h3 id="遍历数组"><a href="#遍历数组" aria-hidden="true" class="header-anchor">#</a> 遍历数组</h3> <h4 id="foreach"><a href="#foreach" aria-hidden="true" class="header-anchor">#</a> foreach</h4> <div class="language- extra-class"><pre class="language-text"><code>$users = [
+    ['name'=&gt;'向军大叔','url'=&gt;'aoxiangjun.com'],
+    ['name'=&gt;'后盾人','url'=&gt;'houdunren.com']
+];
+foreach ($users as $key=&gt;$user) {
+    echo &quot;[{$key}] 姓名:{$user['name']} 网址:{$user['url']} &lt;hr/&gt;&quot;;
+}
+</code></pre></div><h4 id="list"><a href="#list" aria-hidden="true" class="header-anchor">#</a> list</h4> <p>把数组中的值赋给一组变量</p> <div class="language- extra-class"><pre class="language-text"><code>$arr = ['向军','hdcms'];
+list($name, $soft) = $arr;
+echo $soft;
+</code></pre></div><p>直接显示第三个</p> <div class="language- extra-class"><pre class="language-text"><code>$arr = ['向军','hdcms','houdunren.com'];
+list(, , $web) = $arr;
+echo $web;
+</code></pre></div><p>使用键名</p> <div class="language- extra-class"><pre class="language-text"><code>$users = [
+    ['name'=&gt;'向军大叔','age'=&gt;16],
+    ['name'=&gt;'小明','age'=&gt;22],
+    ['name'=&gt;'李四','age'=&gt;34],
+    ['name'=&gt;'张三','age'=&gt;19],
+];
+while (list('name'=&gt;$name, 'age'=&gt;$age) = current($users)) {
+    echo &quot;name: {$name} &lt;hr/&gt;&quot;;
+    next($users);
+}
+</code></pre></div><h3 id="常用函数"><a href="#常用函数" aria-hidden="true" class="header-anchor">#</a> 常用函数</h3> <p>下面我们学习常用的数组操作函数，之后你就可以自行参考 <a href="http://php.net/manual/zh/ref.array.php" target="_blank" rel="noopener noreferrer">官方手册<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 掌握其他函数了。</p> <h4 id="array-push"><a href="#array-push" aria-hidden="true" class="header-anchor">#</a> array_push</h4> <p>将一个或多个单元压入数组的末尾，这是传址操作。</p> <div class="language- extra-class"><pre class="language-text"><code>$users =['向军大叔','小明'];
+array_push($users, '张三');
+print_r($users);
+</code></pre></div><h4 id="array-pop"><a href="#array-pop" aria-hidden="true" class="header-anchor">#</a> array_pop</h4> <p>弹出数组最后一个单元（出栈），这是传址操作。</p> <div class="language- extra-class"><pre class="language-text"><code>$users =['向军大叔','小明'];
+array_pop($users);
+print_r($users);
+</code></pre></div><h4 id="array-shift"><a href="#array-shift" aria-hidden="true" class="header-anchor">#</a> array_shift</h4> <p>将数组开头的单元移出数组，这是传址操作。</p> <div class="language- extra-class"><pre class="language-text"><code>$users =['向军大叔','小明'];
+array_shift($users);
+print_r($users);
+</code></pre></div><h4 id="array-unshift"><a href="#array-unshift" aria-hidden="true" class="header-anchor">#</a> array_unshift</h4> <p>在数组开头插入一个或多个单元</p> <div class="language- extra-class"><pre class="language-text"><code>$users =['向军大叔','小明'];
+array_unshift($users, '后盾人');
+print_r($users);
+</code></pre></div><h4 id="count"><a href="#count" aria-hidden="true" class="header-anchor">#</a> count</h4> <p>count — 计算数组中的单元数目，或对象中的属性个数</p> <div class="language- extra-class"><pre class="language-text"><code>$users = ['向军大叔','小明'];
+echo count($users);
+</code></pre></div><h4 id="in-array"><a href="#in-array" aria-hidden="true" class="header-anchor">#</a> in_array</h4> <p>检查数组中是否存在某个值</p> <div class="language- extra-class"><pre class="language-text"><code>$allowImageType = ['jpeg','jpg','png'];
+$file = 'hdcms.txt';
+$ext = strtolower(substr(strrchr($file, '.'), 1));
+if (!in_array($ext, $allowImageType)) {
+    echo 'is wrong';
+}
+</code></pre></div><h4 id="array-key-exists"><a href="#array-key-exists" aria-hidden="true" class="header-anchor">#</a> array_key_exists</h4> <p>检查数组里是否有指定的键名或索引</p> <div class="language- extra-class"><pre class="language-text"><code>$allowImageType = ['jpeg'=&gt;2000000,'jpg'=&gt;2000000,'png'=&gt;2000000];
+$file = 'hdcms.txt';
+$ext = strtolower(substr(strrchr($file, '.'), 1));
+if (!array_key_exists($ext, $allowImageType)) {
+    echo 'is wrong';
+}
+</code></pre></div><h4 id="array-keys"><a href="#array-keys" aria-hidden="true" class="header-anchor">#</a> array_keys</h4> <div class="language- extra-class"><pre class="language-text"><code>$allowImageType = ['jpeg'=&gt;2000000,'jpg'=&gt;2000000,'png'=&gt;2000000];
+$file = 'hdcms.jpg';
+$ext = strtolower(substr(strrchr($file, '.'), 1));
+if (!in_array($ext, array_keys($allowImageType))) {
+    echo 'is wrong';
+}
+</code></pre></div><h4 id="array-filter"><a href="#array-filter" aria-hidden="true" class="header-anchor">#</a> array_filter</h4> <p>用回调函数过滤数组中的单元，下面是只获取男生的操作。</p> <div class="language- extra-class"><pre class="language-text"><code>$users = [
+    ['name'=&gt;'向军大叔','sex'=&gt;'男','age'=&gt;20],
+    ['name'=&gt;'小丽','sex'=&gt;'女','age'=&gt;33]
+];
+
+print_r(array_filter($users, function ($user) {
+    return $user['sex']=='男';
+}));
+</code></pre></div><h4 id="array-map"><a href="#array-map" aria-hidden="true" class="header-anchor">#</a> array_map</h4> <p>为数组的每个元素应用回调函数，下面是删除用户年龄的操作。</p> <div class="language- extra-class"><pre class="language-text"><code>$users = [
+    ['name'=&gt;'向军大叔','sex'=&gt;'男','age'=&gt;20],
+    ['name'=&gt;'小丽','sex'=&gt;'女','age'=&gt;33]
+];
+
+print_r(array_map(function ($user) {
+    unset($user['age']);
+    return $user;
+}, $users));
+</code></pre></div><p>获取所有会员名称</p> <div class="language- extra-class"><pre class="language-text"><code>$users = [
+    ['name'=&gt;'向军大叔','sex'=&gt;'男','age'=&gt;20],
+    ['name'=&gt;'小丽','sex'=&gt;'女','age'=&gt;33]
+];
+
+print_r(array_map(function ($user) {
+    return $user['name'];
+}, $users));
+</code></pre></div><h4 id="array-values"><a href="#array-values" aria-hidden="true" class="header-anchor">#</a> array_values</h4> <p>返回数组中所有的值</p> <div class="language- extra-class"><pre class="language-text"><code>$formats = array_map(function ($user) {
+    return implode('-', array_values($user));
+}, $users);
+print_r($formats); //输出 Array ( [0] =&gt; 向军大叔-男-20 [1] =&gt; 小丽-女-33 )
+
+</code></pre></div><h4 id="array-merge"><a href="#array-merge" aria-hidden="true" class="header-anchor">#</a> array_merge</h4> <p>合并一个或多个数组</p> <div class="language- extra-class"><pre class="language-text"><code>$database = [
+    'host'=&gt;'localhost','port'=&gt;3306,'user'=&gt;'root','password'=&gt;''
+];
+
+print_r(
+    array_merge($database, ['user'=&gt;'hdcms','password'=&gt;'admin888'])
+);
+</code></pre></div><h4 id="array-change-key-case"><a href="#array-change-key-case" aria-hidden="true" class="header-anchor">#</a> array_change_key_case</h4> <p>将数组中的所有键名修改为全大写或小写</p> <div class="language- extra-class"><pre class="language-text"><code>//键名转大写
+print_r(array_change_key_case($database, CASE_UPPER));
+
+//键名转小写
+print_r(array_change_key_case($database, CASE_LOWER));
+</code></pre></div><h4 id="递归改变数组键名"><a href="#递归改变数组键名" aria-hidden="true" class="header-anchor">#</a> 递归改变数组键名</h4> <div class="language- extra-class"><pre class="language-text"><code>$config = [
+    'database'=&gt;['host'=&gt;'localhost','port'=&gt;3306,'user'=&gt;'root','password'=&gt;''],
+    'app'=&gt;['name'=&gt;'向军大叔','url'=&gt;'http://houdunren.com','app'=&gt;[&quot;hdcms&quot;]]
+];
+
+function hd_array_change_key_case(array $data, int $type=CASE_UPPER):array
+{
+    foreach ($data as $k=&gt;$v):
+        $action = $type ==CASE_UPPER?'strtoupper':'strtolower';
+    	unset($data[$k]);
+    	$data[$action($k)] = is_array($v)?hd_array_change_key_case($v, $type):$v;
+    endforeach;
+    return $data;
+}
+print_r(hd_array_change_key_case($config));
+</code></pre></div><h4 id="递归改变数组值"><a href="#递归改变数组值" aria-hidden="true" class="header-anchor">#</a> 递归改变数组值</h4> <div class="language- extra-class"><pre class="language-text"><code>$config = [
+    'database'=&gt;['host'=&gt;'localhost','port'=&gt;3306,'user'=&gt;'root','password'=&gt;''],
+    'app'=&gt;['name'=&gt;'向军大叔','url'=&gt;'http://houdunren.com','app'=&gt;[&quot;hdcms&quot;]]
+];
+
+function hd_array_change_value_case(array $data, int $type=CASE_UPPER):array
+{
+    foreach ($data as $k=&gt;$v):
+        $action = $type ==CASE_UPPER?'strtoupper':'strtolower';
+    $data[$k] = is_array($v)?hd_array_change_value_case($v, $type):$action($v);
+    endforeach;
+    return $data;
+}
+print_r(hd_array_change_value_case($config));
+</code></pre></div><h4 id="array-walk-recursive"><a href="#array-walk-recursive" aria-hidden="true" class="header-anchor">#</a> array_walk_recursive</h4> <p>对数组中的每个成员递归地应用用户函数，本函数会递归到更深层的数组中去。下面是改变数组键值的操作。</p> <div class="language- extra-class"><pre class="language-text"><code>$config = [
+    'database'=&gt;['host'=&gt;'localhost','port'=&gt;3306,'user'=&gt;'root','password'=&gt;''],
+    'app'=&gt;['name'=&gt;'向军大叔','url'=&gt;'http://houdunren.com',['app'=&gt;'hdcms']]
+];
+
+function change_array_value(array $data, int $type=CASE_UPPER):array
+{
+    array_walk_recursive($data, function (&amp;$value, $key, $type) {
+        $action = $type==CASE_UPPER?'strtoupper':'strtolower';
+        $value=$action($value);
+    }, $type);
+    return $data;
+}
+print_r(change_array_value($config));
+</code></pre></div><h4 id="var-export"><a href="#var-export" aria-hidden="true" class="header-anchor">#</a> var_export</h4> <p>输出或返回一个变量的字符串表示，第二个参数为 <code>TRUE</code> 时返回字符串。</p> <div class="language- extra-class"><pre class="language-text"><code>$config = [
+    'database'=&gt;['host'=&gt;'localhost','port'=&gt;3306,'user'=&gt;'root','password'=&gt;''],
+    'app'=&gt;['name'=&gt;'向军大叔','url'=&gt;'http://houdunren.com']
+];
+
+//生成合法的PHP代码
+$configContent = &quot;&lt;?php return &quot;.var_export($config, true).';';
+file_put_contents('database.php', $configContent);
+</code></pre></div><h4 id="serialize"><a href="#serialize" aria-hidden="true" class="header-anchor">#</a> serialize</h4> <p>将数组序列化为字符串。</p> <div class="language- extra-class"><pre class="language-text"><code>$config = [
+    'database'=&gt;['host'=&gt;'localhost','port'=&gt;3306,'user'=&gt;'root','password'=&gt;''],
+    'app'=&gt;['name'=&gt;'向军大叔','url'=&gt;'http://houdunren.com',['app'=&gt;'hdcms']]
+];
+echo serialize($config);
+</code></pre></div><h4 id="unserialize"><a href="#unserialize" aria-hidden="true" class="header-anchor">#</a> unserialize</h4> <p>从已存储的表示中创建 PHP 的值，下面是缓存数据的操作实例。</p> <div class="language- extra-class"><pre class="language-text"><code>$config = [
+    'database'=&gt;['host'=&gt;'localhost','port'=&gt;3306,'user'=&gt;'root','password'=&gt;''],
+    'app'=&gt;['name'=&gt;'向军大叔','url'=&gt;'http://houdunren.com',['app'=&gt;'hdcms']]
+];
+
+function cache(string $name, array $data=null)
+{
+    $file = 'cache'.DIRECTORY_SEPARATOR.md5($name).'.php';
+    if (is_null($data)) {
+        $content = is_file($file)?file_get_contents($file):null;
+        return unserialize($content)?:null;
+    } else {
+        return file_put_contents($file, serialize($data));
+    }
+}
+
+cache('database', $config);
+var_dump(cache('database'));
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://gitee.com/houdunren/code/edit/master/docs/php/4 数组类型.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">7/6/2019, 5:43:45 AM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ffc882f0.js" defer></script><script src="/assets/js/2.20ae6c44.js" defer></script><script src="/assets/js/48.5cac608a.js" defer></script>
+  </body>
+</html>
