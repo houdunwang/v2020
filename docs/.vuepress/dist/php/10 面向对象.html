@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>面向对象 | houdunren</title>
+    <meta name="description" content="在线文档库">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.f961c06d.css" as="style"><link rel="preload" href="/assets/js/app.ebd78155.js" as="script"><link rel="preload" href="/assets/js/2.a0b4bf58.js" as="script"><link rel="preload" href="/assets/js/40.7af7e004.js" as="script"><link rel="prefetch" href="/assets/js/10.c65b0bca.js"><link rel="prefetch" href="/assets/js/11.be640993.js"><link rel="prefetch" href="/assets/js/12.0d519001.js"><link rel="prefetch" href="/assets/js/13.043a6675.js"><link rel="prefetch" href="/assets/js/14.fa7b7ca3.js"><link rel="prefetch" href="/assets/js/15.f6bac2b1.js"><link rel="prefetch" href="/assets/js/16.b690c7bc.js"><link rel="prefetch" href="/assets/js/17.f7413f35.js"><link rel="prefetch" href="/assets/js/18.cb5a1361.js"><link rel="prefetch" href="/assets/js/19.f6eca32a.js"><link rel="prefetch" href="/assets/js/20.c5a8c4cc.js"><link rel="prefetch" href="/assets/js/21.71dc6a2e.js"><link rel="prefetch" href="/assets/js/22.6ebc1fde.js"><link rel="prefetch" href="/assets/js/23.2eacaee3.js"><link rel="prefetch" href="/assets/js/24.a56759dd.js"><link rel="prefetch" href="/assets/js/25.d7784a74.js"><link rel="prefetch" href="/assets/js/26.c4ba0871.js"><link rel="prefetch" href="/assets/js/27.74b3e66e.js"><link rel="prefetch" href="/assets/js/28.8fd777f5.js"><link rel="prefetch" href="/assets/js/29.694e11b6.js"><link rel="prefetch" href="/assets/js/3.09daf1c6.js"><link rel="prefetch" href="/assets/js/30.30130803.js"><link rel="prefetch" href="/assets/js/31.052d3e86.js"><link rel="prefetch" href="/assets/js/32.464d76a7.js"><link rel="prefetch" href="/assets/js/33.c0950c19.js"><link rel="prefetch" href="/assets/js/34.e2ee45dd.js"><link rel="prefetch" href="/assets/js/35.22363c3c.js"><link rel="prefetch" href="/assets/js/36.1657bcd5.js"><link rel="prefetch" href="/assets/js/37.8e59a9c0.js"><link rel="prefetch" href="/assets/js/38.b1c07a4f.js"><link rel="prefetch" href="/assets/js/39.4e85ffbd.js"><link rel="prefetch" href="/assets/js/4.4532dc49.js"><link rel="prefetch" href="/assets/js/41.3a592b56.js"><link rel="prefetch" href="/assets/js/42.e68c014d.js"><link rel="prefetch" href="/assets/js/43.9b2e7d7a.js"><link rel="prefetch" href="/assets/js/44.07099b20.js"><link rel="prefetch" href="/assets/js/45.d3e90319.js"><link rel="prefetch" href="/assets/js/46.5b63bab2.js"><link rel="prefetch" href="/assets/js/47.7fd1a78b.js"><link rel="prefetch" href="/assets/js/48.b43c4fd4.js"><link rel="prefetch" href="/assets/js/49.a87cfb66.js"><link rel="prefetch" href="/assets/js/5.a37178cd.js"><link rel="prefetch" href="/assets/js/50.0c851306.js"><link rel="prefetch" href="/assets/js/51.8fbc8de6.js"><link rel="prefetch" href="/assets/js/52.a92b31b7.js"><link rel="prefetch" href="/assets/js/53.586d70b5.js"><link rel="prefetch" href="/assets/js/54.862dff6a.js"><link rel="prefetch" href="/assets/js/55.8a113c28.js"><link rel="prefetch" href="/assets/js/56.4ee47ae4.js"><link rel="prefetch" href="/assets/js/57.6e0fb608.js"><link rel="prefetch" href="/assets/js/58.6e4a0820.js"><link rel="prefetch" href="/assets/js/59.733f4370.js"><link rel="prefetch" href="/assets/js/6.4d5b7cab.js"><link rel="prefetch" href="/assets/js/60.1103a418.js"><link rel="prefetch" href="/assets/js/7.f7df9d6d.js"><link rel="prefetch" href="/assets/js/8.24e30967.js"><link rel="prefetch" href="/assets/js/9.97704c21.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f961c06d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">houdunren</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1 前言.html" class="nav-link">PHP</a></li><li class="dropdown-item"><!----> <a href="/linux/ubuntu.html" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/environment/composer.html" class="nav-link">环境与软件</a></li><li class="dropdown-item"><!----> <a href="/docker/laradock.html" class="nav-link">Docker</a></li><li class="dropdown-item"><!----> <a href="/git/git.html" class="nav-link">GIT</a></li><li class="dropdown-item"><!----> <a href="/laravel/Laravel.html" class="nav-link">Laravel</a></li><li class="dropdown-item"><!----> <a href="/hdcms/HDCMS.html" class="nav-link">HDCMS</a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/houdunwang/coding" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">文档列表</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/php/1 前言.html" class="nav-link">PHP</a></li><li class="dropdown-item"><!----> <a href="/linux/ubuntu.html" class="nav-link">Linux</a></li><li class="dropdown-item"><!----> <a href="/environment/composer.html" class="nav-link">环境与软件</a></li><li class="dropdown-item"><!----> <a href="/docker/laradock.html" class="nav-link">Docker</a></li><li class="dropdown-item"><!----> <a href="/git/git.html" class="nav-link">GIT</a></li><li class="dropdown-item"><!----> <a href="/laravel/Laravel.html" class="nav-link">Laravel</a></li><li class="dropdown-item"><!----> <a href="/hdcms/HDCMS.html" class="nav-link">HDCMS</a></li></ul></div></div><div class="nav-item"><a href="https://www.houdunren.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  在线学习
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://www.houdunren.com/edu/front/live" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  八点直播
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/houdunwang/coding" target="_blank" rel="noopener noreferrer" class="repo-link">
+    查看源码
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/php/1 前言.html" class="sidebar-link">前言</a></li><li><a href="/php/2 基础知识.html" class="sidebar-link">基础知识</a></li><li><a href="/php/3 函数编程.html" class="sidebar-link">函数编程</a></li><li><a href="/php/4 数组类型.html" class="sidebar-link">数组类型</a></li><li><a href="/php/5 正则表达式.html" class="sidebar-link">正则表达式</a></li><li><a href="/php/6 文件与目录.html" class="sidebar-link">文件与目录</a></li><li><a href="/php/7 文件上传.html" class="sidebar-link">文件上传</a></li><li><a href="/php/8 会话控制.html" class="sidebar-link">会话控制</a></li><li><a href="/php/9 图像处理.html" class="sidebar-link">图像处理</a></li><li><a href="/php/10 面向对象.html" class="active sidebar-link">面向对象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#历史" class="sidebar-link">历史</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#类和对象" class="sidebar-link">类和对象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#this" class="sidebar-link">$this</a></li></ul></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#继承" class="sidebar-link">继承</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#父类调用" class="sidebar-link">父类调用</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#方法重写" class="sidebar-link">方法重写</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#禁止重写" class="sidebar-link">禁止重写</a></li></ul></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#封装" class="sidebar-link">封装</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#trait" class="sidebar-link">trait</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#多个trait" class="sidebar-link">多个trait</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#解决冲突" class="sidebar-link">解决冲突</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#访问控制" class="sidebar-link">访问控制</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#多重trait" class="sidebar-link">多重trait</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#抽象方法" class="sidebar-link">抽象方法</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#静态方法" class="sidebar-link">静态方法</a></li></ul></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#static" class="sidebar-link">static</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#类常量" class="sidebar-link">类常量</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#this-self-parent" class="sidebar-link">$this self:: parent::</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#魔术方法" class="sidebar-link">魔术方法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#构造方法-析构方法" class="sidebar-link">构造方法&amp;析构方法</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#get-与-set" class="sidebar-link">__get 与__set</a></li></ul></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#抽象类-抽象方法" class="sidebar-link">抽象类&amp;抽象方法</a></li><li class="sidebar-sub-header"><a href="/php/10 面向对象.html#接口" class="sidebar-link">接口</a></li></ul></li><li><a href="/php/11 命名空间.html" class="sidebar-link">命名空间</a></li><li><a href="/php/12 错误处理.html" class="sidebar-link">错误处理</a></li><li><a href="/php/13 异常处理.html" class="sidebar-link">异常处理</a></li><li><a href="/php/14 数据库操作.html" class="sidebar-link">数据库操作</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="面向对象"><a href="#面向对象" aria-hidden="true" class="header-anchor">#</a> 面向对象</h1> <blockquote><p>创作不易，转载请注明出处： 后盾人 @ houdurnen.com</p></blockquote> <h2 id="历史"><a href="#历史" aria-hidden="true" class="header-anchor">#</a> 历史</h2> <p>早期编程由于受电脑硬件限制，程序都是追求效率，而忽略可理解性，扩充性，随着硬件技术的发展，编程越来越重视多人开发，程序员越来越重视程序的可靠性，可扩展性，可维护性，所以刺激了程序语言的发展</p> <p>面向过程</p> <ul><li>程序员设计好程序代码流程图，辅助程序设计。优点：用什么功能就编写什么函数    缺点：数据管理上比较混乱 ，主要集中在函数成面上，面向对象把属性和方法进行封装，更好的可重用性和可扩展性</li></ul> <p>面向对象</p> <ul><li>万物皆对象，将构成问题的事务分解到各个对象上，建立对象的目的不是为了完成一个工作，而是为了描述某个事务在解决问题中的行为，更符合人的思维习惯，代码重用性高，可扩展性好</li></ul> <blockquote><p>面向对象和面向过程的核心区别是如何分配职责。</p></blockquote> <h2 id="类和对象"><a href="#类和对象" aria-hidden="true" class="header-anchor">#</a> 类和对象</h2> <p>面向对象是由一系统具有属性和方法的对象构成，对象之间相互交互 ，从而实现业务需求。</p> <p>属性</p> <ul><li>在类中定义的变量，即为成员属性，用于描述对象静态特性的数据。如人的姓名，性别，首字母小写</li></ul> <p>方法</p> <ul><li>函数定义在类中即为成员方法，用于描述对象动态特性的操作行为，方法名不区分大小写，不可重名，首字母小写</li></ul> <p>对象生命周期</p> <ul><li>创建后，生命周期开始，当程序结束后或程序员清除对象后即销毁，PHP会自动销毁对象</li></ul> <p>类是一种抽象的概念，是具有相同语义定义对象的集合（具有相同属性和方法的集体），使用具体的类是不可行的，只能实例化。拿汽车举例，汽车的设计图纸就是类，汽车是对象。设计中重点是类的创建</p> <p>类名书写规范</p> <ul><li>类名首字母大写</li> <li>一个类定义在一个文件中</li></ul> <h3 id="this"><a href="#this" aria-hidden="true" class="header-anchor">#</a> $this</h3> <p>对象中使用 <code>$this</code> 指针可以访问属性或方法。</p> <div class="language- extra-class"><pre class="language-text"><code>class Code
+{
+    protected $len = 5;
+    public function make()
+    {
+        return $this-&gt;len . $this-&gt;show();
+    }
+    public function show()
+    {
+        return ' : is show';
+    }
+}
+echo (new Code)-&gt;make();
+</code></pre></div><h2 id="继承"><a href="#继承" aria-hidden="true" class="header-anchor">#</a> 继承</h2> <p>通过使用 <code>extends</code> 可以继承父类的属性与方法，在PHP中继承是单一的。</p> <div class="language- extra-class"><pre class="language-text"><code>class Notify
+{
+    public function message()
+    {
+        return 'notify message';
+    }
+}
+class User extends Notify
+{ }
+echo (new User)-&gt;message();
+</code></pre></div><h3 id="父类调用"><a href="#父类调用" aria-hidden="true" class="header-anchor">#</a> 父类调用</h3> <p>子类可以使用 <code>parent</code> 关键字调用父类方法</p> <div class="language- extra-class"><pre class="language-text"><code>...
+public function message()
+{
+	return parent::message();
+}
+...
+</code></pre></div><h3 id="方法重写"><a href="#方法重写" aria-hidden="true" class="header-anchor">#</a> 方法重写</h3> <p>子类可以重写父类的方法，除非父类的方法没有使用 <code>final</code> 修饰。</p> <div class="language- extra-class"><pre class="language-text"><code>class Notify
+{
+    public function message()
+    {
+        return 'notify message';
+    }
+}
+class User extends Notify
+{
+    public function message()
+    {
+        return 'user notify';
+    }
+}
+echo (new User)-&gt;message();
+</code></pre></div><h3 id="禁止重写"><a href="#禁止重写" aria-hidden="true" class="header-anchor">#</a> 禁止重写</h3> <p>使用final声明的方法，将禁止在子类中重写父类方法。</p> <div class="language- extra-class"><pre class="language-text"><code>public final function message()
+{
+	return 'notify message';
+}
+</code></pre></div><h2 id="封装"><a href="#封装" aria-hidden="true" class="header-anchor">#</a> 封装</h2> <p>public 公有</p> <ul><li>在类的内部与外部或子类都可以访问，是最开放的权限</li></ul> <p>private 私有</p> <ul><li>定义类的属性和方法，在类的内部可以访问，在类的外部或子类都不可以访问</li></ul> <p>protected 受保护</p> <ul><li>定义类的属性和方法，在类的内部或子类可以访问，类的外部不可以访问</li></ul> <p>模块设计</p> <ul><li>强内聚（功能尽量在类的内部完成），弱耦合（开放尽量少的方法给外部调用）。例：公司销售接项目，具体工作交给公司内部程序员，设计人员，服务器管理人员协同完成</li></ul> <h2 id="trait"><a href="#trait" aria-hidden="true" class="header-anchor">#</a> trait</h2> <p>使用<code>trait</code> 机制可以变相的使用多重继承。</p> <div class="language- extra-class"><pre class="language-text"><code>class Alipay
+{
+    use Pay;
+}
+class WePay
+{
+    use Pay;
+}
+
+trait Pay
+{
+    public function sn()
+    {
+        return 'ABCDEF';
+    }
+}
+echo (new WePay)-&gt;sn();
+</code></pre></div><p>如果本类与 trait 中存在同名的属性和方法时，将使用本类中的属性与方法。</p> <div class="language- extra-class"><pre class="language-text"><code>...
+class WePay
+{
+    use Pay;
+    public function sn()
+    {
+        return __METHOD__;
+    }
+}
+
+trait Pay
+{
+    public function sn()
+    {
+        return 'ABCDEF';
+    }
+}
+...
+</code></pre></div><h3 id="多个trait"><a href="#多个trait" aria-hidden="true" class="header-anchor">#</a> 多个trait</h3> <p>可以使用多个 <code>trait</code> 用逗号连接</p> <div class="language- extra-class"><pre class="language-text"><code>...
+use Pay,Site;
+...
+</code></pre></div><h3 id="解决冲突"><a href="#解决冲突" aria-hidden="true" class="header-anchor">#</a> 解决冲突</h3> <div class="language- extra-class"><pre class="language-text"><code>class WePay
+{
+    use Pay, Email {
+    Pay::notify insteadof Email;
+    Email::notify as EmailNotify;
+}
+trait Pay
+{
+    public function notify()
+    {
+        return __METHOD__;
+    }
+}
+trait Email
+{
+    public function notify()
+    { 
+    	return __METHOD__;
+    }
+}
+echo (new WePay)-&gt;notify();
+
+</code></pre></div><p><code>Pay::notify insteadof Email</code> 表示使用 <code>Pay::notify</code> 方法替代 <code>Email::notify</code> 方法。</p> <p><code>Email::notify as EmailNotify</code> 将<code>Email:notify</code> 别名为 <code>EmailNotify</code></p> <h3 id="访问控制"><a href="#访问控制" aria-hidden="true" class="header-anchor">#</a> 访问控制</h3> <p>可以为继承的 trait 方法重新定义访问控制</p> <div class="language- extra-class"><pre class="language-text"><code>class WePay
+{
+    use Pay, Email {
+    Pay::notify insteadof Email;
+    Email::notify as protected EmailNotify;
+    ...
+}
+</code></pre></div><h3 id="多重trait"><a href="#多重trait" aria-hidden="true" class="header-anchor">#</a> 多重trait</h3> <p>可以通过多个<code>trait</code> 组合来使用。</p> <div class="language- extra-class"><pre class="language-text"><code>trait Notify
+{
+    public function response()
+    {
+        return 'notify response';
+    }
+}
+trait Pay
+{
+    use Notify;
+}
+
+class User
+{
+    use Pay;
+}
+echo (new User)-&gt;response();
+</code></pre></div><h3 id="抽象方法"><a href="#抽象方法" aria-hidden="true" class="header-anchor">#</a> 抽象方法</h3> <div class="language- extra-class"><pre class="language-text"><code>trait Notify
+{
+    public function response()
+    {
+        return 'notify response' . $this-&gt;sn();
+    }
+    abstract protected function sn();
+}
+trait Pay
+{
+    use Notify;
+}
+
+class User
+{
+    use Pay;
+    protected function sn()
+    {
+        return 'SN999';
+    }
+}
+echo (new User)-&gt;response();
+</code></pre></div><h3 id="静态方法"><a href="#静态方法" aria-hidden="true" class="header-anchor">#</a> 静态方法</h3> <p>在 <code>trait</code> 中可以使用静态方法、抽象方法、静态属性。</p> <div class="language- extra-class"><pre class="language-text"><code>...
+trait Pay
+{
+    public function sn()
+    {
+        return 'ABCDEF';
+    }
+    public static function notify()
+    {
+        return __METHOD__;
+    }
+}
+class WePay
+{
+    use Pay;
+    ...
+}
+echo WePay::notify();
+</code></pre></div><h2 id="static"><a href="#static" aria-hidden="true" class="header-anchor">#</a> static</h2> <p>static：</p> <ul><li>需要一个数据对象只服务于类，即类内部可用，对外不可用时。建对象是极其耗费资源的,因此当一个方法具有比较强的公用性的时候,没有必要为了调用这个方法而重新再生成该类的实例。定义的方法或变量在程序第一次加载时即驻留内存，程序结束释放。</li></ul> <p>static变量：</p> <ul><li>通过static声明的成员变量为静态变量或叫类变量，是该类的公共变量，在第一次使用时即生成，对于该类的所有对象只有一份，是属于类的，不是属于对象的。static变量是属于类而不属于对象，可以在任何地方通地类来访问，是类的全局变量，类创建时即存入内存。对多个对象来说，静态数据成员只存储一处，可以节省内存。只要对静态数据成员的值更新一次，保证所有对象存取更新后的相同的值。</li></ul> <p>static方法：</p> <ul><li>用static声明的方法为静态方法或叫类方法，执行该方法时不会将对象引用传给函数，所以我们不能访问非静态成员，只能访问静态方法或静态变量。只能使用关于类的方式如self   static  parent等。使用时不用生成对象即可执行</li></ul> <h2 id="类常量"><a href="#类常量" aria-hidden="true" class="header-anchor">#</a> 类常量</h2> <p>使用 <code>const</code> 来定义类常量，常量使用 <code>self::</code>来调用。</p> <div class="language- extra-class"><pre class="language-text"><code>class Model implements ArrayAccess, Iterator
+{
+    use ArrayIterator, Relation, Validate, Auto, Filter;
+    //----------自动验证----------
+    //有字段时验证
+    const EXIST_VALIDATE = 1;
+    //值不为空时验证
+    const NOT_EMPTY_VALIDATE = 2;
+    ...
+}
+</code></pre></div><h2 id="this-self-parent"><a href="#this-self-parent" aria-hidden="true" class="header-anchor">#</a> $this self:: parent::</h2> <p>$this</p> <ul><li>是当前对象的引用， 一般出现在方法里,用于获取类的成员属性，或执行类的成员方法</li></ul> <p>self::</p> <ul><li>对本类的引用 ，用于获取当前类的表态成员属性或静态成员方法self::run()</li></ul> <p>parent::</p> <ul><li>对父类的引用,调用父类的方法或属性。</li></ul> <h2 id="魔术方法"><a href="#魔术方法" aria-hidden="true" class="header-anchor">#</a> 魔术方法</h2> <h3 id="构造方法-析构方法"><a href="#构造方法-析构方法" aria-hidden="true" class="header-anchor">#</a> 构造方法&amp;析构方法</h3> <p>构造方法__construct()</p> <ul><li>在创建对象时自动执行，没有返回值，用于执行类的一些初始化工作，如对象属性的初始化工作，构造方法为__construct()。</li> <li>可以在构造方法中传递参数，用于定义属性，在父类和子类都定义构造方法时，执行子类的构造方法</li></ul> <p>析构方法__destruct()：</p> <ul><li>当所有对象的引用被销毁时执行。</li></ul> <h3 id="get-与-set"><a href="#get-与-set" aria-hidden="true" class="header-anchor">#</a> __get 与__set</h3> <p>读取不可访问或不存在的属性时，__get() 会被调用，同理获取不可访问或不存的的属性时会执行 __set() 方法。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+abstract class Query
+{
+    abstract protected function record(array $data);
+    public function select()
+    {
+        return $this-&gt;record(['name' =&gt; '后盾人', 'age' =&gt; 33]);
+    }
+}
+class Model extends Query
+{
+    protected $field = [
+        'name'
+    ];
+		public function all(){
+			$this-&gt;select();
+			return $this-&gt;field;
+		}
+    protected function record(array $data)
+    {
+        $this-&gt;field = $data;
+    }
+    public function __get($name)
+    {
+        return $this-&gt;field[$name] ?? null;
+    }
+    public function __set($name, $value)
+    {
+        $this-&gt;field[$name] = $value;
+    }
+}
+
+$user = new Model;
+$user-&gt;all();
+echo $user-&gt;name;
+$user-&gt;name = '向军大叔';
+echo $user-&gt;name;ry
+</code></pre></div><p>### __isset() 与 __unset()</p> <p>当使用 isset()函数或者empty()函数 判断属性是否存在或者是否为空的时候会自动触发。</p> <p>当使用 unset() 函数判断属性时，如果存在__unset() 方法将会执行。</p> <div class="language- extra-class"><pre class="language-text"><code>...
+public function __unset($name)
+{
+	if (!isset($this-&gt;field[$name]) || in_array($name, $this-&gt;deny)) {
+		throw new Exception('禁止操作');
+	}
+}
+public function __isset($name)
+{
+	return isset($this-&gt;field[$name]);
+}
+...
+</code></pre></div><h2 id="抽象类-抽象方法"><a href="#抽象类-抽象方法" aria-hidden="true" class="header-anchor">#</a> 抽象类&amp;抽象方法</h2> <p>具有抽象方法的类为抽象类，抽象方法即为没有内容的空方法，要求子类进行完善内容，抽象类不能实例化，只能继承，通过extends来实现，抽象类中也可以定义普通方法</p> <p>父类方法执行方式不确定，但子类还都有这个方法</p> <ul><li>例1：如交通工具类：定义抽象方法控制交通工具运行方式，这样每个交通工具如飞机，汽车都要重写父类方法。如果在父类工具类定义该方法（比如在地上走）没有任何意义，因为每个交通工具都要重写（飞机要重写方法，船要重写方法），所以针对你类方法的不确定性，我们需要抽象方法，实现多态。</li></ul> <p>例2：定义动物类，每个动物都有叫声方法，但是表面不同，所以要定义为抽象类，让每种动物类去实现功能。</p> <ul><li><p>当父类为抽象类时，子类必须重写父类的抽象方法</p></li> <li><p>抽象类里不一定非要写抽象方法，但有抽象方法的类必须定义为抽象类</p></li> <li><p>抽象类必须继承使用</p></li> <li><p>抽象方法不能有主体即{}</p></li> <li><div class="language- extra-class"><pre class="language-text"><code>&lt;?php
+
+abstract class AbstractClass
+{
+   // 强制要求子类定义这些方法
+	abstract protected function getValue();
+
+	abstract protected function prefixValue($prefix);
+
+   // 普通方法（非抽象方法）
+    public function printOut() {
+        print $this-&gt;getValue();
+
+    }
+}
+</code></pre></div></li></ul> <h2 id="接口"><a href="#接口" aria-hidden="true" class="header-anchor">#</a> 接口</h2> <p>接口是一组成员声明方法的集合，包含空的成员方法和常量，空的方法要求继承类去具体实现。成员方法为public，属性为常量。</p> <ul><li><ul><li>例如：现实中的电脑USB或PCI插槽，插线板等都有接口例子</li></ul></li></ul> <p>继承是一级一级层次式，如果某一层出现问题，整个继承就会出现意外。而接口只影响实现接口的类，接口可以在破坏原来的继承基础上对类扩展。接口可以实现多继承。</p> <ul><li>例：电脑USB接口，规定各个厂商必须构造合适的接口方法，比如手机，数码相机，网银U盾。要让各个厂商写自己的方法如U盾插到USB上他会自动安装网银驱盾，弹出网页，手机装上后可以打开手机里的内容，同时可以充电</li></ul> <p>抽象类及普通类都可以实现接口，通过关键字implements</p> <p>接口与抽象类的区别：</p> <ul><li><p>1 接口只能用implements实现   抽象类用extends继承实现</p> <p>2 接口没有数据成员，可以定义常量，抽象类可以有</p> <p>3 接口没有构造函数，抽象类可以定义构造函数</p> <p>4 接口方法都是public 抽象类方法可以用protected private public来修饰</p> <p>5 一个类可以实现多个接口，但只能继承一个抽象类</p> <p>6 接口中不可以有成员方法，抽象类可以有成员方法</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>interface DbInterface {
+    public function connectDb(); //获得连接   参数为表名
+    public function close(); //关闭数据库
+    public function exe($sql); //发送没有返回值的sql
+    public function query($sql); //有返回值的sql
+｝
+class Db implements DbInterface
+{
+	public function exe($sql){
+	}
+	public function query($sql{
+	}
+｝
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/houdunwang/coding/edit/master/docs/php/10 面向对象.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">7/6/2019, 8:37:16 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/php/9 图像处理.html" class="prev">
+          图像处理
+        </a></span> <span class="next"><a href="/php/11 命名空间.html">
+          命名空间
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.ebd78155.js" defer></script><script src="/assets/js/2.a0b4bf58.js" defer></script><script src="/assets/js/40.7af7e004.js" defer></script>
+  </body>
+</html>
