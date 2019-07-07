@@ -8,11 +8,7 @@ Gitee仓库：https://gitee.com/houdunren/code
 
 ## 晚八点直播
 
-我会在每天晚上八点直播（注：特殊情况会请假），大家可以在[后盾人](https://www.houdunren.com/)或我的[B站直播间](https://live.bilibili.com/8176658)观看。
-
-也可以通过[我的主页]( http://www.aoxiangjun.com )了解我的动态。
-
-![image-20181010222329263](http://www.aoxiangjun.com/images/xj.jpeg)
+我会在每天晚上八点直播（注：特殊情况会请假），大家可以在[后盾人](https://www.houdunren.com/)或我的[B站直播间](https://live.bilibili.com/8515468)观看。
 
 ## 目录说明
 
@@ -21,5 +17,5 @@ Gitee仓库：https://gitee.com/houdunren/code
 | live     | 晚八点直播代码                       |
 | video    | 视频代码                             |
 | material | 图片、模板等素材                     |
-| docs     | 文档，最新文档只在 houdunren.com更新 |
+| docs     | 文档，最新文档请在 doc.houdunren.com查看 |
 | archives | 按年份归档的代码，每年一个归档       |
