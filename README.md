@@ -17,5 +17,5 @@ Gitee仓库：https://gitee.com/houdunren/code
 | live     | 晚八点直播代码                       |
 | video    | 视频代码                             |
 | material | 图片、模板等素材                     |
-| docs     | 文档，最新文档请在 doc.houdunren.com查看 |
+| docs     | 文档，更建议访问 doc.houdunren.com |
 | archives | 按年份归档的代码，每年一个归档       |
