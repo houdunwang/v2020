@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>houdunren.com</title>
+</head>
+
+<body>
+    <form action="1.php" method="post">
+        <fieldset>
+            <legend>后盾人</legend>
+            <label>
+                用户名
+                <input type="text" name="username">
+            </label>
+            <label>
+                介绍
+                <textarea placeholder="请输入介绍信息" name="info" cols="20" rows="3">这是默认值</textarea>
+            </label>
+            <label>栏目
+                <select name="category[]">
+                    <optgroup label="新闻">
+                        <option value="1">新闻</option>
+                        <option value="2">游戏</option>
+                    </optgroup>
+                    <optgroup label="开发">
+                        <option value="1">MYSQL</option>
+                        <option value="2">LINUX</option>
+                    </optgroup>
+                </select>
+            </label>
+        </fieldset>
+        <button type="submit">提交</button>
+    </form>
+</body>
+<script>
+    function valid(message) {
+        alert(message);
+    }
+</script>
+
+</html>
