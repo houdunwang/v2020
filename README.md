@@ -1,5 +1,7 @@
 ## 文档说明
 
+![xj](assets/xj.png)
+
 本项目为视频代码或直播课程代码，希望大家能给个 `star` 这是对我们最好的鼓励和肯定。
 
 Github仓库：https://github.com/houdunwang/coding
@@ -17,5 +19,5 @@ Gitee仓库：https://gitee.com/houdunren/code
 | live     | 晚八点直播代码                       |
 | video    | 视频代码                             |
 | material | 图片、模板等素材                     |
-| docs     | 文档，更建议访问 doc.houdunren.com |
+| docs     | 文档，最新文档请访问 [doc.houdunren.com](http://doc.houdunren.com) |
 | archives | 按年份归档的代码，每年一个归档       |
