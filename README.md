@@ -1,6 +1,4 @@
-## 文档说明
-
-![xj](assets/xj.png)
+<img src="assets/xj.png" style="margin:0 auto;"/>
 
 本项目为视频代码或直播课程代码，希望大家能给个 `star` 这是对我们最好的鼓励和肯定。
 
