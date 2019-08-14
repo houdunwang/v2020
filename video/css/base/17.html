@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后盾人</title>
+    <style>
+        /* span::after {
+            content: "\2193";
+            color: red;
+            font-size: 300px;
+        } */
+        div {
+            border: solid 1px #ddd;
+            width: 130px;
+        }
+
+        div>input[type="text"] {
+            border: none;
+            outline: none;
+        }
+
+        div>input[type="text"]+span:after {
+            content: "\293D";
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text">
+        <span></span>
+    </div>
+</body>
+
+</html>

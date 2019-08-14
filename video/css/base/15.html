@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后盾人</title>
+    <style>
+        input:disabled {
+            border: solid 1px #ddd !important;
+        }
+
+        /* input:enabled {
+            background: green;
+        } */
+
+        input:checked+label {
+            color: green;
+        }
+
+        input {
+            outline: none;
+        }
+
+        input:optional {
+            border: solid 1px green;
+        }
+
+        input:required {
+            border: solid 1px red;
+        }
+
+        input:valid {
+            background: yellowgreen;
+        }
+
+        input:invalid {
+            background: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" disabled>
+        <input type="text">
+        <hr>
+        <input type="radio" name="sex" id="boy">
+        <label for="boy">男</label>
+        <input type="radio" name="sex" checked id="girl">
+        <label for="girl">女</label>
+        <hr>
+        <input type="text" required>
+        <hr>
+        <input type="email">
+        <hr>
+        <button>保存</button>
+    </form>
+</body>
+
+</html>
