@@ -1,0 +1,9 @@
+main article h2 {
+  color: red;
+}
+main article a {
+  color: green;
+}
+main article a:hover {
+  background: blue;
+}
