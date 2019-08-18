@@ -4,15 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        h2 {
-            outline: red solid 2px;
-            border: solid 5px #ddd;
+        h2::before {
+            content: attr(title);
+        }
+
+        div.field {
+            position: relative;
+        }
+
+        span::before {
+            content: attr(data-placeholder);
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            white-space: pre;
+            color: red;
+        }
+
+        input:focus+span::before {
+            top: 0px;
         }
     </style>
 </head>
 
 <body>
-    <h2>houdunren.com</h2>
+    <h2 title="后盾人">houdunren.com</h2>
+    <div class="field">
+        <input type="text" value=""><span data-placeholder="请输入标题"></span>
+    </div>
 </body>
 
 </html>
