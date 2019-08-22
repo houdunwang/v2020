@@ -1,15 +1,25 @@
+article::after,
+article::before {
+  content: "";
+  display: table;
+}
+article::after {
+  clear: both;
+}
 div {
-    border: solid 1px #ddd;
-    width: 150px;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
 }
-
-div>input[type="text"] {
-    border: none;
-    outline: none;
+div.green {
+  border: solid 2px green;
+  float: left;
 }
-
-div>input[type="text"]+span:after {
-    content: "\21AA";
-    font-size: 14px;
-    cursor: pointer;
+div.red {
+  border: solid 2px red;
+  height: 200px;
+  float: left;
+}
+div.blue {
+  background: blue;
 }

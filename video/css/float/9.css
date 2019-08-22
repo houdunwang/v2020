@@ -1,0 +1,48 @@
+main {
+  width: 1020px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+main article.hot {
+  border: solid 2px red;
+  overflow: hidden;
+}
+main article.hot section {
+  width: 500px;
+  background: #f3f3f3;
+  height: 300px;
+}
+main article.hot section:nth-of-type(1) {
+  float: left;
+}
+main article.hot section:nth-of-type(2) {
+  float: right;
+}
+main article.goods {
+  margin-top: 20px;
+}
+main article.goods section.ad {
+  width: 200px;
+  height: 300px;
+  background: greenyellow;
+  float: left;
+}
+main article.goods section.lists {
+  width: 820px;
+  height: 300px;
+  float: left;
+  background: yellowgreen;
+}
+main article.goods section.lists ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+main article.goods section.lists ul li {
+  float: left;
+  padding: 20px;
+  width: 200px;
+  height: 260px;
+  border-right: solid 1px yellowgreen;
+  background: #f3f3f3;
+}

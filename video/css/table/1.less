@@ -1,0 +1,38 @@
+.table {
+    display: table;
+
+    nav {
+        display: table-caption;
+        text-align: center;
+        color: red;
+        caption-side: top;
+        background: #000;
+    }
+
+    section {
+        &:nth-of-type(1) {
+            display: table-header-group;
+            background: #555;
+            color: white;
+        }
+
+        &:nth-of-type(2) {
+            display: table-row-group;
+        }
+
+        &:nth-of-type(3) {
+            display: table-footer-group;
+            background: #f3f3f3;
+        }
+
+        ul {
+            display: table-row;
+
+            li {
+                display: table-cell;
+                border: solid 1px #ddd;
+                padding: 10px;
+            }
+        }
+    }
+}

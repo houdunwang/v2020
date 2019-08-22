@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后盾人</title>
+    <style>
+        .clearfix {
+            clear: both;
+        }
+
+        main {
+            border: solid 3px black;
+            width: 610px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        div {
+            width: 300px;
+            height: 200px;
+            box-sizing: border-box;
+        }
+
+        div:nth-of-type(1) {
+            border: solid 3px red;
+            float: left;
+        }
+
+        div:nth-of-type(2) {
+            background: blue;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div></div>
+        <div></div>
+        <article class="clearfix"></article>
+    </main>
+</body>
+
+</html>

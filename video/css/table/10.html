@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后盾人</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+
+        .field {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            width: 100%;
+            text-align: center;
+            color: #555;
+        }
+
+        .field::after {
+            content: "";
+            background: linear-gradient(to right, white, red, green, blue, white);
+            display: block;
+            height: 1px;
+        }
+
+        .field:hover::before {
+            content: attr(data-help);
+            color: #666;
+            font-size: 12px;
+            position: absolute;
+            top: -10px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="field" data-help="请输入100以内的字符">
+        <input type="text">
+    </div>
+    <div class="field" data-help="请输入100以内的字符">
+        <input type="text">
+    </div>
+    <div class="field" data-help="请输入100以内的字符">
+        <input type="text">
+    </div>
+</body>
+
+</html>

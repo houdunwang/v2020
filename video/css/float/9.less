@@ -1,0 +1,59 @@
+main {
+    width: 1020px;
+    // border: solid 1px #ddd;
+    margin: 0 auto;
+    overflow: hidden;
+    // padding: 10px;
+
+    article.hot {
+        border: solid 2px red;
+        overflow: hidden;
+
+        section {
+            width: 500px;
+            background: #f3f3f3;
+            height: 300px;
+
+            &:nth-of-type(1) {
+                float: left;
+            }
+
+            &:nth-of-type(2) {
+                float: right;
+            }
+        }
+    }
+
+    article.goods {
+        margin-top: 20px;
+
+        section.ad {
+            width: 200px;
+            height: 300px;
+            background: greenyellow;
+            float: left;
+        }
+
+        section.lists {
+            width: 820px;
+            height: 300px;
+            float: left;
+            background: yellowgreen;
+
+            ul {
+                list-style: none;
+                padding: 0px;
+                margin: 0px;
+
+                li {
+                    float: left;
+                    padding: 20px;
+                    width: 200px;
+                    height: 260px;
+                    border-right: solid 1px yellowgreen;
+                    background: #f3f3f3;
+                }
+            }
+        }
+    }
+}

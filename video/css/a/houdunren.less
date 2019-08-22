@@ -1,0 +1,31 @@
+article::after,
+article::before {
+    content: "";
+    display: table;
+}
+
+article::after {
+    clear: both;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+
+div.green {
+    border: solid 2px green;
+    float: left;
+}
+
+div.red {
+    border: solid 2px red;
+    height: 200px;
+    float: left;
+}
+
+div.blue {
+    background: blue;
+}

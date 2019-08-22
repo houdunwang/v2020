@@ -17,7 +17,6 @@ git add -A
 git commit -m '更新课程代码'
 git push 
 git push gitee
-git push 
 
 # 如果发布到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
