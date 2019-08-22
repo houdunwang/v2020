@@ -1,31 +1,16 @@
-article::after,
-article::before {
-    content: "";
-    display: table;
+p {
+    width: 500px;
+    border: solid 2px #ddd;
+    padding: 10px;
+    overflow: hidden;
 }
 
-article::after {
-    clear: both;
-}
-
-div {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 10px;
-}
-
-
-div.green {
-    border: solid 2px green;
+span.shape {
     float: left;
-}
-
-div.red {
-    border: solid 2px red;
-    height: 200px;
-    float: left;
-}
-
-div.blue {
-    background: blue;
+    width: 100px;
+    height: 100px;
+    padding: 30px;
+    margin: 30px;
+    background: red;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%)
 }
