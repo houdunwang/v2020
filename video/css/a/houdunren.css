@@ -1,15 +1,17 @@
-p {
-  width: 500px;
-  border: solid 2px #ddd;
-  padding: 10px;
-  overflow: hidden;
+body {
+  padding: 100px;
 }
-span.shape {
-  float: left;
+article {
+  padding: 30px;
+  border: solid 2px red;
+  width: 200px;
+}
+article div {
   width: 100px;
   height: 100px;
-  padding: 30px;
-  margin: 30px;
-  background: red;
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  border: solid 2px red;
+  padding: 20px;
+}
+article div:nth-of-type(1) {
+  visibility: hidden;
 }
