@@ -1,17 +1,41 @@
-body {
+* {
+  padding: 0;
+  margin: 0;
+}
+main {
+  width: 600px;
   padding: 100px;
+  margin: 0 auto;
 }
-article {
-  padding: 30px;
-  border: solid 2px red;
-  width: 200px;
+main article {
+  width: 150px;
+  position: relative;
+  background: red;
+  border: solid 1px red;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
 }
-article div {
-  width: 100px;
-  height: 100px;
-  border: solid 2px red;
-  padding: 20px;
+main article:hover div:nth-of-type(1) {
+  border-bottom: none;
 }
-article div:nth-of-type(1) {
-  visibility: hidden;
+main article:hover div:nth-of-type(2) {
+  display: block;
+}
+main article div {
+  box-sizing: border-box;
+  height: 45px;
+  line-height: 3em;
+  text-align: center;
+  border: solid 2px blueviolet;
+}
+main article div:nth-of-type(1) {
+  background: white;
+}
+main article div:nth-of-type(2) {
+  display: none;
+  position: absolute;
+  right: 0;
+  left: -100px;
+  z-index: -1;
 }
