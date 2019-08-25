@@ -1,41 +1,23 @@
 * {
   padding: 0;
   margin: 0;
+  padding: 10px;
+  margin: 5px;
 }
-main {
-  width: 600px;
-  padding: 100px;
-  margin: 0 auto;
-}
-main article {
-  width: 150px;
-  position: relative;
-  background: red;
-  border: solid 1px red;
-  cursor: pointer;
-  font-size: 14px;
-  color: #555;
-}
-main article:hover div:nth-of-type(1) {
-  border-bottom: none;
-}
-main article:hover div:nth-of-type(2) {
-  display: block;
-}
-main article div {
+article {
+  height: 300px;
+  border: solid 5px silver;
   box-sizing: border-box;
-  height: 45px;
-  line-height: 3em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: center;
+}
+article div {
+  min-width: 50px;
+  min-height: 80px;
+  border: solid 5px blueviolet;
   text-align: center;
-  border: solid 2px blueviolet;
-}
-main article div:nth-of-type(1) {
-  background: white;
-}
-main article div:nth-of-type(2) {
-  display: none;
-  position: absolute;
-  right: 0;
-  left: -100px;
-  z-index: -1;
+  font-size: 28px;
 }

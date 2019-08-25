@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 200px;
+            padding-top: 200px;
+        }
+
+        article {
+            width: 150px;
+            position: relative;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        article:hover div:nth-of-type(1) {
+            border-bottom: none;
+            border-color: blueviolet;
+        }
+
+        article:hover div:nth-of-type(2) {
+            display: block;
+            border-color: blueviolet;
+        }
+
+        article div {
+            height: 50px;
+            border: solid 1px #ddd;
+            text-align: center;
+            line-height: 3.5em;
+        }
+
+        article div:nth-of-type(1) {
+            background: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        article div:nth-of-type(2) {
+            width: 300px;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>我的购物车</div>
+        <div>购物车中暂无商品</div>
+    </article>
+</body>
+
+</html>
