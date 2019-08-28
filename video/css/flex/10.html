@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-left: 50px;
+            padding-top: 15px;
+        }
+
+        article {
+            border: solid 5px silver;
+            width: 650px;
+            height: 550px;
+            display: flex;
+            /* flex-direction: row-reverse; */
+            /* justify-content: flex-start; */
+            /* flex-direction: column-reverse; */
+            /* justify-content: flex-start; */
+            flex-direction: column;
+            /* justify-content: center; */
+            justify-content: space-evenly;
+        }
+
+        article * {
+            width: 100px;
+            height: 100px;
+            background: blueviolet;
+            /* background-clip: content-box; */
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 35px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </article>
+</body>
+
+</html>

@@ -1,25 +1,25 @@
 * {
     padding: 0;
     margin: 0;
-    padding: 10px;
-    margin: 5px;
+
 }
 
-article {
-    height: 300px;
-    border: solid 5px silver;
-    box-sizing: border-box;
+div.container {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: center;
+    height: 100vh;
+    justify-content: space-evenly;
 
     div {
-        min-width: 50px;
-        min-height: 80px;
-        border: solid 5px blueviolet;
-        text-align: center;
-        font-size: 28px;
+        border: solid 1px #ddd;
+    }
+
+    div:nth-of-type(1) {
+        min-width: 80px;
+        background: #4E9166;
+    }
+
+    div:nth-of-type(2) {
+        flex: 1;
+        background: #eee;
     }
 }

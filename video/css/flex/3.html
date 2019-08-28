@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            height: 100vh;
+            background: #ddd;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100vw;
+            height: 50px;
+            background: linear-gradient(to bottom, #f3f3f3, #ddd, #f3f3f3);
+            border-top: solid 1px #ddd;
+        }
+
+        footer div {
+            float: left;
+            width: 25%;
+            height: 100%;
+            box-sizing: border-box;
+            /* background: #000; */
+            text-align: center;
+            line-height: 3em;
+            color: #555;
+        }
+
+        footer div:nth-child(n+2) {
+            border-left: solid 1px #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <main></main>
+    <footer>
+        <div>后盾人</div>
+        <div>直播</div>
+        <div>直播</div>
+        <div>ccc</div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            background: #ddd;
+            flex: 1;
+        }
+
+        footer {
+            background: linear-gradient(to top, #f3f3f3, #ccc, #f3f3f3);
+            height: 50px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        footer div {
+            flex: 1;
+            text-align: center;
+            line-height: 3em;
+            color: #555;
+        }
+
+        footer div:nth-child(n+2) {
+            border-left: solid 1px #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <main>111</main>
+    <footer>
+        <div>后盾人</div>
+        <div>后盾人</div>
+        <div>后盾人</div>
+    </footer>
+</body>
+
+</html>
