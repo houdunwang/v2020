@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            padding-top: 50px;
+        }
+
+        .container {
+            width: 1020px;
+            margin: 0 auto;
+            border: solid 2px silver;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 10px;
+        }
+
+        .col-1 {
+            grid-column: span 1;
+            /* grid-column-end: span 1; */
+        }
+
+        .col-2 {
+            grid-column: span 2;
+            /* grid-column-end: span 2; */
+        }
+
+        .col-3 {
+            grid-column-end: span 3;
+        }
+
+        .col-4 {
+            grid-column-end: span 4;
+        }
+
+        .col-5 {
+            grid-column-end: span 5;
+        }
+
+        .col-6 {
+            grid-column-end: span 6;
+        }
+
+        .col-7 {
+            grid-column-end: span 7;
+        }
+
+        .col-8 {
+            grid-column-end: span 8;
+        }
+
+        [class^="col-"] {
+            background: blueviolet;
+            background-clip: content-box;
+            border: solid 1px blueviolet;
+            padding: 10px;
+            box-sizing: border-box;
+            color: white;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="container">
+        <div class="row">
+            <div class="col-2">1</div>
+            <div class="col-8">2</div>
+            <div class="col-2">3</div>
+        </div>
+    </article>
+</body>
+
+</html>

@@ -4,45 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        body {
-            padding-left: 200px;
-            padding-top: 200px;
-        }
-
         article {
-            border: solid 5px silver;
             width: 300px;
             height: 300px;
+            border: solid 5px silver;
             display: grid;
-            grid-template-rows: repeat(3, 100px);
-            grid-template-columns: repeat(3, 100px);
-            place-content: center end;
+            /* grid-template-rows: repeat(auto-fill, 100px); */
+            /* grid-template-columns: repeat(auto-fill, 100px); */
+            /* grid-template-rows: repeat(3, 1fr); */
+            /* grid-template-columns: repeat(3, 1fr); */
+            grid-template-rows: 1fr 2fr 1fr;
+            grid-template-columns: 1fr 2fr 1fr;
         }
 
         div {
             background: blueviolet;
             background-clip: content-box;
-            box-sizing: border-box;
-            padding: 10px;
             border: solid 1px blueviolet;
-        }
-
-        div:first-child {
-            justify-self: center;
-            align-self: center;
-            place-self: center center;
+            padding: 10px;
+            box-sizing: border-box;
         }
     </style>
-
 </head>
 
 <body>
+    后盾人
     <article>
         <div>1</div>
         <div>2</div>

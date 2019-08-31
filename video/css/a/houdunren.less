@@ -1,25 +1,24 @@
 * {
     padding: 0;
     margin: 0;
-
 }
 
-div.container {
-    display: flex;
-    height: 100vh;
-    justify-content: space-evenly;
+body {
+    padding: 200px;
+}
+
+article {
+    width: 400px;
+    height: 200px;
+    border: solid 5px silver;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 25% 25% 25% 25%;
 
     div {
+        background: blueviolet;
+        background-clip: content-box;
+        padding: 10px;
         border: solid 1px #ddd;
-    }
-
-    div:nth-of-type(1) {
-        min-width: 80px;
-        background: #4E9166;
-    }
-
-    div:nth-of-type(2) {
-        flex: 1;
-        background: #eee;
     }
 }

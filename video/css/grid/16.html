@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        article {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: 60px 1fr 60px;
+            grid-template-columns: 60px 1fr;
+            grid-template-areas: "logo header"
+                "nav main"
+                "footer footer";
+        }
+
+        /* header-start header-start header-end header-end */
+        header,
+        nav,
+        main,
+        footer {
+            background: blueviolet;
+            background-clip: content-box;
+            padding: 10px;
+        }
+
+        header {
+            grid-area: logo-start/header-start/main-end/main-end;
+        }
+
+        footer {
+            grid-area: footer;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        footer div {
+            background: #ddd;
+            background-clip: content-box;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <header></header>
+
+        <footer>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </footer>
+    </article>
+</body>
+
+</html>

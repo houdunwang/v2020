@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
     <style>
         * {
             padding: 0;
@@ -11,35 +12,42 @@
         }
 
         body {
-            padding-left: 200px;
-            padding-top: 200px;
+            padding-top: 50px;
         }
 
         article {
-            border: solid 5px silver;
-            width: 300px;
-            height: 300px;
+            margin: 0 auto;
+            border: solid 1px silver;
+            width: 400px;
+            height: 100px;
             display: grid;
-            grid-template-rows: repeat(3, 100px);
-            grid-template-columns: repeat(3, 100px);
-            place-content: center end;
+            grid-template-columns: repeat(4, 100px);
+            justify-items: center;
+            align-items: center;
         }
 
         div {
             background: blueviolet;
             background-clip: content-box;
-            box-sizing: border-box;
             padding: 10px;
+            font-size: 25px;
+            color: white;
+            height: 50px;
+            width: 50px;
+            box-sizing: border-box;
             border: solid 1px blueviolet;
         }
 
         div:first-child {
-            justify-self: center;
+            justify-self: end;
             align-self: center;
-            place-self: center center;
+        }
+
+        div:nth-child(4) {
+            justify-self: start;
+            align-self: center;
         }
     </style>
-
 </head>
 
 <body>
@@ -48,11 +56,6 @@
         <div>2</div>
         <div>3</div>
         <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
     </article>
 </body>
 
