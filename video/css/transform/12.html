@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+        }
+
+        ul li {
+            margin-right: 10px;
+        }
+
+        ul li strong {
+            padding: 5px 30px;
+            background: #27ae60;
+            text-transform: uppercase;
+            color: white;
+            cursor: pointer;
+        }
+
+        ul li strong+div {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: #95a5a6;
+            padding: 10px;
+            transform: scale(0);
+            transition: .6s;
+            z-index: -1;
+            transform-origin: left top;
+        }
+
+        ul li strong+div a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 0;
+        }
+
+        ul li:hover strong+div {
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <ul>
+            <li>
+                <strong>video</strong>
+                <div>
+                    <a href="">HDCMS</a>
+                    <a href="">PHP</a>
+                </div>
+            </li>
+            <li>
+                <strong>live</strong>
+                <div>
+                    <a href="">LINUX</a>
+                    <a href="">CSS3</a>
+                </div>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>

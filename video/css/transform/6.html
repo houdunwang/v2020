@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+        }
+
+        main {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            border: solid 5px silver;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .field {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .field::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            height: 2px;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to right, white, #1abc9c, #f1c40f, #e74c3c, white);
+            transform: translateX(-100%);
+            transition: 2s;
+        }
+
+        .field:hover::before {
+            transform: translateX(100%);
+        }
+
+        .field input {
+            border: none;
+            outline: none;
+            background: #ecf0f1;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="field">
+            <input type="text" placeholder="请输入后盾人帐号">
+        </div>
+        <div class="field">
+            <input type="text" placeholder="请输入密码">
+        </div>
+    </main>
+</body>
+
+</html>

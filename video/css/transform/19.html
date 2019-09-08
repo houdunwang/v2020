@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>houdunren</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #2c3e50;
+        }
+
+        main div {
+            cursor: pointer;
+            color: #ecf0f1;
+            font-size: 2em;
+        }
+
+        main>div>strong {
+            display: inline-block;
+            transition: 1s;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            text-align: center;
+        }
+
+        main div>strong:nth-of-type(1) {
+            background: #f1c40f;
+        }
+
+        main div>strong:nth-of-type(2) {
+            background: #1abc9c;
+        }
+
+        main div:hover>strong:nth-of-type(1) {
+            transform: rotate(360deg);
+        }
+
+        main div:hover>strong:nth-of-type(2) {
+            transform: rotate(-360deg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <strong>h</strong>ou<strong>d</strong>unren
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #34495e;
+        }
+
+        main {
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            left: 50%;
+            top: 50%;
+            transform-style: preserve-3d;
+            transform-origin: center center -300px;
+            transform: translate(-50%, -50%) rotateX(-45deg);
+            transition: 2s;
+        }
+
+        body:hover main {
+            transform: translate(-50%, -50%) rotateX(-45deg) rotateY(900deg);
+        }
+
+        div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-origin: center center -300px;
+            overflow: hidden;
+        }
+
+        div img {
+            height: 100%;
+        }
+
+        div:nth-child(1) {
+            transform: rotateY(60deg);
+        }
+
+        div:nth-child(2) {
+            transform: rotateY(120deg);
+        }
+
+        div:nth-child(3) {
+            transform: rotateY(180deg);
+        }
+
+        div:nth-child(4) {
+            transform: rotateY(240deg);
+        }
+
+        div:nth-child(5) {
+            transform: rotateY(300deg);
+        }
+
+        div:nth-child(6) {
+            transform: rotateY(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <img src="5.jpg" alt="">
+        </div>
+        <div>
+            <img src="1.jpg" alt="">
+        </div>
+        <div>
+            <img src="3.jpg" alt="">
+        </div>
+        <div>
+            <img src="5.jpg" alt="">
+        </div>
+        <div>
+            <img src="1.jpg" alt="">
+        </div>
+        <div>
+            <img src="3.jpg" alt="">
+        </div>
+    </main>
+</body>
+
+</html>

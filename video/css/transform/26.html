@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>houdunren.com</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: #2c3e50;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: linear-gradient(to right, #f1c40f, #e67e22, #e74c3c);
+            position: relative;
+            z-index: -2;
+        }
+
+        main::after {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: #2c3e50;
+            z-index: -1;
+        }
+
+        .line {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            /* background: #000; */
+        }
+
+        .line::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: #2c3e50;
+            z-index: 1;
+        }
+
+        .line::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: #fff;
+            z-index: 1;
+        }
+
+        .line>div {
+            width: 8px;
+            background: #fff;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+        }
+
+        .line>div:nth-of-type(1) {
+            transform: rotate(0deg);
+        }
+
+        .line>div:nth-of-type(2) {
+            transform: rotate(30deg);
+        }
+
+        .line>div:nth-of-type(3) {
+            transform: rotate(60deg);
+        }
+
+        .line>div:nth-of-type(4) {
+            transform: rotate(90deg);
+        }
+
+        .line>div:nth-of-type(5) {
+            transform: rotate(120deg);
+        }
+
+        .line>div:nth-of-type(6) {
+            transform: rotate(150deg);
+        }
+
+        .hour {
+            position: absolute;
+            width: 10px;
+            height: 15%;
+            background: #fff;
+            left: 50%;
+            bottom: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .minute {
+            position: absolute;
+            width: 5px;
+            height: 25%;
+            background: #fff;
+            left: 50%;
+            bottom: 50%;
+            transform-origin: bottom;
+            transform: translate(-50%, 0) rotate(60deg);
+        }
+
+        .second {
+            position: absolute;
+            width: 1px;
+            height: 30%;
+            background: #fff;
+            left: 50%;
+            bottom: 50%;
+            transform-origin: bottom;
+            transition: 5s;
+            transform: translate(-50%, 0) rotate(90deg);
+        }
+
+        body:hover .second {
+            transform: translate(-50%, 0) rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="line">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+    </main>
+</body>
+
+</html>

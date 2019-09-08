@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>houdunren</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #2c3e50;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            color: #ecf0f1;
+            text-decoration: none;
+            width: 200px;
+            height: 40px;
+            background: #e74c3c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transform: skewX(25deg) rotate(-15deg);
+            letter-spacing: .5em;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .btn::before {
+            content: '';
+            width: 10px;
+            height: 100%;
+            left: -10px;
+            background: #000;
+            position: absolute;
+            transform: skewY(-45deg) translate(0, 5px);
+        }
+
+        .btn::after {
+            content: '';
+            width: 100%;
+            height: 10px;
+            bottom: -10px;
+            background: #000;
+            position: absolute;
+            transform: skewX(-45deg) translate(-5px, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="" class="btn"> houdunren</a>
+</body>
+
+</html>
