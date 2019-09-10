@@ -25,12 +25,19 @@
             width: 400px;
             height: 400px;
             border-radius: 50%;
+            position: relative;
+        }
+
+        .clock {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
             background: linear-gradient(to right, #f1c40f, #e67e22, #e74c3c);
             position: relative;
             z-index: -2;
         }
 
-        main::after {
+        .clock::after {
             content: '';
             position: absolute;
             width: 90%;
@@ -56,28 +63,28 @@
 
         .line::before {
             content: '';
-            position: absolute;
-            width: 80%;
-            height: 80%;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            border-radius: 50%;
+            width: 90%;
+            height: 90%;
+            position: absolute;
             background: #2c3e50;
-            z-index: 1;
+            border-radius: 50%;
+            z-index: 2;
         }
 
         .line::after {
             content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            position: absolute;
             background: #fff;
-            z-index: 1;
+            border-radius: 50%;
+            z-index: 2;
         }
 
         .line>div {
@@ -89,81 +96,84 @@
         }
 
         .line>div:nth-of-type(1) {
-            transform: rotate(0deg);
+            transform: translateX(-50%) rotate(0deg);
         }
 
         .line>div:nth-of-type(2) {
-            transform: rotate(30deg);
+            transform: translateX(-50%) rotate(30deg);
         }
 
         .line>div:nth-of-type(3) {
-            transform: rotate(60deg);
+            transform: translateX(-50%) rotate(60deg);
         }
 
         .line>div:nth-of-type(4) {
-            transform: rotate(90deg);
+            transform: translateX(-50%) rotate(90deg);
         }
 
         .line>div:nth-of-type(5) {
-            transform: rotate(120deg);
+            transform: translateX(-50%) rotate(120deg);
         }
 
         .line>div:nth-of-type(6) {
-            transform: rotate(150deg);
+            transform: translateX(-50%) rotate(150deg);
         }
 
         .hour {
-            position: absolute;
-            width: 10px;
-            height: 15%;
+            width: 8px;
             background: #fff;
-            left: 50%;
+            height: 15%;
             bottom: 50%;
-            transform: translate(-50%, 0);
+            transform: translateX(-50%);
+            position: absolute;
+            transform-origin: bottom;
+            left: 50%;
         }
 
         .minute {
-            position: absolute;
             width: 5px;
-            height: 25%;
             background: #fff;
-            left: 50%;
+            height: 25%;
             bottom: 50%;
+            position: absolute;
+            left: 50%;
             transform-origin: bottom;
-            transform: translate(-50%, 0) rotate(60deg);
+            transform: translateX(-50%) rotate(60deg);
         }
 
         .second {
-            position: absolute;
             width: 1px;
-            height: 30%;
             background: #fff;
-            left: 50%;
+            height: 35%;
             bottom: 50%;
+            transform: translateX(-50%) rotate(90deg);
+            position: absolute;
             transform-origin: bottom;
-            transition: 5s;
-            transform: translate(-50%, 0) rotate(90deg);
+            left: 50%;
+            transition: 10s;
         }
 
-        body:hover .second {
-            transform: translate(-50%, 0) rotate(360deg);
+        main:hover .second {
+            transform: translateX(-50%) rotate(360deg);
         }
     </style>
 </head>
 
 <body>
     <main>
-        <div class="line">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="clock">
+            <div class="line">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
         </div>
-        <div class="hour"></div>
-        <div class="minute"></div>
-        <div class="second"></div>
     </main>
 </body>
 

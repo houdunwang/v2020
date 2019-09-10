@@ -4,32 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>houdunren.com</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后盾人</title>
     <style>
         * {
             padding: 0;
             margin: 0;
-            box-sizing: border-box;
         }
 
         body {
-            background: #34495e;
+            width: 100vw;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100vw;
-            height: 100vh;
+            background: #2c3e50;
         }
 
         .card {
             width: 300px;
             height: 200px;
-            background: #e74c3c;
-            color: #ecf0f1;
+            background: #e67e22;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 2em;
+            color: #ecf0f1;
             position: relative;
             transform-style: preserve-3d;
             transform: perspective(900px) rotateX(45deg) rotateY(25deg);
@@ -38,32 +38,36 @@
         .card::before,
         .card::after {
             transition: 2s;
+            background: #e74c3c;
+            width: 50%;
+            height: 100%;
+            position: absolute;
         }
 
         .card::before {
             content: '新年';
-            background: #e67e22;
             left: 0;
             top: 0;
-            position: absolute;
-            height: 100%;
-            width: 150px;
-            text-align: right;
-            line-height: 6em;
-            transform-origin: left bottom;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            transform-origin: left;
+            border-right: solid 2px #333;
+            box-sizing: border-box;
+            padding-right: 10px;
         }
 
         .card::after {
             content: '快乐';
-            background: #e67e22;
             right: 0;
             top: 0;
-            position: absolute;
-            height: 100%;
-            width: 150px;
-            text-align: left;
-            line-height: 6em;
-            transform-origin: right bottom;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            transform-origin: right;
+            border-left: solid 2px #333;
+            box-sizing: border-box;
+            padding-left: 10px;
         }
 
         .card:hover::before {
@@ -77,7 +81,9 @@
 </head>
 
 <body>
-    <div class="card">houdunren.com</div>
+    <div class="card">
+        houdunren
+    </div>
 </body>
 
 </html>

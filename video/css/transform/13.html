@@ -4,56 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>后盾人</title>
     <style>
         * {
             padding: 0;
             margin: 0;
-            box-sizing: border-box;
         }
 
         body {
-            height: 100vh;
             width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #2c3e50;
+        }
+
+        main {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        main {
-            display: flex;
-        }
-
-        main div {
+        div {
             width: 200px;
             height: 200px;
+            margin-right: 20px;
             overflow: hidden;
-            border: solid 2px #2c3e50;
-            cursor: pointer;
-            transition: .5s;
+            border: solid 2px #95a5a6;
+            transition: 1s;
         }
 
-        main div>img {
+        div>img {
+            filter: blur(10px);
             height: 100%;
+            transition: 1s;
         }
 
-        main:hover div {
-            transform: scaleZ(.5);
-            filter: blur(15px);
+        div>img:hover {
+            filter: none;
+            transform: scale(1.3);
         }
 
-        main div:hover {
+        /* main:hover div {
+            filter: blur(25px);
+            transform: scale(.6);
+        }
+
+        main:hover div:hover {
             transform: scale(1.6);
             filter: none;
-            z-index: 1;
-        }
+        } */
     </style>
 </head>
 
 <body>
     <main>
         <div><img src="images/5.jpg" alt=""></div>
-        <div><img src="images/1.jpg" alt=""></div>
+        <div><img src="images/3.jpg" alt=""></div>
         <div><img src="images/2.jpg" alt=""></div>
     </main>
 </body>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后盾人</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        body {
+            background: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        nav {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        nav::before {
+            content: '';
+            background: #e74c3c;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+
+        nav::after {
+            content: '后盾人';
+            background: #e74c3c;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            color: white;
+        }
+
+        nav:hover ul {
+            transform: scale(1);
+        }
+
+        ul {
+            transition: .5s;
+            transform: scale(0);
+            /* position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); */
+            width: 300px;
+            height: 300px;
+            /* background: #000; */
+            /* border: solid 2px #000; */
+        }
+
+        li {
+            width: 80px;
+            height: 80px;
+            background: #e74c3c;
+            border-radius: 50%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            color: white;
+            transition: 1s;
+            transform-origin: 150px 150px;
+        }
+
+        nav:hover li:nth-child(1) {
+            transform: rotate(40deg);
+        }
+
+        nav:hover li:nth-child(2) {
+            transform: rotate(80deg);
+        }
+
+        nav:hover li:nth-child(3) {
+            transform: rotate(120deg);
+        }
+
+        nav:hover li:nth-child(4) {
+            transform: rotate(160deg);
+        }
+
+        nav:hover li:nth-child(5) {
+            transform: rotate(200deg);
+        }
+
+        nav:hover li:nth-child(6) {
+            transform: rotate(240deg);
+        }
+
+        nav:hover li:nth-child(7) {
+            transform: rotate(280deg);
+        }
+
+        nav:hover li:nth-child(8) {
+            transform: rotate(320deg);
+        }
+
+        nav:hover li:nth-child(9) {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <span>
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </span>
+            </li>
+            <li>
+                <span><i class="fa fa-joomla" aria-hidden="true"></i></span>
+            </li>
+            <li>
+                <span><i class="fa fa-lastfm" aria-hidden="true"></i></span>
+            </li>
+            <li>
+                <span>
+                    <i class="fa fa-neuter" aria-hidden="true"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="fa fa-grav" aria-hidden="true"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="fa fa-opera" aria-hidden="true"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="fa fa-viadeo" aria-hidden="true"></i>
+                </span>
+            </li>
+            <li>
+                <span>
+                    <i class="fa fa-google" aria-hidden="true"></i>
+                </span>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>
