@@ -7,24 +7,33 @@
     <title>后盾人</title>
     <style>
         body {
-            display: flex;
             width: 100vw;
             height: 100vh;
-            background: #f3f3f3;
+            background: #2c3e50;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
 
         main {
             display: flex;
-            perspective: 900px;
+            border: solid 5px silver;
+            width: 400px;
+            height: 300px;
+            /* transform-style: preserve-3d; */
+            transform: perspective(900px) rotateY(45deg);
         }
 
         div {
-            width: 300px;
-            height: 300px;
-            background: blue;
-            transform: rotateY(45deg);
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #f1c40f;
+        }
+
+        div:nth-child(2) {
+            background: #2ecc71;
+            transform: translateZ(-500px);
         }
     </style>
 </head>
