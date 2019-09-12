@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            display: flex;
+            /* border: solid 5px silver; */
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: perspective(900px);
+            transition: 2s;
+            transform-origin: center center 100px;
+        }
+
+        body:hover main {
+            transform: perspective(900px) rotateY(350deg);
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: #27ae60;
+            font-size: 4em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-origin: center center 100px;
+            opacity: .8;
+        }
+
+        div:nth-child(1) {
+            background: #e67e22;
+            transform: rotateY(90deg);
+        }
+
+        div:nth-child(2) {
+            background: #2980b9;
+            transform: rotateY(180deg);
+        }
+
+        div:nth-child(3) {
+            background: #e74c3c;
+            transform: rotateY(270deg);
+        }
+
+        div:nth-child(4) {
+            background: #8e44ad;
+            transform: rotateY(360deg);
+        }
+
+        div:nth-child(5) {
+            background: #e67e22;
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
+
+        div:nth-child(6) {
+            background: #e67e22;
+            transform-origin: bottom;
+            transform: rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </main>
+</body>
+
+</html>

@@ -11,15 +11,14 @@
         * {
             padding: 0;
             margin: 0;
-            box-sizing: border-box;
         }
 
         main {
-            position: absolute;
             width: 100vw;
             height: 100vh;
-            transition: 2s;
             transform-style: preserve-3d;
+            transform: perspective(900px);
+            transition: 2s;
         }
 
         main.login {
@@ -30,31 +29,37 @@
             transform: perspective(900px) rotateY(180deg);
         }
 
+        /* body:hover main {
+            transform: perspective(900px) rotateY(180deg);
+        } */
+
         div {
             position: absolute;
             width: 100%;
             height: 100%;
-            font-size: 5em;
+            background: #000;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            backface-visibility: hidden;
-            transition: 2s;
+            font-size: 4em;
             text-transform: uppercase;
             color: white;
+            backface-visibility: hidden;
+        }
+
+        div i[class^="fa"] {
+            font-size: 1.8em;
         }
 
         div span {
-            text-transform: lowercase;
-            letter-spacing: .2em;
             font-size: .2em;
-            color: #2c3e50;
+            color: #ecf0f1;
+            opacity: .8;
         }
 
         div:nth-child(1) {
-            background: #2ecc71;
-            transform: rotateY(0deg);
+            background: #8e44ad;
         }
 
         div:nth-child(2) {
@@ -65,25 +70,16 @@
         nav {
             position: absolute;
             width: 100%;
-            height: 100%;
-            z-index: 99;
+            bottom: 60px;
             text-align: center;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding-bottom: 30px;
         }
 
         nav a {
-            padding: 10px;
-            text-decoration: none;
-            font-size: 1em;
-            background: #000;
-            color: white;
+            padding: 10px 20px;
+            background: #34495e;
             margin-right: 10px;
-            cursor: pointer;
-            left: 0;
-            top: 0;
+            color: white;
+            text-decoration: none;
         }
     </style>
 </head>
