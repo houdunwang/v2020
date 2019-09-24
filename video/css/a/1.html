@@ -4,119 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>后盾人</title>
-    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+    <title>Document</title>
+</head>
 
-        main {
-            position: absolute;
+<head>
+    <style>
+        body {
             width: 100vw;
             height: 100vh;
-            transition: 2s;
-            transform-style: preserve-3d;
-        }
-
-        main.login {
-            transform: perspective(900px) rotateY(0deg);
-        }
-
-        main.register {
-            transform: perspective(900px) rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            background: #2c3e50;
         }
 
         div {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            font-size: 5em;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            backface-visibility: hidden;
-            transition: 2s;
-            text-transform: uppercase;
-            color: white;
-        }
-
-        div span {
-            text-transform: lowercase;
-            letter-spacing: .2em;
-            font-size: .2em;
-            color: #2c3e50;
-        }
-
-        div:nth-child(1) {
-            background: #2ecc71;
-            transform: rotateY(0deg);
+            width: 100px;
+            height: 100px;
+            left: 30%;
+            top: 0px;
+            transform: translate(0vw, 0);
+            background: radial-gradient(at right top, #f39c12, #d35400);
+            border-radius: 50%;
+            animation-name: jump;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
         }
 
         div:nth-child(2) {
-            background: #e74c3c;
-            transform: rotateY(180deg);
+            animation-delay: .2s;
+            left: 60%;
         }
 
-        nav {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 99;
-            text-align: center;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding-bottom: 30px;
-        }
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+                animation-timing-function: ease-in;
+            }
 
-        nav a {
-            padding: 10px;
-            text-decoration: none;
-            font-size: 1em;
-            background: #000;
-            color: white;
-            margin-right: 10px;
-            cursor: pointer;
-            left: 0;
-            top: 0;
+            30% {
+                transform: translateY(10vh);
+                animation-timing-function: ease-in;
+            }
+
+            60% {
+                transform: translateY(40vh);
+                animation-timing-function: ease-in;
+            }
+
+            80% {
+                transform: translateY(60vh);
+                animation-timing-function: ease-in;
+            }
+
+            95% {
+                transform: translateY(75vh);
+                animation-timing-function: ease-in;
+            }
+
+            15%,
+            45%,
+            70%,
+            88%,
+            100% {
+                transform: translateY(80vh);
+                animation-timing-function: ease-out;
+            }
         }
     </style>
 </head>
 
 <body>
-    <main>
-        <div>
-            <i class="fa fa-home" aria-hidden="true"></i>
-            login
-            <span>houdunren.com</span>
-        </div>
-        <div>
-            <i class="fa fa-user" aria-hidden="true"></i>
-            register
-            <span>houdunren.com</span>
-        </div>
-    </main>
-    <nav>
-        <a href="javascript:;" onclick="change('login')">登录</a>
-        <a href="javascript:;" onclick="change('register')">注册</a>
-    </nav>
-    <script>
-        function change(t) {
-            switch (t) {
-                case 'login':
-                    $("main").removeClass().addClass('login');
-                    break;
-                case 'register':
-                    $("main").removeClass().addClass('register');
-                    break;
-            }
-        }
-    </script>
+    <div></div>
+    <div></div>
 </body>
 
 </html>

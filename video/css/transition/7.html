@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul {
+            width: 800px;
+            height: 300px;
+            display: flex;
+            position: relative;
+        }
+
+        li {
+            flex: 1;
+            list-style: none;
+            border: solid 1px #ddd;
+            text-align: center;
+        }
+
+        li::before {
+            content: 'houdunren';
+            color: white;
+            opacity: .5;
+        }
+
+        ul::before {
+            content: 'start';
+            width: 200px;
+            height: 100px;
+            background: #e67e22;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition-duration: 2s;
+            font-size: 2em;
+            color: white;
+            transition-timing-function: steps(4, start);
+            z-index: 2;
+        }
+
+        ul::after {
+            content: 'end';
+            font-size: 2em;
+            z-index: 2;
+            color: white;
+            width: 200px;
+            height: 100px;
+            left: 0;
+            bottom: 0;
+            background: #9b59b6;
+            position: absolute;
+            transition-duration: 2s;
+            transition-timing-function: steps(4, end);
+        }
+
+        ul:hover::before {
+            transform: translateX(800px);
+        }
+
+        ul:hover::after {
+            transform: translateX(800px);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>

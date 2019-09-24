@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            border: solid 1px #ddd;
+        }
+
+        i.fa {
+            font-size: 100px;
+            color: #95a5a6;
+            position: absolute;
+            transition-duration: 1s;
+        }
+
+        main.heart i.fa {
+            transform: scale(5);
+            color: #e74c3c;
+            opacity: 0;
+        }
+
+        main.heart i.fa:nth-child(2) {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <main onclick="heart()">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+        <i class="fa fa-heart" aria-hidden="true"></i>
+    </main>
+    <script>
+        function heart() {
+            $("main").toggleClass('heart');
+        }
+    </script>
+</body>
+
+</html>

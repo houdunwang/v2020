@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: #2c3e50;
+        }
+
+        main {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            transform: scale(0);
+            animation-name: scale, background, radius;
+            animation-duration: 2s, 4s, 1s;
+            animation-fill-mode: forwards;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main::after {
+            content: 'houdunren.com';
+            font-size: 2em;
+            color: white;
+            opacity: 0;
+            animation-name: opacity;
+            animation-duration: 2s;
+            animation-delay: 4s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes opacity {
+            to {
+                opacity: .8;
+            }
+        }
+
+        @keyframes scale {
+            25% {
+                transform: scale(0.5);
+            }
+
+            50% {
+                transform: scale(1) rotate(360deg);
+            }
+
+            75% {
+                transform: scale(0.5);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes background {
+            25% {
+                background: #2ecc71;
+            }
+
+            50% {
+                background: #e67e22;
+            }
+
+            75% {
+                background: #9b59b6;
+            }
+
+            100% {
+                background: #e74c3c;
+            }
+        }
+
+        @keyframes radius {
+
+            25% {
+                border-radius: 50%;
+            }
+
+            50% {
+                border-radius: 0%;
+            }
+
+            75% {
+                border-radius: 50%;
+            }
+        }
+
+        section {
+            width: 100vw;
+            height: 100vh;
+            background: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+    </main>
+</body>
+
+</html>

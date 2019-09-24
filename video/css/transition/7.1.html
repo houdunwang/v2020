@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 400px;
+            height: 400px;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        main::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: #000;
+            position: absolute;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        main::after {
+            content: '';
+            width: 2px;
+            height: 50%;
+            background: #000;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            transform-origin: bottom;
+            transition-duration: 60s;
+            transition-timing-function: steps(60, start);
+        }
+
+        main:hover::after {
+            transform: translateX(-50%) rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <main></main>
+</body>
+
+</html>

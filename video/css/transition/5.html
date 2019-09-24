@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            width: 200px;
+            height: 200px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        div::before {
+            content: '后盾人';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 10%;
+            font-size: 3em;
+            background: #95a5a6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition-duration: 2s;
+            cursor: pointer;
+        }
+
+        div:hover::before {
+            transform: rotate(360deg);
+        }
+
+        div::after {
+            content: 'houdunren.com';
+            position: absolute;
+            bottom: -55px;
+            width: 200px;
+            text-align: center;
+            color: #95a5a6;
+            font-size: 1.8em;
+            transform: translateX(-999px) skew(45deg);
+            transition-duration: 1s;
+        }
+
+        div.move::after {
+            transform: translateX(0px) skew(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div></div>
+    </main>
+    <script>
+        document.querySelector('div').addEventListener('transitionend', function (e) {
+            document.querySelector('div').className = 'move';
+        });
+    </script>
+</body>
+
+</html>

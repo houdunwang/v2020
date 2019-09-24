@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: #2c3e50;
+        }
+
+        main {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: #f1c40f;
+            animation-name: scale;
+            animation-duration: 2s;
+            border: solid 2px white;
+        }
+
+        @keyframes scale {
+            to {
+                width: 300px;
+                height: 300px;
+                border: double 30px #fff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+
+</html>
