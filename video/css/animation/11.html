@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart {
+            width: 200px;
+            height: 200px;
+            background: #e74c3c;
+            transform: rotate(45deg) scale(.5);
+            animation-name: hd;
+            animation-duration: 2s;
+            opacity: .5;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes hd {
+            25% {
+                opacity: 1;
+                transform: rotate(45deg) scale(1);
+            }
+
+            50% {
+                opacity: .5;
+                transform: rotate(45deg) scale(.5);
+            }
+
+            75% {
+                opacity: 1;
+                transform: rotate(45deg) scale(1);
+            }
+
+            85% {
+                opacity: .5;
+                transform: rotate(45deg) scale(.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: rotate(45deg) scale(1);
+            }
+        }
+
+        .heart::before {
+            content: '';
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            background: #e74c3c;
+            transform: translateX(-100px);
+        }
+
+        .heart::after {
+            content: '';
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            background: #e74c3c;
+            transform: translateY(-100px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heart"></div>
+</body>
+
+</html>

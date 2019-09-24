@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul {
+            list-style: none;
+            width: 400px;
+            height: 120px;
+            display: flex;
+        }
+
+        li {
+            flex: 1;
+            color: #e74c3c;
+            /* border: solid 1px #ddd; */
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        i.fa {
+            font-size: 3em;
+            animation-name: hd;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            position: absolute;
+        }
+
+        li:nth-child(1)>i {
+            animation-direction: normal;
+        }
+
+        li:nth-child(2)>i {
+            animation-direction: reverse;
+        }
+
+        span {
+            position: absolute;
+            bottom: 0;
+        }
+
+        @keyframes hd {
+            to {
+                transform: scale(3);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <span>normal</span>
+        </li>
+        <li>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <span>reverse</span>
+        </li>
+    </ul>
+</body>
+
+</html>

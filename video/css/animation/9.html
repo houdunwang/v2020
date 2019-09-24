@@ -12,10 +12,6 @@
         }
 
         body {
-            background: #2c3e50;
-        }
-
-        main {
             width: 100vw;
             height: 100vh;
             background: #34495e;
@@ -24,20 +20,60 @@
             align-items: center;
         }
 
+        main {
+            width: 400px;
+            height: 400px;
+            border: solid 1px #ddd;
+        }
+
         div {
             width: 100px;
             height: 100px;
             background: #f1c40f;
-            animation-name: scale;
+            animation-name: translate, background, radius;
             animation-duration: 2s;
-            border: solid 2px white;
+            animation-iteration-count: infinite, 2;
         }
 
-        @keyframes scale {
-            to {
-                width: 300px;
-                height: 300px;
-                border: double 30px #fff;
+        @keyframes translate {
+            25% {
+                transform: translateX(300px);
+            }
+
+            50% {
+                transform: translate(300px, 300px);
+            }
+
+            75% {
+                transform: translateY(300px);
+            }
+        }
+
+        @keyframes background {
+            25% {
+                background: #2ecc71;
+            }
+
+            50% {
+                background: #e67e22;
+            }
+
+            75% {
+                background: #9b59b6;
+            }
+        }
+
+        @keyframes radius {
+            25% {
+                border-radius: 50%;
+            }
+
+            50% {
+                border-radius: 0%;
+            }
+
+            75% {
+                border-radius: 50%;
             }
         }
     </style>

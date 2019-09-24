@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: 10vh 1fr 10vh;
+        }
+
+        header {
+            background: #e67e22;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+            animation-name: translate;
+            animation-duration: .5s;
+        }
+
+        main {
+            background: url("images/5.jpg") no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation-name: rotate;
+            animation-duration: .5s;
+            animation-delay: 2s;
+            animation-fill-mode: backwards;
+        }
+
+        div {
+            width: 80vw;
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+            opacity: .8;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+        }
+
+        div:nth-child(1) {
+            transform: translateY(-50px);
+            background: #8e44ad;
+        }
+
+        div:nth-child(2) {
+            background: #e74c3c;
+        }
+
+        .opacity {
+            animation-name: opacity;
+            animation-duration: .5s;
+
+            animation-fill-mode: backwards;
+        }
+
+        .s3 {
+            animation-delay: 3s;
+        }
+
+        .s4 {
+            animation-delay: 4s;
+        }
+
+
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3em;
+            color: white;
+            background: #34495e;
+            /* transform: scale(0);
+            animation-fill-mode: forwards; */
+            animation-fill-mode: backwards;
+            animation-name: rotate;
+            animation-duration: .5s;
+            animation-delay: 1s;
+        }
+
+        @keyframes translate {
+            from {
+                transform: translateX(-100vw);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: scale(0) rotate(360deg);
+            }
+
+            to {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes opacity {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>后盾人</header>
+    <main>
+        <div class="opacity s3">Flat UI Colors 2 features 13 more color palettes. Collaborating with 13 designers around
+            the world, a total
+            set of 280 colors are on your command for COPY / PASTE for your next project, design, presentation</div>
+        <div class="opacity s4">Flat UI Colors uses cookies to personalize content and make the website site easier for
+            you to use.
+            By continuing to browse the site, you are agreeing to our use of cookies.</div>
+    </main>
+    <footer>houdunren.com</footer>
+</body>
+
+</html>

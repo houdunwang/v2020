@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(at center, #e67e22, #e74c3c);
+            border-radius: 50%;
+            animation-name: ball;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+
+        section {
+            width: 300px;
+            height: 40px;
+            background: rgba(0, 0, 0, .3);
+            position: absolute;
+            transform: translateY(50px);
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(5px);
+            animation-name: shadow;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+
+        @keyframes shadow {
+            to {
+                width: 300px;
+                height: 20px;
+                filter: blur(35px);
+                background: rgba(0, 0, 0, .1);
+            }
+        }
+
+        @keyframes ball {
+            to {
+                transform: translateY(-300px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <section></section>
+</body>
+
+</html>
