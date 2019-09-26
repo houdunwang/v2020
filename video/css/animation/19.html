@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: grid;
+            grid-template: 1fr/repeat(5, 1fr);
+        }
+
+        div {
+            grid-column: 3/4;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: #e67e22;
+            justify-self: center;
+            animation-name: move;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0vh);
+                transition-timing-function: ease-in;
+            }
+
+            30% {
+                transform: translateY(10vh);
+                transition-timing-function: ease-in;
+            }
+
+            60% {
+                transform: translateY(40vh);
+                transition-timing-function: ease-in;
+            }
+
+            80% {
+                transform: translateY(60vh);
+                transition-timing-function: ease-in;
+            }
+
+            95% {
+                transform: translateY(75vh);
+                transition-timing-function: ease-in;
+            }
+
+            15%,
+            45%,
+            75%,
+            85%,
+            100% {
+                transform: translateY(90vh);
+                transition-timing-function: ease-out;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

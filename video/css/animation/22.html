@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #2c3e50;
+            display: grid;
+        }
+
+        main {
+            align-self: center;
+            justify-self: center;
+            width: 400px;
+            height: 200px;
+            display: grid;
+            grid-template: repeat(2, 1fr)/repeat(4, 1fr);
+        }
+
+        div {
+            text-align: center;
+            background: #f1c40f;
+            border: solid 1px #2c3e50;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        div:nth-child(1)::before,
+        div:nth-child(5)::before {
+            animation-name: hd;
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+            z-index: 2;
+        }
+
+        div:nth-child(1)::before {
+            content: 'START';
+            width: 100px;
+            height: 100px;
+            background: #8e44ad;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation-timing-function: steps(4, start);
+        }
+
+        div:nth-child(5)::before {
+            content: 'END';
+            width: 100px;
+            height: 100px;
+            background: #27ae60;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation-timing-function: steps(4, end);
+        }
+
+        @keyframes hd {
+            to {
+                transform: translateX(400px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </main>
+</body>
+
+</html>
