@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #2c3e50;
+            display: grid;
+        }
+
+        main {
+            width: 400px;
+            height: 200px;
+            align-self: center;
+            justify-self: center;
+            overflow: hidden;
+        }
+
+        section {
+            width: 1600px;
+            height: 200px;
+            display: grid;
+            grid-template: 1fr/repeat(4, 400px);
+            animation-name: slide;
+            animation-duration: 4s;
+            animation-timing-function: steps(4, end);
+            animation-iteration-count: infinite;
+        }
+
+        section:hover {
+            animation-play-state: paused;
+        }
+
+        div {
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        @keyframes slide {
+            to {
+                transform: translateX(-1600px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div><img src="images/1.jpg" alt=""></div>
+            <div><img src="images/5.jpg" alt=""></div>
+            <div><img src="images/2.jpg" alt=""></div>
+            <div><img src="images/3.jpg" alt=""></div>
+        </section>
+    </main>
+</body>
+
+</html>

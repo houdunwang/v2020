@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #2c3e50;
+            display: grid;
+        }
+
+        main {
+            width: 400px;
+            height: 200px;
+            align-self: center;
+            justify-self: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        section {
+            width: 1600px;
+            height: 200px;
+            display: grid;
+            grid-template: 1fr/repeat(4, 400px);
+            animation-name: slide;
+            animation-duration: 4s;
+            animation-timing-function: steps(4, end);
+            animation-iteration-count: infinite;
+        }
+
+        section:hover,
+        section:hover+ul::after {
+            animation-play-state: paused;
+        }
+
+        div {
+            overflow: hidden;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        @keyframes slide {
+            to {
+                transform: translateX(-1600px);
+            }
+        }
+
+        @keyframes num {
+            to {
+                transform: translateX(200px);
+            }
+        }
+
+        ul {
+            position: absolute;
+            width: 200px;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            display: grid;
+            grid-template: 1fr/repeat(4, 1fr);
+            list-style: none;
+            justify-items: center;
+        }
+
+        ul::after {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e74c3c;
+            z-index: -1;
+            animation-name: num;
+            animation-duration: 4s;
+            animation-timing-function: steps(4, end);
+            animation-iteration-count: infinite;
+        }
+
+        li {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, .3);
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div><img src="images/1.jpg" alt=""></div>
+            <div><img src="images/5.jpg" alt=""></div>
+            <div><img src="images/2.jpg" alt=""></div>
+            <div><img src="images/3.jpg" alt=""></div>
+        </section>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </main>
+</body>
+
+</html>

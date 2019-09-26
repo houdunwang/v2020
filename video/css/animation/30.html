@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后盾人</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #2c3e50;
+            display: grid;
+        }
+
+        ul {
+            list-style: none;
+            width: 400px;
+            height: 100px;
+            align-self: center;
+            justify-self: center;
+            display: grid;
+            grid-template: 1fr/repeat(4, 1fr);
+        }
+
+        li {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #e67e22;
+
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            /* animation-name: ;
+            animation-duration: 0ms;
+            animation-timing-function: ;
+            animation-direction: ;
+            animation-iteration-count: ;
+            animation-fill-mode: ;
+            animation-delay:  */
+            /* animation-duration: 2s; */
+            /* animation-delay: 2s; */
+        }
+
+        li:nth-child(1) {
+            animation: hd 2s 2s;
+        }
+
+        li:nth-child(2) {
+            /* animation-name: hd;
+            animation-fill-mode: backwards; */
+            animation: hd backwards 2s 2s;
+        }
+
+        li:nth-child(3) {
+            /* animation-name: hd;
+            animation-fill-mode: forwards; */
+            animation: hd forwards 2s 2s;
+        }
+
+        li:nth-child(4) {
+            /* animation-name: hd;
+            animation-fill-mode: both; */
+            animation: hd both 2s 2s;
+        }
+
+        @keyframes hd {
+            from {
+                transform: scale(0);
+            }
+
+            to {
+                transform: scale(1);
+                background: #2ecc71;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>normal</li>
+        <li>backwards</li>
+        <li>forwards</li>
+        <li>both</li>
+    </ul>
+</body>
+
+</html>

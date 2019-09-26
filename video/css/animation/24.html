@@ -39,8 +39,9 @@
         div:nth-child(5)::before {
             animation-name: hd;
             animation-iteration-count: infinite;
-            animation-duration: .5s;
+            animation-duration: 2s;
             z-index: 2;
+            animation-play-state: paused;
         }
 
         div:nth-child(1)::before {
@@ -51,7 +52,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            animation-timing-function: step-start;
+            animation-timing-function: steps(4, start);
         }
 
         div:nth-child(5)::before {
@@ -62,17 +63,17 @@
             position: absolute;
             left: 0;
             top: 0;
-            animation-timing-function: step-end;
+            animation-timing-function: steps(4, end);
         }
 
         @keyframes hd {
-            50% {
-                transform: translateX(100px);
-            }
-
             to {
-                transform: translateX(0px);
+                transform: translateX(400px);
             }
+        }
+
+        main:hover div::before {
+            animation-play-state: running;
         }
     </style>
 </head>
