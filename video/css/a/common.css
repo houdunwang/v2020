@@ -1,0 +1,10 @@
+h1 {
+    outline: solid 5px #e74c3c;
+}
+
+@media print {
+    h2 {
+        display: block !important;
+        color: #000 !important;
+    }
+}
