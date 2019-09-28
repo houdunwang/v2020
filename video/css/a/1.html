@@ -4,82 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<head>
-    <style>
+    <title>后盾人</title>
+    <style type="text/css" media="print">
         body {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: flex-start;
-            background: #2c3e50;
+            background: #8e44ad;
         }
 
-        div {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            left: 30%;
-            top: 0px;
-            transform: translate(0vw, 0);
-            background: radial-gradient(at right top, #f39c12, #d35400);
-            border-radius: 50%;
-            animation-name: jump;
-            animation-duration: 2s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in;
+        h1 {
+            background: #8e44ad;
+            color: #f1c40f;
+        }
+    </style>
+    <style type="text/css" media="screen">
+        body {
+            background: #e67e22;
         }
 
-        div:nth-child(2) {
-            animation-delay: .2s;
-            left: 60%;
-        }
-
-        @keyframes jump {
-            0% {
-                transform: translateY(0);
-                animation-timing-function: ease-in;
-            }
-
-            30% {
-                transform: translateY(10vh);
-                animation-timing-function: ease-in;
-            }
-
-            60% {
-                transform: translateY(40vh);
-                animation-timing-function: ease-in;
-            }
-
-            80% {
-                transform: translateY(60vh);
-                animation-timing-function: ease-in;
-            }
-
-            95% {
-                transform: translateY(75vh);
-                animation-timing-function: ease-in;
-            }
-
-            15%,
-            45%,
-            70%,
-            88%,
-            100% {
-                transform: translateY(80vh);
-                animation-timing-function: ease-out;
-            }
+        h1 {
+            color: #2ecc71;
         }
     </style>
 </head>
 
 <body>
-    <div></div>
-    <div></div>
+
+    <h1>houdunren.com</h1>
 </body>
 
 </html>
