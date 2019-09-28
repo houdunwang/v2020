@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        width: 100vw;
+        height: 100vh;
+        background: #f3f3f3;
+    }
+
+    body {
+        display: grid;
+        grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+    }
+
+    header {
+        grid-area: 2/4/1/3;
+        background: #e67e22;
+    }
+
+    main {
+        grid-area: main;
+        background: #9b59b6;
+    }
+
+    footer {
+        grid-area: footer;
+        background: #16a085;
+    }
+</style>
+
+<body>
+    <header></header>
+    <main></main>
+    <footer></footer>
+</body>
+
+</html>
