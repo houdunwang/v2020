@@ -1,0 +1,51 @@
+header {
+    border-bottom: solid 5px #16a085;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+
+    .navbar {
+        display: flex;
+        height: 60px;
+        align-items: center;
+
+        .logo {
+            color: #16a085;
+            font-weight: bold;
+            margin-right: 20px;
+            font-size: 1.3rem;
+        }
+
+        .collapse {
+            display: flex;
+            flex-grow: 1;
+
+            .links {
+                display: flex;
+                margin-right: auto;
+
+                a {
+                    color: #777;
+                    margin: 0 10px;
+                    font-weight: bold;
+
+                    &:hover {
+                        color: #333;
+                    }
+                }
+            }
+
+            .form {
+                a {
+                    border: solid 1px #16a085;
+                    border-radius: .3rem;
+                    padding: .3rem 1rem;
+                    color: #16a085;
+
+                    &.form-bg {
+                        background: #16a085;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

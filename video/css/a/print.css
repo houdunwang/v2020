@@ -1,9 +1,0 @@
-h1 {
-    font-size: 8em;
-    color: red;
-}
-
-h2,
-hr {
-    display: none;
-}
