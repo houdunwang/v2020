@@ -1,3 +1,36 @@
-body {
-    background: green;
+.col-md-12 {
+  grid-column: span 12;
+}
+.col-md-11 {
+  grid-column: span 11;
+}
+.col-md-10 {
+  grid-column: span 10;
+}
+.col-md-9 {
+  grid-column: span 9;
+}
+.col-md-8 {
+  grid-column: span 8;
+}
+.col-md-7 {
+  grid-column: span 7;
+}
+.col-md-6 {
+  grid-column: span 6;
+}
+.col-md-5 {
+  grid-column: span 5;
+}
+.col-md-4 {
+  grid-column: span 4;
+}
+.col-md-3 {
+  grid-column: span 3;
+}
+.col-md-2 {
+  grid-column: span 2;
+}
+.col-md-1 {
+  grid-column: span 1;
 }

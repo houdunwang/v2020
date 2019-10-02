@@ -4,7 +4,7 @@ header {
 
     .navbar {
         display: flex;
-        height: 60px;
+        padding: 1rem 0;
         align-items: center;
 
         .logo {
@@ -12,6 +12,14 @@ header {
             font-weight: bold;
             margin-right: 20px;
             font-size: 1.3rem;
+
+            &+label {
+                display: none;
+
+                &+input {
+                    display: none;
+                }
+            }
         }
 
         .collapse {
@@ -22,13 +30,17 @@ header {
                 display: flex;
                 margin-right: auto;
 
-                a {
-                    color: #777;
+                li {
                     margin: 0 10px;
-                    font-weight: bold;
 
-                    &:hover {
-                        color: #333;
+                    a {
+                        color: #777;
+
+                        font-weight: bold;
+
+                        &:hover {
+                            color: #333;
+                        }
                     }
                 }
             }
@@ -43,6 +55,49 @@ header {
                     &.form-bg {
                         background: #16a085;
                         color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:960px) {
+    header {
+        .navbar {
+            flex-flow: row wrap;
+
+            .logo {
+                margin-right: auto;
+
+                &+label {
+                    display: block;
+                    border: solid 1px #ddd;
+                    padding: .5rem 1rem;
+                    color: #555;
+                    cursor: pointer;
+
+
+
+                    &+input:checked {
+                        &+.collapse {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .collapse {
+                display: none;
+                flex-flow: column;
+                width: 100%;
+
+                .links {
+                    flex-direction: column;
+                    margin-bottom: 1.5rem;
+
+                    li {
+                        margin: .5rem 0;
                     }
                 }
             }
