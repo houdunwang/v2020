@@ -1,0 +1,16 @@
+.card {
+  border: solid 1px #ddd;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: .2rem;
+}
+.card .card-header {
+  padding: .5rem 1rem;
+  border-bottom: solid 1px #ddd;
+}
+.card .card-body {
+  padding: 1rem;
+}
+.card .card-footer {
+  padding: .5rem 1rem;
+  border-top: solid 1px #ddd;
+}
