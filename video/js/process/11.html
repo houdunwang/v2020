@@ -8,11 +8,17 @@
   </head>
   <body>
     <script>
-      // console.log("houdunren");
-      /*
-      dskldfsklfds
-      dsfkldfskldfskldsfkl
-      */
+      function star(row = 5) {
+        let start = 0;
+        do {
+          let n = 0;
+          do {
+            document.write("*");
+          } while (++n <= start);
+          document.write("<br/>");
+        } while (++start <= row);
+      }
+      star(5);
     </script>
   </body>
 </html>

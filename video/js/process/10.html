@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <script>
+      function table(options = { tr: 5, td: 3 }) {
+        document.write(`<table border="1" width="100%">`);
+        while (options.tr-- != 0) {
+          let td = options.td;
+          document.write(`<tr>`);
+          while (td-- != 0) {
+            document.write(`<td>${td}</td>`);
+          }
+          document.write(`</td>`);
+        }
+        document.write(`</table>`);
+      }
+      table({ tr: 20, td: 10 });
+    </script>
+  </body>
+</html>

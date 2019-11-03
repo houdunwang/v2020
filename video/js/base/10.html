@@ -8,11 +8,17 @@
   </head>
   <body>
     <script>
-      // console.log("houdunren");
-      /*
-      dskldfsklfds
-      dsfkldfskldfskldsfkl
-      */
+      //传值 传址
+      let a = 1;
+      let b = a;
+      console.log(a, b);
+      b = 3;
+      console.log(a, b);
+      let e = { name: "hdcms" };
+      let f = e;
+      console.log(e, f);
+      f.name = "houdunren";
+      console.log(e, f);
     </script>
   </body>
 </html>

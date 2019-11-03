@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <input type="text" name="password" />
+    <input type="text" name="confirm_password" />
+    <br />
+    <span name="msg"></span>
+    <script>
+      function query(name) {
+        return document.querySelector(`[name='${name}']`);
+      }
+      let inputs = document.querySelectorAll(
+        "[name='password'],[name='confirm_password']"
+      );
+      [...inputs].map(item => {
+        item.addEventListener("keyup", function() {
+          let msg = "";
+          if (
+            query("password").value != query("confirm_password").value ||
+            query("password").value.length < 5
+          ) {
+            msg = "两次密码不一致或密码长度小于五位";
+          }
+          query("msg").innerHTML = msg;
+        });
+      });
+      // let a = 1,
+      //   b = 1;
+      // if (a == 1 && b != 2) {
+      //   console.log("表达式成立");
+      // }
+    </script>
+  </body>
+</html>

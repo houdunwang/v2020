@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        border: solid 1px #ddd;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+      li > a {
+        color: green;
+      }
+    </style>
+    <script>
+      // let name = "后盾人";
+      // let web = "houdunren.com";
+      // console.log(tag`${name}`);
+      // function tag(strings, ...vars) {
+      //   console.log(vars);
+      //   console.log(strings);
+      // }
+
+      let lessons = [
+        { title: "后盾人媒体查询响应式布局", author: "后盾人向军" },
+        { title: "FLEX 弹性盒模型", author: "后盾人" },
+        { title: "GRID 栅格系统后盾人教程", author: "古老师" }
+      ];
+      function template() {
+        return `<ul>
+            ${lessons
+              .map(
+                item => links`<li>作者:${item.author}，课程:${item.title}</li>`
+              )
+              .join("")}
+          </ul>`;
+      }
+      function links(strings, ...vars) {
+        return strings
+          .map((str, key) => {
+            return (
+              str +
+              (vars[key]
+                ? vars[key].replace(
+                    "后盾人",
+                    `<a href="https://www.houdunren.com">后盾人</a>`
+                  )
+                : "")
+            );
+          })
+          .join("");
+      }
+      document.body.innerHTML += template();
+    </script>
+  </body>
+</html>

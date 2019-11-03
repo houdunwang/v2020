@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        padding: 10px;
+      }
+      li:nth-child(odd) {
+        background: #16a085;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // let str = "houdunren.com";
+      // str += " 后盾人";
+      // console.log(str);
+      // function show() {
+      //   return "houdunren.com";
+      // }
+      // let hd = `www.${5 + 9}`;
+      // console.log(hd);
+
+      let lessons = [
+        { title: "媒体查询响应式布局" },
+        { title: "FLEX 弹性盒模型" },
+        { title: "GRID 栅格系统" }
+      ];
+
+      function template() {
+        return `
+        <ul>${lessons.map(item => `<li>${item.title}</li>`).join("")}</ul>
+        `;
+      }
+      document.body.innerHTML = template();
+    </script>
+  </body>
+</html>
