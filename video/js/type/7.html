@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <script>
+      const hd = "Houdunren.com";
+      // console.log(hd.lastIndexOf("o", 9));
+      // console.log(hd.includes("o", 12));
+      // if (hd.indexOf("h") != -1) {
+      //   console.log("找到了");
+      // }
+      // console.log(hd.toLowerCase().endsWith("m"));
+      const word = ["@@", "css"];
+      const string = "我喜欢在后盾人学习php与css知识";
+      const status = word.some(word => {
+        return string.includes(word);
+      });
+      if (status) {
+        console.log("找到了关键词");
+      }
+    </script>
+  </body>
+</html>
