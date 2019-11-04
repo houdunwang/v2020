@@ -8,13 +8,23 @@
   </head>
   <body>
     <script>
-      const user = [
-        { name: "李四", js: 89 },
-        { name: "马六", js: 55 },
-        { name: "张三", js: 78 }
+      let cart = [
+        { name: "iphone", price: 12000 },
+        { name: "imac", price: 25000 },
+        { name: "ipad", price: 3600 }
       ];
-      const resust = user.every(user => user.js >= 60);
-      console.log(resust);
+
+      function getNameByPrice(array, price) {
+        return array
+          .reduce((goods, elem) => {
+            if (elem.price > price) {
+              goods.push(elem);
+            }
+            return goods;
+          }, [])
+          .map(elem => elem.name);
+      }
+      console.table(getNameByPrice(cart, 10000));
     </script>
   </body>
 </html>
