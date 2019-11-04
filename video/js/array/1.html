@@ -7,24 +7,6 @@
     <title>houdunren.com</title>
   </head>
   <body>
-    <script>
-      let cart = [
-        { name: "iphone", price: 12000 },
-        { name: "imac", price: 25000 },
-        { name: "ipad", price: 3600 }
-      ];
-
-      function getNameByPrice(array, price) {
-        return array
-          .reduce((goods, elem) => {
-            if (elem.price > price) {
-              goods.push(elem);
-            }
-            return goods;
-          }, [])
-          .map(elem => elem.name);
-      }
-      console.table(getNameByPrice(cart, 10000));
-    </script>
+    <script></script>
   </body>
 </html>

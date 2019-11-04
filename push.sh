@@ -16,7 +16,7 @@ git pull
 
 # git init
 git add -A
-git commit -m '更新课程代码'
+git commit -m 'course code'
 git push 
 git push gitee
 
