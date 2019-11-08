@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function move(array, from, to) {
+      if (from < 0 || to >= array.length) {
+        console.error("参数错误");
+        return;
+      }
+      const newArray = [...array];
+      let item = newArray.splice(from, 1);
+      newArray.splice(to, 0, item[0]);
+      return newArray;
+    }
+    let array = [1, 2, 3, 4];
+    console.table(move(array, 1, 3));
+  </script>
+</html>

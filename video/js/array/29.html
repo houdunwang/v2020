@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //获取价格超过1万元商品的名称
+    // let cart = [
+    //   { name: "iphone", price: 12000 },
+    //   { name: "imac", price: 25000 },
+    //   { name: "ipad", price: 3600 }
+    // ];
+    // function getNameByPrice(goods, price) {
+    //   return goods
+    //     .reduce(function(arr, cur) {
+    //       if (cur.price > price) arr.push(cur);
+    //       return arr;
+    //     }, [])
+    //     .map(function(item) {
+    //       return item.name;
+    //     });
+    // }
+    // console.table(getNameByPrice(cart, 10000));
+
+    // let arr = [1, 2, 3, 3, 1, 4, 2];
+    // let newArr = arr.reduce(function(arr, cur) {
+    //   if (arr.includes(cur) === false) {
+    //     arr.push(cur);
+    //   }
+    //   return arr;
+    // }, []);
+    // console.table(newArr);
+
+    let cart = [
+      { name: "imac", price: 25000 },
+      { name: "iphone", price: 12000 },
+      { name: "imac", price: 25000 },
+      { name: "ipad", price: 3600 },
+      { name: "ipad", price: 3600 }
+    ];
+    function filterGoods(goods) {
+      return goods.reduce(function(arr, cur) {
+        let find = arr.find(function(v) {
+          return v.name == cur.name;
+        });
+        if (!find) arr.push(cur);
+        return arr;
+      }, []);
+    }
+    console.table(filterGoods(cart));
+  </script>
+</html>

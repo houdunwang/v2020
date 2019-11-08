@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let lessons = [
+      { title: "媒体查询响应式布局", category: "css" },
+      { title: "FLEX 弹性盒模型", category: "css" },
+      { title: "MYSQL多表查询随意操作", category: "mysql" }
+    ];
+    let hd = lessons.map(function(value) {
+      // return Object.assign({ click: 100 }, value);
+      return {
+        title: value.title,
+        category: value.cagtegory,
+        click: 100
+      };
+    });
+    console.table(hd);
+    console.table(lessons);
+    // let arr = ["hdcms", "houdunren"];
+    // let hd = arr.map(function(value, index, arr) {
+    //   value = `后盾人 -${value}`;
+    //   return value;
+    // });
+    // console.table(arr);
+    // console.table(hd);
+  </script>
+</html>

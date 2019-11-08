@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = [1, 5, 3, 9, 7];
+    //sort
+    function sort(array, callback) {
+      for (const n in array) {
+        for (const m in array) {
+          if (callback(array[n], array[m]) < 0) {
+            const temp = array[n];
+            array[n] = array[m];
+            array[m] = temp;
+          }
+        }
+      }
+      return array;
+    }
+    arr = sort(arr, function(a, b) {
+      return b - a;
+    });
+    console.log(arr);
+  </script>
+</html>

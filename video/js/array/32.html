@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        width: 100vh;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #34495e;
+      }
+      div {
+        font-size: 4em;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #9b59b6;
+      }
+      div > span {
+        position: relative;
+        display: inline-block;
+      }
+      .color {
+        animation-name: color;
+        animation-duration: 1s;
+        animation-iteration-count: 2;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+      }
+      @keyframes color {
+        50% {
+          color: #f1c40f;
+          transform: scale(2);
+        }
+        to {
+          color: #e74c3c;
+          transform: scale(0.5);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>houdunren.com</div>
+  </body>
+  <script>
+    const div = document.querySelector("div");
+    [...div.textContent].reduce(function(pre, cur, index) {
+      pre == index && (div.innerHTML = "");
+      let span = document.createElement("span");
+      span.innerHTML = cur;
+      div.appendChild(span);
+      span.addEventListener("mouseover", function() {
+        this.classList.add("color");
+      });
+      span.addEventListener("animationend", function() {
+        this.classList.remove("color");
+      });
+    }, 0);
+  </script>
+</html>

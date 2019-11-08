@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = [1, 2, 3, 4];
+    function filter(array, callback) {
+      let newArray = [];
+      for (const value of array) {
+        if (callback(value) === true) {
+          newArray.push(value);
+        }
+      }
+      return newArray;
+    }
+    console.log(
+      filter(hd, function(value) {
+        return value > 2;
+      })
+    );
+  </script>
+</html>
