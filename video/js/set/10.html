@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      padding: 100px;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      width: 200px;
+      flex-direction: column;
+    }
+    li {
+      height: 30px;
+      border: solid 2px #e67e22;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 10px;
+      color: #333;
+      transition: 1s;
+    }
+    a {
+      border-radius: 3px;
+      width: 20px;
+      height: 20px;
+      text-decoration: none;
+      text-align: center;
+      background: #16a085;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 5px;
+    }
+    .remove {
+      border: solid 2px #eee;
+      opacity: 0.8;
+      color: #eee;
+    }
+    .remove a {
+      background: #eee;
+    }
+  </style>
+
+  <body>
+    <ul>
+      <li>houdunren.com <a href="javascript:;">x</a></li>
+      <li>hdcms.com <a href="javascript:;">x</a></li>
+      <li>houdunwang.com <a href="javascript:;">x</a></li>
+    </ul>
+  </body>
+  <script>
+    class Todo {
+      constructor() {
+        this.items = document.querySelectorAll("ul>li");
+        this.lists = new WeakSet();
+        this.items.forEach(item => this.lists.add(item));
+      }
+      run() {
+        this.addEvent();
+      }
+      addEvent() {
+        this.items.forEach(item => {
+          let a = item.querySelector("a");
+          a.addEventListener("click", event => {
+            const parentElement = event.target.parentElement;
+            if (this.lists.has(parentElement)) {
+              parentElement.classList.add("remove");
+              this.lists.delete(parentElement);
+            } else {
+              parentElement.classList.remove("remove");
+              this.lists.add(parentElement);
+            }
+          });
+        });
+      }
+    }
+    new Todo().run();
+  </script>
+</html>

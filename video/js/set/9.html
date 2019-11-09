@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = { name: "后盾人" };
+    let edu = hd;
+    let set = new WeakSet();
+    set.add(hd);
+
+    hd = null;
+    edu = null;
+    // setTimeout(() => {
+    //   console.lolg(set);
+    // }, 2000);
+
+    // console.log(set);
+    // console.log(set.keys());
+    // for (const iterator of set) {
+    // }
+    // console.log(set);
+    // console.log(set.size);
+    // let a = new Set([1, 2]);
+    // console.log(a.size);
+  </script>
+</html>
