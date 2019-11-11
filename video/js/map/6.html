@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <form action="http://doc.houdunren.com" onsubmit="return post()">
+      接受协议:
+      <input type="checkbox" name="agreement" error="请接受接受协议" />
+      我是学生:
+      <input type="checkbox" name="student" error="网站只对学生开放" />
+      <input type="submit" />
+    </form>
+  </body>
+  <script>
+    function post() {
+      let map = new Map();
+      let inputs = document.querySelectorAll("[error]");
+      inputs.forEach(item => {
+        map.set(item, {
+          error: item.getAttribute("error"),
+          status: item.checked
+        });
+      });
+      // console.log([...map]);
+      return [...map].every(([elem, config]) => {
+        config.status || alert(config.error);
+        return config.status;
+      });
+    }
+  </script>
+</html>

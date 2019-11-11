@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      padding: 20px;
+      width: 100vw;
+      display: flex;
+      box-sizing: border-box;
+    }
+    div {
+      border: solid 2px #ddd;
+      padding: 10px;
+      flex: 1;
+    }
+    div:last-of-type {
+      margin-left: -2px;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      width: 200px;
+      flex-direction: column;
+    }
+    li {
+      height: 30px;
+      border: solid 2px #e67e22;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 10px;
+      color: #333;
+      transition: 1s;
+    }
+    a {
+      border-radius: 3px;
+      width: 20px;
+      height: 20px;
+      text-decoration: none;
+      text-align: center;
+      background: #16a085;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 5px;
+    }
+    .remove {
+      border: solid 2px #eee;
+      opacity: 0.8;
+      color: #eee;
+    }
+    .remove a {
+      background: #eee;
+    }
+    p {
+      margin-top: 20px;
+    }
+    p span {
+      display: inline-block;
+      background: #16a085;
+      padding: 5px;
+      color: white;
+      margin-right: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <body>
+    <div>
+      <ul>
+        <li><span>php</span> <a href="javascript:;">+</a></li>
+        <li><span>js</span> <a href="javascript:;">+</a></li>
+        <li><span>向军讲编程</span><a href="javascript:;">+</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong id="count">共选了2门课</strong>
+      <p id="lists"></p>
+    </div>
+  </body>
+  <script>
+    class Lesson {
+      constructor() {
+        this.lis = document.querySelectorAll("ul>li");
+        this.countElem = document.getElementById("count");
+        this.listElem = document.getElementById("lists");
+        this.map = new WeakMap();
+      }
+      run() {
+        this.lis.forEach(li => {
+          li.querySelector("a").addEventListener("click", event => {
+            const a = event.target;
+            const state = li.getAttribute("select");
+            if (state) {
+              li.removeAttribute("select");
+              this.map.delete(li);
+              a.innerHTML = "+";
+              a.style.backgroundColor = "green";
+            } else {
+              this.map.set(li);
+              li.setAttribute("select", true);
+              a.innerHTML = "-";
+              a.style.backgroundColor = "red";
+            }
+            this.render();
+          });
+        });
+      }
+      count() {
+        return [...this.lis].reduce((count, li) => {
+          return (count += this.map.has(li) ? 1 : 0);
+        }, 0);
+      }
+      lists() {
+        return [...this.lis]
+          .filter(li => {
+            return this.map.has(li);
+          })
+          .map(li => {
+            return `<span>${li.querySelector("span").innerHTML}</span>`;
+          })
+          .join("");
+      }
+      render() {
+        this.countElem.innerHTML = `共选了${this.count()}门课`;
+        this.listElem.innerHTML = this.lists();
+      }
+    }
+    new Lesson().run();
+  </script>
+</html>

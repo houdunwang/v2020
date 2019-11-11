@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = new Map([["houdunren", "后盾人"], ["hdcms", "开源系统"]]);
+    hd.set("name", "在线教程");
+    // console.log(hd.keys());
+    // console.log(hd.values());
+    // console.log(hd.entries());
+    // for (const [key, value] of hd.entries()) {
+    //   console.log(key, value);
+    // }
+    hd.forEach((value, key) => {
+      console.log(value, key);
+    });
+  </script>
+</html>
