@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // function hd() {
+    //   console.log("houdunren.com");
+    // }
+    // var hd = function() {
+    //   console.log("后盾人");
+    // };
+    // console.log(hd instanceof Object);
+    // let cms = hd;
+    // cms();
+    // show();
+    function sum(...args) {
+      // console.log(args);
+      return args.reduce(function(a, b) {
+        return a + b;
+      });
+    }
+    console.log(sum(1, 2, 3, 34, 45, 5));
+  </script>
+</html>
