@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    dl {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    dt {
+      background: #e67e22;
+      border-bottom: solid 2px #333;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    dd {
+      height: 200px;
+      background: #bdc3c7;
+      font-size: 5em;
+      text-align: center;
+      line-height: 200px;
+    }
+  </style>
+
+  <body>
+    <dl>
+      <dt>后盾人</dt>
+      <dd>1</dd>
+      <dt>hdcms</dt>
+      <dd hidden="hidden">2</dd>
+    </dl>
+  </body>
+  <script>
+    function panel(i) {
+      let dds = document.querySelectorAll("dd");
+      dds.forEach(dd => dd.setAttribute("hidden", "hidden"));
+      dds[i].removeAttribute("hidden");
+    }
+    document.querySelectorAll("dt").forEach((dt, i) => {
+      dt.addEventListener("click", () => panel.call(null, i));
+    });
+  </script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <button>hdcms</button>
+    <button>houdunren</button>
+  </body>
+  <script>
+    // console.log(Math.max(12, 2, 3, 4));
+    let arr = [1, 2, 3, 4, 5];
+    // console.log(Math.max(...arr));
+    console.log(Math.max.apply(Math, arr));
+    // arr.max
+    // Math
+    // function show() {
+    //   alert(this.innerHTML);
+    // }
+    // let buttons = document.querySelectorAll("button");
+    // for (let i = 0; i < buttons.length; i++) {
+    //   buttons[i].addEventListener("click", event => {
+    //     show.apply(event.target);
+    //   });
+    // }
+    //call apply
+    // let lisi = {
+    //   name: "李四"
+    // };
+    // let wangwu = {
+    //   name: "王五"
+    // };
+    // function User(web, url) {
+    //   console.log(web + url + this.name);
+    // }
+    // User.call(lisi, "后盾人", "houdunren.com");
+    // User.apply(lisi, ["后盾人", "houdunren.com"]);
+  </script>
+</html>

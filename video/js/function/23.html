@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      font-size: 3em;
+      padding: 30px;
+      transition: 2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #34495e;
+      color: #34495e;
+    }
+    h1 {
+      padding: 30px;
+      font-size: 30px;
+    }
+  </style>
+  <body>
+    <h1>houdunren.com</h1>
+    houdunren.com
+  </body>
+  <script>
+    function Color(elem) {
+      this.elem = elem;
+      this.colors = ["#1abc9c", "#f1c40f", "#9b59b6", "#f39c12"];
+      this.run = function() {
+        setInterval(
+          function() {
+            let i = Math.floor(Math.random() * this.colors.length);
+            this.elem.style.backgroundColor = this.colors[i];
+          }.bind(this),
+          1000
+        );
+      };
+    }
+    let obj = new Color(document.body);
+    obj.run();
+    let h1 = new Color(document.querySelector("h1"));
+    h1.run();
+  </script>
+</html>

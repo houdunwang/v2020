@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <button id="bt">后盾人</button>
+  </body>
+  <script>
+    // document.getElementById("bt").addEventListener("click", function() {
+    //   alert(this.innerHTML);
+    // });
+    let hd = [1, 2, 3, 4];
+    hd.map(function(value, index, array) {
+      array[index] += 10;
+    });
+    console.table(hd);
+  </script>
+</html>

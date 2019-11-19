@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // function avg(total, year = 1) {
+    //   // year = year || 1;
+    //   console.log(year);
+    //   return Math.round(total / year);
+    // }
+    // console.log(avg(2000));
+    // function sortArray(array, type = "asc") {
+    //   return array.sort((a, b) => (type == "asc" ? a - b : b - a));
+    // }
+    // console.log(sortArray([3, 1, 4, 2], "desc"));
+    function sum(total, discount = 0, dis = 0) {
+      return total * (1 - discount) * (1 - dis);
+    }
+    console.log(sum(1000));
+  </script>
+</html>

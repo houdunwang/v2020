@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <button id="hd">后盾人</button>
+  </body>
+  <script>
+    // function event() {
+    //   alert(this.innerHTML);
+    // }
+    // document.getElementById("hd").addEventListener("click", event);
+    // function hd(a) {
+    //   return a <= 3;
+    // }
+    // let arr = [1, 2, 3, 4, 5, 6, 7].filter(hd);
+    // console.log(arr);
+    // var i = 0;
+    // function cms() {
+    //   console.log(++i);
+    // }
+    // setInterval(cms, 1000);
+    function sum(...args) {
+      // console.log(args);
+      // console.log(arguments.length);
+      // let total = 0;
+      // for (let i = 0; i < arguments.length; i++) {
+      //   total += arguments[i];
+      // }
+      // return total;
+      return args.reduce((a, b) => a + b);
+    }
+    console.log(sum(1, 23, 3, 43, 45, 53));
+  </script>
+</html>

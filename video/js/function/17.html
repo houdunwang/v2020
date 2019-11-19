@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <button>houdunren.com</button>
+    <button>hdcms.com</button>
+  </body>
+  <script>
+    let Dom = {
+      site: "后盾人",
+      handleEvent: function(event) {
+        // console.log(event.target);
+        console.log(this.site + event.target.innerHTML);
+      },
+      bind: function() {
+        let buttons = document.querySelectorAll("button");
+        // console.log(buttons.length);
+        const self = this;
+        buttons.forEach(function(elem) {
+          // console.log(this);
+          elem.addEventListener("click", function() {
+            console.log(self.site + this.innerHTML);
+          });
+        });
+        // const button = document.querySelector("button");
+        // button.addEventListener("click", this);
+        // console.log(button);
+        // const self = this;
+        // button.addEventListener("click", function() {
+        // console.log(this);
+        // console.log(this.site + event.target.innerHTML);
+        // console.log(self.site + this.innerHTML);
+        // });
+        // button.onclick = function() {
+        //   console.log(this);
+        // };
+      }
+    };
+    Dom.bind();
+    // let hd = () => {
+    //   console.log("后盾人");
+    // };
+    // hd();
+    // let Lesson = {
+    //   site: "后盾人",
+    //   lists: ["js", "css", "mysql"],
+    //   show: function() {
+    //     return this.lists.map(title => `${this.site}-${title}`);
+    //   }
+    // };
+    // console.table(Lesson.show());
+  </script>
+</html>

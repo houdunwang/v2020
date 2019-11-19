@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //this
+    // let edu = {
+    //   name: "后盾人",
+    //   show: function() {
+    //     return this.name;
+    //   }
+    // };
+    // // console.log(edu.show());
+
+    // console.log(window);
+    // console.log(this == edu);
+    // name = "这是window的name";
+    // let edu = {
+    //   site: "后盾人",
+    //   show: function() {
+    //     console.log(this);
+    //     function render() {
+    //       console.log(this.site);
+    //     }
+    //     render();
+    //     // return this.name;
+    //   }
+    // };
+    // console.log(edu.show());
+    function User(name) {
+      this.name = name;
+      this.show = function() {
+        function render() {
+          console.log(this);
+        }
+        render();
+        return this.name;
+      };
+    }
+    let lisi = new User("李四");
+    console.log(lisi.show());
+  </script>
+</html>

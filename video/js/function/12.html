@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let lessons = [
+      {
+        title: "媒体查询响应式布局",
+        click: 89
+      },
+      {
+        title: "FLEX 弹性盒模型",
+        click: 45
+      },
+      {
+        title: "GRID 栅格系统",
+        click: 19
+      },
+      {
+        title: "盒子模型详解",
+        click: 29
+      }
+    ];
+    // function change(lessons, num = 100, i = 0) {
+    //   if (i == lessons.length) {
+    //     return lessons;
+    //   }
+    //   lessons[i].click += num;
+    //   return change(lessons, num, ++i);
+    // }
+    // console.table(change(lessons, 90));
+    lessons = lessons.map(function(item) {
+      item.click += 100;
+      return item;
+    });
+    console.table(lessons);
+  </script>
+</html>

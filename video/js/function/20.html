@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function Request() {
+      this.get = function(params) {
+        let str = Object.keys(params)
+          .map(k => `${k}=${params[k]}`)
+          .join("&");
+        let url = `https://api.houdunren.com?${this.url}/${str}`;
+        document.write(url + "<hr/>");
+      };
+    }
+    //https://houdunren.com/article/lists?id=1&cat=js
+    function Article() {
+      this.url = "article/lists";
+      Request.apply(this);
+    }
+    let a = new Article();
+    console.log(a.get({ id: 1, cat: "js" }));
+    function User() {
+      this.url = "user/lists";
+      Request.call(this);
+    }
+    let user = new User();
+    user.get({ id: 2, role: "admin" });
+  </script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <button>后盾人</button>
+  </body>
+  <script>
+    document.querySelector("button").addEventListener(
+      "click",
+      function(event) {
+        document.write(this.url + event.target.innerHTML);
+      }.bind({ url: "houdunren.com" })
+    );
+    //bind  call
+    // function show() {
+    //   console.log(this.name);
+    // }
+    // // show.call({ name: "后盾人" });
+    // show.bind({ name: "hdcms" });
+    // let a = function() {};
+    // let b = a;
+    // // console.log(a instanceof Object);
+    // console.log(a === b);
+    // b = a.bind();
+    // console.log(a === b);
+
+    // function hd(a, b) {
+    //   console.log(a, b);
+    //   return this.f + a + b;
+    // }
+    // // console.log(hd.call({ f: 1 }, 1, 1));
+    // let func = hd.bind({ f: 1 }, 1);
+    // func(3, 4);
+    // func(2,3)
+  </script>
+</html>
