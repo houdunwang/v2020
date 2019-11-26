@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //let const vs var 环境（作用域）
+    // {
+    //   var a = 1;
+    // }
+    // console.log(window.a);
+    for (let a = 1; a <= 3; a++) {
+      setTimeout(function() {
+        console.log(a);
+      }, 1000);
+    }
+    // console.log(a);
+  </script>
+</html>

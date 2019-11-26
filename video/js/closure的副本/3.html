@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function User() {
+      let a = 1;
+      this.get = function() {
+        console.log(++a);
+        // return "houdunren.com";
+      };
+    }
+    let xj = new User();
+    xj.get();
+    xj.get();
+    xj.get();
+    // console.log(xj);
+    let lisi = new User();
+    lisi.get();
+    // console.log(lisi);
+    // console.log(xj.get());
+  </script>
+</html>

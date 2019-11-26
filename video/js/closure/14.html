@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let lessons = [
+      {
+        title: "媒体查询响应式布局",
+        click: 89,
+        price: 12
+      },
+      {
+        title: "FLEX 弹性盒模型",
+        click: 45,
+        price: 120
+      },
+      {
+        title: "GRID 栅格系统",
+        click: 19,
+        price: 67
+      },
+      {
+        title: "盒子模型详解",
+        click: 29,
+        price: 300
+      }
+    ];
+    function order(field, type = "asc") {
+      return function(a, b) {
+        if (type == "asc") return a[field] > b[field] ? 1 : -1;
+        return a[field] > b[field] ? -1 : 1;
+      };
+    }
+    // lessons={
+    //   sort:function(callback){
+    //     callback(a,b)
+    //   }
+    // }
+    let hd = lessons.sort(order("price"));
+    console.table(hd);
+    // let hd = lessons.sort(function(a, b) {
+    //   return a.price > b.price ? 1 : -1;
+    // });
+    // console.table(hd);
+    // let a = lessons.sort(function(a, b) {
+    //   return a.click > b.click ? 1 : -1;
+    // });
+    // console.table(a);
+  </script>
+</html>

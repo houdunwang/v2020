@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = [];
+    for (var i = 1; i <= 3; i++) {
+      (function(i) {
+        arr.push(function() {
+          return i;
+        });
+      })(i);
+      // console.log(i);
+    }
+    console.log(arr[2]());
+  </script>
+</html>

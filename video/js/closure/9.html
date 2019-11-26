@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function hd() {
+      let n = 1;
+      return function sum() {
+        console.log(++n);
+      };
+    }
+    let a = hd();
+    a();
+    a();
+  </script>
+</html>

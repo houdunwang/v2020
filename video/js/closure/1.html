@@ -2,35 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>后盾人</title>
   </head>
-  <body></body>
+  <body>
+    <!-- <button>houdunren.com</button> -->
+  </body>
   <script>
-    let lessons = [
-      {
-        title: "媒体查询响应式布局",
-        click: 89
-      },
-      {
-        title: "FLEX 弹性盒模型",
-        click: 45
-      },
-      {
-        title: "GRID 栅格系统",
-        click: 19
-      },
-      {
-        title: "盒子模型详解",
-        click: 29
-      }
-    ];
-    function order(key) {
-      return function(a, b) {
-        return a[key] > b[key] ? 1 : -1;
-      };
+    // let title = "后盾人";
+    // function hd() {
+    //   alert(title);
+    // }
+    // document.querySelector("button").addEventListener("click", hd);
+    // console.log(title);
+
+    let title = "后盾人";
+    function show() {
+      console.log(title);
     }
-    console.table(lessons.sort(order("click")));
+    show();
   </script>
 </html>

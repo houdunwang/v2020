@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function Hd() {
+      let n = 1;
+      this.sum = function() {
+        console.log(++n);
+      };
+    }
+    // function Hd() {
+    //   let n = 1;
+    //   function sum() {
+    //     console.log(++n);
+    //   }
+    //   return {
+    //     sum: sum
+    //   };
+    // }
+    let a = new Hd();
+    // console.log(a);
+    a.sum();
+    a.sum();
+    let b = new Hd();
+    b.sum();
+    b.sum();
+  </script>
+</html>

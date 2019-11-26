@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <style>
+      button {
+        position: absolute;
+      }
+    </style>
+    <button message="后盾人">houdunren</button>
+    <button message="hdcms">hdcms</button>
+  </body>
+  <script>
+    let btns = document.querySelectorAll("button");
+    btns.forEach(function(item) {
+      item.addEventListener("click", function() {
+        let left = 1;
+        setInterval(function() {
+          item.style.left = left++ + "px";
+        }, 100);
+      });
+    });
+  </script>
+</html>

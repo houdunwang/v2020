@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    for (var i = 1; i <= 3; i++) {
+      (function(i) {
+        setTimeout(function() {
+          console.log(i);
+        }, 1000);
+      })(i);
+    }
+  </script>
+</html>
