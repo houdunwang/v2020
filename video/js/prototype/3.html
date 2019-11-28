@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // let user = {};
+    // let hd = user;
+    // user.name = "向军";
+    // console.log(hd.name);
+
+    //传值
+    // function show(a) {
+    //   // console.log(a);
+    //   a = a + 100;
+    //   console.log(a);
+    // }
+    // let a = 1;
+    // show(a);
+    // console.log(a);
+    let user = { name: "后盾人" };
+    function show(user) {
+      // console.log(a);
+      user.age = 18;
+      console.log(user);
+    }
+    show(user);
+    console.log(user);
+  </script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {
+      name: "后盾人",
+      lesson: {
+        title: "javascript"
+      }
+    };
+    let {
+      name,
+      lesson: { title }
+    } = hd;
+    console.log(name, title);
+    // let { title } = {
+    //   title: "javascript"
+    // };
+    // console.log(title);
+  </script>
+</html>

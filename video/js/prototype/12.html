@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // let hd = { name: "后盾人" };
+    // let arr = ["houdunren.com", "hdcms"];
+    // console.log(arr);
+    // console.log(arr.hasOwnProperty("length"));
+    // console.log(arr.hasOwnProperty("concat"));
+
+    // console.log("concat" in arr);
+
+    let a = {
+      name: "后盾人"
+    };
+    let b = {
+      url: "houdunren.com"
+    };
+    Object.setPrototypeOf(a, b);
+    console.log(a);
+    console.log(a.hasOwnProperty("url"));
+    console.log("url" in a);
+
+    function oss(options) {
+      if (!options.hasOwnProperty("host")) {
+        throw new Error("必须设置主机地址");
+      }
+    }
+    oss({ user: "admin" });
+  </script>
+</html>

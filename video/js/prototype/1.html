@@ -2,17 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>后盾人</title>
   </head>
   <body></body>
   <script>
-    let arr = [1, 2, 3];
-    console.log(
-      arr.reject(function(v) {
-        return v == 1;
-      })
-    );
+    // let name = "向军";
+    // let grade = [
+    //   { name: "js", score: 99 },
+    //   { name: "docker", score: 76 }
+    // ];
+    // function average(grade, name) {
+    //   let total = grade.reduce((t, l) => t + l.score, 0);
+    //   return `${name}的平均成绩是: ${total / grade.length}`;
+    // }
+    // console.log(average(grade, name));
+    let user = {
+      name: "向军",
+      grade: [
+        { name: "js", score: 99 },
+        { name: "docker", score: 76 }
+      ],
+      average() {
+        let total = this.grade.reduce((t, l) => t + l.score, 0);
+        return `${this.name}的平均成绩是: ${total / this.grade.length}`;
+      }
+    };
+    // console.log(user);
+    console.log(user.average());
   </script>
 </html>

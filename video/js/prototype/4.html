@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // let arr = [1, 2, 3];
+    // let a = [...arr, 5, 6, 7];
+    // console.log(a);
+    // let user = { name: "向军", age: 22 };
+    // let hd = { ...user, lang: "zh" };
+    // console.log(hd);
+    function upload(params) {
+      let config = {
+        type: "*.jpeg,*.png",
+        size: 10000
+      };
+      return (config = { ...config, ...params });
+    }
+    console.log(JSON.stringify(upload({ size: 99, type: "*.gif" }), null, 2));
+  </script>
+</html>
