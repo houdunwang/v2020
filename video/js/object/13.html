@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // let hd = {};
+    // let name = "title";
+    // hd[name] = "后盾人";
+    // console.log(hd.title);
+    // let id = 0;
+    // let hd = {};
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // hd[`id-${++id}`] = id;
+    // console.log(hd);
+    const lessons = [
+      {
+        title: "媒体查询响应式布局",
+        category: "css"
+      },
+      {
+        title: "FLEX 弹性盒模型",
+        category: "css"
+      },
+      {
+        title: "MYSQL多表查询随意操作",
+        category: "mysql"
+      }
+    ];
+    let res = lessons.reduce((obj, cur, index) => {
+      obj[`${cur["category"]}-${index + 1}`] = cur;
+      return obj;
+    }, {});
+    // console.log(res);
+    console.log(JSON.stringify(res, null, 2));
+
+    // let hd = Object.assign({ a: 1 }, { b: 2 });
+    // console.log(hd);
+    // jQuery.extend()  lodash
+    function upload(params) {
+      let options = {
+        size: 19999
+      };
+      options = Object.assign(options, params);
+      console.log(JSON.stringify(options, null, 2));
+    }
+    upload({ size: 99, type: "jpeg" });
+  </script>
+</html>

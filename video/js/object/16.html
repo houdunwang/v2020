@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // let obj = {
+    //   name: "后盾人",
+    //   user: {
+    //     name: "hdcms"
+    //   }
+    // };
+    // let hd = {
+    //   name: obj.name,
+    //   user: obj.user
+    // };
+    // hd.user.name = "向军";
+    // console.log(JSON.stringify(obj, null, 2));
+    // console.log(JSON.stringify(hd, null, 2));
+
+    // let data = {
+    //   name: "后盾人",
+    //   user: {
+    //     name: "hdcms"
+    //   }
+    // };
+    // function copy(object) {
+    //   let res = {};
+    //   for (const key in object) {
+    //     res[key] =
+    //       typeof object[key] == "object" ? copy(object[key]) : object[key];
+    //   }
+    //   return res;
+    // }
+    // let hd = copy(data);
+    // hd.user.name = "向军";
+    // console.log(JSON.stringify(hd, null, 2));
+    // console.log(JSON.stringify(data, null, 2));
+
+    let data = {
+      name: "后盾人",
+      user: {
+        name: "hdcms"
+      },
+      arr: []
+    };
+    // console.log({} instanceof Object);
+    // let a = ["后盾人", "向军"];
+    // console.log(JSON.stringify(Object.entries(a), null, 2));
+    // let b = { name: "后盾人", title: "向军" };
+    // console.log(JSON.stringify(Object.entries(b), null, 2));
+    function copy(obj) {
+      let res = obj instanceof Array ? [] : {};
+      for (const [k, v] of Object.entries(obj)) {
+        res[k] = typeof v == "object" ? copy(v) : v;
+      }
+      return res;
+    }
+    let hd = copy(data);
+    // hd.user.name = "向军";
+    hd.arr.push("abc");
+    console.log(JSON.stringify(hd, null, 2));
+    console.log(JSON.stringify(data, null, 2));
+  </script>
+</html>

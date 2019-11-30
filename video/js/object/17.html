@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // let xj = {
+    //   name: "向军",
+    //   show: function() {
+    //     console.log(this.name+`-houdunren`);
+    //   }
+    // };
+    // let hd = {
+    //   name: "后盾人",
+    //   show: function() {
+    //     console.log(this.name+`-houdunren`);
+    //   }
+    // };
+    function user(name, age) {
+      return {
+        name,
+        age,
+        show() {
+          console.log(this.name + `-houdunren.com`);
+        },
+        info() {
+          console.log(`${this.name}的年龄是${this.age}`);
+        }
+      };
+    }
+    let xj = user("向军", 18);
+    xj.show();
+    let lisi = user("李四", 22);
+    lisi.show();
+    lisi.info();
+  </script>
+</html>

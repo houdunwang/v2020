@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const user = {
+      data: { name: null, age: null },
+      set age(value) {
+        if (typeof value != "number" || value > 100 || value < 10) {
+          throw new Error("年龄格式错误");
+        }
+        this.data.age = value;
+      },
+      get age() {
+        return `年龄是: ${this.data.age}`;
+      }
+    };
+    user.age = 99;
+    console.log(user.age);
+  </script>
+</html>

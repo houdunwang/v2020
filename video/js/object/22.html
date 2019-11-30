@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const user = {
+      name: "后盾人",
+      age: 18
+    };
+    console.log(
+      JSON.stringify(Object.getOwnPropertyDescriptor(user, "age"), null, 2)
+    );
+    Object.defineProperties(user, {
+      name: {
+        value: "后盾人",
+        writable: true,
+        enumerable: false,
+        configurable: true
+      },
+      age: {
+        value: "后盾人",
+        writable: true,
+        enumerable: true,
+        configurable: true
+      }
+    });
+    console.log(Object.keys(user));
+    // Object.defineProperty(user, "name", {
+    //   value: "后盾人",
+    //   writable: true,
+    //   enumerable: true,
+    //   configurable: false
+    // });
+    // Object.defineProperty(user, "name", {
+    //   value: "后盾人",
+    //   writable: true,
+    //   enumerable: false,
+    //   configurable: true
+    // });
+    // console.log(user.name);
+    // user.name = "向军";
+    // console.log(user);
+    // delete user.name;
+    // console.log(user);
+    // console.log(user.name);
+    // console.log(Object.keys(user));
+    // for (const key in user) {
+    //   console.log(key);
+    // }
+  </script>
+</html>

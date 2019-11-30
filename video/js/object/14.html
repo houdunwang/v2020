@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {
+      name: "后盾人",
+      year: "2010"
+    };
+    // console.log(Object.keys(hd));
+    // console.log(Object.values(hd));
+    // console.log(JSON.stringify(Object.entries(hd), null, 2));
+
+    // for (const key in hd) {
+    //   console.log(hd[key]);
+    // }
+    // for (const iterator of hd) {
+    //   console.log(iterator);
+    // }
+    // let lessons = [{ name: "js", click: 999 }];
+    // for (const iterator of lessons) {
+    //   console.log(iterator);
+    // }
+    // for (const [key, value] of Object.entries(hd)) {
+    //   console.log(value);
+    // }
+
+    let lessons = [
+      { name: "js", click: 999 },
+      { name: "node", click: 127 }
+    ];
+    let ul = document.createElement("ul");
+    for (const lesson of lessons) {
+      let li = document.createElement("li");
+      li.innerHTML = `课程:${lesson.name}，点击数:${lesson.click}`;
+      ul.appendChild(li);
+    }
+    document.body.appendChild(ul);
+  </script>
+</html>

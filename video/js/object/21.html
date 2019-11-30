@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    const user = {
+      name: "向军",
+      age: 18
+    };
+
+    console.log(
+      JSON.stringify(Object.getOwnPropertyDescriptor(user, "name"), null, 2)
+    );
+    console.log(
+      JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+    );
+
+    // user.lesson = "js";
+    // console.log(user);
+    // delete user.lesson;
+    // console.log(user);
+
+    // let arr = ["后盾人", "hdcms"];
+    // console.log(arr);
+    // for (const [key, value] of Object.entries(arr)) {
+    //   console.log(key, value);
+    // }
+  </script>
+</html>

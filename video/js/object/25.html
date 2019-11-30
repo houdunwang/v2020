@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const user = {
+      name: "后盾人",
+      age: 18
+    };
+    Object.freeze(user);
+    console.log(
+      JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2)
+    );
+    // user.site = "houdunren.com";
+    // delete user.name;
+    // user.name = "向军";
+    // console.log(Object.isFrozen(user));
+    console.log(user.name);
+  </script>
+</html>

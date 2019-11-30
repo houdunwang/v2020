@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // let o = {};
+    // console.log(o);
+    let o = new Object();
+    o.name = "后盾人";
+    console.log(o);
+    let n = new Number(1);
+    console.log(n + 3);
+    let s = new String("houdunren");
+    // let s = 'abc';
+    // console.log(s.valueOf());
+    // console.log(s.toUpperCase());
+    let b = new Boolean(true);
+    console.log(typeof b.toString());
+    console.log(typeof b.valueOf());
+
+    // let d = new Date();
+    // console.log(d.valueOf());
+
+    let r = new RegExp("\\d+");
+    console.log(r.valueOf());
+    console.log(r.test("abc"));
+    function hd() {}
+    console.log(hd.constructor); //Function
+    let User = new hd.constructor(
+      "name",
+      `
+      this.name = name;
+      this.show = function(){
+        console.log(this.name+'是能过构造函数Function创建的');
+      }
+    `
+    );
+    let xj = new User("向军");
+    xj.show();
+  </script>
+</html>

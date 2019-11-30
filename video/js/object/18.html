@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    function User(name) {
+      this.name = name;
+      this.show = function() {
+        console.log(this);
+        // console.log(this.name);
+      };
+      // return this;
+      // return {};
+    }
+    let xj = new User("向军");
+    // console.log(xj);
+    // xj.show();
+    let func = xj.show;
+    // func
+    // console.log(this);
+    func();
+  </script>
+</html>
