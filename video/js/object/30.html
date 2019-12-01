@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const DATA = Symbol();
+    const user = {
+      // name: "后盾人",
+      [DATA]: { name },
+      age: 10,
+      set name(value) {
+        this[DATA].name = value;
+      },
+      get name() {
+        return this[DATA].name;
+      }
+    };
+    user.name = "hdcms";
+    // user.data.name = "你好";
+    console.log(user[Symbol()]);
+  </script>
+</html>

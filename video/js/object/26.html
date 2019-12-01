@@ -8,18 +8,20 @@
   <script>
     "use strict";
     const user = {
-      data: { name: null, age: null },
+      data: { name: "后盾人", age: 10 },
       set age(value) {
-        if (typeof value != "number" || value > 100 || value < 10) {
+        if (typeof value != "number" || value < 10 || value > 100) {
           throw new Error("年龄格式错误");
         }
         this.data.age = value;
       },
       get age() {
-        return `年龄是: ${this.data.age}`;
+        return this.data.age + "岁";
       }
     };
-    user.age = 99;
+    // user.setAge(999);
+    user.age = 87;
     console.log(user.age);
+    // user.age = 19999;
   </script>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <input type="text" v-model="title" />
+    <input type="text" v-model="title" />
+    <h4 v-bind="title">这里也会发生更新</h4>
+  </body>
+  <script>
+    function View() {
+      let proxy = new Proxy(
+        {},
+        {
+          get(obj, property) {},
+          set(obj, property, value) {
+            console.log(value);
+          }
+        }
+      );
+      this.init = function() {
+        const els = document.querySelectorAll("[v-model]");
+        els.forEach(item => {
+          item.addEventListener("keyup", function() {
+            proxy[this.getAttribute("v-model")] = this.value;
+          });
+        });
+      };
+    }
+    new View().init();
+  </script>
+</html>

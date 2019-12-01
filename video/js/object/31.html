@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const DATA = Symbol();
+    class User {
+      constructor(name, age) {
+        this[DATA] = { name, age };
+      }
+      get name() {
+        return this[DATA].name;
+      }
+      set name(value) {
+        if (value.trim() == "" || value.length > 20) {
+          throw new Error("用户名不合法");
+        }
+        this[DATA].name = value;
+      }
+      get age() {
+        return this[DATA].age;
+      }
+      set age(value) {
+        this[DATA].name = age;
+      }
+    }
+    let xj = new User("向军", 19);
+    xj.name = "后盾人";
+    console.log(xj.name);
+    // function User(name, age) {
+    //   // this.name = name;
+    //   // this.age = age;
+    //   let data = { name, age };
+    //   Object.defineProperties(this, {
+    //     name: {
+    //       get() {
+    //         return data.name;
+    //       },
+    //       set(value) {
+    //         if (value.trim() == "" || value.length > 20) {
+    //           throw new Error("用户名不合法");
+    //         }
+    //         data.name = value;
+    //       }
+    //     },
+    //     age: {
+    //       get() {
+    //         return data.age;
+    //       },
+    //       set(value) {
+    //         data.name = age;
+    //       }
+    //     }
+    //   });
+    // }
+    // let xj = new User("向军", 19);
+    // xj.name = "后盾人";
+    // console.log(xj.name);
+  </script>
+</html>

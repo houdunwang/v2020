@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const web = {
+      name: "后盾人",
+      url: "houdunren.com",
+      get site() {
+        return `${this.name}的网址是${this.url}`;
+      },
+      set site(value) {
+        [this.name, this.url] = value.split(",");
+      }
+    };
+    // web.name = '开源产品';
+    web.site = "开源产品,www.hdcms.com";
+    // console.log(web.url);
+    console.log(web.site);
+  </script>
+</html>

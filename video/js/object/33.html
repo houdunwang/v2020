@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function factorial(num) {
+      return num == 1 ? 1 : num * factorial(num - 1);
+    }
+    let proxy = new Proxy(factorial, {
+      apply(func, obj, args) {
+        console.time("run");
+        func.apply(this, args);
+        console.timeEnd("run");
+      }
+    });
+    proxy.apply({}, [1000]);
+  </script>
+</html>

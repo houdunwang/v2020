@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    let Lesson = {
+      lists: [
+        { name: "js", price: 100 },
+        { name: "mysql", price: 212 },
+        { name: "vue.js", price: 98 }
+      ],
+      get total() {
+        return this.lists.reduce((t, l) => t + l.price, 0);
+      }
+    };
+    console.log(Lesson.total);
+    Lesson.total = 8388;
+    console.log(Lesson.total);
+  </script>
+</html>

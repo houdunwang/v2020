@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    //token
+    let Request = {
+      set token(content) {
+        localStorage.setItem("token", content);
+      },
+      get token() {
+        let token = localStorage.getItem("token");
+        if (!token) {
+          alert("请登录");
+        }
+        return token;
+      }
+    };
+    Request.token = "3248989239823kldskjklsd";
+    console.log(Request.token);
+  </script>
+</html>

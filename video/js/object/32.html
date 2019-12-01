@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    "use strict";
+    const hd = { name: "后盾人" };
+    const proxy = new Proxy(hd, {
+      get(obj, property) {
+        // console.log(obj);
+        return obj[property];
+      },
+      set(obj, property, value) {
+        obj[property] = value;
+        return true;
+      }
+    });
+    console.log(proxy.name);
+    proxy.name = "向军";
+    console.log(proxy.name);
+    console.log(proxy);
+  </script>
+</html>

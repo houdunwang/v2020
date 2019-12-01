@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {
+      title: "后盾人",
+      url: "houdunren.com",
+      teacher: {
+        name: "向军大叔"
+      },
+      toJSON: function() {
+        return {
+          title: this.title,
+          teacher: this.teacher.name
+        };
+      }
+    };
+    let json = JSON.stringify(hd, null, 2);
+    console.log(json);
+    // let json = JSON.stringify(hd, ["title", "url"], 2);
+    // console.log(json);
+
+    // let arr = ["后盾人", "hdcms.com"];
+    // let arrJson = JSON.stringify(arr, ["title", "url"], 2);
+    // console.log(arrJson);
+  </script>
+</html>

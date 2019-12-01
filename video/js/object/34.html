@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    const lessons = [
+      {
+        title: "媒体查询响应式布局",
+        category: "css"
+      },
+      {
+        title: "FLEX模型",
+        category: "css"
+      },
+      {
+        title: "MYSQL多表查询随意操作",
+        category: "mysql"
+      }
+    ];
+    let proxy = new Proxy(lessons, {
+      get(array, key) {
+        const title = array[key].title;
+        const len = 10;
+        array[key].title =
+          title.length > len ? title.substr(0, len) + ".".repeat(3) : title;
+        return array[key];
+      }
+    });
+    console.log(JSON.stringify(proxy[1], null, 2));
+  </script>
+</html>
