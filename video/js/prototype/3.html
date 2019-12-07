@@ -8,16 +8,15 @@
   </head>
   <body></body>
   <script>
-    //let const vs var 环境（作用域）
-    // {
-    //   var a = 1;
-    // }
-    // console.log(window.a);
-    for (let a = 1; a <= 3; a++) {
-      setTimeout(function() {
-        console.log(a);
-      }, 1000);
-    }
-    // console.log(a);
+    let xj = { name: "向军" };
+    console.log(xj);
+    console.log(xj.hasOwnProperty("name"));
+    //完全数据字典对象
+    let hd = Object.create(null, {
+      name: {
+        value: "后盾人"
+      }
+    });
+    console.log(hd.hasOwnProperty("name"));
   </script>
 </html>

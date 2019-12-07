@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {
+      show() {
+        console.log("后盾人");
+      },
+      render() {
+        console.log("hd . render");
+      }
+    };
+    console.log(hd);
+    hd.__proto__.render = function() {
+      console.log("向军");
+    };
+    hd.render();
+  </script>
+</html>

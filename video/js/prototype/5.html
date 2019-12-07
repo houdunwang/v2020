@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // let hd = {};
+    // console.dir(hd);
+    //new String new Number new Boolean new RegExp
+    function User() {}
+    User.__proto__.view = function() {
+      console.log("User function view method");
+    };
+    User.view();
+    // User.apply
+    // console.dir(User);
+    // User.prototype.show = function() {
+    //   console.log("后盾人");
+    // };
+    // let hd = new User();
+
+    // hd.show();
+    // console.log(User.prototype == hd.__proto__);
+  </script>
+</html>
