@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //Object.prototyope = b.__proto__
+    let a = {};
+    let b = {};
+    let c = {};
+    Object.setPrototypeOf(b, c);
+    Object.setPrototypeOf(a, b);
+    // console.log(Object.prototype == b.__proto__);
+    // console.log(b.__proto__.isPrototypeOf(a));
+    console.log(b.isPrototypeOf(a));
+    console.log(c.isPrototypeOf(b));
+    console.log(c.isPrototypeOf(a));
+  </script>
+</html>

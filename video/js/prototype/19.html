@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //this
+    let hd = {
+      name: "后盾人"
+    };
+    let User = {
+      name: "向军",
+      show() {
+        console.log(this.name);
+      }
+    };
+    Object.setPrototypeOf(hd, User);
+    hd.show();
+    // console.log(hd);
+    // console.log(hd.show());
+  </script>
+</html>

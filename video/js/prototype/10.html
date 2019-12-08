@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function User(name) {
+      this.name = name;
+    }
+    User.prototype = {
+      constructor: User,
+      show() {
+        console.log(this.name);
+      }
+    };
+    let hd = new User("后盾人");
+    console.log(hd);
+    function createByObject(obj, ...args) {
+      const constructor = Object.getPrototypeOf(obj).constructor;
+      return new constructor(...args);
+    }
+    let xj = createByObject(hd, "向军");
+    xj.show();
+  </script>
+</html>

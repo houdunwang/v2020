@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <button message="后盾人" class="red">后盾人</button>
+    <button message="hdcms">hdcms</button>
+  </body>
+  <script>
+    let arr = [1, 3, 43];
+    let res = arr.filter(item => {
+      return item > 39;
+    });
+    // console.dir();
+    console.log(res);
+    let btns = document.querySelectorAll("button");
+    btns = [].filter.call(btns, item => {
+      return item.hasAttribute("class");
+    });
+    console.log(btns);
+  </script>
+</html>

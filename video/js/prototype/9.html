@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function User(name) {
+      this.name = name;
+    }
+    // User.prototype = {
+    //   constructor: User,
+    //   show() {
+    //     console.log(this.name);
+    //   }
+    // };
+    User.prototype.show = function() {
+      console.log(this.name);
+    };
+    // console.dir(User);
+    // console.log(User.prototype.__proto__ == Object.prototype);
+    // console.log(User.prototype.constructor == User);
+    let lisi = new User.prototype.constructor("李四");
+    lisi.show();
+  </script>
+</html>

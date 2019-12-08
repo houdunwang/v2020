@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //__proto__ getter setter
+    // let hd = { name: "后盾人" };
+    // hd.__proto__ = {
+    //   show() {
+    //     console.log(this.name);
+    //   }
+    // };
+    // hd.__proto__ = 99;
+    // hd.show();
+    // let hd = {
+    //   action: {},
+    //   get proto() {
+    //     return this.action;
+    //   },
+    //   set proto(obj) {
+    //     if (obj instanceof Object) {
+    //       this.action = obj;
+    //     }
+    //   }
+    // };
+    // hd.proto = { view: function() {} };
+    // hd.proto = "abc";
+    // console.log(hd.proto);
+    // let hd = Object.create(null);
+    let hd = {};
+    console.dir(hd);
+    hd.__proto__ = "后盾人";
+    console.dir(hd.__proto__);
+  </script>
+</html>

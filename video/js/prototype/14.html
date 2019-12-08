@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let a = { url: "houdunren" };
+    let b = { name: "后盾人" };
+    // Object.prototype.web = "hdcms.com";
+    // console.log("web" in a);
+    Object.setPrototypeOf(a, b);
+    // console.log("name" in a);
+    // console.log(a.hasOwnProperty("name"));
+    for (const key in a) {
+      if (a.hasOwnProperty(key)) {
+        console.log(a[key]);
+      }
+    }
+  </script>
+</html>

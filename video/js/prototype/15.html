@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = {
+      data: [1, 2, 3, 34, 5, 7]
+    };
+    Object.setPrototypeOf(hd, {
+      max(data) {
+        return data.sort((a, b) => b - a)[0];
+      }
+    });
+    console.log(hd.max(hd.data));
+
+    let xj = {
+      lessons: { js: 87, php: 63, node: 99, linux: 88 }
+      //getter
+      // get data() {
+      //   return Object.values(this.lessons);
+      // }
+    };
+    console.log(hd.max.call(null, Object.values(xj.lessons)));
+  </script>
+</html>

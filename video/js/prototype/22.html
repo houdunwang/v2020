@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let user = {
+      show() {
+        return this.name;
+      }
+    };
+    //prototype
+    //定义对象的原型，不能获取
+    // let hd = Object.create(user, {
+    //   name: {
+    //     value: "后盾人"
+    //   }
+    // });
+    // console.log(hd.show());
+    let hd = { name: "后盾人" };
+    // hd.__proto__ = user;
+    // console.log(hd.__proto__);   __proto__
+    Object.setPrototypeOf(hd, user);
+    console.log(hd.show());
+    console.log(Object.getPrototypeOf(hd));
+  </script>
+</html>

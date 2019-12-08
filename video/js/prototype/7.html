@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // let hd = {}; // Object
+    // console.log(hd.__proto__ == Object.prototype);
+    Array.prototype.show = function() {
+      console.log("后盾人");
+    };
+    let arr = []; // new Array
+    console.log(arr.__proto__ == Array.prototype);
+    arr.show();
+    let str = ""; //new String
+    console.log(str.__proto__ == String.prototype);
+
+    let bool = true;
+    console.log(bool.__proto__ == Boolean.prototype);
+
+    let reg = /a/i; // new RegExp
+    console.log(reg.__proto__ == RegExp.prototype);
+
+    let obj = {};
+    console.log(obj.__proto__ == Object.prototype);
+  </script>
+</html>

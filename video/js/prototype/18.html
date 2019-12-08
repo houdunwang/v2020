@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function User(name) {
+      this.name = name;
+    }
+    User.prototype = {
+      constructor: User,
+      show() {
+        console.log(this.name);
+      },
+      get() {
+        console.log("get..");
+      }
+    };
+    let lisi = new User("李四");
+    let xj = new User("向军");
+    lisi.show();
+    xj.show();
+  </script>
+</html>

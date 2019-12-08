@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // let arr = []; //new Array
+    // console.log(arr.__proto__.__proto__ == Object.prototype);
+    // console.log(Object.prototype.__proto__);
+
+    let a = { name: "a" };
+    let c = { name: "c" };
+    let b = {
+      name: "b",
+      show() {
+        console.log(this.name);
+      },
+      view() {
+        console.log("view method");
+      }
+    };
+    Object.setPrototypeOf(a, b);
+    Object.setPrototypeOf(c, b);
+    a.show();
+    c.show();
+    a.view();
+    c.view();
+  </script>
+</html>

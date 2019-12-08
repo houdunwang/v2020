@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function A() {}
+    function B() {}
+    function C() {}
+    let c = new C();
+    B.prototype = c;
+    let b = new B();
+    A.prototype = b;
+    let a = new A();
+    //A.prototype
+    console.log(a instanceof A);
+    console.log(a instanceof C);
+    console.log(a instanceof C);
+    console.log(b instanceof A);
+  </script>
+</html>
