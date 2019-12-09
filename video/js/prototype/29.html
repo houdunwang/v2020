@@ -7,12 +7,19 @@
   <body></body>
   <script>
     function User() {}
-    User.prototype.name = function() {
+    User.prototype.show = function() {
       console.log("user.name");
     };
-
+    User.prototype.site = function() {
+      return "后盾人";
+    };
     function Admin() {}
     Admin.prototype = Object.create(User.prototype);
     Admin.prototype.constructor = Admin;
+    Admin.prototype.show = function() {
+      console.log(User.prototype.site() + "admin.show");
+    };
+    let hd = new Admin();
+    hd.show();
   </script>
 </html>

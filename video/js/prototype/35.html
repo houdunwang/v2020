@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // php:trait mixin 混合功能
+    function extend(sub, sup) {
+      sub.prototype = Object.create(sup.prototype);
+      Object.defineProperty(sub.prototype, "constructor", {
+        value: sub,
+        enumerable: false
+      });
+    }
+    const Address = {
+      getAddress() {
+        console.log("获取收货地址");
+      }
+    };
+    const Credit = {
+      total() {
+        console.log("积分统计");
+      }
+    };
+    const Request = {
+      ajax() {
+        console.log("请求后台");
+      }
+    };
+    function User(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    User.prototype.show = function() {
+      console.log(this.name, this.age);
+    };
+
+    function Admin(name, age) {
+      User.call(this, name, age);
+    }
+    extend(Admin, User);
+    Admin.prototype = Object.assign(Admin.prototype, Request, Credit);
+    let admin = new Admin("向军", 19);
+    admin.show();
+    admin.ajax();
+    admin.total();
+
+    function Member(name, age) {
+      User.call(this, name, age);
+    }
+    extend(Member, User);
+    Member.prototype = Object.assign(Admin.prototype, Request, Credit, Address);
+    let lisi = new Member("李四", 22);
+    lisi.getAddress();
+  </script>
+</html>

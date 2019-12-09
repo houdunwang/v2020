@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // let hd = {
+    //   name: "后盾人",
+    //   view() {
+    //     console.log(this.name);
+    //   }
+    // };
+    // hd.view();
+    function User(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    User.prototype.show = function() {
+      console.log(this.name, this.age);
+    };
+
+    function Admin(...args) {
+      // console.log(args);
+      User.apply(this, args);
+    }
+    Admin.prototype = Object.create(User.prototype);
+    let xj = new Admin("向军", 18);
+    xj.show();
+
+    function Member(...args) {
+      User.apply(this, args);
+    }
+    Member.prototype = Object.create(User.prototype);
+    let lisi = new Member("李四", 19);
+    lisi.show();
+  </script>
+</html>

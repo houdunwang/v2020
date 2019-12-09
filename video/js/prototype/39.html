@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: top;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    main {
+      width: 400px;
+      flex-direction: column;
+      position: relative;
+      margin-right: 20px;
+    }
+
+    main nav {
+      display: flex;
+      height: 50px;
+      align-items: center;
+    }
+
+    main nav a,
+    main nav span {
+      background: #95a5a6;
+      margin-right: px;
+      padding: 10px 20px;
+      border: solid 1px #333;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main nav a:first-of-type,
+    main nav span:first-of-type {
+      background: #e67e22;
+    }
+
+    section {
+      height: 200px;
+      width: 100%;
+      background: #f1c40f;
+      position: absolute;
+      font-size: 5em;
+      /* display: none; */
+    }
+
+    .hd-tab section:first-of-type {
+      display: block;
+    }
+
+    section:nth-child(even) {
+      background: #27ae60;
+    }
+  </style>
+
+  <body>
+    <main class="tab1">
+      <nav>
+        <a href="javascript:;">后盾人</a>
+        <a href="javascript:;">hdcms</a>
+      </nav>
+      <section>1</section>
+      <section>2</section>
+    </main>
+    <main class="tab2">
+      <nav>
+        <span href="javascript:;">后盾人</span>
+        <span href="javascript:;">hdcms</span>
+      </nav>
+      <section>1</section>
+      <section>2</section>
+    </main>
+  </body>
+  <script>
+    function extend(sub, sup) {
+      sub.prototype = Object.create(sup.prototype);
+      sub.prototype.constructor = sub;
+    }
+    function Animation() {}
+    Animation.prototype.show = function() {
+      this.style.display = "block";
+    };
+    Animation.prototype.hide = function() {
+      this.style.display = "none";
+    };
+    Animation.prototype.background = function(color) {
+      this.style.backgroundColor = color;
+    };
+    function Tab(args) {
+      args = Object.assign(
+        { el: null, link: "a", callback: null, section: "section" },
+        args
+      );
+      this.tab = document.querySelector(args["el"]);
+      this.links = this.tab.querySelectorAll(args["link"]);
+      this.sections = this.tab.querySelectorAll(args["section"]);
+      this.callback = args["callback"];
+    }
+    extend(Tab, Animation);
+    Tab.prototype.run = function() {
+      this.bindEvent();
+      this.reset();
+      this.action(0);
+    };
+    Tab.prototype.bindEvent = function() {
+      this.links.forEach((el, i) => {
+        el.addEventListener("click", () => {
+          this.reset();
+          this.action(i);
+          if (this.callback) this.callback();
+        });
+      });
+    };
+    Tab.prototype.action = function(i) {
+      this.background.call(this.links[i], "#e67e22");
+      this.show.call(this.sections[i]);
+    };
+    Tab.prototype.reset = function() {
+      this.links.forEach((el, i) => {
+        this.background.call(this.links[i], "#95a5a6");
+        this.hide.call(this.sections[i]);
+      });
+    };
+    new Tab({
+      el: ".tab1",
+      callback() {
+        console.log("houdurnen.com");
+      }
+    }).run();
+    new Tab({ el: ".tab2", link: "span" }).run();
+  </script>
+</html>
