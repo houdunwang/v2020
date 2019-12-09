@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // function Hd() {}
+    // let obj = new Hd();
+    // let obj2 = obj.__proto__.constructor;
+    // console.dir(obj2);
+    // console.dir(Hd);
+    //原型的继承，而不是改变构造函数的原型
+    function User() {}
+    User.prototype.name = function() {
+      console.log("user.name");
+    };
+
+    function Admin() {}
+
+    Admin.prototype = Object.create(User.prototype);
+    Admin.prototype.constructor = Admin;
+    Admin.prototype.role = function() {
+      console.log("admin.role");
+    };
+    let a = new Admin();
+    let b = new a.__proto__.constructor();
+    console.log(b);
+    // console.dir(Admin.prototype.constructor);
+    // console.dir(Admin.prototype.constructor);
+    // function Member() {}
+    // Member.prototype.__proto__ = User.prototype;
+    // Member.prototype.role = function() {
+    //   console.log("member.role");
+    // };
+  </script>
+</html>
