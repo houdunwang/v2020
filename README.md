@@ -10,13 +10,13 @@ Gitee 仓库：https://gitee.com/houdunren/code
 
 我们会在每天晚上八点直播（注：特殊情况会请假），非常感谢大家的光临。
 
-| 平台     | 地址                                                         |
-| -------- | ------------------------------------------------------------ |
-| B站      | [https://live.bilibili.com/8515468](https://live.bilibili.com/8515468) |
-| 斗鱼     | [https://www.douyu.com/4179871](https://www.douyu.com/4179871) |
-| 腾讯课堂 | [https://ke.qq.com/course/288236](https://ke.qq.com/course/288236) |
-| 虎牙     | [https://www.huya.com/19909817](https://www.huya.com/19909817) |
-| 抖音     | 抖音号:  268943416                                           |
+| 平台     | 地址                                                                   |
+| -------- | ---------------------------------------------------------------------- |
+| B 站     | [https://live.bilibili.com/8515468](https://live.bilibili.com/8515468) |
+| 斗鱼     | [https://www.douyu.com/4179871](https://www.douyu.com/4179871)         |
+| 腾讯课堂 | [https://ke.qq.com/course/288236](https://ke.qq.com/course/288236)     |
+| 虎牙     | [https://www.huya.com/19909817](https://www.huya.com/19909817)         |
+| 抖音     | 抖音号: 268943416                                                      |
 
 ## 目录说明
 
