@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // function User() {}
+    // User.site = "后盾人";
+    // User.show = function() {
+    //   console.log("User.static.method");
+    // };
+    // function Admin() {}
+    // Admin.__proto__ = User;
+    // // console.dir(Admin);
+    // // Admin.show();
+    // console.log(Admin.site);
+
+    class User {
+      static site = "houdunren.com";
+      static show() {
+        console.log("user.static show");
+      }
+    }
+    class Admin extends User {}
+    // console.dir(Admin.site);
+    // Admin.show();
+  </script>
+</html>

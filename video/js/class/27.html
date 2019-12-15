@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //mixin
+    let Tool = {
+      max(key) {
+        return this.data.sort((a, b) => b[key] - a[key])[0];
+      }
+    };
+    let Arr = {
+      count(key) {
+        return this.data.reduce((t, c) => t + c[key], 0);
+      }
+    };
+    class Lesson {
+      constructor(lessons) {
+        this.lessons = lessons;
+      }
+      get data() {
+        return this.lessons;
+      }
+    }
+    const data = [
+      { name: "js", price: 100, click: 188 },
+      { name: "mysql", price: 212, click: 34 },
+      { name: "vue.js", price: 98, click: 89 }
+    ];
+    Object.assign(Lesson.prototype, Tool, Arr);
+    // console.dir(Lesson);
+    let hd = new Lesson(data);
+    console.log(hd.count("price"));
+  </script>
+</html>

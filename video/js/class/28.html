@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: content-box;
+    }
+    body {
+      padding: 30px;
+    }
+    .slide {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); */
+    }
+    .slide dt {
+      height: 30px;
+      background: #34495e;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      cursor: pointer;
+    }
+    .slide dt:first-of-type {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .slide dd {
+      height: 100px;
+      background: #f1c40f;
+      overflow: hidden;
+    }
+    .slide dd div {
+      padding: 10px;
+    }
+    .slide dd:last-of-type {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide s1">
+    <dt>后盾人</dt>
+    <dd>
+      <div>houdunren.com</div>
+    </dd>
+    <dt>后盾人</dt>
+    <dd>
+      <div>hdcms.com</div>
+    </dd>
+  </div>
+</body>
+  <script>
+    class Animation{
+      constructor(el){
+        this.el = el;
+        this.isShow= true;
+        this.defaultHeight = this.height;
+      }
+      hide(callback){
+        this.isShow =false;
+        let id = setInterval(() => {
+         this.height = this.height-1;
+         if(this.height<=0){
+           clearInterval(id);
+           callback && callback();
+         }
+        }, 10);
+      }
+      show(callback){
+        this.isShow =false;
+        let id = setInterval(() => {
+         this.height = this.height+1;
+         if(this.height>=this.defaultHeight){
+           clearInterval(id);
+           callback && callback();
+         }
+        }, 10);
+      }
+      get height(){
+        return window.getComputedStyle(this.el).height.slice(0,-2)*1
+      }
+      set height(height){
+        this.el.style.height =height+'px';
+      }
+    }
+    let el = document.querySelector('.s1');
+    let hd = new Animation(el);
+    hd.hide(()=>{
+      console.log('隐藏结束');
+      hd.show(()=>{
+        console.log('显示完了');
+      });
+    });
+  </script>
+</html>

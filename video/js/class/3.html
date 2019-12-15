@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    class User {
+      constructor(name) {
+        this.name = name;
+      }
+      show() {}
+    }
+    let u = new User("后盾人");
+    console.log(Object.getOwnPropertyNames(User.prototype));
+    // console.log(Object.getOwnPropertyNames(u));
+    // console.dir(u);
+    // console.dir(User);
+    // console.log(User === User.prototype.constructor);
+    function Hd(name) {
+      this.name = name;
+    }
+    Hd.prototype.show = function() {};
+    let h = new Hd("向军");
+    // console.log(Object.getOwnPropertyNames(h));
+    console.log(Object.getOwnPropertyNames(Hd.prototype));
+    // console.dir(h);
+
+    // console.dir(Hd);
+    // console.log(Hd === Hd.prototype.constructor);
+  </script>
+</html>

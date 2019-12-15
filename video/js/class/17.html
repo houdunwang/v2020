@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //super
+    // class User {
+    //   show() {
+    //     console.log(this.name);
+    //   }
+    // }
+    // class Admin extends User {
+    //   constructor(name) {
+    //     super();
+    //     this.name = name;
+    //   }
+    //   show() {
+    //     super.show();
+    //   }
+    // }
+    // let hd = new Admin("后盾人");
+    // hd.show();
+
+    let hd = {
+      name: "hd.name",
+      show() {
+        // console.log(this);
+        console.log(this.name);
+      }
+    };
+    let xj = {
+      __proto__: hd,
+      name: "xj.name",
+      show() {
+        this.__proto__.show.call(this);
+      }
+    };
+    xj.show();
+  </script>
+</html>

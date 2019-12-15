@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    class User {
+      constructor(name) {
+        this.name = name;
+      }
+    }
+    class Admin extends User {
+      constructor(...args) {
+        super(...args);
+        this.name = "houdunren.com";
+      }
+    }
+    let hd = new Admin("后盾人");
+    console.log(hd);
+    // function User(name) {
+    //   this.name = name;
+    // }
+    // function Admin(...args) {
+    //   User.call(this, ...args);
+    // }
+    // Admin.prototype = Object.create(User.prototype);
+    // let hd = new Admin("后盾人");
+    // console.log(hd);
+  </script>
+</html>

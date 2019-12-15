@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    class Common {
+      sum() {
+        return this.data.reduce((t, c) => t + c.price, 0);
+      }
+      getByKey(key) {
+        return this.data.filter(item => item.name.includes(key));
+      }
+    }
+    class Controller extends Common {}
+    class Lesson extends Controller {
+      constructor(data) {
+        super();
+        this.data = data;
+      }
+      info() {
+        return {
+          totalPrice: super.sum(),
+          data: this.data
+        };
+      }
+      getByKey(key) {
+        return super.getByKey(key).map(item => item.name);
+      }
+    }
+    let data = [
+      { name: "js", price: 100 },
+      { name: "mysql", price: 212 },
+      { name: "vue.js", price: 98 }
+    ];
+    let hd = new Lesson(data);
+    console.log(hd.getByKey("js"));
+  </script>
+</html>

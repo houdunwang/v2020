@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    const data = [
+      { name: "js", price: 100 },
+      { name: "mysql", price: 212 },
+      { name: "vue.js", price: 98 }
+    ];
+    class Lesson {
+      constructor(data) {
+        this.model = data;
+      }
+      get price() {
+        return this.model.price;
+      }
+      get name() {
+        return this.model.name;
+      }
+      static totalPrice(data) {
+        return data.reduce((t, c) => {
+          return t + c.price;
+        }, 0);
+      }
+      static createBatch(data) {
+        return data.map(item => new Lesson(item));
+      }
+      static maxPrice(data) {
+        return data.sort((a, b) => b.price - a.price)[0];
+      }
+    }
+    // let obj1 = new Lesson(data[0]);
+    // console.log(obj1);
+    let lessons = Lesson.createBatch(data);
+    console.log(Lesson.maxPrice(lessons).name);
+    console.log(Lesson.totalPrice(lessons));
+  </script>
+</html>

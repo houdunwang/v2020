@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // function User() {}
+    // User.prototype.show = function() {
+    //   console.log("prototype.show");
+    // };
+    // User.__proto__.show = function() {
+    //   console.log(this == User.prototype.constructor);
+    //   console.log("static.show");
+    // };
+    // User.show();
+    // console.dir(User);
+    // console.dir(User);
+    // let hd = new User();
+    // hd.show();
+    // class User {
+    //   show() {
+    //     console.log("prototype.show");
+    //   }
+    //   static show = function() {
+    //     console.log("static.show");
+    //   };
+    // }
+    // User.show();
+    // console.dir(User);
+    // let hd = new User();
+    // hd.show();
+
+    class Member {
+      constructor(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+      }
+      static create(...args) {
+        return new this(...args);
+      }
+    }
+    let xj = Member.create("向军", 19, "男");
+    console.log(xj);
+    // let hd = new User("后盾人");
+    // console.log(hd);
+  </script>
+</html>

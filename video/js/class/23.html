@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // function User() {}
+    // function Admin() {}
+    // Admin.prototype = Object.create(User.prototype);
+    // let hd = new Admin();
+    // console.log(hd instanceof Admin);
+    // console.log(hd instanceof User);
+    // console.log(hd.__proto__ == Admin.prototype);
+    // console.log(hd.__proto__.__proto__ == Admin.prototype.__proto__);
+    // console.log(Admin.prototype.__proto__.__proto__.__proto__);
+
+    // function checkPrototype(obj, constructor) {
+    //   if (!obj.__proto__) return false;
+    //   if (obj.__proto__ == constructor.prototype) return true;
+    //   return checkPrototype(obj.__proto__, constructor);
+    // }
+    // console.log(checkPrototype(hd, User));
+
+    class User {}
+    class Admin extends User {}
+    let hd = new Admin();
+    console.log(hd instanceof User);
+  </script>
+</html>

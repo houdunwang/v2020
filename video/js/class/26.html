@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    class Arr extends Array {
+      constructor(...args) {
+        super(...args);
+      }
+      first() {
+        return this[0];
+      }
+      max() {
+        return this.sort((a, b) => b - a)[0];
+      }
+      add(item) {
+        this.push(item);
+      }
+      remove(value) {
+        let pos = this.findIndex(item => item == value);
+        // console.log(pos);
+        this.splice(pos, 1);
+      }
+    }
+    let hd = new Arr(1, 2, 3);
+    hd.remove(3);
+    console.log(hd);
+  </script>
+</html>

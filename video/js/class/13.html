@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    const protecteds = new WeakMap();
+    class Comment {
+      constructor() {
+        protecteds.set(this, {
+          host: '"https://houdunren.com"'
+        });
+      }
+      set host(url) {
+        if (!/^https?:/i.test(url)) {
+          throw new Error("非常网址");
+        }
+        protecteds.set(this, { ...protecteds.get(this), url });
+      }
+      get host() {
+        return protecteds.get(this)["host"];
+      }
+    }
+    class User extends Comment {
+      constructor(name) {
+        super();
+        this.name = name;
+      }
+      set name(name) {
+        protecteds.set(this, { ...protecteds.get(this), name });
+      }
+      get name() {
+        return protecteds.get(this)["name"];
+      }
+    }
+    let hd = new User("后盾人");
+    // hd.name = "向军";
+    // console.log(hd.name);
+    console.log(hd);
+  </script>
+</html>

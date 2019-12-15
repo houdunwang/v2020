@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    class Common {
+      #check = () => {
+        if (this.name.length < 5) {
+          throw new Error("名子长度不能小于五位");
+        }
+        return true;
+      };
+    }
+    class User {
+      //public protected private
+      #host = "https://houdunren.com";
+      constructor(name) {
+        this.name = name;
+        this.#check(name);
+      }
+      set host(url) {
+        if (!/^https?:/i.test(url)) {
+          throw new Error("非常网址");
+        }
+        this.#host = url;
+      }
+    }
+    let hd = new User("后盾人在线教程");
+    hd.host = "https://www.hdcms.com";
+    // hd.#check();
+    console.log(hd);
+  </script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // function User(name) {
+    //   this.name = name;
+    // }
+    // function Admin(name) {
+    //   User.call(this, name);
+    // }
+    // Admin.prototype = Object.create(User.prototype);
+    // Admin.prototype.show = function() {};
+    // let hd = new Admin("后盾人");
+    // console.log(hd);
+    class User {
+      constructor(name) {
+        this.name = name;
+      }
+    }
+    class Admin extends User {
+      constructor(name) {
+        super(name);
+      }
+    }
+    let hd = new Admin("后盾人");
+    console.log(hd);
+  </script>
+</html>

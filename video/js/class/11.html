@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    class User {
+      //public
+      _url = "https://houdunren.com";
+      constructor(name) {
+        this.name = name;
+      }
+      set url(url) {
+        if (!/^https?:/i.test(url)) {
+          throw new Error("非常网址");
+        }
+        this._url = url;
+      }
+    }
+    let hd = new User("后盾人");
+    hd.name = "李四";
+    hd.url = "https://hdcms.com";
+    console.log(hd);
+  </script>
+</html>

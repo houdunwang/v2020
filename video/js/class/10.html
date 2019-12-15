@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    class Requset {
+      constructor(host) {
+        this.data = {};
+        this.host = host;
+      }
+      set host(url) {
+        if (!/^https?:\/\//i.test(url)) {
+          throw new Error("地址错误");
+        }
+        this.data.host = url;
+      }
+      get host() {
+        return this.data["host"];
+      }
+    }
+    let hd = new Requset("https://houdunren.com");
+    // hd.host = "https://hdcms.com";
+    // hd.setUrl("https://hdcms.com");
+    console.log(hd.host);
+  </script>
+</html>

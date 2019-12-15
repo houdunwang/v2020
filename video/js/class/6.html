@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // "use strict";
+    // function show() {
+    //   console.log(this);
+    // }
+    // show();
+    // "use strict";
+    // function User() {}
+    // User.prototype.show = function() {
+    //   function test() {
+    //     console.log(this);
+    //   }
+    //   test();
+    // };
+    // let u = new User();
+    // u.show();
+    class Hd {
+      show() {
+        function test() {
+          console.log(this);
+        }
+        test();
+      }
+    }
+    let hd = new Hd();
+    hd.show();
+  </script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // function Web(url) {
+    //   this.url = url;
+    // }
+    // Web.url = "hdcms.com";
+    // let hd = new Web("houdunren.com");
+    // console.log(hd);
+    // console.dir(Web);
+    class Request {
+      static host = "https://www.houdunren.com";
+      api(url) {
+        return Request.host + `/${url}`;
+      }
+    }
+    let obj = new Request();
+    console.log(obj.api("article"));
+    // console.log(obj);
+    // console.dir(Request);
+    // let obj2 = new Request();
+    // obj.host = "https://baidu.com";
+    // console.log(obj2);
+  </script>
+</html>

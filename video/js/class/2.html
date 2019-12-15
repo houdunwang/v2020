@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // class User {}
+    // // console.log(typeof User);
+    // let Hd = class {};
+    // console.log(Hd);
+    // class User {
+    //   show() {}
+    //   get() {
+    //     console.log("后盾人");
+    //   }
+    // }
+    // let hd = new User();
+    // // console.dir(hd);
+    // hd.get();
+    // function Article(title) {
+    //   this.title = title;
+    // }
+    // let a = new Article("后盾人");
+    // console.log(a.title);
+    class User {
+      constructor(name) {
+        this.name = name;
+      }
+      getName() {
+        return this.name;
+      }
+    }
+    let hd = new User("后盾人");
+    console.log(hd.getName());
+    // console.log(hd.name);
+    // let xj = new User("向军");
+    // console.log(xj.name);
+  </script>
+</html>
