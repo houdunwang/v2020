@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <button>houdunren</button>
+  </body>
+  <script type="module">
+    //import
+    document.querySelector("button").addEventListener("click", () => {
+      import("./modules/m14.js").then(({ site, url }) => {
+        console.log(site, url);
+      });
+    });
+  </script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let module = (function() {
+      const moduleList = {};
+      function define(name, modules, action) {
+        modules.map((m, i) => {
+          modules[i] = moduleList[m];
+        });
+        moduleList[name] = action.apply(null, modules);
+      }
+      return { define };
+    })();
+    module.define("hd", [], function() {
+      return {
+        first(arr) {
+          return arr[0];
+        },
+        max(arr, key) {
+          return arr.sort((a, b) => b[key] - a[key])[0];
+        }
+      };
+    });
+    module.define("lesson", ["hd"], function(hd) {
+      let data = [
+        { name: "js", price: 199 },
+        { name: "mysql", price: 78 }
+      ];
+    });
+    module.define("a", [], function() {
+      return {
+        site: "后盾人",
+        url: "houdunren.com"
+      };
+    });
+    module.define("b", ["a"], function(a) {
+      a.site = "hdcms";
+    });
+    module.define("c", ["a"], function(a) {
+      console.log(a);
+    });
+  </script>
+</html>
