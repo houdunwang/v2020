@@ -16,7 +16,7 @@ Gitee 仓库：https://gitee.com/houdunren/code
 | 斗鱼 | [https://www.douyu.com/4179871](https://www.douyu.com/4179871)         |
 | 腾讯 | [https://ke.qq.com/course/288236](https://ke.qq.com/course/288236)     |
 | 虎牙 | [https://www.huya.com/19909817](https://www.huya.com/19909817)         |
-| 抖音 | 抖音号: 268943416                                                      |
+| <!-- | 抖音                                                                   | 抖音号: 268943416 | --> |
 
 ## 目录说明
 
