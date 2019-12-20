@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <input type="text" name="mail" value="" />
+    <span></span>
+  </body>
+  <script>
+    let mail = document
+      .querySelector(`[name="mail"]`)
+      .addEventListener("keyup", function() {
+        reg = /^[\w-]+@([\w-]+\.)+(com|org|cc|cn|net)$/i;
+        document.querySelector("span").innerHTML = reg.test(this.value)
+          ? "正确"
+          : "错误";
+      });
+    // let reg = /^[\w-]+@[\w-]+\.(com|org|cc|cn|net)$/i;
+  </script>
+</html>

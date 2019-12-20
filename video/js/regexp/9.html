@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //元字符
+    // let hd = "houdunren 2010";
+    // console.log(hd.match(/\d+/g));
+    // let hd = `
+    //   张三:010-99999999,李四:020-88888888
+    // `;
+    // console.log(hd.match(/\d{3}-\d{7,8}/g));
+    //\d  \D
+
+    // let hd = "houdunren 2010";
+    // console.log(hd.match(/\D+/));
+
+    let hd = `
+      张三:010-99999999,李四:020-88888888
+    `;
+    console.log(hd.match(/[^-\d:,\s]+/g));
+
+    //\s
+    // console.log(/\s/.test("\nhd"));
+    // console.log(/\S/.test(" \nhd"));
+  </script>
+</html>

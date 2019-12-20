@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //y g
+    // let hd = "udunren";
+    // let reg = /u/y;
+    // console.log(reg.exec(hd));
+    // console.log(reg.lastIndex);
+    // console.log(reg.exec(hd));
+    // console.log(reg.lastIndex);
+
+    let hd = `后盾人QQ群:11111111,999999999,88888888
+后盾人不断分享视频教程，后盾人网址是 houdunren.com`;
+
+    let reg = /(\d+),?/y;
+    reg.lastIndex = 7;
+    let qq = [];
+    while ((res = reg.exec(hd))) qq.push(res[1]);
+    console.log(qq);
+  </script>
+</html>

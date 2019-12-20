@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <input type="text" name="username" />
+  </body>
+  <script>
+    // let hd = "2010";
+    // console.log(hd.match(/[0-9]+/g));
+    // let hd = "houdunren";
+    // console.log(hd.match(/[a-z]+/g));
+    let input = document.querySelector(`[name="username"]`);
+    input.addEventListener("keyup", function() {
+      console.log(this.value.match(/^[a-z]\w{3,6}$/i));
+    });
+  </script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = `
+    https://www.houdunren.com
+    http://houdunwang.com
+    https://hdcms.com
+    `;
+    let reg = /https?:\/\/((?:\w+\.)?\w+\.(?:com|org|cn))/gi;
+    // console.dir(hd.match(reg));
+    let urls = [];
+    while ((res = reg.exec(hd))) {
+      urls.push(res[1]);
+    }
+    console.log(urls);
+  </script>
+</html>

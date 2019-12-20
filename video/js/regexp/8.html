@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <input type="text" name="user" />
+    <span></span>
+  </body>
+  <script>
+    // let hd = "3";
+    // console.log(/^\d$/.test(hd));
+    document
+      .querySelector("[name='user']")
+      .addEventListener("keyup", function() {
+        let flag = this.value.match(/^[a-z]{3,6}$/);
+        document.querySelector("span").innerHTML = flag ? "正确" : "失败";
+      });
+  </script>
+</html>

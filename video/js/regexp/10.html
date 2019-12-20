@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //\w \d
+    // let hd = "houdunren2010_@@";
+    // console.log(hd.match(/\w+/));
+    // let email = "&^&**(*&*^2300071698@qq.com";
+    // console.log(email.match(/^\w+@\w+\.\w+$/));
+    //\W
+    // console.log("hdcms@".match(/\W/));
+    // a  \w   5 10
+    let username = prompt("请输入用户名");
+    // 8houdunren
+    console.log(/^[a-z]\w{4,9}$/.test(username));
+  </script>
+</html>

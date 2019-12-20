@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let price = 12.23;
+    // . 除换行外任何字符 .普通点
+    // d   \d 数字 0~9
+    console.log(/\d+\.\d+/.test(price));
+    console.log("\d" == "d");
+    console.log("\\d+\\.\\d+");
+    let reg = new RegExp("\\d+\\.\\d+");
+    console.log(reg.test(price));
+    let url = "https://www.houdunren.com";
+    console.log(/https?:\/\/\w+\.\w+\.\w+/.test(url));
+  </script>
+</html>

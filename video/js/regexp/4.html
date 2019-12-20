@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>houdunren.com</title>
+  </head>
+  <body>
+    <div class="content">
+      houdunren.com
+    </div>
+  </body>
+  <script>
+    let con = prompt("请输入要检测的内容，支持正则");
+    let reg = new RegExp(con, "g");
+    let div = document.querySelector("div");
+    div.innerHTML = div.innerHTML.replace(reg, search => {
+      return `<span style="color:red">${search}</span>`;
+    });
+    // console.log(
+    //   "abc".replace(/\w/g, search => {
+    //     return "后盾人";
+    //   })
+    // );
+
+    // let hd = "houdunren.com";
+    // let a = "u";
+    // let reg = new RegExp(a, "g");
+    // console.log(reg.test(hd));
+  </script>
+</html>

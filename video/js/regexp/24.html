@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = `<h1>houdunren</h1>
+    <h2>hdcms</h2>
+    `;
+
+    let reg = /<(h[1-6])>([\s\S]*)<\/\1>/i;
+    console.dir(hd.match(reg));
+  </script>
+</html>

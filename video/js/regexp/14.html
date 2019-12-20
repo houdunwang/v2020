@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = `
+    #1 js,200元 #
+    #2 php,300元 #
+    #9 houdunren.com # 后盾人
+    #3 node.js,180元 #
+  `;
+    // [{name:'js',price:'200元'}]
+    let lessons = hd.match(/^\s*#\d+\s+.+\s+#$/gm).map(v => {
+      v = v.replace(/\s*#\d+\s*/, "").replace(/\s+#/, "");
+      [name, price] = v.split(",");
+      return { name, price };
+    });
+    console.log(JSON.stringify(lessons, null, 2));
+  </script>
+</html>
