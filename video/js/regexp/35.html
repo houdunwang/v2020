@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <h1>houdunren.com</h1>
+    <h2>hdcms.com</h2>
+    <h1>后盾人</h1>
+  </body>
+  <script>
+    //exec
+    String.prototype.matchAll = function(reg) {
+      let res = this.match(reg);
+      if (res) {
+        let str = this.replace(res[0], "^".repeat(res[0].length));
+        let match = str.matchAll(reg) || [];
+        return [res, ...match];
+      }
+    };
+    let body = document.querySelector("body").innerHTML;
+    let search = body.matchAll(/<(h[1-6])>([\s\S]+?)<\/\1>/i);
+    console.log(search);
+  </script>
+</html>

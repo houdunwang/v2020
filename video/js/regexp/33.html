@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <main>
+      <span>houdunwang</span>
+      <span>hdcms.com</span>
+      <span>houdunren.com</span>
+    </main>
+  </body>
+  //h4 描红 后盾人-
+  <script>
+    const main = document.querySelector("main");
+    const reg = /<span>([\s\S]+?)<\/span>/gi;
+    main.innerHTML = main.innerHTML.replace(reg, (v, p1) => {
+      return `<h4 style="color:red">后盾人-${p1}</h4>`;
+    });
+  </script>
+</html>

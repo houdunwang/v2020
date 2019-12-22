@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let hd = `
+  <h1>houdunren</h1>
+  <span>后盾人</span>
+  <h2>hdcms</h2>
+`;
+    const reg = /<(h[1-6])>(?<con>.*?)<\/\1>/gi;
+    console.log(hd.replace(reg, "<h4>$<con></h4>"));
+  </script>
+</html>

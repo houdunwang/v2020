@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //match exec matchAll replace
+    // let hd = "houdunren.com";
+    // console.log(hd.search(/u/));
+    // console.log(hd.match(/u/gi));
+
+    let hd = `
+    https://hdcms.com  
+    http://www.sina.com.cn
+    https://www.houdunren.com
+`;
+    let reg = /https?:\/\/(\w+\.)?(\w+\.)+(com|cn|org|cc)/gi;
+    console.dir(hd.match(reg));
+  </script>
+</html>

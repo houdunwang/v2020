@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <main>
+      <a href="https://www.houdunren.com/1.jpg">1.jpg</a>
+      <a href="https://oss.houdunren.com/2.jpg">2.jpg</a>
+      <a href="https://cdn.houdunren.com/3.jpg">3.jpg</a>
+      <a href="https://houdunren.com/4.jpg">后盾人</a>
+    </main>
+  </body>
+  <script>
+    const main = document.querySelector("main");
+    const reg = /https:\/\/([a-z]+)?(?<!oss)\..+?(?=\/)/gi;
+    main.innerHTML = main.innerHTML.replace(reg, v => {
+      return "https://oss.houdunren.com";
+    });
+  </script>
+</html>

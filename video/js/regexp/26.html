@@ -7,12 +7,13 @@
   <body></body>
   <script>
     let hd = `
-    <h1>houdunren</h1>
-    <span>后盾人</span>
-    <h2>hdcms</h2>
-  `;
+      <h1>houdunren</h1>
+      <span>后盾人</span>
+      <h2>hdcms</h2>
+    `;
     let reg = /<(h[1-6])>([\s\S]+)<\/\1>/gi;
-    // console.dir(hd.match(reg));
-    console.log(hd.replace(reg, `<p>$2</p>`));
+    // console.log(hd.replace(reg, `<p>$2</p>`));
+    let res = hd.replace(reg, (p0, p1, p2) => `<p>${p2}</p>`);
+    console.log(res);
   </script>
 </html>

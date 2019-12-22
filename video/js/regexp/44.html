@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <input type="text" name="email" />
+  </body>
+  <script>
+    //match matchAll search replace
+    const mail = document.querySelector(`[name="email"]`);
+    mail.addEventListener("keyup", e => {
+      let value = e.target.value;
+      let flag = /^[\w-]+@(\w+\.)+(com|org|cn)$/i.test(value);
+      console.log(flag);
+    });
+  </script>
+</html>

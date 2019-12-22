@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <main>
+      <a id="hd" href="https://www.houdunren.com">后盾人</a>
+      <a href="https://www.hdcms.com">hdcms</a>
+      <a href="https://www.sina.com.cn">新浪</a>
+    </main>
+  </body>
+  <script>
+    // [{link:'',title:''}]
+    const main = document.querySelector("body main");
+    const reg = /<a.*?href=(['"])(?<link>.*?)\1>(?<title>.*?)<\/a>/gi;
+    const links = [];
+    for (const iterator of main.innerHTML.matchAll(reg)) {
+      links.push(iterator["groups"]);
+    }
+    console.log(links);
+  </script>
+</html>

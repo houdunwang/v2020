@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <main></main>
+  </body>
+  <script>
+    let users = `
+  向军电话: 12345678901
+  后盾人电话: 98745675603
+`;
+    let reg = /(?<=\d{7})\d{4}/gi;
+    users = users.replace(reg, v => {
+      return "*".repeat(4);
+    });
+    console.log(users);
+  </script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <main>
+      <a href="https://baidu.com">百度</a>
+      <a href="https://yahoo.com">雅虎</a>
+    </main>
+  </body>
+  <script>
+    const main = document.querySelector("main");
+    const reg = /(?<=href=(['"])).+(?=\1)/gi;
+    main.innerHTML = main.innerHTML.replace(reg, "https://www.houdunren.com");
+    // console.log(main.innerHTML.match(reg));
+    // let hd = "houdunren789hdcms666";
+    // const reg = /(?<=houdunren)\d+/i;
+    // console.log(hd.match(reg));
+  </script>
+</html>

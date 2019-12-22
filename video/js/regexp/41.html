@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <main>
+      <a style="color:red" href="http://www.hdcms.com">
+        开源系统
+      </a>
+      <a id="l1" href="http://houdunren.com">后盾人</a>
+      <a href="http://yahoo.com">雅虎</a>
+      <h4>http://www.hdcms.com</h4>
+    </main>
+  </body>
+  <script>
+    const main = document.querySelector("body main");
+    const reg = /(<a.*href=['"])(http)(:\/\/)(www\.)?(hdcms|houdunren)/gi;
+    main.innerHTML = main.innerHTML.replace(reg, (v, ...args) => {
+      args[1] += "s";
+      args[3] = args[3] || "www.";
+      return args.splice(0, 5).join("");
+    });
+  </script>
+</html>

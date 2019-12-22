@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <h1>houdunren.com</h1>
+    <h2>hdcms.com</h2>
+    <h1>后盾人</h1>
+  </body>
+  <script>
+    function search(string, reg) {
+      let result = [];
+      while ((res = reg.exec(string))) {
+        result.push(res);
+      }
+      return result;
+    }
+    let matchs = search(document.body.innerHTML, /<(h[1-6])[\s\S]+?<\/\1>/gi);
+    console.dir(matchs);
+    // let hd = "houdunren";
+    // let reg = /u/gi;
+    // console.log(reg.exec(hd));
+    // console.log(reg.exec(hd));
+    // console.log(reg.exec(hd));
+    // let result = [];
+    // while ((res = reg.exec(hd))) {
+    //   result.push(res);
+    // }
+    // console.log(result);
+  </script>
+</html>

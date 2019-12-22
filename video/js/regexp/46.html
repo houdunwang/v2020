@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <main>
+      后盾人不断分享视频教程，学习后盾人教程提升编程能力。
+    </main>
+  </body>
+  <script>
+    let main = document.querySelector("main");
+    let reg = /后盾人(?=教程)/g;
+    main.innerHTML = main.innerHTML.replace(
+      reg,
+      `<a href="https://houdunren.com">$&</a>`
+    );
+  </script>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <main>
+      <input type="text" name="username" />
+    </main>
+  </body>
+  <script>
+    const input = document.querySelector(`[name="username"]`);
+    input.addEventListener("keyup", function() {
+      const reg = /^(?!.*向军.*)[a-z]{5,6}$/i;
+      console.log(this.value.match(reg));
+    });
+  </script>
+</html>
