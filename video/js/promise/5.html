@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    ajax(`http://localhost:8888/php/user.php?name=后盾人`, user => {
+      ajax(`http://localhost:8888/php/houdunren.php?id=${user.id}`, lessons => {
+        console.log(lessons);
+      });
+    });
+    console.log("houdunren.com");
+  </script>
+</html>

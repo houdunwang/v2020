@@ -1,3 +1,4 @@
 function houdunren() {
-  console.log("houdunren function");
+  hd();
+  console.log("houdunren.js");
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: yellowgreen;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+  <script>
+    function interval(callback, delay = 50) {
+      let id = setInterval(() => callback(id), delay);
+    }
+    interval(timeId => {
+      const div = document.querySelector("div");
+      let left = parseInt(window.getComputedStyle(div).left);
+      div.style.left = left + 10 + "px";
+      if (left >= 200) {
+        clearInterval(timeId);
+        interval(timeId => {
+          let width = parseInt(window.getComputedStyle(div).width);
+          div.style.width = width - 10 + "px";
+          if (width <= 20) {
+            clearInterval(timeId);
+          }
+        }, 100);
+      }
+    }, 50);
+    console.log("houdunren.com");
+  </script>
+</html>

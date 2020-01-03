@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let p1 = new Promise((resolve, reject) => {
+      // resolve("fulfilled");
+      reject("rejected");
+    });
+    let p2 = p1
+      .then(
+        value => console.log(value),
+        reason => console.log(reason)
+      )
+      .then(
+        a => console.log("成功"),
+        b => console.log(b)
+      );
+
+    setTimeout(() => {
+      // console.log(p1);
+      // console.log(p2);
+    });
+  </script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function loadImag(src, resolve, reject) {
+      let image = new Image();
+      image.src = src;
+      image.onload = () => {
+        resolve(image);
+      };
+      image.onerror = reject;
+    }
+    loadImag(
+      "images/houdunren.png2",
+      image => {
+        document.body.appendChild(image);
+      },
+      () => {
+        console.log("加载失败");
+      }
+    );
+    console.log("后盾人");
+  </script>
+</html>

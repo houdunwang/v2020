@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let promise = new Promise(resolve => {
+      setTimeout(() => {
+        resolve();
+        console.log("setTimeout");
+      }, 0);
+      console.log("promise");
+    }).then(value => console.log("成功"));
+    console.log("houdunren.com");
+  </script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    ajax(`http://localhost:8888/php/user.php?name=后盾人12`)
+      .then(value => {
+        console.log(value);
+      })
+      .catch(error => {
+        if (error instanceof ParamError) {
+          console.log(error.message);
+        }
+        if (error instanceof HttpError) {
+          alert(error.message);
+        }
+        console.log(error);
+      });
+  </script>
+</html>

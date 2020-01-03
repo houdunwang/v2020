@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function load(src, resolve) {
+      let script = document.createElement("script");
+      script.src = src;
+      script.onload = resolve;
+      document.body.appendChild(script);
+    }
+    load("js/hd.js", () => {
+      load("js/houdunren.js", () => {
+        houdunren();
+        load("js/a.js", () => {
+          houdunren();
+        });
+      });
+    });
+    for (i = 0; i < 100000; i++) {
+      console.log(i);
+    }
+    console.log(343434);
+  </script>
+</html>

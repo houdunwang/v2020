@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    let url = `http://localhost:8888/php`;
+    ajax(`${url}/user.php?name=后盾人`)
+      .then(user => ajax(`${url}/houdunren.php?id=${user.id}`))
+      .then(lessons => console.log(lessons));
+    // function request() {
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       resolve("成功");
+    //     }, 2300);
+    //   });
+    // }
+    // request().then(value => console.log(value));
+  </script>
+</html>

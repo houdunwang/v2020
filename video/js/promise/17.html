@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        color: white;
+        display: none;
+      }
+    </style>
+    <div id="loading">loading...</div>
+  </body>
+  <script src="js/ajax.js"></script>
+  <script>
+    ajax(`http://localhost:8888/php/user.php?name=后盾人`)
+      .then(value => {
+        console.log(value);
+      })
+      .finally(() => {
+        loading.style.display = "none";
+      });
+    // const promise = new Promise((resolve, reject) => {
+    //   reject("hdcms");
+    // })
+    //   .then(msg => {
+    //     console.log("resolve");
+    //   })
+    //   .catch(error => {})
+    //   .finally(() => {
+    //     console.log("永远会执行");
+    //   });
+  </script>
+</html>

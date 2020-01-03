@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let p1 = new Promise((resolve, reject) => {
+      resolve("fulfilled");
+    })
+      .then(
+        value => {
+          // class Hd {
+          //   then(resolve, reject) {
+          //     setTimeout(() => {
+          //       resolve("这是对象");
+          //     }, 2000);
+          //   }
+          // }
+          return class {
+            static then(resolve, reject) {
+              // resolve("这是一个静态方法");
+              reject("失败");
+            }
+          };
+        },
+        reason => {}
+      )
+      .then(
+        value => {
+          console.log(value);
+        },
+        reason => {
+          console.log(reason);
+        }
+      );
+  </script>
+</html>

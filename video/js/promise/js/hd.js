@@ -1,3 +1,3 @@
 function hd() {
-  console.log("hd function");
+  console.log("hd.js");
 }

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    new Promise((resolve, reject) => {
+      // resolve("一瓶可乐");
+      reject("涨价了，买不起了");
+    })
+      .then(null, a => {
+        console.log(`处理了失败的状态,${a}`);
+      })
+      .then(null, reason => {
+        console.log(reason);
+      });
+  </script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    let p1 = new Promise((resolve, reject) => {
+      // resolve("成功");
+      setTimeout(() => {
+        reject("拒绝");
+      }, 2000);
+    }).then(null, a => {});
+    new Promise((resolve, reject) => {
+      reject("失败");
+      resolve("fulfilled");
+      // resolve(p1);
+      // setTimeout(() => {
+      //   resolve("fulfilled");
+      // }, 2000);
+    }).then(
+      msg => {
+        console.log("success:" + msg);
+      },
+      error => {
+        console.log("error" + error);
+      }
+    );
+    console.log("houdunren.com");
+  </script>
+</html>

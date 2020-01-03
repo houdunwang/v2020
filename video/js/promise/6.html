@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    //pending 准备阶段
+    //resolved 成功状态
+    //rejected 拒绝状态
+    new Promise((resolve, reject) => {
+      // reject("拒绝状态 ");
+      resolve("操作成功");
+    })
+      .then(
+        value => {
+          console.log("成功业务处理 1");
+        },
+        reason => {
+          console.log("拒绝的业务处理");
+        }
+      )
+      .then(
+        value => {
+          console.log("成功业务处理 2");
+        },
+        reason => {
+          console.log("拒绝的业务处理");
+        }
+      );
+  </script>
+</html>
