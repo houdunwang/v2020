@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    async function get(name) {
+      let host = "http://localhost:8888/php";
+      let user = await ajax(`${host}/user.php?name=${name}`);
+      let lessons = await ajax(`${host}/houdunren.php?id=${user.id}`);
+      console.log(lessons);
+    }
+    get("后盾人");
+  </script>
+</html>

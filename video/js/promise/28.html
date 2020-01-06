@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    function queue(num) {
+      let promise = Promise.resolve();
+      num.map(v => {
+        promise = promise.then(_ => {
+          return v();
+        });
+      });
+    }
+    function p1() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          console.log("p1");
+          resolve();
+        }, 1000);
+      });
+    }
+    function p2() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          console.log("p2");
+          resolve();
+        }, 1000);
+      });
+    }
+    queue([p1, p2]);
+  </script>
+</html>

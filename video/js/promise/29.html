@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    function queue(num) {
+      num.reduce((promise, n) => {
+        return promise.then(_ => {
+          return new Promise(resolve => {
+            setTimeout(() => {
+              console.log(n);
+              resolve();
+            }, 1000);
+          });
+        });
+      }, Promise.resolve());
+    }
+    queue([1, 2, 3, 4]);
+  </script>
+</html>

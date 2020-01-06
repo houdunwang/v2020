@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    function query(url, delay = 2000) {
+      let promises = [
+        //http://localhost:8888/php/user.php?name=后盾人
+        ajax(url),
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            reject("请求超时");
+          }, delay);
+        })
+      ];
+      return Promise.race(promises);
+    }
+    query(`http://localhost:8888/php/user.php?name=后盾人`, 1000)
+      .then(value => {
+        console.log(value);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    // Promise.race(promises)
+    //   .then(value => {
+    //     console.log(value);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
+    // const hdcms = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve("第一个Promise");
+    //   }, 200);
+    // });
+    // const houdunren = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve("第二个异步");
+    //   }, 1000);
+    // });
+    // Promise.race([hdcms, houdunren])
+    //   .then(results => {
+    //     console.log(results);
+    //   })
+    //   .catch(msg => {
+    //     console.log(msg);
+    //   });
+  </script>
+</html>

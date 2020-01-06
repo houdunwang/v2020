@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    async function sleep(delay = 2000) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve();
+        }, delay);
+      });
+    }
+    async function show() {
+      for (const user of ["后盾人", "向军"]) {
+        await sleep();
+        console.log(user);
+      }
+    }
+    show();
+  </script>
+</html>

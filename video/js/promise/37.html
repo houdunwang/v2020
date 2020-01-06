@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    // let get = async function(name) {
+    //   return await ajax(`http://localhost:8888/php/user.php?name=${name}`);
+    // };
+    // let hd = {
+    //   async get(name) {
+    //     return await ajax(`http://localhost:8888/php/user.php?name=${name}`);
+    //   }
+    // };
+    // hd.get("后盾人").then(user => {
+    //   console.log(user);
+    // });
+    // let get = async function(name) {
+    //   return await ajax(`http://localhost:8888/php/user.php?name=${name}`);
+    // };
+    // get("后盾人").then(user => {
+    //   console.log(user);
+    // });
+    class User {
+      async get(name) {
+        return await ajax(`http://localhost:8888/php/user.php?name=${name}`);
+      }
+    }
+    new User().get("后盾人").then(user => {
+      console.log(user);
+    });
+  </script>
+</html>

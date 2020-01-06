@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    // const hdcms = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     // resolve("第一个异步");
+    //     reject("fail");
+    //   }, 1000);
+    // }).catch(error => {
+    //   console.log(error);
+    // });
+    // const houdunren = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve("第二个异步");
+    //   }, 1000);
+    // });
+    // Promise.all([hdcms, houdunren]).then(result => {
+    //   console.log(result);
+    // });
+    //根据用户批量获取用户资料
+    function getUsers(names) {
+      let promises = names.map(name => {
+        return ajax(`http://localhost:8888/php/user.php?name=${name}`);
+      });
+      return Promise.all(promises);
+    }
+    getUsers(["后盾人"]).then(users => {
+      console.log(users);
+    });
+  </script>
+</html>

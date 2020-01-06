@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    let promises = ["后盾人", "李四"].map(name => {
+      return ajax(`http://localhost:8888/php/user.php?name=${name}`);
+    });
+    Promise.allSettled(promises).then(values => {
+      let users = values.filter(user => {
+        return user.status == "fulfilled";
+      });
+      console.log(users);
+    });
+    // console.log("后盾人");
+    // const p1 = new Promise((resolve, reject) => {
+    //   reject("rejected");
+    // });
+    // const p2 = new Promise((resolve, reject) => {
+    //   reject("resolved");
+    // });
+    // Promise.allSettled([p1, p2]).then(results => {
+    //   console.log(results);
+    // });
+  </script>
+</html>

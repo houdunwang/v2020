@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    let promise = Promise.resolve("后盾人");
+    promise = promise.then(v => {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          console.log(1);
+          resolve();
+        }, 1000);
+      });
+    });
+    promise.then(v => {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          console.log(2);
+          resolve();
+        }, 1000);
+      });
+    });
+  </script>
+</html>

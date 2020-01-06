@@ -1,9 +1,11 @@
 <?php
 header("Access-Control-Allow-Origin:*");
-sleep(2);
 $users = [
     ['id' => 1, 'name' => '后盾人', 'email' => 'admin@houdunren.com'],
     ['id' => 2, 'name' => '向军', 'email' => '2300071698@qq.com'],
+    ['id' => 3, 'name' => '李四', 'email' => 'lisi@qq.com'],
+    ['id' => 4, 'name' => '王五', 'email' => 'wangwu@qq.com'],
+    ['id' => 5, 'name' => '赵六', 'email' => 'zaoliu@qq.com'],
 ];
 //根据用户名获取用户
 if (isset($_GET['name'])) {

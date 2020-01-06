@@ -12,7 +12,7 @@ class HttpError extends Error {
 }
 function ajax(url) {
   return new Promise((resolve, reject) => {
-    loading.style.display = "block";
+    // loading.style.display = "block";
     if (!/^http/.test(url)) {
       throw new ParamError("请求地址格式错误");
     }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    class User {
+      ajax(user) {
+        let url = `http://localhost:8888/php/user.php`;
+        return new Promise((resolve, reject) => {
+          let xhr = new XMLHttpRequest();
+          xhr.open("GET", `${url}?name=${user}`);
+          xhr.send();
+          xhr.onload = function() {
+            if (this.status == 200) {
+              resolve(JSON.parse(this.response));
+            } else if (this.status == 404) {
+              reject(new HttpError("用户不存在"));
+            } else {
+              reject("加载失败");
+            }
+          };
+          xhr.onerror = function() {
+            reject(this);
+          };
+        });
+      }
+      render(users) {
+        users.reduce((promise, user) => {
+          return promise
+            .then(_ => {
+              return this.ajax(user);
+            })
+            .then(user => {
+              return this.view(user);
+            });
+        }, Promise.resolve());
+      }
+      view(user) {
+        return new Promise(resolve => {
+          let h2 = document.createElement("h2");
+          h2.innerHTML = user.name;
+          document.body.appendChild(h2);
+          resolve();
+        });
+      }
+    }
+    new User().render(["后盾人", "向军"]);
+  </script>
+</html>

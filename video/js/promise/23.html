@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    let hd = {
+      then(resolve, reject) {
+        resolve("后盾人");
+      }
+    };
+    Promise.resolve(hd).then(value => {
+      // console.log(value);
+    });
+    new Promise((resolve, reject) => {
+      resolve("后盾人");
+    })
+      .then(value => {
+        // console.log(value);
+        if (value != "成功") {
+          // throw new Error("fail");
+          return Promise.reject("参数错误");
+        }
+      })
+      .catch(error => {
+        console.log(error + "fail");
+      });
+    // Promise.reject("fail")
+    //   .then(value => {
+    //     console.log(value);
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
+  </script>
+</html>

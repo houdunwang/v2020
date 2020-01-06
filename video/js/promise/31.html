@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // new Promise(resolve => {
+    //   resolve();
+    // })
+    //   .then(v => {
+    //     return new Promise(resolve => {
+    //       setTimeout(() => {
+    //         resolve("后盾人");
+    //       }, 2000);
+    //     });
+    //   })
+    //   .then(v => {
+    //     console.log(v);
+    //   });
+
+    async function hd() {
+      let name = await new Promise(resolve => {
+        setTimeout(() => {
+          resolve("后盾人");
+        }, 2000);
+      });
+      let site = await new Promise(resolve => {
+        setTimeout(() => {
+          resolve(name + "houdunren.com");
+        }, 2000);
+      });
+      console.log(site);
+      // return new Promise(resolve => {
+      //   setTimeout(() => {
+      //     resolve("houdunren.com");
+      //   }, 2000);
+      // });
+    }
+    hd();
+    // hd().then(v => console.log(v));
+  </script>
+</html>
