@@ -1,7 +1,5 @@
 本项目为视频代码或直播课程代码，希望大家能给个 `star` 这是对我们最好的鼓励和肯定。
 
-[![time tracker](assets/coding.svg)](https://wakatime.com/badge/github/houdunwang/coding)
-
 Github 仓库：https://github.com/houdunwang/coding
 
 Gitee 仓库：https://gitee.com/houdunren/code
