@@ -29,9 +29,14 @@ Gitee 仓库：https://gitee.com/houdunren/code
 | docs     | 文档，最新文档请访问 [doc.houdunren.com](http://doc.houdunren.com) |
 | archives | 按年份归档的代码，每年一个归档                                     |
 
-## 编码时间
+## 编码记录
 
-下面是最近七天向军大叔编码时间
+下面是近七天向军大叔的编码时间与语言
+
+**编码时间**
 
 ![https://www.houdunren.com/](https://wakatime.com/share/@houdunren/fa3cbd8c-e1b5-4f8a-bf02-b5c1d0e3a8b3.png)
 
+**编码语言**
+
+![https://www.houdunren.com/](https://wakatime.com/share/@houdunren/f083f191-971f-48c1-a1c1-0a8123ece873.png)
