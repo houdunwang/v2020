@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    async function hd(name) {
+      let user = await ajax(`http://localhost:8888/php/user.php?name=${name}`);
+      let lessons = await ajax(
+        `http://localhost:8888/php/houdunren.php?id=${user.id}`
+      );
+      return lessons;
+    }
+    hd("后盾人教程")
+      .then(lessons => {
+        console.log(lessons);
+      })
+      .catch(error => {
+        alert(error.message);
+      });
+    // .then(user => {
+    //   console.log(user);
+    // })
+    // .catch(error => {
+    //   console.log(error.message);
+    // });
+  </script>
+</html>

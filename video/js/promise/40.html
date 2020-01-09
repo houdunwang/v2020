@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script src="js/ajax.js"></script>
+  <script>
+    function p1() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve("houdunren");
+        }, 2000);
+      });
+    }
+    function p2() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve("hdcms");
+        }, 2000);
+      });
+    }
+    async function hd() {
+      let res = await Promise.all([p1(), p2()]);
+      console.log(res);
+      // let h1 = p1();
+      // console.log(h1);
+      // let h2 = p2();
+      // let h1value = await h1; //then
+      // let h2value = await h2;
+      // console.log(h1value, h2value);
+      // console.log(h2);
+      // setTimeout(() => {
+      //   console.log(h1, h2);
+      // }, 2000);
+    }
+    hd();
+  </script>
+</html>
