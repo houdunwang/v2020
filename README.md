@@ -33,10 +33,13 @@ Gitee 仓库：https://gitee.com/houdunren/code
 
 下面是近七天向军大叔的编码时间与语言 
 
-**编码时间**
+| **编码时间**                                                 | **开发语言**                                                 |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| <img src="https://wakatime.com/share/@houdunren/fa3cbd8c-e1b5-4f8a-bf02-b5c1d0e3a8b3.png" alt="https://www.houdunren.com/"  /> | <img src="https://wakatime.com/share/@houdunren/f083f191-971f-48c1-a1c1-0a8123ece873.png" alt="https://www.houdunren.com/" /> |
 
-<img src="https://wakatime.com/share/@houdunren/fa3cbd8c-e1b5-4f8a-bf02-b5c1d0e3a8b3.png" alt="https://www.houdunren.com/" style="max-width:50%;" />
 
-**开发语言**
 
-<img src="https://wakatime.com/share/@houdunren/f083f191-971f-48c1-a1c1-0a8123ece873.png" alt="https://www.houdunren.com/" style="max-width:50%;" />
+
+
+
+
