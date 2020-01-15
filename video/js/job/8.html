@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    // function sum(num) {
+    //   return new Promise(resolve => {
+    //     setTimeout(() => {
+    //       let count = 0;
+    //       for (let i = 0; i < num; i++) {
+    //         count += num--;
+    //       }
+    //       resolve(count);
+    //     });
+    //   });
+    // }
+    async function hd(num) {
+      let res = await Promise.resolve().then(_ => {
+        let count = 0;
+        for (let i = 0; i < num; i++) {
+          count += num--;
+        }
+        return count;
+      });
+      console.log(res);
+    }
+    hd(987654321);
+    console.log("后盾人");
+  </script>
+</html>

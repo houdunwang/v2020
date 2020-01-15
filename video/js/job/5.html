@@ -6,12 +6,12 @@
   </head>
   <body></body>
   <script>
+    let i = 0;
     setTimeout(() => {
-      console.log("定时器");
-    }, 0);
-    Promise.resolve().then(value => {
-      console.log("Promise");
-    });
-    console.log("后盾人");
+      console.log(++i);
+    }, 1000);
+    setTimeout(() => {
+      console.log(++i);
+    }, 1000);
   </script>
 </html>

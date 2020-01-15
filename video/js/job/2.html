@@ -7,11 +7,14 @@
   <body></body>
   <script>
     setTimeout(() => {
-      console.log("定时器");
-    }, 0);
-    Promise.resolve().then(value => {
-      console.log("Promise");
-    });
+      console.log("定时器 1");
+    }, 2000);
+    setTimeout(() => {
+      console.log("定时器 2");
+    }, 1000);
     console.log("后盾人");
+    for (let i = 0; i < 10000; i++) {
+      console.log("");
+    }
   </script>
 </html>

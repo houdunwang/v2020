@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    setTimeout(() => {
+      console.log("定时器");
+      setTimeout(() => {
+        console.log("timeout timeout");
+      }, 0);
+      new Promise(resolve => {
+        console.log("settimeout Promise");
+        resolve();
+      }).then(() => {
+        console.log("settimeout then");
+      });
+    }, 0);
+    new Promise(resolve => {
+      console.log("Promise");
+      resolve();
+    }).then(() => {
+      console.log("then");
+    });
+    console.log("后盾人");
+  </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body></body>
+  <script>
+    function hd() {
+      for (let i = 0; i < num; i++) {
+        count += num--;
+      }
+      console.log(count);
+    }
+    let num = 987654321;
+    let count = 0;
+    // hd();
+    function hd2() {
+      for (let i = 0; i < 100000000; i++) {
+        if (num <= 0) break;
+        count += num--;
+      }
+      if (num > 0) {
+        console.log(num);
+        setTimeout(hd2);
+      } else {
+        console.log(count);
+      }
+    }
+    num = 987654321;
+    count = 0;
+    hd2();
+    console.log("后盾人");
+  </script>
+</html>
