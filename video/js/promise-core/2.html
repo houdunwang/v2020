@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>原生</title>
+  </head>
+  <body>
+    <script>
+      let p1 = new Promise(resolve => {
+        setTimeout(() => {
+          resolve("后盾人");
+        }, 2000);
+      });
+      let p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          reject("HDCMS");
+        }, 1000);
+      });
+      Promise.race([p1, p2]).then(
+        values => {
+          console.log(values);
+        },
+        reason => {
+          console.log(reason);
+        }
+      );
+    </script>
+  </body>
+</html>

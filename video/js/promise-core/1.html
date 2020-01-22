@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+    <script src="HD.js"></script>
+  </head>
+  <body></body>
+  <script>
+    let p1 = new HD(resolve => {
+      setTimeout(() => {
+        resolve("后盾人");
+      }, 2000);
+    });
+    let p2 = new HD((resolve, reject) => {
+      setTimeout(() => {
+        reject("HDCMS");
+      }, 1000);
+    });
+    HD.race([p1, p2]).then(
+      value => {
+        console.log(value);
+      },
+      reason => {
+        console.log(reason);
+      }
+    );
+  </script>
+</html>
