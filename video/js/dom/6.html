@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="houdunren" data="hd">houdunren.com</div>
+      <div class="hdcms">hdcms.com</div>
+      <div class="xiangjun"><!-- 向军大叔 --></div>
+    </div>
+    <script>
+      let app = document.getElementById('app')
+      console.log(app.nodeType)
+
+      console.log(app.firstChild.nodeType)
+
+      console.log(app.childNodes[1].attributes[0].nodeType)
+
+      const xj = document.querySelector('.xiangjun')
+      console.log(xj.firstChild.nodeType)
+
+      console.dir(app)
+
+      console.log(app instanceof HTMLDivElement)
+
+      console.log(app instanceof Element)
+    </script>
+  </body>
+</html>

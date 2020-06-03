@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <div id="hd">houdunren.com</div>
+    <script>
+      let hd = document.getElementById('hd')
+      Object.assign(hd, {
+        id: 'red',
+        onclick() {
+          Object.assign(this.style, {
+            backgroundColor: hd.id,
+          })
+        },
+      })
+      // Object.assign(hd, {
+      //   color: 'red',
+      //   change() {
+      //     this.innerHTML = '后盾人'
+      //     this.style.color = this.color
+      //   },
+      //   onclick() {
+      //     this.change()
+      //   },
+      // })
+      // hd.title = '后盾人'
+      // hd.id = 'houdunren'
+      // hd.style.color = 'red'
+      // hd.name = '后盾人'
+      // hd.show = function () {
+      //   console.log(this.name)
+      // }
+      // hd.show()
+      // let hd = {}
+      // hd.name = '后盾人'
+      // hd.show = function () {
+      //   console.log(this.name)
+      // }
+      // hd.show()
+    </script>
+  </body>
+</html>

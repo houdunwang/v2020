@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后盾人</title>
+  </head>
+  <body>
+    <div id="hd">
+      <h1>houdunren.com</h1>
+      <ul>
+        <li>
+          <h2>
+            <span>后盾人</span>
+          </h2>
+        </li>
+      </ul>
+    </div>
+    <script>
+      function all(el) {
+        const items = []
+        ;[...el.childNodes].map((node) => {
+          if (node.nodeType == 1) {
+            items.push(node, ...all(node))
+          }
+        })
+        return items
+      }
+      const nodes = all(document.getElementById('hd'))
+      console.log(nodes)
+    </script>
+  </body>
+</html>

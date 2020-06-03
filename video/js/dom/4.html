@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>后盾人</title>
+  </head>
+  <body class="red">
+    <!-- houdunren.com -->
+    <!-- <script>
+      console.log(document.nodeType)
+      console.log(document.body.nodeType)
+      console.log(document.body.attributes[0].nodeType)
+      console.log(document.body.childNodes[0].nodeType)
+      console.log(document.body.childNodes[1].nodeType)
+    </script> -->
+    <div id="hd">hdcms.com</div>
+    <input type="text" id="title" />
+    <script>
+      //   console.dir(hd)
+      function prototype(el) {
+        let p = Object.getPrototypeOf(el)
+        console.log(p)
+        Object.getPrototypeOf(p) ? prototype(p) : ''
+      }
+      let hd = document.getElementById('title')
+      prototype(hd)
+    </script>
+  </body>
+</html>
