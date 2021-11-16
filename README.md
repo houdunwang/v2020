@@ -21,9 +21,9 @@
 
 | 年份                      | 仓库地址                                       |
 | ------------------------- | ---------------------------------------------- |
-| 2021年视频教程代码        | https://gitee.com/houdunren/houdunren.com-2021 |
-| 2019~2020年视频教程代码   | https://gitee.com/houdunren/houdunren.com-2020 |
-| 2015~2018年前视频教程代码 | https://gitee.com/houdunren/houdunren.com-2015 |
+| 2021年视频教程代码        | https://gitee.com/houdunren/v2021 |
+| 2019~2020年视频教程代码   | https://gitee.com/houdunren/v2020 |
+| 2015~2018年前视频教程代码 | https://gitee.com/houdunren/v2015 |
 
 
 
