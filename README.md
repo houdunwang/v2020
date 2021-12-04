@@ -1,8 +1,8 @@
 本项目为视频代码或直播课程代码，希望大家能给个 `star` 这是对我们最好的鼓励和肯定。
 
-Github 仓库：https://github.com/houdunwang/coding
+Github 仓库：https://github.com/houdunwang/v2020
 
-Gitee 仓库：https://gitee.com/houdunren/code
+Gitee 仓库：https://gitee.com/houdunren/v2020
 
 ![IMG_7099](./assets/IMG_7099.JPG)
 
@@ -13,8 +13,6 @@ Gitee 仓库：https://gitee.com/houdunren/code
 | 平台 | 地址                                                                   |
 | ---- | ---------------------------------------------------------------------- |
 | B 站 | [https://live.bilibili.com/8515468](https://live.bilibili.com/8515468) |
-| 斗鱼 | [https://www.douyu.com/4179871](https://www.douyu.com/4179871)         |
-| 腾讯 | [https://ke.qq.com/course/288236](https://ke.qq.com/course/288236)     |
 | 抖音 | 抖音号: 268943416                                                      |
 
 ## 目录说明
