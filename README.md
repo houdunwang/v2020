@@ -1,8 +1,10 @@
 ## 后盾人 / 2020年视频教程代码
 
-本项目为视频代码或直播课程代码，希望大家能给个 `star` 这是对我们最好的鼓励和肯定。
+本项目为视频或直播代码，你可以在 [后盾人](https://gitee.com/link?target=https%3A%2F%2Fwww.houdunren.com) 网站通过视频学习。
 
-> 更多视频教程请访问 [ houdunren.com](houdunren.com) 学习
+> 兄弟姐妹们给个 Star 鼓励我一下吧
+
+
 
 ![IMG_7099](./assets/IMG_7099.JPG)
 
@@ -39,6 +41,8 @@
 
 | 年份      | GitHub                                                       | Gitee                                                        |
 | --------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 2024      | [https://github.com/houdunwang/v2024](https://github.com/houdunwang/v2024) | [https://gitee.com/houdunren/v2024](https://gitee.com/houdunren/v2024) |
+| 2023      | [https://github.com/houdunwang/v2023](https://github.com/houdunwang/v2023) | [https://gitee.com/houdunren/v2023](https://gitee.com/houdunren/v2023) |
 | 2022      | [https://github.com/houdunwang/v2022](https://github.com/houdunwang/v2022) | [https://gitee.com/houdunren/v2022](https://gitee.com/houdunren/v2022) |
 | 2021      | [https://github.com/houdunwang/v2021](https://github.com/houdunwang/v2021) | [https://gitee.com/houdunren/v2021](https://gitee.com/houdunren/v2021) |
 | 2019~2020 | [https://github.com/houdunwang/v2020](https://github.com/houdunwang/v2020) | [https://gitee.com/houdunren/v2020](https://gitee.com/houdunren/v2020) |
